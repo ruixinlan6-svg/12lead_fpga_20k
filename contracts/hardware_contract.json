@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1",
+  "status": "provisional",
+  "last_checked": "2026-08-26T14:34:25+08:00",
+  "target_board": "Sipeed Tang Nano 20K",
+  "fpga": {
+    "family": "GW2A/GW2AR-18C",
+    "eda_device": "GW2AR-LV18QN88PC8/I7",
+    "jtag_observed": {
+      "family_reported": "GW2ANR",
+      "idcode": "0x0000081B",
+      "exact_package_confirmed": false
+    }
+  },
+  "resources_from_board_documents": {
+    "lut4": 20736,
+    "bsram_blocks": 46,
+    "bsram_kbit": 828,
+    "multiplier_18x18": 48
+  },
+  "clock": {
+    "input_hz": 27000000,
+    "source": "existing project timing constraint; verify against the physical board before ECG timing closure"
+  },
+  "external_memory": {
+    "board_document_capacity_mbit": 64,
+    "candidate_by_package": {
+      "QN88": "SDR SDRAM",
+      "QN88P": "PSRAM"
+    },
+    "confirmed_package": null,
+    "confirmed_type": null,
+    "read_write_test_passed": false,
+    "requires": [
+      "physical package marking",
+      "JTAG/EDA cross-check",
+      "non-destructive volatile memory read/write test"
+    ]
+  },
+  "goai": {
+    "npu_public_package_scope": "GW2AR-18C-QFN88P",
+    "local_reference_device": "GW2AR-LV18QN88PC8/I7",
+    "usable_for_this_board": null,
+    "decision_gate": "confirm physical package and memory type first"
+  },
+  "programming": {
+    "first_allowed_mode": "SRAM",
+    "persistent_flash_write_authorized": false
+  }
+}

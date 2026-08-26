@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1",
+  "status": "provisional",
+  "last_checked": "2026-08-26T14:34:25+08:00",
+  "dataset_target": "PTB-XL",
+  "sampling": {
+    "rate_hz": 100,
+    "duration_s": 10,
+    "sample_count": 1000,
+    "resampling_method": "pending explicit implementation and validation",
+    "crop_or_pad": "pending; must be deterministic"
+  },
+  "leads": {
+    "order": ["I", "II", "III", "aVR", "aVL", "aVF", "V1", "V2", "V3", "V4", "V5", "V6"],
+    "count": 12,
+    "input_shape": [12, 1000],
+    "unit": null,
+    "unit_status": "must be confirmed from the selected PTB-XL loader and metadata"
+  },
+  "task": {
+    "type": "five-diagnostic-superclass-multilabel",
+    "label_order": ["NORM", "MI", "STTC", "CD", "HYP"],
+    "label_source": "PTB-XL diagnostic superclass mapping; freeze exact mapping before M1"
+  },
+  "output": {
+    "model_output": "five fixed-point logits",
+    "host_postprocess": ["sigmoid", "fixed threshold", "metrics/reporting"],
+    "clinical_use": false
+  },
+  "split": {
+    "patient_level": true,
+    "fold_manifest": null,
+    "manifest_sha256": null,
+    "test_set_used_for_tuning": false
+  },
+  "quantization": {
+    "input_dtype": "pending M2",
+    "weight_dtype": "pending M2",
+    "activation_dtype": "pending M2",
+    "rounding_saturation_byte_order": "pending M2"
+  },
+  "pending_gates": [
+    "freeze physical input unit and normalization",
+    "freeze deterministic resampling/crop/pad",
+    "freeze PTB-XL label mapping and patient-level split manifest"
+  ]
+}
