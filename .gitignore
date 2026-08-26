@@ -3,6 +3,7 @@ project/impl/
 **/impl/
 fpga/sdram_probe/build/
 fpga/inference_smoke/build/
+fpga/uart_probe/build/
 *.vcd
 *.vvp
 *.fs
@@ -30,6 +31,7 @@ checkpoints/
 *.mem
 
 # Local/private environment material
+.embeddedskills/
 .env
 .env.*
 *.pem

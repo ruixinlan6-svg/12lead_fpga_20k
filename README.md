@@ -2,7 +2,7 @@
 
 在 Sipeed Tang Nano 20K（Gowin GW2AR-18C）上研究十二导联 ECG 多标签模型的训练、INT8 量化、FPGA/NPU 部署和板级验证。
 
-> 当前状态：QN88/SDRAM 路线已确认；PTB-XL 全量下载、三 seed FP32 基线和完整 checkpoint INT8 PTQ 已通过。QN88 SDRAM 探针与 INT8 算术 smoke 已完成 QN88 PnR 和 SRAM 下载，但 LED/状态尚待独立观察。项目不是医疗器械，公开数据集结果不能作为临床诊断声明。
+> 当前状态：QN88/SDRAM 路线已确认；PTB-XL 全量下载、三 seed FP32 基线和完整 checkpoint INT8 PTQ 已通过。板卡有可用串口：COM9/COM10 均枚举为 FT2232，其中 COM10 已实测接收 FPGA PIN69 的 UART；INT8 算术 smoke 已通过 COM10 状态帧，QN88 SDRAM 探针仍稳定报告首读失配，读写门禁保持关闭。项目不是医疗器械，公开数据集结果不能作为临床诊断声明。
 
 ## 首轮目标
 
@@ -20,10 +20,10 @@
 - 全量 PTB-XL 异步下载器：[train/download_ptbxl_async.py](train/download_ptbxl_async.py)。远端私有数据目录为 `C:/Users/Administrator/Desktop/LRX/12lead_fpga_20k_m1/data/ptb-xl/1.0.3`；最终验收为 21,799 对 `records100/*_lr` 文件、0 个 `.part` 文件，manifest SHA-256 记录在 `20260826-1611-m1-ptbxl-record-parser-fix`。
 - 完整 FP32 基线：远端 `runs/20260826-1613-m1-ptbxl-full-fp32-retry`，三 seed 测试 macro AUROC 为 0.8578–0.8624；checkpoint 仅保留在远端，不进 Git。
 - 完整 checkpoint INT8 PTQ：远端 `runs/20260826-1634-m2-ptq-full-checkpoint/seed1`，验证集 AUROC 下降 0.00039；量化 contract 和 golden vectors 的哈希见对应迭代记录。
-- QN88 SDRAM 非破坏性探针：[fpga/sdram_probe/README.md](fpga/sdram_probe/README.md)。构建入口为 `fpga/sdram_probe/build_qn88.tcl`，只允许 SRAM 下载；`read_write_test_passed` 仍须 LED/可读状态确认。
-- QN88 INT8 算术实板 smoke：[fpga/inference_smoke/README.md](fpga/inference_smoke/README.md)。它验证 8 项 INT8 点积 240、重定标结果 120，不等同于完整 ECG 模型准确率。
+- QN88 SDRAM 非破坏性探针：[fpga/sdram_probe/README.md](fpga/sdram_probe/README.md)。构建入口为 `fpga/sdram_probe/build_qn88.tcl`，只允许 SRAM 下载；COM10 已能读取状态，但当前为 `I1 P0 E1 D=0000 X=A5A5`，`read_write_test_passed` 仍为 false。
+- QN88 INT8 算术实板 smoke：[fpga/inference_smoke/README.md](fpga/inference_smoke/README.md)。它验证 8 项 INT8 点积 240、重定标结果 120，并已在 COM10 读取 `INFER D=00F0 Q=78 P=1`；这不等同于完整 ECG 模型准确率。
 
-后续 Agent 在任何训练、量化、RTL、综合或板测前，必须先为本轮创建新的 `docs/iterations/records/<run_id>.md` 并更新 `INDEX.md`；重试也必须使用新 ID。当前物理板无可用串口，JTAG “SRAM Program” 成功不能替代 LED/状态观察。
+后续 Agent 在任何训练、量化、RTL、综合或板测前，必须先为本轮创建新的 `docs/iterations/records/<run_id>.md` 并更新 `INDEX.md`；重试也必须使用新 ID。当前可用的机器可读状态通道为 COM10；JTAG “SRAM Program” 成功仍不能替代状态帧或 LED 观察。
 
 ## 强制迭代追溯
 

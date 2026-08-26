@@ -6,6 +6,8 @@
 module qn88_sdram_probe (
     input  wire       clk,
     input  wire       rst_btn,
+    input  wire       uart_rx,
+    output wire       uart_tx,
     output wire [5:0] led
 );
     localparam integer DATA_WIDTH = 32;
@@ -13,7 +15,9 @@ module qn88_sdram_probe (
     localparam integer ROW_WIDTH = 11;
     localparam integer COL_WIDTH = 8;
     localparam integer USER_ADDR_WIDTH = BANK_WIDTH + ROW_WIDTH + COL_WIDTH;
-    localparam integer BURST_WORDS = 32;
+    // GW2AR's local vendor testbench uses data_len=25 for the 32-bit
+    // embedded-SDRAM interface; that corresponds to 26 user data beats.
+    localparam integer BURST_WORDS = 26;
     localparam integer BURSTS = 4;
 
     wire rst_n = ~rst_btn;
@@ -94,8 +98,72 @@ module qn88_sdram_probe (
     reg error_seen;
     reg [27:0] watchdog;
     reg [23:0] heartbeat;
+    reg [23:0] uart_timer;
+    reg uart_start_reg;
+    reg [255:0] uart_frame;
+    wire uart_busy;
+    wire uart_done;
+    reg [DATA_WIDTH-1:0] first_read_data;
+    reg [DATA_WIDTH-1:0] first_expected_data;
+    reg mismatch_latched;
 
-    assign sdrc_addr = {2'd0, 11'd0, column};
+    function [7:0] hex_ascii;
+        input [3:0] nibble;
+        begin
+            if (nibble < 4'd10)
+                hex_ascii = "0" + nibble;
+            else
+                hex_ascii = "A" + (nibble - 4'd10);
+        end
+    endfunction
+
+    // Little-endian frame: "SDRAM I0 P0 E0 D=xxxx X=xxxx\r\n" (30 bytes).
+    always @* begin
+        uart_frame = 256'd0;
+        uart_frame[8*0 +: 8]  = "S";
+        uart_frame[8*1 +: 8]  = "D";
+        uart_frame[8*2 +: 8]  = "R";
+        uart_frame[8*3 +: 8]  = "A";
+        uart_frame[8*4 +: 8]  = "M";
+        uart_frame[8*5 +: 8]  = " ";
+        uart_frame[8*6 +: 8]  = "I";
+        uart_frame[8*7 +: 8]  = sdrc_init_done ? "1" : "0";
+        uart_frame[8*8 +: 8]  = " ";
+        uart_frame[8*9 +: 8]  = "P";
+        uart_frame[8*10 +: 8] = (state == ST_DONE) ? "1" : "0";
+        uart_frame[8*11 +: 8] = " ";
+        uart_frame[8*12 +: 8] = "E";
+        uart_frame[8*13 +: 8] = error_seen ? "1" : "0";
+        uart_frame[8*14 +: 8] = " ";
+        uart_frame[8*15 +: 8] = "D";
+        uart_frame[8*16 +: 8] = "=";
+        uart_frame[8*17 +: 8] = hex_ascii(first_read_data[31:28]);
+        uart_frame[8*18 +: 8] = hex_ascii(first_read_data[27:24]);
+        uart_frame[8*19 +: 8] = hex_ascii(first_read_data[23:20]);
+        uart_frame[8*20 +: 8] = hex_ascii(first_read_data[19:16]);
+        uart_frame[8*21 +: 8] = " ";
+        uart_frame[8*22 +: 8] = "X";
+        uart_frame[8*23 +: 8] = "=";
+        uart_frame[8*24 +: 8] = hex_ascii(first_expected_data[31:28]);
+        uart_frame[8*25 +: 8] = hex_ascii(first_expected_data[27:24]);
+        uart_frame[8*26 +: 8] = hex_ascii(first_expected_data[23:20]);
+        uart_frame[8*27 +: 8] = hex_ascii(first_expected_data[19:16]);
+        uart_frame[8*28 +: 8] = 8'h0D;
+        uart_frame[8*29 +: 8] = 8'h0A;
+    end
+
+    qn88_uart_frame_tx uart_status_tx (
+        .clk(clk), .rst_n(rst_n), .start(uart_start_reg),
+        .frame_data(uart_frame), .frame_len(6'd30),
+        .tx(uart_tx), .busy(uart_busy), .done(uart_done)
+    );
+
+    // Keep RX present for the documented BL616 return path; this read-only
+    // probe intentionally does not interpret or act on incoming bytes.
+    wire uart_rx_unused = uart_rx;
+
+    // Match the vendor GW2AR example's non-zero bank/row starting point.
+    assign sdrc_addr = {2'd2, 11'd2, column};
     assign sdrc_data_len = BURST_WORDS - 1;
     assign sdrc_dqm = 4'b0000;
     assign sdrc_data_in = user_data;
@@ -114,7 +182,7 @@ module qn88_sdram_probe (
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             state <= ST_IDLE;
-            column <= 0;
+            column <= 8'd5;
             burst <= 0;
             write_count <= 0;
             read_count <= 0;
@@ -126,8 +194,20 @@ module qn88_sdram_probe (
             error_seen <= 1'b0;
             watchdog <= 0;
             heartbeat <= 0;
+            uart_timer <= 0;
+            uart_start_reg <= 1'b0;
+            first_read_data <= 0;
+            first_expected_data <= 0;
+            mismatch_latched <= 1'b0;
         end else begin
             heartbeat <= heartbeat + 1'b1;
+            uart_start_reg <= 1'b0;
+            if ((uart_timer == 24'd6749999) && !uart_busy) begin
+                uart_timer <= 24'd0;
+                uart_start_reg <= 1'b1;
+            end else if (!uart_busy) begin
+                uart_timer <= uart_timer + 1'b1;
+            end
             if (state != ST_DONE && state != ST_FAIL)
                 watchdog <= watchdog + 1'b1;
             if (watchdog == {28{1'b1}}) begin
@@ -176,8 +256,14 @@ module qn88_sdram_probe (
                 ST_READ: begin
                     user_rd_n <= 1'b1;
                     if (sdrc_rd_valid) begin
-                        if (sdrc_data_out !== expected_data)
+                        if (sdrc_data_out !== expected_data) begin
                             error_seen <= 1'b1;
+                            if (!mismatch_latched) begin
+                                first_read_data <= sdrc_data_out;
+                                first_expected_data <= expected_data;
+                                mismatch_latched <= 1'b1;
+                            end
+                        end
                         expected_data <= expected_data + 1'b1;
                         read_count <= read_count + 1'b1;
                     end

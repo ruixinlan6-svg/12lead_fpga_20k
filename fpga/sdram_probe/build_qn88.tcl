@@ -8,6 +8,7 @@ set build_dir [file join $root build]
 file mkdir $build_dir
 create_project -name qn88_sdram_probe -dir $build_dir -pn GW2AR-LV18QN88C8/I7 -device_version C -force
 add_file [file join $root qn88_sdram_probe_top.v]
+add_file [file join $root .. uart_probe qn88_uart_frame_tx.v]
 add_file [file join $root pins.cst]
 add_file [file join $root timing.sdc]
 add_file [file join $root sdrc_defines.v]

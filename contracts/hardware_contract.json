@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
-  "status": "qn88_confirmed_memory_test_pending",
-  "last_checked": "2026-08-26T16:38:26+08:00",
+  "status": "qn88_uart_verified_sdram_gate_failed",
+  "last_checked": "2026-08-26T17:10:00+08:00",
   "target_board": "Sipeed Tang Nano 20K",
   "fpga": {
     "family": "GW2A/GW2AR-18C",
@@ -22,6 +22,17 @@
   "clock": {
     "input_hz": 27000000,
     "source": "existing project timing constraint; verify against the physical board before ECG timing closure"
+  },
+  "uart": {
+    "available": true,
+    "host_ports": ["COM9", "COM10"],
+    "active_port": "COM10",
+    "baudrate": 115200,
+    "format": "8-N-1",
+    "fpga_tx_pin": 69,
+    "fpga_rx_pin": 70,
+    "bridge": "onboard BL616/FT2232 path documented by Tang Nano 20K schematic",
+    "evidence": "docs/iterations/records/20260826-1651-m4-qn88-uart-recheck.md"
   },
   "external_memory": {
     "board_document_capacity_mbit": 64,

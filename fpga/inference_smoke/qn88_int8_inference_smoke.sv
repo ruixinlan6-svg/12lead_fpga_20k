@@ -6,6 +6,8 @@
 module qn88_int8_inference_smoke (
     input  wire       clk,
     input  wire       rst_btn,
+    input  wire       uart_rx,
+    output wire       uart_tx,
     output wire [5:0] led
 );
     localparam [2:0] ST_START  = 3'd0;
@@ -28,6 +30,21 @@ module qn88_int8_inference_smoke (
     wire signed [7:0] quantized;
     wire signed [31:0] zero_offset = 32'sd0;
     wire signed [31:0] unit_multiplier = 32'sd1;
+    reg [23:0] uart_timer;
+    reg uart_start_reg;
+    reg [255:0] uart_frame;
+    wire uart_busy;
+    wire uart_done;
+
+    function [7:0] hex_ascii;
+        input [3:0] nibble;
+        begin
+            if (nibble < 4'd10)
+                hex_ascii = "0" + nibble;
+            else
+                hex_ascii = "A" + (nibble - 4'd10);
+        end
+    endfunction
 
     always @* begin
         activation = 8'sd0;
@@ -57,11 +74,58 @@ module qn88_int8_inference_smoke (
         .multiplier(unit_multiplier), .shift(6'd1), .result(quantized)
     );
 
+    // Little-endian frame: "INFER D=00F0 Q=78 P=1\r\n" (23 bytes).
+    always @* begin
+        uart_frame = 256'd0;
+        uart_frame[8*0 +: 8]  = "I";
+        uart_frame[8*1 +: 8]  = "N";
+        uart_frame[8*2 +: 8]  = "F";
+        uart_frame[8*3 +: 8]  = "E";
+        uart_frame[8*4 +: 8]  = "R";
+        uart_frame[8*5 +: 8]  = " ";
+        uart_frame[8*6 +: 8]  = "D";
+        uart_frame[8*7 +: 8]  = "=";
+        uart_frame[8*8 +: 8]  = hex_ascii(mac_result[15:12]);
+        uart_frame[8*9 +: 8]  = hex_ascii(mac_result[11:8]);
+        uart_frame[8*10 +: 8] = hex_ascii(mac_result[7:4]);
+        uart_frame[8*11 +: 8] = hex_ascii(mac_result[3:0]);
+        uart_frame[8*12 +: 8] = " ";
+        uart_frame[8*13 +: 8] = "Q";
+        uart_frame[8*14 +: 8] = "=";
+        uart_frame[8*15 +: 8] = hex_ascii(quantized[7:4]);
+        uart_frame[8*16 +: 8] = hex_ascii(quantized[3:0]);
+        uart_frame[8*17 +: 8] = " ";
+        uart_frame[8*18 +: 8] = "P";
+        uart_frame[8*19 +: 8] = "=";
+        uart_frame[8*20 +: 8] = (state == ST_DONE) ? "1" : "0";
+        uart_frame[8*21 +: 8] = 8'h0D;
+        uart_frame[8*22 +: 8] = 8'h0A;
+    end
+
+    qn88_uart_frame_tx uart_status_tx (
+        .clk(clk), .rst_n(rst_n), .start(uart_start_reg),
+        .frame_data(uart_frame), .frame_len(6'd23),
+        .tx(uart_tx), .busy(uart_busy), .done(uart_done)
+    );
+
+    // Keep RX present for the documented BL616 return path; this smoke is
+    // intentionally receive-inert and performs only passive reporting.
+    wire uart_rx_unused = uart_rx;
+
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             state <= ST_START;
             index <= 3'd0;
+            uart_timer <= 24'd0;
+            uart_start_reg <= 1'b0;
         end else begin
+            uart_start_reg <= 1'b0;
+            if ((uart_timer == 24'd6749999) && !uart_busy) begin
+                uart_timer <= 24'd0;
+                uart_start_reg <= 1'b1;
+            end else if (!uart_busy) begin
+                uart_timer <= uart_timer + 1'b1;
+            end
             case (state)
                 ST_START: begin
                     index <= 3'd0;

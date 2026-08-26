@@ -1,14 +1,20 @@
 # QN88 embedded SDRAM probe
 
-This probe writes and reads four 32-word patterns through Gowin's
+This probe writes and reads four 26-beat user patterns through Gowin's
 `SDRC_EMB` controller, then shows initialization/pass/error state on the six
-active-low Tang Nano 20K LEDs. It is volatile only: the test does not touch
-QSPI Flash.
+active-low Tang Nano 20K LEDs. It also emits a read-only
+`SDRAM I? P? E? D=xxxx X=xxxx` status frame at 115200 8-N-1 on the documented
+BL616 UART pins, so the board result can be captured without relying on visual
+LED observation. `D` and `X` are the high 16-bit words of the first read and
+expected values. It is
+volatile only: the test does not touch QSPI Flash.
 
 The vendor IP is encrypted and remains in the local Gowin installation. The
 build script references `IDE/ipcore/SDRC_EMB/data/GENERAL` at build time; no
 vendor source is copied into Git. The target is the user-confirmed
-`GW2AR-LV18QN88C8/I7` (QN88), not the historical QN88P LED project.
+`GW2AR-LV18QN88C8/I7` (QN88), not the historical QN88P LED project. The
+26-beat transfer (`data_len=25`, bank 2, row 2) follows the local GW2AR
+vendor testbench interface convention.
 
 `sdrc_defines.v` is the auditable configuration header normally emitted by the
 Gowin IP generator. The vendor RTL remains encrypted and is referenced from
