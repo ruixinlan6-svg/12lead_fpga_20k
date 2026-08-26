@@ -23,6 +23,7 @@
 - 全量 PTB-XL 异步下载器：[train/download_ptbxl_async.py](train/download_ptbxl_async.py)。远端私有数据目录为 `C:/Users/Administrator/Desktop/LRX/12lead_fpga_20k_m1/data/ptb-xl/1.0.3`；最终验收为 21,799 对 `records100/*_lr` 文件、0 个 `.part` 文件，manifest SHA-256 记录在 `20260826-1611-m1-ptbxl-record-parser-fix`。
 - 完整 FP32 基线：远端 `runs/20260826-1613-m1-ptbxl-full-fp32-retry`，三 seed 测试 macro AUROC 为 0.8578–0.8624；checkpoint 仅保留在远端，不进 Git。
 - 完整 checkpoint INT8 PTQ：远端 `runs/20260826-1634-m2-ptq-full-checkpoint/seed1`，验证集 AUROC 下降 0.00039；量化 contract 和 golden vectors 的哈希见对应迭代记录。
+- 模型复现验证：`20260826-1908-m2-model-verify` 在同一完整 registry、seed1 checkpoint 和 2,048 条校准样本上重新生成 PTQ；metrics、量化 contract、INT8 权重和 4 个 Golden 数组与既有结果逐项/逐元素一致。该结果确认软件模型与量化产物可复现，但尚未验证模型级 QN88 FPGA 推理。
 - QN88 SDRAM 非破坏性探针：[fpga/sdram_probe/README.md](fpga/sdram_probe/README.md)。构建入口为 `fpga/sdram_probe/build_qn88.tcl`，只允许 SRAM 下载；当前接受构建在 COM10 稳定报告 `SD I1 P1 E0 C=19 D=0000 X=0000`。首读零、低位偏移、尾脉冲和突发状态泄漏均已按迭代记录闭合；`read_write_test_passed` 已更新为 true，但这仍不是长时保持或完整 ECG 模型流量证明。
 - QN88 INT8 算术实板 smoke：[fpga/inference_smoke/README.md](fpga/inference_smoke/README.md)。它验证 8 项 INT8 点积 240、重定标结果 120，并已在 COM10 读取 `INFER D=00F0 Q=78 P=1`；这不等同于完整 ECG 模型准确率。
 
