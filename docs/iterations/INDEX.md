@@ -4,3 +4,4 @@
 
 | Run ID | Date | Stage | Baseline | Optimization | Reason | Key result | Decision | Record |
 |---|---|---|---|---|---|---|---|---|
+| `20260826-1425-m0-preflight` | 2026-08-26 | M0 | `06b5d23` | read-only environment/JTAG/GPU preflight | resolve hardware/tool assumptions before model work | tools and SSH pass; exact package/memory unresolved | return to hardware/tool setup | [record](records/20260826-1425-m0-preflight.md) |
