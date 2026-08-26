@@ -1,11 +1,11 @@
 {
   "schema_version": "0.1",
   "status": "qn88_confirmed_memory_test_pending",
-  "last_checked": "2026-08-26T15:10:00+08:00",
+  "last_checked": "2026-08-26T16:38:26+08:00",
   "target_board": "Sipeed Tang Nano 20K",
   "fpga": {
     "family": "GW2A/GW2AR-18C",
-    "eda_device": "GW2AR-LV18QN88PC8/I7",
+    "eda_device": "GW2AR-LV18QN88C8/I7",
     "jtag_observed": {
       "family_reported": "GW2ANR",
       "idcode": "0x0000081B",

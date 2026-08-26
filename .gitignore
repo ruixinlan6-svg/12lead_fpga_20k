@@ -1,6 +1,8 @@
 # Gowin generated files and simulation output
 project/impl/
 **/impl/
+fpga/sdram_probe/build/
+fpga/inference_smoke/build/
 *.vcd
 *.vvp
 *.fs
