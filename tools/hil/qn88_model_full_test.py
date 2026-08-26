@@ -58,6 +58,12 @@ def main() -> int:
     parser.add_argument("--port", default="COM10")
     parser.add_argument("--baud", type=int, default=115200)
     parser.add_argument("--timeout", type=float, default=60.0)
+    parser.add_argument(
+        "--burst-pause",
+        type=float,
+        default=0.005,
+        help="seconds to pause after each 100-byte weight chunk while SDRAM is checked",
+    )
     parser.add_argument("--out", type=Path)
     args = parser.parse_args()
 
@@ -68,13 +74,19 @@ def main() -> int:
     if len(input_bytes) != 12000 or len(weight_bytes) != 10293:
         raise SystemExit(f"payload size mismatch: input={len(input_bytes)} weights={len(weight_bytes)}")
 
-    payload = b"ECG0" + input_bytes + weight_bytes
     started = datetime.now(timezone.utc).isoformat()
     with serial.Serial(args.port, args.baud, timeout=0.25) as ser:
         time.sleep(0.2)
         ser.reset_input_buffer()
-        ser.write(payload)
-        ser.flush()
+        # Input samples are consumed directly by the CNN input BRAM.  Weights
+        # are sent in 100-byte chunks because the FPGA keeps only one active
+        # SDRAM burst on chip; after each chunk it writes, reads, compares, and
+        # drains the burst before accepting the next chunk.
+        ser.write(b"ECG0" + input_bytes)
+        for offset in range(0, len(weight_bytes), 100):
+            ser.write(weight_bytes[offset : offset + 100])
+            ser.flush()
+            time.sleep(args.burst_pause)
         deadline = time.monotonic() + args.timeout
         received = bytearray()
         frame = b""
@@ -94,7 +106,9 @@ def main() -> int:
         "started_utc": started,
         "port": args.port,
         "baud": args.baud,
-        "payload_bytes": len(payload),
+        "payload_bytes": 4 + len(input_bytes) + len(weight_bytes),
+        "weight_chunk_bytes": 100,
+        "burst_pause_s": args.burst_pause,
         "expected_logits": expected,
         "actual_logits": actual,
         "frame": parsed,

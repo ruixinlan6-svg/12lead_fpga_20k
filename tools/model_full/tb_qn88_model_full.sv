@@ -44,6 +44,7 @@ module tb_qn88_model_full #(
     reg [7:0] w3_mem [0:5119], b3_mem [0:31];
     reg [7:0] wh_mem [0:159], bh_mem [0:4];
     integer i;
+    integer weight_count;
 
     task automatic send_byte(input [7:0] value);
         integer bit_no;
@@ -59,6 +60,19 @@ module tb_qn88_model_full #(
         end
     endtask
 
+    // The BRAM-only top accepts one 100-byte parameter chunk, services the
+    // SDRAM burst, verifies it, and then resumes UART reception.  This gap is
+    // deliberately conservative for simulation; the host HIL script uses a
+    // millisecond-scale equivalent pause.
+    task automatic send_weight_byte(input [7:0] value);
+        begin
+            send_byte(value);
+            weight_count = weight_count + 1;
+            if ((weight_count % 100) == 0)
+                repeat (CPB * 200) @(posedge clk);
+        end
+    endtask
+
     initial begin
         $readmemh(INPUT_FILE, input_mem);
         $readmemh(W1_FILE, w1_mem); $readmemh(B1_FILE, b1_mem);
@@ -68,23 +82,24 @@ module tb_qn88_model_full #(
         repeat (16) @(posedge clk);
         rst_btn = 1'b0;
         repeat (70000) @(posedge clk); // POR interval
+        weight_count = 0;
         send_byte("E"); send_byte("C"); send_byte("G"); send_byte("0");
         for (i = 0; i < 12000; i = i + 1) send_byte(input_mem[i]);
-        for (i = 0; i < 1344; i = i + 1) send_byte(w1_mem[i]);
-        for (i = 0; i < 16; i = i + 1) send_byte(b1_mem[i]);
-        for (i = 0; i < 3584; i = i + 1) send_byte(w2_mem[i]);
-        for (i = 0; i < 32; i = i + 1) send_byte(b2_mem[i]);
-        for (i = 0; i < 5120; i = i + 1) send_byte(w3_mem[i]);
-        for (i = 0; i < 32; i = i + 1) send_byte(b3_mem[i]);
-        for (i = 0; i < 160; i = i + 1) send_byte(wh_mem[i]);
-        for (i = 0; i < 5; i = i + 1) send_byte(bh_mem[i]);
+        for (i = 0; i < 1344; i = i + 1) send_weight_byte(w1_mem[i]);
+        for (i = 0; i < 16; i = i + 1) send_weight_byte(b1_mem[i]);
+        for (i = 0; i < 3584; i = i + 1) send_weight_byte(w2_mem[i]);
+        for (i = 0; i < 32; i = i + 1) send_weight_byte(b2_mem[i]);
+        for (i = 0; i < 5120; i = i + 1) send_weight_byte(w3_mem[i]);
+        for (i = 0; i < 32; i = i + 1) send_weight_byte(b3_mem[i]);
+        for (i = 0; i < 160; i = i + 1) send_weight_byte(wh_mem[i]);
+        for (i = 0; i < 5; i = i + 1) send_weight_byte(bh_mem[i]);
         repeat (60000000) @(posedge clk);
         $display("[FAIL] wrapper simulation timeout, led=%b", led);
         $finish;
     end
 
     always @(posedge clk) begin
-        if (dut.state == 5'd13) begin
+        if (dut.state == 5'd12) begin
             $display("[FAIL] wrapper state=%0d payload=%b sdram=%b err=%b burst=%0d read=%0d first=%h expected=%h", dut.state, dut.payload_received, dut.sdram_pass, dut.error_seen, dut.burst_pos, dut.read_count, dut.first_read_data, dut.first_expected_data);
             $finish;
         end

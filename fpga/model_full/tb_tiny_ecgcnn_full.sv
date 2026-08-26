@@ -39,12 +39,12 @@ module tb_tiny_ecgcnn_full;
     initial begin
         // Private model artifacts are intentionally outside Git.  The test
         // invocation may replace this directory by editing MEMDIR below.
-        $readmemh("runs/20260826-1929-m2-input-quant-contract/hex/input.hex", dut.input_mem);
-        $readmemh("runs/20260826-1929-m2-input-quant-contract/hex/features_0_weight.hex", dut.w1_mem);
+        $readmemh("runs/20260826-1929-m2-input-quant-contract/hex/input.hex", dut.input_ram.mem);
+        $readmemh("runs/20260826-1929-m2-input-quant-contract/hex/features_0_weight.hex", dut.w1_ram.mem);
         $readmemh("runs/20260826-1929-m2-input-quant-contract/hex/features_0_bias.hex", dut.b1_mem);
-        $readmemh("runs/20260826-1929-m2-input-quant-contract/hex/features_3_weight.hex", dut.w2_mem);
+        $readmemh("runs/20260826-1929-m2-input-quant-contract/hex/features_3_weight.hex", dut.w2_ram.mem);
         $readmemh("runs/20260826-1929-m2-input-quant-contract/hex/features_3_bias.hex", dut.b2_mem);
-        $readmemh("runs/20260826-1929-m2-input-quant-contract/hex/features_6_weight.hex", dut.w3_mem);
+        $readmemh("runs/20260826-1929-m2-input-quant-contract/hex/features_6_weight.hex", dut.w3_ram.mem);
         $readmemh("runs/20260826-1929-m2-input-quant-contract/hex/features_6_bias.hex", dut.b3_mem);
         $readmemh("runs/20260826-1929-m2-input-quant-contract/hex/head_weight.hex", dut.wh_mem);
         $readmemh("runs/20260826-1929-m2-input-quant-contract/hex/head_bias.hex", dut.bh_mem);
@@ -78,26 +78,38 @@ module tb_tiny_ecgcnn_full;
                 mismatch_conv3 = 0; mismatch_relu3 = 0; mismatch_gap = 0; mismatch_logits = 0;
                 for (i = 0; i < 16000; i = i + 1) begin
                     if (dut.conv1_raw_mem[i] !== exp_conv1[i]) begin
-                        if (mismatch_conv1 == 0) $display("[TRACE] first conv1 mismatch idx=%0d rtl=%0d exp=%0d", i, dut.conv1_raw_mem[i], exp_conv1[i]);
+                        if (mismatch_conv1 < 60) $display("[TRACE] conv1 mismatch idx=%0d rtl=%0d exp=%0d", i, dut.conv1_raw_mem[i], exp_conv1[i]);
                         mismatch_conv1 = mismatch_conv1 + 1;
                     end
-                    if (dut.buf1_mem[i] !== exp_relu1[i]) mismatch_relu1 = mismatch_relu1 + 1;
+                    if (dut.relu1_shadow_mem[i] !== exp_relu1[i]) begin
+                        if (mismatch_relu1 < 20) $display("[TRACE] first relu1 mismatch idx=%0d rtl=%0d exp=%0d", i, dut.relu1_shadow_mem[i], exp_relu1[i]);
+                        mismatch_relu1 = mismatch_relu1 + 1;
+                    end
                     if (dut.conv2_raw_mem[i] !== exp_conv2[i]) begin
-                        if (mismatch_conv2 == 0) $display("[TRACE] first conv2 mismatch idx=%0d rtl=%0d exp=%0d", i, dut.conv2_raw_mem[i], exp_conv2[i]);
+                        if (mismatch_conv2 < 60) $display("[TRACE] conv2 mismatch idx=%0d rtl=%0d exp=%0d", i, dut.conv2_raw_mem[i], exp_conv2[i]);
                         mismatch_conv2 = mismatch_conv2 + 1;
                     end
-                    if (dut.buf2_mem[i] !== exp_relu2[i] && i < 16000) mismatch_relu2 = mismatch_relu2 + 1;
+                    if (dut.relu2_shadow_mem[i] !== exp_relu2[i] && i < 16000) begin
+                        if (mismatch_relu2 < 5) $display("[TRACE] first relu2 mismatch idx=%0d rtl=%0d exp=%0d", i, dut.relu2_shadow_mem[i], exp_relu2[i]);
+                        mismatch_relu2 = mismatch_relu2 + 1;
+                    end
                 end
                 for (i = 0; i < 8000; i = i + 1) begin
-                    if (dut.pool1_mem[i] !== exp_pool1[i]) mismatch_pool1 = mismatch_pool1 + 1;
-                    if (dut.pool2_mem[i] !== exp_pool2[i]) mismatch_pool2 = mismatch_pool2 + 1;
+                    if (dut.pool1_ram.mem[i] !== exp_pool1[i]) begin
+                        if (mismatch_pool1 < 20) $display("[TRACE] first pool1 mismatch idx=%0d rtl=%0d exp=%0d", i, dut.pool1_ram.mem[i], exp_pool1[i]);
+                        mismatch_pool1 = mismatch_pool1 + 1;
+                    end
+                    if (dut.pool2_ram.mem[i] !== exp_pool2[i]) begin
+                        if (mismatch_pool2 < 20) $display("[TRACE] first pool2 mismatch idx=%0d rtl=%0d exp=%0d", i, dut.pool2_ram.mem[i], exp_pool2[i]);
+                        mismatch_pool2 = mismatch_pool2 + 1;
+                    end
                     if (dut.conv3_raw_mem[i] !== exp_conv3[i]) begin
-                        if (mismatch_conv3 == 0) $display("[TRACE] first conv3 mismatch idx=%0d rtl=%0d exp=%0d", i, dut.conv3_raw_mem[i], exp_conv3[i]);
+                        if (mismatch_conv3 < 60) $display("[TRACE] conv3 mismatch idx=%0d rtl=%0d exp=%0d", i, dut.conv3_raw_mem[i], exp_conv3[i]);
                         mismatch_conv3 = mismatch_conv3 + 1;
                     end
-                    if (dut.buf3_mem[i] !== exp_relu3[i]) mismatch_relu3 = mismatch_relu3 + 1;
+                    if (dut.buf3_ram.mem[i] !== exp_relu3[i]) mismatch_relu3 = mismatch_relu3 + 1;
                 end
-                for (i = 0; i < 32; i = i + 1) if (dut.gap_mem[i] !== exp_gap[i]) mismatch_gap = mismatch_gap + 1;
+                for (i = 0; i < 32; i = i + 1) if (dut.gap_ram.mem[i] !== exp_gap[i]) mismatch_gap = mismatch_gap + 1;
                 if (logit0 !== exp_logits[0]) mismatch_logits = mismatch_logits + 1;
                 if (logit1 !== exp_logits[1]) mismatch_logits = mismatch_logits + 1;
                 if (logit2 !== exp_logits[2]) mismatch_logits = mismatch_logits + 1;
