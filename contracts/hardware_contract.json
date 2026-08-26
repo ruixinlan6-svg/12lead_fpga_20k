@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
-  "status": "qn88_uart_verified_sdram_gate_failed",
-  "last_checked": "2026-08-26T17:10:00+08:00",
+  "status": "qn88_uart_verified_sdram_smoke_passed",
+  "last_checked": "2026-08-26T18:14:00+08:00",
   "target_board": "Sipeed Tang Nano 20K",
   "fpga": {
     "family": "GW2A/GW2AR-18C",
@@ -42,9 +42,10 @@
     },
     "confirmed_package": "QN88",
     "confirmed_type": "SDR SDRAM",
-    "read_write_test_passed": false,
+    "read_write_test_passed": true,
+    "evidence": "docs/iterations/records/20260826-1840-m4-qn88-sdram-burst-reseed.md; COM10 stable P1 E0 after eight clean reads; SRAM artifact SHA-256 1B1ACF201B380AD6B3F1D4AB807C73CFF6E2022DB521CFAEAF873A000B9EDE50",
     "requires": [
-      "non-destructive volatile memory read/write test"
+      "long-duration retention test and model-sized traffic remain unverified"
     ]
   },
   "goai": {
