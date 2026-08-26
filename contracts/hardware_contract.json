@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
-  "status": "provisional",
-  "last_checked": "2026-08-26T14:34:25+08:00",
+  "status": "qn88_confirmed_memory_test_pending",
+  "last_checked": "2026-08-26T14:43:00+08:00",
   "target_board": "Sipeed Tang Nano 20K",
   "fpga": {
     "family": "GW2A/GW2AR-18C",
@@ -9,7 +9,8 @@
     "jtag_observed": {
       "family_reported": "GW2ANR",
       "idcode": "0x0000081B",
-      "exact_package_confirmed": false
+      "exact_package_confirmed": true,
+      "confirmation_source": "user confirmation on 2026-08-26"
     }
   },
   "resources_from_board_documents": {
@@ -28,8 +29,8 @@
       "QN88": "SDR SDRAM",
       "QN88P": "PSRAM"
     },
-    "confirmed_package": null,
-    "confirmed_type": null,
+    "confirmed_package": "QN88",
+    "confirmed_type": "SDR SDRAM",
     "read_write_test_passed": false,
     "requires": [
       "physical package marking",
@@ -40,8 +41,8 @@
   "goai": {
     "npu_public_package_scope": "GW2AR-18C-QFN88P",
     "local_reference_device": "GW2AR-LV18QN88PC8/I7",
-    "usable_for_this_board": null,
-    "decision_gate": "confirm physical package and memory type first"
+    "usable_for_this_board": false,
+    "decision_gate": "QN88 confirmed; use QN88 SDRAM controller/self RTL unless Gowin supplies an explicit QN88 GoAI variant"
   },
   "programming": {
     "first_allowed_mode": "SRAM",

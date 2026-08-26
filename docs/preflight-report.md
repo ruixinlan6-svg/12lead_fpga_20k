@@ -20,19 +20,19 @@
 | GPU 1 | 暂不自动占用 | RTX 5060 Ti，39/16311 MiB，0% 利用率；存在少量系统占用，启动前需复查 |
 | GPU 2 | 不可用 | RTX 4090，962/49140 MiB，15% 利用率；存在其他计算进程 |
 | JTAG | 通过但不完整 | 发现 2 个 USB Debugger；1 个设备，报告 GW2ANR 系列/ID `0x0000081B` |
-| 精确封装 | 未通过 | JTAG 输出未区分 QN88/QN88P |
+| 精确封装 | 用户确认 | 用户已确认实物为 QN88；JTAG 输出本身仍未区分 QN88/QN88P |
 | 存储器类型 | 未通过 | 尚未完成非破坏性 SDRAM/PSRAM 读写测试 |
 | 串口 | 未确认 | 本机 WMI 串口枚举未返回端口；需要后续识别 USB-UART 设备 |
 
 ## 硬件冲突
 
-当前 EDA 工程选择 `GW2AR-LV18QN88PC8/I7`，而本地 Tang Nano 20K 资料指向不带 P 的 QN88/SDR SDRAM。公开 NPU IP 的范围是 QN88P/PSRAM。故硬件契约仍为 provisional；在物理丝印、JTAG/EDA 和存储器测试一致前，不得把 GoAI/NPU 作为本板可部署事实。
+用户已确认实物为不带 P 的 QN88，板上存储器按 SDR SDRAM 处理；当前 EDA 工程的 QN88P 选择只作为历史 LED/NPU 参考，不能用于本板 GoAI 部署。硬件契约已锁定 QN88/SDRAM，但 SDRAM 读写测试仍是后续内存 RTL 和上板门禁。
 
 ## 允许的下一步
 
-1. 记录板上 FPGA 丝印或清晰照片，确认 QN88/QN88P。
-2. 在不写配置 Flash 的前提下，准备独立的 volatile memory test bitstream，确认 SDRAM/PSRAM 接口。
-3. 完成后再创建 M1 数据登记和训练记录；启动远端实验前复查 GPU 0/1 的计算进程。
+1. 在不写配置 Flash 的前提下，准备独立的 volatile SDRAM test bitstream，确认控制器接口。
+2. 建立 QN88/SDRAM 的存储层级和带宽预算。
+3. 创建 M1 数据登记和训练记录；启动远端实验前复查 GPU 0/1 的计算进程。
 
 ## 禁止事项
 
