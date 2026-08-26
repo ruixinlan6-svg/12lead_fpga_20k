@@ -3,6 +3,7 @@
 - 调研日期：2026-08-26
 - 范围：只核对高云官方公开资料、本机已安装的高云官方 EDA 资料，以及 TensorFlow 官方格式规范；本轮不安装/运行 GoAI，不下载 GoAI 3.0 SDK，不连接或下载板卡。
 - 标记：**[确认]** 为来源直接支持；**[推断]** 为基于确认事实作出的工程判断；**[未知]** 表示公开资料不足，必须由后续 Agent 获取文档或做最小实验确认。
+- 硬件事实更新：用户已确认当前实物 FPGA 封装为 QN88；本地原理图/板卡资料对应 SDR SDRAM。该确认替代了本文件早先对 QN88/QN88P 的待核验状态，但不替代 SDRAM 实读写门禁。
 
 ## 结论先行
 
@@ -10,7 +11,7 @@
 2. **公开资料确认 NPU IP 支持 `GW2AR-18C QFN88P`，但没有确认标准 Tang Nano 20K 板卡。** 高云文档中的参考板芯片为 `GW2AR-LV18QN88PC8/I7`，而本地 Sipeed 原理图标注 `GW2AR-LV18-QN88C8/I7`：前者的 `P` 表示 PSRAM，后者集成 SDR SDRAM。因此，本机 EDA 中选择 QN88P 并生成工程不能证明当前实物板兼容。[RN800 NPU 发布说明](https://www.gowinsemi.com/upload/database_doc/2357/document/63085cb26caa3.pdf)
 3. **将 ECG `Conv1D` 改写为高度为 1、卷积核为 `1×K` 的 `Conv2D` 在数学上等价，但尚不能据此宣布 GoAI 可用。** 官方资料没有公开矩形核、高度 1、量化细节及张量布局限制；旧版 IP 文档用单个 `CONV_KERNEL` 描述方形核，更需要以转换器实测为准。
 4. **GoAI 3.0 已于 2026-01 发布 SDK 1.0E、用户指南 MUG1526 1.0E 和发布说明 MRN1526 1.0E，但正文下载需要高云账号。** 当前公开可访问页面只能确认这些交付物存在，不能确认 GoAI 3.0 的器件、算子、模型格式或量化兼容清单。[GoAI 3.0 官方文档目录](https://www.gowinsemi.com/en/document/main/database/3343/?order=ASC&page=1&support_search=&type=category)
-5. **当前建议：先把 GoAI/NPU 作为一个短门禁分支，而不是主路径承诺。** 若实物确认为 QN88（SDRAM），且高云未提供 QN88 版本 NPU/可替换存储接口，则直接转向面向本板 SDRAM 的自研 INT8 RTL；若实物为 QN88P 或厂商明确支持当前板，再做 `1×K Conv2D` 最小兼容性实验。
+5. **当前建议：先把 GoAI/NPU 作为一个短门禁分支，而不是主路径承诺。** 实物已确认是 QN88（SDRAM）；在没有高云书面提供 QN88/SDRAM 版本 NPU 或可替换存储接口前，板端主路线直接采用面向本板 SDRAM 的自研 INT8 RTL，GoAI 仅保留为 QN88P 隔离探针。
 
 ## 1. 一手证据与版本边界
 
@@ -91,8 +92,8 @@ IPUG800 的物理端口包括 16-bit PSRAM 数据、PSRAM 时钟/RWDS/片选、4
 |---|---|---|
 | `GW2AR-18C QFN88P` 芯片/封装 | **公开确认支持 NPU IP** | IPUG800 和 RN800 均明确列出；本机 `npu.ipspec` 也列为支持 |
 | `GW2AR-LV18QN88PC8/I7` | **公开参考设计已使用** | IPUG800 的 MJB V1.2 参考板与本机参考工程均使用该料号 |
-| `GW2AR-LV18QN88C8/I7`（不带 P） | **未确认支持 NPU IP** | 本机 NPU 白名单不包含 QN88；DS226 表明 QN88 为 SDR SDRAM，QN88P 为 PSRAM |
-| 标准 Sipeed Tang Nano 20K V1.3 | **未确认，现有资料指向不兼容** | 本地板卡数据手册写 64 Mbit SDRAM，本地原理图写 `GW2AR-LV18-QN88C8/I7`；官方 NPU 数据路径依赖 QN88P 的 PSRAM |
+| `GW2AR-LV18QN88C8/I7`（不带 P） | **实物已由用户确认；NPU 支持未确认** | 本机 NPU 白名单不包含 QN88；DS226 表明 QN88 为 SDR SDRAM，QN88P 为 PSRAM |
+| 标准 Sipeed Tang Nano 20K V1.3 | **实物封装已确认；NPU/SDRAM 兼容未确认** | 本地板卡数据手册写 64 Mbit SDRAM，本地原理图写 `GW2AR-LV18-QN88C8/I7`；官方 NPU 数据路径依赖 QN88P 的 PSRAM |
 | 当前 `project/` 中的 `GW2AR-LV18QN88PC8/I7` 配置 | **只证明 EDA 配置，不证明实物** | 工程选择可能与板上芯片不一致，必须以丝印/JTAG/原理图/存储读写四项证据确认 |
 | GoAI 3.0 对上述器件的支持 | **未知** | MUG1526/MRN1526 正文尚未取得，不能用 2022 NPU 支持表替代 2026 GoAI 3.0 支持表 |
 
@@ -102,7 +103,7 @@ IPUG800 的物理端口包括 16-bit PSRAM 数据、PSRAM 时钟/RWDS/片选、4
 - `datasheet/Tang_Nano_20K_3923_Schematics.pdf`：FPGA 标注为 `GW2AR-LV18-QN88C8/I7`。
 - `datasheet/DS226-2.1_GW2AR系列FPGA产品数据手册.pdf`：表 2-2 明确 QN88 为 32-bit/64-Mbit SDR SDRAM，QN88P 为 16-bit/64-Mbit PSRAM，并说明后缀 `P` 表示 PSRAM。
 
-**当前判断：** 若实物确为标准 QN88 Tang Nano 20K，则不能直接使用公开交付的 QN88P NPU IP。除非高云支持明确提供 QN88/SDRAM 版本或可替换存储控制器，否则自研 RTL 应成为板端主路线；仍可保留 GoAI 作为模型/量化可行性探索，但不能把 GoAI 生成物直接当作本板部署物。
+**当前判断：** 当前实物已确认为标准 QN88 Tang Nano 20K，不能直接使用公开交付的 QN88P NPU IP。除非高云明确提供 QN88/SDRAM 版本或可替换存储控制器，否则自研 RTL 是板端主路线；GoAI 只可作为模型/量化可行性探索，不能把 GoAI 生成物直接当作本板部署物。
 
 ## 4. `Conv1D → 1×K Conv2D` 映射分析
 

@@ -1,16 +1,16 @@
 # Gowin GoAI/NPU 用于十二导联 ECG 的可用性与使用路线
 
-> 状态：基于高云官方公开页面、本机 Gowin V1.9.12.03 NPU IP 和官方示例的规划结论。完整证据见 `datasheet/2026-08-26_Gowin-GoAI_十二导联ECG可用性.md`。尚未运行模型转换、综合、Flash 写入或板级推理。
+> 状态：基于高云官方公开页面、本机 Gowin V1.9.12.03 NPU IP 和官方示例的规划结论。用户已确认实物封装为 QN88；SDRAM 读写门禁仍未执行。完整证据见 `datasheet/2026-08-26_Gowin-GoAI_十二导联ECG可用性.md`。尚未运行模型转换、综合、Flash 写入或板级推理。
 
 ## 结论
 
-**可以保留为短门禁分支，但当前不能判定 Tang Nano 20K 实物可以使用。**
+**可以保留为短门禁分支，但不能把它当作当前 QN88 板的部署路径。**
 
-本机 `NPU 1.0` 的器件清单包含 `GW2AR-18C-QFN88P*`，官方 `mjb_npu` 示例和当前 EDA 工程选择的器件号也是 `GW2AR-LV18QN88PC8/I7`。但 Tang Nano 20K 原理图标注 `GW2AR-LV18-QN88C8/I7`：QN88P 集成 PSRAM，QN88 集成 SDR SDRAM。工程配置与官方示例只能证明 QN88P 路线存在，不能证明当前实物是 QN88P。
+本机 `NPU 1.0` 的器件清单包含 `GW2AR-18C-QFN88P*`，官方 `mjb_npu` 示例和当前 EDA 工程选择的器件号也是 `GW2AR-LV18QN88PC8/I7`。用户已确认当前实物是非 P 的 `QN88`，板上存储按 SDRAM 处理；QN88P/PSRAM 资料只能证明另一条参考路线存在，不能证明当前实物兼容。
 
 真正的门禁是：
 
-1. 必须先用丝印、JTAG、EDA 和内存读写四项证据确认实物是 QN88 还是 QN88P；实物为 QN88 且厂商未提供 SDRAM 版本时，直接转自研 RTL；
+1. QN88 封装事实已有用户确认；仍需完成 SDRAM 读写测试。若高云未提供 QN88/SDRAM 版本，直接以自研 RTL 为主路线；
 2. 本机尚未发现 GoAI 模型转换 SDK/工具，只发现 EDA 内的 NPU IP 和参考工程；
 3. 公开确认的计算算子只有 Conv2D、DepthwiseConv2D、MaxPool2D、AveragePool2D；
 4. Conv1D、残差 Add、激活、全连接、GlobalAveragePool、Sigmoid 和具体量化语义仍需用转换器报告确认；
@@ -89,7 +89,7 @@ PyTorch `Conv1d(Cin, Cout, K)` 的权重 `[Cout, Cin, K]` 在导出时转换为 
 
 ### G0：补齐 GoAI 3.0 工具与官方合同
 
-1. 先完成实物料号与内存类型四证据确认；若为 QN88，要求高云书面确认 QN88/SDRAM NPU 支持，否则本阶段直接结束并转自研 RTL。
+1. 记录用户确认的 QN88 料号并完成 SDRAM 读写门禁；若没有高云书面确认 QN88/SDRAM NPU 支持，本阶段只保留为 QN88P 隔离探针，板端工作转自研 RTL。
 2. 从[高云 GoAI 3.0 文档入口](https://gowinsemi.com/en/document/main/database/3343/?order=ASC&page=1&support_search=&type=version)取得与本机工具版本匹配的 SDK、用户指南、支持器件表和算子表。
 3. 记录安装包版本、下载来源和 SHA-256，不把厂商受限安装包提交到公共仓库。
 4. 确认模型输入格式、量化合同、生成文件、授权条件和命令行入口。

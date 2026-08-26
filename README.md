@@ -2,7 +2,7 @@
 
 在 Sipeed Tang Nano 20K（Gowin GW2AR-18C）上研究十二导联 ECG 多标签模型的训练、INT8 量化、FPGA/NPU 部署和板级验证。
 
-> 当前状态：规划与硬件工具链基线阶段。项目不是医疗器械，公开数据集结果不能作为临床诊断声明。
+> 当前状态：QN88 硬件路线已确认，正在建立 PTB-XL 训练与 INT8 RTL 闭环。项目不是医疗器械，公开数据集结果不能作为临床诊断声明。
 
 ## 首轮目标
 
@@ -41,7 +41,7 @@
 - `DK-GoAI-GW2AR18_QN88P` Programmer bridge；
 - Conv2D、DepthwiseConv2D、MaxPool2D、AveragePool2D 加速单元，以及 AHB、PSRAM 和 QSPI Flash 数据路径。
 
-这证明本机工具链包含面向 **QN88P/PSRAM** 的 NPU 能力，但本地 Tang Nano 20K 原理图标注的是非 P 的 **QN88/SDR SDRAM**。EDA 工程选择 QN88P 不能证明实物兼容；如果丝印、JTAG 和内存测试最终确认是 QN88，且高云没有提供 QN88/SDRAM 版本，GoAI 不能直接作为本板部署路线，应转自研 RTL。器件门禁通过后，再把 Conv1D 表示成高度为 1、卷积核为 `1×K` 的 Conv2D 做最小兼容性验证。
+本轮已由用户确认实物封装为 **QN88**，板上外部存储按 **SDR SDRAM** 主路线处理；QN88P/PSRAM 资料仅保留为 GoAI 可行性对照，不能当作本板部署依据。因现有 GoAI/NPU 证据针对 QN88P/PSRAM，当前主路线是自研、可综合的 INT8 RTL；只有在额外证明 QN88/SDRAM 兼容后，才把 Conv1D 表示成高度为 1、卷积核为 `1×K` 的 Conv2D 做隔离实验。SDRAM 读写测试仍是独立门禁。
 
 - 操作用法：[Gowin GoAI ECG 使用说明](docs/goai/GOWIN_GOAI_ECG_GUIDE.md)
 - 一手证据：[GoAI/NPU 可用性与验证门禁](datasheet/2026-08-26_Gowin-GoAI_十二导联ECG可用性.md)

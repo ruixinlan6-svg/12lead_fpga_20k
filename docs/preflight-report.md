@@ -39,3 +39,9 @@
 - 不得把 GPU 2 的任务停止或迁移。
 - 不得向 QSPI Flash 写入权重或配置。
 - 不得在未冻结 I/O/量化契约时下载 PTB-XL 或生成模型部署结论。
+
+## 后续执行更新（非 M0 重新取样）
+
+- 用户确认 QN88 后，已在远端私有目录 `LRX/12lead_fpga_20k_m1` 建立 M1 训练工作区。
+- PTB-XL 元数据与 48 条可用标注样本的 smoke registry 已生成；全量逐文件下载因 PhysioNet 连接超时中止，详见 M1 迭代记录。
+- 已完成 GPU0 单种子 FP32 smoke、静态 INT8 PTQ smoke 和 M3 Level-1 RTL 自检；这些结果不替代 SDRAM 读写门禁、完整数据基准或实板测试。

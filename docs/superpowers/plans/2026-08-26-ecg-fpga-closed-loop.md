@@ -19,10 +19,10 @@
 本地已有事实：
 
 - `project/` 是可综合的 LED 板级基线，不是 NPU；报告证明 Gowin 工具曾在 `GW2AR-LV18QN88PC8/I7` 上完成 PnR，并生成 `.fs`，但不代表当前 JTAG 或板卡实时可用。
-- `train/` 暂无训练实现。
+- `train/` 已有 PTB-XL 下载/登记、TinyECGCNN FP32 smoke 和静态 INT8 PTQ 参考脚本；完整基准仍待完整数据。
 - `datasheet/REMOTE_LRX_AGENT_CONNECTION.md` 已给出安全的 GPU SSH 别名、远端 Python 和 GPU 使用边界，本计划不重复保存凭据。
 - Tang Nano 20K 文档列出 20,736 LUT4、46 个 BSRAM（828 Kbit，约 103.5 KiB）、48 个 18x18 乘法器、64 Mbit 动态存储和 64 Mbit QSPI Flash。
-- 板卡资料/原理图与工程器件号对 QN88/QN88P、SDRAM/PSRAM 的描述不一致。这是实现前硬门禁；BlueStar Skill 默认的 Tang Primer 25K PSRAM 契约不能直接移植。
+- 用户已确认实物封装为 QN88；因此 QN88/SDR SDRAM 是主部署路线。仓库中的 QN88P/PSRAM 工程和 GoAI 资料只作历史/隔离实验参考，不能证明本板兼容；SDRAM 读写测试仍需独立通过。
 
 难度判断为 **高但适合分阶段完成的研究原型**。真正的难点不是单次模型训练，而是患者级无泄漏划分、跨数据集标签映射、量化舍入一致性、长序列活动值/权重搬运、Gowin BSRAM/DSP 正确推断，以及软件—RTL—实板三端结果可追溯。现有调研中 `<20 ms`、微瓦级功耗等跨平台数字不作为本板目标；首轮先测量，再依据计算量、内存带宽和实际时钟设定优化目标。
 
@@ -95,15 +95,17 @@ docs/research/             文献、数据集与硬件决策依据
 
 **交付物：** `contracts/hardware_contract.json`、`contracts/ecg_io_contract.json`、`docs/preflight-report.md`。
 
-**内容：** 锁定导联顺序、输入单位、100 Hz 重采样、10 秒裁剪/补齐、标签集合、输出 logits；通过实物丝印、JTAG、EDA 和存储器读写测试确认 QN88/QN88P 及 SDRAM/PSRAM；验证 GPU 身份和空闲卡；确认本地 `gw_sh.exe`、Programmer、Icarus 与串口。
+**内容：** 锁定导联顺序、输入单位、100 Hz 重采样、10 秒裁剪/补齐、标签集合、输出 logits；记录用户确认的 QN88 器件事实；把 SDRAM 读写测试作为后续独立硬件门禁；验证 GPU 身份和空闲卡；确认本地 `gw_sh.exe`、Programmer、Icarus 与串口。
 
-**出口门禁：** 两份契约不再含歧义；活体连接证据带时间戳；不修改或占用他人 GPU 进程。
+**出口门禁：** 两份契约不再含歧义；QN88 事实有来源记录；活体连接证据带时间戳；不修改或占用他人 GPU 进程；SDRAM 未通过前不得宣称板级闭环完成。
 
 ### M1：可复现 FP32 基线
 
 **交付物：** `data_registry.yaml`、患者级 split manifest、训练配置、FP32 checkpoint、ONNX、`metrics_fp32.json` 和复现报告。
 
 **内容：** 复现 PTB-XL 5 超类任务；报告 macro/per-class AUROC、AUPRC、F1、敏感度/特异度和固定阈值；至少两个随机种子，空闲 GPU 以“一卡一候选”并行。
+
+当前已先完成一个不用于论文/基准声明的有界样本 smoke run，用于验证 WFDB、标签、训练和后续整数向量链路；完整 M1 仍需完整数据或可信 bulk 镜像后再执行。
 
 **出口门禁：** 无患者泄漏；相同配置可复跑；指标定义和阈值冻结；测试集未参与调参。
 
