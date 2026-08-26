@@ -74,6 +74,14 @@ def quantized_eval_model(model: TinyECGCNN, activation_scales: dict[str, float],
     for name, module in quantized.named_modules():
         if isinstance(module, (nn.Conv1d, nn.ReLU, nn.MaxPool1d, nn.AdaptiveAvgPool1d, nn.Linear)) and name in activation_scales:
             module.register_forward_hook(lambda _m, _i, output, scale=activation_scales[name]: fake_quant(output, scale))
+    # The deployment interface is signed INT8.  Quantize the raw signal before
+    # the first convolution as well; without this pre-hook the exported
+    # ``input_int8`` vector and the evaluated PTQ model describe different
+    # computations and cannot be compared layer by layer with RTL.
+    first_module = quantized.features[0]
+    first_module.register_forward_pre_hook(
+        lambda _m, inputs, scale=activation_scales["input"]: (fake_quant(inputs[0], scale),)
+    )
     return quantized
 
 

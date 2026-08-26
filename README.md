@@ -24,8 +24,11 @@
 - 完整 FP32 基线：远端 `runs/20260826-1613-m1-ptbxl-full-fp32-retry`，三 seed 测试 macro AUROC 为 0.8578–0.8624；checkpoint 仅保留在远端，不进 Git。
 - 完整 checkpoint INT8 PTQ：远端 `runs/20260826-1634-m2-ptq-full-checkpoint/seed1`，验证集 AUROC 下降 0.00039；量化 contract 和 golden vectors 的哈希见对应迭代记录。
 - 模型复现验证：`20260826-1908-m2-model-verify` 在同一完整 registry、seed1 checkpoint 和 2,048 条校准样本上重新生成 PTQ；metrics、量化 contract、INT8 权重和 4 个 Golden 数组与既有结果逐项/逐元素一致。该结果确认软件模型与量化产物可复现，但尚未验证模型级 QN88 FPGA 推理。
+- 模型级 RTL 闭环：`20260826-1922-m3-model-full-rtl` 已完成软件整数图、逐层 RTL、UART 全时序装载、行为级 SDRAM 2,574-word/103-burst 回读和五个 logits 的精确对拍，Golden logits 为 `32,-22,-21,-19,-21`。当前 QN88 硬件门禁未通过：Gowin 综合把异步 `input_mem` 推成 131,072 个 DFF，超过器件 15,915 个限制，因此尚未生成可下载比特流，也没有实板完整 ECG logits；下一轮必须改为同步 BRAM/显式 Gowin RAM 原语。
 - QN88 SDRAM 非破坏性探针：[fpga/sdram_probe/README.md](fpga/sdram_probe/README.md)。构建入口为 `fpga/sdram_probe/build_qn88.tcl`，只允许 SRAM 下载；当前接受构建在 COM10 稳定报告 `SD I1 P1 E0 C=19 D=0000 X=0000`。首读零、低位偏移、尾脉冲和突发状态泄漏均已按迭代记录闭合；`read_write_test_passed` 已更新为 true，但这仍不是长时保持或完整 ECG 模型流量证明。
 - QN88 INT8 算术实板 smoke：[fpga/inference_smoke/README.md](fpga/inference_smoke/README.md)。它验证 8 项 INT8 点积 240、重定标结果 120，并已在 COM10 读取 `INFER D=00F0 Q=78 P=1`；这不等同于完整 ECG 模型准确率。
+
+模型级 RTL 的可复用入口在 [fpga/model_full](fpga/model_full/) 和 [tools/model_full](tools/model_full/)：`ecg_integer_reference.py` 做 NumPy 整数参考，`tb_tiny_ecgcnn_full.v` 做逐层对拍，`qn88_model_full_top.sv` 定义 `ECG0` + 输入/权重字节流、SDRAM 回读校验和五 logits UART 帧。当前可复现实验只到行为级封装；`build_qn88_model_full.tcl` 的硬件综合门禁会明确报告异步 CNN 存储器的 DFF 超限，不应据此声称已经完成 QN88 实板部署。完整结果见 [M3 记录](docs/iterations/records/20260826-1922-m3-model-full-rtl.md)。
 
 后续 Agent 在任何训练、量化、RTL、综合或板测前，必须先为本轮创建新的 `docs/iterations/records/<run_id>.md` 并更新 `INDEX.md`；重试也必须使用新 ID。当前可用的机器可读状态通道为 COM10；JTAG “SRAM Program” 成功仍不能替代状态帧或 LED 观察。
 
