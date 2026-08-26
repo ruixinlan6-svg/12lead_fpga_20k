@@ -15,6 +15,9 @@
 
 完整计划见 [十二导联 ECG FPGA 本地部署计划](docs/superpowers/plans/2026-08-26-ecg-fpga-closed-loop.md)。本轮实际结果按 [迭代索引](docs/iterations/INDEX.md) 追溯。
 
+本次 QN88 SDRAM 首读为零的现象、复位排除、魔法端口根因和后续 RTL 修复见
+[问题说明](docs/research/qn88-sdram-first-read-zero.md)。
+
 ## 已验证入口（2026-08-26）
 
 - 全量 PTB-XL 异步下载器：[train/download_ptbxl_async.py](train/download_ptbxl_async.py)。远端私有数据目录为 `C:/Users/Administrator/Desktop/LRX/12lead_fpga_20k_m1/data/ptb-xl/1.0.3`；最终验收为 21,799 对 `records100/*_lr` 文件、0 个 `.part` 文件，manifest SHA-256 记录在 `20260826-1611-m1-ptbxl-record-parser-fix`。
