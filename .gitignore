@@ -1,0 +1,45 @@
+# Gowin generated files and simulation output
+project/impl/
+**/impl/
+*.vcd
+*.vvp
+*.fs
+*.bin
+*.binx
+*.vo
+*.vg
+*.timing_paths
+*.gprj.user
+
+# Training data, models and run artifacts
+data/
+datasets/
+train/data/
+train/runs/
+runs/
+artifacts/
+checkpoints/
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.npz
+*.npy
+*.mem
+
+# Local/private environment material
+.env
+.env.*
+*.pem
+*.key
+datasheet/*.pdf
+datasheet/REMOTE_LRX_AGENT_CONNECTION.md
+datasheet/心电AI边缘部署调研.md
+
+# Python/editor cache
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.vscode/
+.idea/
