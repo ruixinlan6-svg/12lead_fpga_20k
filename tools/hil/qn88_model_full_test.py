@@ -64,6 +64,22 @@ def main() -> int:
         default=0.005,
         help="seconds to pause after each 100-byte weight chunk while SDRAM is checked",
     )
+    parser.add_argument(
+        "--wait-done",
+        action="store_true",
+        help="ignore intermediate ECG frames and wait for one with D1 (useful for debug images)",
+    )
+    parser.add_argument(
+        "--wait-ack",
+        action="store_true",
+        help="wait for one debug ECG frame after each 100-byte chunk before sending the next",
+    )
+    parser.add_argument(
+        "--input-pause",
+        type=float,
+        default=0.0,
+        help="seconds to wait after the 12,000-byte input stream before the first weight chunk",
+    )
     parser.add_argument("--out", type=Path)
     args = parser.parse_args()
 
@@ -83,22 +99,62 @@ def main() -> int:
         # SDRAM burst on chip; after each chunk it writes, reads, compares, and
         # drains the burst before accepting the next chunk.
         ser.write(b"ECG0" + input_bytes)
+        ser.flush()
+        if args.input_pause:
+            time.sleep(args.input_pause)
+        received = bytearray()
+
+        def wait_for_chunk_ack(expected_weight_low: int) -> None:
+            deadline = time.monotonic() + 5.0
+            while time.monotonic() < deadline:
+                chunk = ser.read(256)
+                if not chunk:
+                    continue
+                received.extend(chunk)
+                lines = received.splitlines(keepends=True)
+                for candidate in lines[:-1]:
+                    if candidate.startswith(b"ECG "):
+                        # Match the low byte of the accepted weight count so
+                        # an input-complete/state-transition frame cannot be
+                        # mistaken for the acknowledgement of this chunk.
+                        try:
+                            fields = candidate.decode("ascii", "replace").split("L=", 1)[1].split()
+                            accepted_low = int(fields[2], 16)
+                        except (IndexError, ValueError):
+                            continue
+                        if accepted_low == expected_weight_low:
+                            del received[: received.find(candidate) + len(candidate)]
+                            return
+            raise TimeoutError(
+                "timed out waiting for debug chunk acknowledgement; "
+                f"recent={bytes(received[-512:])!r}"
+            )
+
         for offset in range(0, len(weight_bytes), 100):
             ser.write(weight_bytes[offset : offset + 100])
             ser.flush()
-            time.sleep(args.burst_pause)
+            if args.wait_ack:
+                wait_for_chunk_ack((offset + 100) & 0xFF)
+            else:
+                time.sleep(args.burst_pause)
         deadline = time.monotonic() + args.timeout
-        received = bytearray()
         frame = b""
+        last_frame = b""
         while time.monotonic() < deadline:
             chunk = ser.read(256)
             if chunk:
                 received.extend(chunk)
-                if b"ECG " in received and b"\n" in received:
-                    begin = received.find(b"ECG ")
-                    end = received.find(b"\n", begin) + 1
-                    frame = bytes(received[begin:end])
+                lines = received.splitlines(keepends=True)
+                for candidate in lines[:-1]:
+                    if candidate.startswith(b"ECG "):
+                        last_frame = bytes(candidate)
+                        if not args.wait_done or b" D1 " in candidate:
+                            frame = last_frame
+                            break
+                if frame:
                     break
+        if not frame and args.wait_done:
+            frame = last_frame
 
     parsed = parse_frame(frame) if frame else {"raw": "", "valid_prefix": False}
     actual = parsed.get("logits", [])
@@ -109,6 +165,9 @@ def main() -> int:
         "payload_bytes": 4 + len(input_bytes) + len(weight_bytes),
         "weight_chunk_bytes": 100,
         "burst_pause_s": args.burst_pause,
+        "wait_done": args.wait_done,
+        "wait_ack": args.wait_ack,
+        "input_pause_s": args.input_pause,
         "expected_logits": expected,
         "actual_logits": actual,
         "frame": parsed,

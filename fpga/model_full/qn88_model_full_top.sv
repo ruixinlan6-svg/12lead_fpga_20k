@@ -424,9 +424,15 @@ module qn88_model_full_top #(
                     end
                 end
                 ST_SDRAM_WRITE_WAIT: begin
-                    sdrc_wr_n <= 1'b0;
+                    // Match the proven QN88 probe handshake: keep the
+                    // interface idle while the controller is busy, then
+                    // assert the write request for the cycle that starts the
+                    // transaction.  Holding WR_N low before BUSY_N is high
+                    // can leave a subsequent read request stuck on hardware.
+                    sdrc_wr_n <= 1'b1;
                     sdrc_rd_n <= 1'b1;
                     if (sdrc_busy_n) begin
+                        sdrc_wr_n <= 1'b0;
                         write_count <= 0;
                         write_data_reg <= 0;
                         state <= ST_SDRAM_WRITE;
@@ -452,9 +458,12 @@ module qn88_model_full_top #(
                 end
                 ST_SDRAM_READ_WAIT: begin
                     sdrc_wr_n <= 1'b1;
-                    sdrc_rd_n <= 1'b0;
+                    // The controller expects RD_N to be asserted only after
+                    // BUSY_N is released, as in the standalone QN88 probe.
+                    sdrc_rd_n <= 1'b1;
                     sdrc_addr_reg <= sdram_addr_linear;
                     if (sdrc_busy_n) begin
+                        sdrc_rd_n <= 1'b0;
                         read_count <= 0;
                         state <= ST_SDRAM_READ;
                     end
@@ -509,7 +518,14 @@ module qn88_model_full_top #(
                                 burst_pos <= burst_pos + 1'b1;
                                 burst_byte_base <= burst_byte_base + 14'd100;
                                 burst_word_base <= burst_word_base + 12'd25;
-                                sdram_addr_linear <= sdram_addr_linear + BURST_WORDS;
+                                // A 26-word request must stay within the
+                                // QN88 controller's 8-bit column window.
+                                // Packing bursts back-to-back makes burst 9
+                                // cross column 255 and the SIP wraps the
+                                // physical row, corrupting readback.  Place
+                                // each logical payload burst at the same safe
+                                // column in the next SDRAM row instead.
+                                sdram_addr_linear <= sdram_addr_linear + 21'd256;
                                 burst_byte_count <= 0;
                                 burst_word_idx <= 0;
                                 burst_byte_lane <= 0;

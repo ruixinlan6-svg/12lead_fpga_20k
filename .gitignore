@@ -4,6 +4,7 @@ project/impl/
 fpga/sdram_probe/build/
 fpga/inference_smoke/build/
 fpga/uart_probe/build/
+fpga/model_full/build/
 *.vcd
 *.vvp
 *.fs
