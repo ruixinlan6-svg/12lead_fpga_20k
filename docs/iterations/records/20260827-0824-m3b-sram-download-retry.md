@@ -46,7 +46,7 @@
 | Programmer/QN88 SRAM download | `Cable open failed` | target `GW2AR-18C`, 100%, exit 0, status `0x00006020` | recovered | yes |
 | Formal model PnR resources | 14,729 logic, 37/46 SDPB, 24/24 DSP | 14,644 logic, 37/46 SDPB, 24/24 DSP | small logic reduction | yes |
 | COM10 ECG frame | no frame; old SDRAM probe | formal run returned `ECG P0 S0 D0 L=00 00 00 00 00` | board model gate rejected | yes |
-| Logits | unavailable | actual `[-48, 0, 0, 0, 0]`; expected `[32,-22,-21,-19,-21]` | mismatch | yes |
+| Logits | unavailable | no valid model logits; failure frame parsed as `[-48, 0, 0, 0, 0]` from raw `L=00 00 00 00 00`; expected `[32,-22,-21,-19,-21]` | gate rejected | yes |
 | Download / inference latency | unavailable | SRAM programming about 5.5 s; inference did not complete within 180 s | no complete latency | no |
 
 - Per-class or per-layer findings: software and direct RTL Golden remain exact `{32,-22,-21,-19,-21}`; the physical model image did not assert `P1/S1/D1`.
