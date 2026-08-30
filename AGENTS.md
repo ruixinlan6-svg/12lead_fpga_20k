@@ -35,6 +35,15 @@
 
 每个实验使用唯一 `run_id`，至少保存：配置、数据版本与划分哈希、浮点指标、量化指标、逐层整数比对、资源/时序报告、板端延迟（核心推理与通信分开）、输出一致性及模型/比特流哈希。最终结论只能是“接受、回到训练、回到量化、回到 RTL/存储架构”之一，并附触发证据。
 
+## EC57 心律与逐搏检测规则
+
+- 任何涉及心率、QRS、PVC/VEB 检测的结论必须作为独立的逐搏事件任务验证，不得从 PTB-XL 五超类整段分类结果推导。
+- 按 ANSI/AAMI EC57:2012(R2020) 口径至少报告 `QRS Se`、`QRS +P`、`VEB Se`、`VEB +P`、`VEB FPR`；其中 `VEB FPR = VFP / (VTN + VFP)`，以百分比表示。必须同时保存 TP/FN/FP/TN 原始计数，不能只保存百分数。
+- 合规对比以 PhysioNet WFDB `bxb`/`sumstats` 的标准模式为参考实现，使用默认 150 ms 匹配窗、标准学习期、AAMI beat 映射和排除规则；报告每记录、gross 与 average 统计及全部差异注释。
+- QRS/VEB 最低测试数据库集合为 AHA DB、MIT-BIH Arrhythmia DB 与 MIT-BIH Noise Stress Test DB。AHA DB 受获取条件限制；未取得并完成其全库测试时，只能标记为“EC57 预验证不完整”，不得宣称通过 EC57。
+- EC57 是 FDA 完整认可的自愿共识标准，但符合 EC57 不等同于获得 FDA 许可，也不替代设备特定的其他安全、有效性和申报证据。
+- LUDB 仅作为 QRS 开发门禁：医学门禁使用闭区间 `[首个参考 QRS - 150 ms, 末个参考 QRS + 150 ms]` 的精确时间边界；完整 10 s 指标仍须同时报告。门禁以因果纯整数部署参考为准，独立浮点路径用于差异诊断；bit-exact 只要求整数 Golden、RTL 与 QN88 FPGA 三者一致。
+
 ## 强制优化追溯规则
 
 - 每一轮数据、训练、量化、GoAI、RTL、综合或板测优化，执行前先从 `docs/iterations/TEMPLATE.md` 创建唯一 `docs/iterations/records/<run_id>.md`。

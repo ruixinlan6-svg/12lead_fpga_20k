@@ -1,0 +1,12 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW2AR-18C" pn="GW2AR-LV18QN88C8/I7">gw2ar18c-000</Device>
+    <FileList>
+        <File path="D:/project/gowin_project/0_fpga_test/test3/fpga/model_full/ecg_sync_dp_ram.sv" type="file.verilog" enable="1"/>
+        <File path="D:/project/gowin_project/0_fpga_test/test3/fpga/model_full/tiny_ecgcnn_full.sv" type="file.verilog" enable="1"/>
+        <File path="D:/project/gowin_project/0_fpga_test/test3/tools/model_full/core_synth_top.sv" type="file.verilog" enable="1"/>
+    </FileList>
+</Project>

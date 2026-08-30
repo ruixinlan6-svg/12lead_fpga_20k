@@ -1,0 +1,30 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\ecg_sync_dp_ram.sv'
+Analyzing Verilog file 'D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\beat_window_buffer.sv'
+Analyzing Verilog file 'D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\microbench\beat_window_buffer\beat_window_buffer_microbench_top.sv'
+Compiling module 'beat_window_buffer_microbench_top'("D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\microbench\beat_window_buffer\beat_window_buffer_microbench_top.sv":5)
+Compiling module 'beat_window_buffer'("D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\beat_window_buffer.sv":6)
+Extracting RAM for identifier 'pending_r'("D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\beat_window_buffer.sv":71)
+Compiling module 'ecg_sync_dp_ram(DATA_WIDTH=16,DEPTH=512,ADDR_WIDTH=9)'("D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\ecg_sync_dp_ram.sv":22)
+Extracting RAM for identifier 'mem'("D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\ecg_sync_dp_ram.sv":42)
+NOTE  (EX0101) : Current top module is "beat_window_buffer_microbench_top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\microbench\beat_window_buffer\build\beat_window_buffer_microbench\impl\gwsynthesis\beat_window_buffer_microbench.vg" completed
+[100%] Generate report file "D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\microbench\beat_window_buffer\build\beat_window_buffer_microbench\impl\gwsynthesis\beat_window_buffer_microbench_syn.rpt.html" completed
+GowinSynthesis finish

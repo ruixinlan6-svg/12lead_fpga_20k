@@ -1,0 +1,43 @@
+{
+  "model_name": "TinyECGCNN_NV",
+  "total_parameters": 1546,
+  "total_weight_bytes": 1504,
+  "total_bias_bytes": 168,
+  "layers": {
+    "conv1": {
+      "weight_offset_bytes": 0,
+      "weight_size_bytes": 56,
+      "bias_offset_bytes": 0,
+      "bias_size_bytes": 32,
+      "in_channels": 1,
+      "out_channels": 8,
+      "kernel_size": 7
+    },
+    "conv2": {
+      "weight_offset_bytes": 56,
+      "weight_size_bytes": 640,
+      "bias_offset_bytes": 32,
+      "bias_size_bytes": 64,
+      "in_channels": 8,
+      "out_channels": 16,
+      "kernel_size": 5
+    },
+    "conv3": {
+      "weight_offset_bytes": 696,
+      "weight_size_bytes": 768,
+      "bias_offset_bytes": 96,
+      "bias_size_bytes": 64,
+      "in_channels": 16,
+      "out_channels": 16,
+      "kernel_size": 3
+    },
+    "classifier": {
+      "weight_offset_bytes": 1464,
+      "weight_size_bytes": 40,
+      "bias_offset_bytes": 160,
+      "bias_size_bytes": 8,
+      "in_features": 20,
+      "out_features": 2
+    }
+  }
+}

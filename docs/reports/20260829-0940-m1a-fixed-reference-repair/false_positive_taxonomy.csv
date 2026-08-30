@@ -1,0 +1,680 @@
+record_id,fp_sample_index,category,description
+data/1,6,startup_transient,Detected at sample 6 (<1.0s) during filter and adaptive threshold settling
+data/1,2314,baseline_wander,Detected at sample 2314 with nearest true beat at 1984 (dist 1320ms)
+data/2,2,startup_transient,Detected at sample 2 (<1.0s) during filter and adaptive threshold settling
+data/2,62,startup_transient,Detected at sample 62 (<1.0s) during filter and adaptive threshold settling
+data/2,2345,baseline_wander,Detected at sample 2345 with nearest true beat at 2109 (dist 944ms)
+data/3,98,startup_transient,Detected at sample 98 (<1.0s) during filter and adaptive threshold settling
+data/3,2350,baseline_wander,Detected at sample 2350 with nearest true beat at 2118 (dist 928ms)
+data/4,8,startup_transient,Detected at sample 8 (<1.0s) during filter and adaptive threshold settling
+data/4,2474,baseline_wander,Detected at sample 2474 with nearest true beat at 2230 (dist 976ms)
+data/5,223,startup_transient,Detected at sample 223 (<1.0s) during filter and adaptive threshold settling
+data/5,500,cross_window_boundary,Detected at sample 500 near SQI 2-second window boundary 500
+data/5,2300,baseline_wander,Detected at sample 2300 with nearest true beat at 2042 (dist 1032ms)
+data/6,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/6,84,startup_transient,Detected at sample 84 (<1.0s) during filter and adaptive threshold settling
+data/6,2442,baseline_wander,Detected at sample 2442 with nearest true beat at 2147 (dist 1180ms)
+data/7,2,startup_transient,Detected at sample 2 (<1.0s) during filter and adaptive threshold settling
+data/7,238,startup_transient,Detected at sample 238 (<1.0s) during filter and adaptive threshold settling
+data/7,2431,baseline_wander,Detected at sample 2431 with nearest true beat at 2176 (dist 1020ms)
+data/8,133,startup_transient,Detected at sample 133 (<1.0s) during filter and adaptive threshold settling
+data/8,189,startup_transient,Detected at sample 189 (<1.0s) during filter and adaptive threshold settling
+data/8,399,t_wave_misdetection,Occurred 184ms after true R-peak at 353 (typical T-wave window)
+data/8,608,t_wave_misdetection,Occurred 184ms after true R-peak at 562 (typical T-wave window)
+data/8,1426,t_wave_misdetection,Occurred 184ms after true R-peak at 1380 (typical T-wave window)
+data/8,1638,t_wave_misdetection,Occurred 188ms after true R-peak at 1591 (typical T-wave window)
+data/8,1847,t_wave_misdetection,Occurred 184ms after true R-peak at 1801 (typical T-wave window)
+data/8,2059,t_wave_misdetection,Occurred 184ms after true R-peak at 2013 (typical T-wave window)
+data/8,2269,t_wave_misdetection,Occurred 152ms after true R-peak at 2231 (typical T-wave window)
+data/8,2424,baseline_wander,Detected at sample 2424 with nearest true beat at 2231 (dist 772ms)
+data/8,2480,baseline_wander,Detected at sample 2480 with nearest true beat at 2231 (dist 996ms)
+data/9,166,startup_transient,Detected at sample 166 (<1.0s) during filter and adaptive threshold settling
+data/9,2287,baseline_wander,Detected at sample 2287 with nearest true beat at 2063 (dist 896ms)
+data/10,103,startup_transient,Detected at sample 103 (<1.0s) during filter and adaptive threshold settling
+data/10,2305,baseline_wander,Detected at sample 2305 with nearest true beat at 2057 (dist 992ms)
+data/11,137,startup_transient,Detected at sample 137 (<1.0s) during filter and adaptive threshold settling
+data/11,2388,baseline_wander,Detected at sample 2388 with nearest true beat at 2140 (dist 992ms)
+data/12,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/12,133,startup_transient,Detected at sample 133 (<1.0s) during filter and adaptive threshold settling
+data/12,196,startup_transient,Detected at sample 196 (<1.0s) during filter and adaptive threshold settling
+data/12,2381,baseline_wander,Detected at sample 2381 with nearest true beat at 2103 (dist 1112ms)
+data/13,206,startup_transient,Detected at sample 206 (<1.0s) during filter and adaptive threshold settling
+data/13,2252,baseline_wander,Detected at sample 2252 with nearest true beat at 1993 (dist 1036ms)
+data/14,80,startup_transient,Detected at sample 80 (<1.0s) during filter and adaptive threshold settling
+data/14,2407,baseline_wander,Detected at sample 2407 with nearest true beat at 2234 (dist 692ms)
+data/15,182,startup_transient,Detected at sample 182 (<1.0s) during filter and adaptive threshold settling
+data/15,2317,baseline_wander,Detected at sample 2317 with nearest true beat at 2082 (dist 940ms)
+data/16,113,startup_transient,Detected at sample 113 (<1.0s) during filter and adaptive threshold settling
+data/16,2370,baseline_wander,Detected at sample 2370 with nearest true beat at 2158 (dist 848ms)
+data/17,3,startup_transient,Detected at sample 3 (<1.0s) during filter and adaptive threshold settling
+data/17,181,startup_transient,Detected at sample 181 (<1.0s) during filter and adaptive threshold settling
+data/17,2464,baseline_wander,Detected at sample 2464 with nearest true beat at 2264 (dist 800ms)
+data/18,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/18,198,startup_transient,Detected at sample 198 (<1.0s) during filter and adaptive threshold settling
+data/18,2470,baseline_wander,Detected at sample 2470 with nearest true beat at 2281 (dist 756ms)
+data/19,201,startup_transient,Detected at sample 201 (<1.0s) during filter and adaptive threshold settling
+data/19,2418,baseline_wander,Detected at sample 2418 with nearest true beat at 2170 (dist 992ms)
+data/20,230,startup_transient,Detected at sample 230 (<1.0s) during filter and adaptive threshold settling
+data/20,1673,t_wave_misdetection,Occurred 224ms after true R-peak at 1617 (typical T-wave window)
+data/20,2311,baseline_wander,Detected at sample 2311 with nearest true beat at 2074 (dist 948ms)
+data/21,79,startup_transient,Detected at sample 79 (<1.0s) during filter and adaptive threshold settling
+data/21,1365,t_wave_misdetection,Occurred 212ms after true R-peak at 1312 (typical T-wave window)
+data/21,1984,t_wave_misdetection,Occurred 224ms after true R-peak at 1928 (typical T-wave window)
+data/21,2185,t_wave_misdetection,Occurred 212ms after true R-peak at 2132 (typical T-wave window)
+data/21,2337,baseline_wander,Detected at sample 2337 with nearest true beat at 2132 (dist 820ms)
+data/22,14,startup_transient,Detected at sample 14 (<1.0s) during filter and adaptive threshold settling
+data/22,2363,baseline_wander,Detected at sample 2363 with nearest true beat at 2187 (dist 704ms)
+data/23,105,startup_transient,Detected at sample 105 (<1.0s) during filter and adaptive threshold settling
+data/23,2391,baseline_wander,Detected at sample 2391 with nearest true beat at 2122 (dist 1076ms)
+data/24,21,startup_transient,Detected at sample 21 (<1.0s) during filter and adaptive threshold settling
+data/24,90,startup_transient,Detected at sample 90 (<1.0s) during filter and adaptive threshold settling
+data/24,400,t_wave_misdetection,Occurred 288ms after true R-peak at 328 (typical T-wave window)
+data/24,697,t_wave_misdetection,Occurred 296ms after true R-peak at 623 (typical T-wave window)
+data/24,996,cross_window_boundary,Detected at sample 996 near SQI 2-second window boundary 1000
+data/24,1005,cross_window_boundary,Detected at sample 1005 near SQI 2-second window boundary 1000
+data/24,1299,t_wave_misdetection,Occurred 336ms after true R-peak at 1215 (typical T-wave window)
+data/24,1592,t_wave_misdetection,Occurred 324ms after true R-peak at 1511 (typical T-wave window)
+data/24,1871,t_wave_misdetection,Occurred 288ms after true R-peak at 1799 (typical T-wave window)
+data/24,2184,t_wave_misdetection,Occurred 320ms after true R-peak at 2104 (typical T-wave window)
+data/24,2407,baseline_wander,Detected at sample 2407 with nearest true beat at 2104 (dist 1212ms)
+data/24,2478,baseline_wander,Detected at sample 2478 with nearest true beat at 2104 (dist 1496ms)
+data/25,3,startup_transient,Detected at sample 3 (<1.0s) during filter and adaptive threshold settling
+data/25,260,baseline_wander,Detected at sample 260 with nearest true beat at 530 (dist 1080ms)
+data/25,2293,baseline_wander,Detected at sample 2293 with nearest true beat at 2023 (dist 1080ms)
+data/26,186,startup_transient,Detected at sample 186 (<1.0s) during filter and adaptive threshold settling
+data/26,2312,baseline_wander,Detected at sample 2312 with nearest true beat at 2082 (dist 920ms)
+data/27,88,startup_transient,Detected at sample 88 (<1.0s) during filter and adaptive threshold settling
+data/27,2295,baseline_wander,Detected at sample 2295 with nearest true beat at 2017 (dist 1112ms)
+data/28,119,startup_transient,Detected at sample 119 (<1.0s) during filter and adaptive threshold settling
+data/28,2408,baseline_wander,Detected at sample 2408 with nearest true beat at 2151 (dist 1028ms)
+data/28,2461,baseline_wander,Detected at sample 2461 with nearest true beat at 2151 (dist 1240ms)
+data/29,7,startup_transient,Detected at sample 7 (<1.0s) during filter and adaptive threshold settling
+data/29,2316,baseline_wander,Detected at sample 2316 with nearest true beat at 2086 (dist 920ms)
+data/30,56,startup_transient,Detected at sample 56 (<1.0s) during filter and adaptive threshold settling
+data/30,1304,t_wave_misdetection,Occurred 236ms after true R-peak at 1245 (typical T-wave window)
+data/30,2459,baseline_wander,Detected at sample 2459 with nearest true beat at 2150 (dist 1236ms)
+data/31,88,startup_transient,Detected at sample 88 (<1.0s) during filter and adaptive threshold settling
+data/31,2404,baseline_wander,Detected at sample 2404 with nearest true beat at 2170 (dist 936ms)
+data/32,92,startup_transient,Detected at sample 92 (<1.0s) during filter and adaptive threshold settling
+data/32,2474,baseline_wander,Detected at sample 2474 with nearest true beat at 2238 (dist 944ms)
+data/33,128,startup_transient,Detected at sample 128 (<1.0s) during filter and adaptive threshold settling
+data/33,2336,baseline_wander,Detected at sample 2336 with nearest true beat at 2097 (dist 956ms)
+data/34,3,startup_transient,Detected at sample 3 (<1.0s) during filter and adaptive threshold settling
+data/34,110,startup_transient,Detected at sample 110 (<1.0s) during filter and adaptive threshold settling
+data/34,704,t_wave_misdetection,Occurred 304ms after true R-peak at 628 (typical T-wave window)
+data/34,1197,t_wave_misdetection,Occurred 272ms after true R-peak at 1129 (typical T-wave window)
+data/34,1437,t_wave_misdetection,Occurred 232ms after true R-peak at 1379 (typical T-wave window)
+data/34,1706,t_wave_misdetection,Occurred 308ms after true R-peak at 1629 (typical T-wave window)
+data/34,1933,t_wave_misdetection,Occurred 220ms after true R-peak at 1878 (typical T-wave window)
+data/34,2184,t_wave_misdetection,Occurred 220ms after true R-peak at 2129 (typical T-wave window)
+data/34,2372,baseline_wander,Detected at sample 2372 with nearest true beat at 2129 (dist 972ms)
+data/34,2432,baseline_wander,Detected at sample 2432 with nearest true beat at 2129 (dist 1212ms)
+data/35,82,startup_transient,Detected at sample 82 (<1.0s) during filter and adaptive threshold settling
+data/35,1758,baseline_wander,Detected at sample 1758 with nearest true beat at 1789 (dist 124ms)
+data/35,1850,t_wave_misdetection,Occurred 244ms after true R-peak at 1789 (typical T-wave window)
+data/35,1961,t_wave_misdetection,Occurred 268ms after true R-peak at 1894 (typical T-wave window)
+data/35,2468,baseline_wander,Detected at sample 2468 with nearest true beat at 2360 (dist 432ms)
+data/36,186,startup_transient,Detected at sample 186 (<1.0s) during filter and adaptive threshold settling
+data/36,2263,baseline_wander,Detected at sample 2263 with nearest true beat at 2022 (dist 964ms)
+data/37,30,startup_transient,Detected at sample 30 (<1.0s) during filter and adaptive threshold settling
+data/37,2000,cross_window_boundary,Detected at sample 2000 near SQI 2-second window boundary 2000
+data/37,2459,baseline_wander,Detected at sample 2459 with nearest true beat at 2228 (dist 924ms)
+data/38,155,startup_transient,Detected at sample 155 (<1.0s) during filter and adaptive threshold settling
+data/39,242,startup_transient,Detected at sample 242 (<1.0s) during filter and adaptive threshold settling
+data/39,2482,baseline_wander,Detected at sample 2482 with nearest true beat at 2202 (dist 1120ms)
+data/40,91,startup_transient,Detected at sample 91 (<1.0s) during filter and adaptive threshold settling
+data/40,2394,baseline_wander,Detected at sample 2394 with nearest true beat at 2149 (dist 980ms)
+data/41,64,startup_transient,Detected at sample 64 (<1.0s) during filter and adaptive threshold settling
+data/41,2204,baseline_wander,Detected at sample 2204 with nearest true beat at 1895 (dist 1236ms)
+data/42,28,startup_transient,Detected at sample 28 (<1.0s) during filter and adaptive threshold settling
+data/42,2408,baseline_wander,Detected at sample 2408 with nearest true beat at 2140 (dist 1072ms)
+data/43,98,startup_transient,Detected at sample 98 (<1.0s) during filter and adaptive threshold settling
+data/43,2322,baseline_wander,Detected at sample 2322 with nearest true beat at 2071 (dist 1004ms)
+data/44,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/44,142,startup_transient,Detected at sample 142 (<1.0s) during filter and adaptive threshold settling
+data/44,199,startup_transient,Detected at sample 199 (<1.0s) during filter and adaptive threshold settling
+data/44,448,t_wave_misdetection,Occurred 208ms after true R-peak at 396 (typical T-wave window)
+data/44,694,t_wave_misdetection,Occurred 220ms after true R-peak at 639 (typical T-wave window)
+data/44,880,t_wave_misdetection,Occurred 224ms after true R-peak at 824 (typical T-wave window)
+data/44,1067,t_wave_misdetection,Occurred 228ms after true R-peak at 1010 (typical T-wave window)
+data/44,1304,t_wave_misdetection,Occurred 220ms after true R-peak at 1249 (typical T-wave window)
+data/44,1485,t_wave_misdetection,Occurred 224ms after true R-peak at 1429 (typical T-wave window)
+data/44,1770,t_wave_misdetection,Occurred 216ms after true R-peak at 1716 (typical T-wave window)
+data/44,2041,t_wave_misdetection,Occurred 224ms after true R-peak at 1985 (typical T-wave window)
+data/44,2250,t_wave_misdetection,Occurred 220ms after true R-peak at 2195 (typical T-wave window)
+data/44,2385,baseline_wander,Detected at sample 2385 with nearest true beat at 2195 (dist 760ms)
+data/44,2442,baseline_wander,Detected at sample 2442 with nearest true beat at 2195 (dist 988ms)
+data/45,3,startup_transient,Detected at sample 3 (<1.0s) during filter and adaptive threshold settling
+data/45,72,startup_transient,Detected at sample 72 (<1.0s) during filter and adaptive threshold settling
+data/45,138,startup_transient,Detected at sample 138 (<1.0s) during filter and adaptive threshold settling
+data/45,253,baseline_wander,Detected at sample 253 with nearest true beat at 308 (dist 220ms)
+data/45,389,t_wave_misdetection,Occurred 324ms after true R-peak at 308 (typical T-wave window)
+data/45,527,t_wave_misdetection,Occurred 244ms after true R-peak at 466 (typical T-wave window)
+data/45,716,baseline_wander,Detected at sample 716 with nearest true beat at 773 (dist 228ms)
+data/45,966,baseline_wander,Detected at sample 966 with nearest true beat at 1022 (dist 224ms)
+data/45,1104,t_wave_misdetection,Occurred 328ms after true R-peak at 1022 (typical T-wave window)
+data/45,1216,baseline_wander,Detected at sample 1216 with nearest true beat at 1272 (dist 224ms)
+data/45,1354,t_wave_misdetection,Occurred 328ms after true R-peak at 1272 (typical T-wave window)
+data/45,1467,baseline_wander,Detected at sample 1467 with nearest true beat at 1522 (dist 220ms)
+data/45,1605,t_wave_misdetection,Occurred 332ms after true R-peak at 1522 (typical T-wave window)
+data/45,1717,baseline_wander,Detected at sample 1717 with nearest true beat at 1773 (dist 224ms)
+data/45,1845,t_wave_misdetection,Occurred 288ms after true R-peak at 1773 (typical T-wave window)
+data/45,1966,baseline_wander,Detected at sample 1966 with nearest true beat at 2021 (dist 220ms)
+data/45,2101,t_wave_misdetection,Occurred 320ms after true R-peak at 2021 (typical T-wave window)
+data/45,2215,baseline_wander,Detected at sample 2215 with nearest true beat at 2021 (dist 776ms)
+data/45,2288,baseline_wander,Detected at sample 2288 with nearest true beat at 2021 (dist 1068ms)
+data/45,2353,baseline_wander,Detected at sample 2353 with nearest true beat at 2021 (dist 1328ms)
+data/46,182,startup_transient,Detected at sample 182 (<1.0s) during filter and adaptive threshold settling
+data/46,237,startup_transient,Detected at sample 237 (<1.0s) during filter and adaptive threshold settling
+data/46,956,t_wave_misdetection,Occurred 224ms after true R-peak at 900 (typical T-wave window)
+data/46,1676,t_wave_misdetection,Occurred 220ms after true R-peak at 1621 (typical T-wave window)
+data/46,2327,baseline_wander,Detected at sample 2327 with nearest true beat at 2089 (dist 952ms)
+data/47,143,startup_transient,Detected at sample 143 (<1.0s) during filter and adaptive threshold settling
+data/47,2360,baseline_wander,Detected at sample 2360 with nearest true beat at 2043 (dist 1268ms)
+data/48,2,startup_transient,Detected at sample 2 (<1.0s) during filter and adaptive threshold settling
+data/48,232,startup_transient,Detected at sample 232 (<1.0s) during filter and adaptive threshold settling
+data/48,997,cross_window_boundary,Detected at sample 997 near SQI 2-second window boundary 1000
+data/48,2289,baseline_wander,Detected at sample 2289 with nearest true beat at 2038 (dist 1004ms)
+data/49,175,startup_transient,Detected at sample 175 (<1.0s) during filter and adaptive threshold settling
+data/49,2382,baseline_wander,Detected at sample 2382 with nearest true beat at 2103 (dist 1116ms)
+data/50,148,startup_transient,Detected at sample 148 (<1.0s) during filter and adaptive threshold settling
+data/50,2298,baseline_wander,Detected at sample 2298 with nearest true beat at 2084 (dist 856ms)
+data/51,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/51,275,baseline_wander,Detected at sample 275 with nearest true beat at 445 (dist 680ms)
+data/51,333,baseline_wander,Detected at sample 333 with nearest true beat at 445 (dist 448ms)
+data/51,506,cross_window_boundary,Detected at sample 506 near SQI 2-second window boundary 500
+data/51,788,t_wave_misdetection,Occurred 264ms after true R-peak at 722 (typical T-wave window)
+data/51,1002,cross_window_boundary,Detected at sample 1002 near SQI 2-second window boundary 1000
+data/51,1183,t_wave_misdetection,Occurred 256ms after true R-peak at 1119 (typical T-wave window)
+data/51,1544,t_wave_misdetection,Occurred 248ms after true R-peak at 1482 (typical T-wave window)
+data/51,1672,t_wave_misdetection,Occurred 240ms after true R-peak at 1612 (typical T-wave window)
+data/51,2085,t_wave_misdetection,Occurred 252ms after true R-peak at 2022 (typical T-wave window)
+data/51,2292,t_wave_misdetection,Occurred 256ms after true R-peak at 2228 (typical T-wave window)
+data/51,2434,baseline_wander,Detected at sample 2434 with nearest true beat at 2228 (dist 824ms)
+data/51,2492,baseline_wander,Detected at sample 2492 with nearest true beat at 2228 (dist 1056ms)
+data/52,37,startup_transient,Detected at sample 37 (<1.0s) during filter and adaptive threshold settling
+data/52,1457,t_wave_misdetection,Occurred 240ms after true R-peak at 1397 (typical T-wave window)
+data/52,2272,baseline_wander,Detected at sample 2272 with nearest true beat at 2059 (dist 852ms)
+data/53,49,startup_transient,Detected at sample 49 (<1.0s) during filter and adaptive threshold settling
+data/53,1500,cross_window_boundary,Detected at sample 1500 near SQI 2-second window boundary 1500
+data/53,2446,baseline_wander,Detected at sample 2446 with nearest true beat at 2206 (dist 960ms)
+data/54,11,startup_transient,Detected at sample 11 (<1.0s) during filter and adaptive threshold settling
+data/54,2235,baseline_wander,Detected at sample 2235 with nearest true beat at 1956 (dist 1116ms)
+data/55,3,startup_transient,Detected at sample 3 (<1.0s) during filter and adaptive threshold settling
+data/55,177,startup_transient,Detected at sample 177 (<1.0s) during filter and adaptive threshold settling
+data/55,2369,baseline_wander,Detected at sample 2369 with nearest true beat at 2124 (dist 980ms)
+data/56,204,startup_transient,Detected at sample 204 (<1.0s) during filter and adaptive threshold settling
+data/56,2441,baseline_wander,Detected at sample 2441 with nearest true beat at 2238 (dist 812ms)
+data/57,35,startup_transient,Detected at sample 35 (<1.0s) during filter and adaptive threshold settling
+data/57,2437,baseline_wander,Detected at sample 2437 with nearest true beat at 2257 (dist 720ms)
+data/58,102,startup_transient,Detected at sample 102 (<1.0s) during filter and adaptive threshold settling
+data/58,2479,baseline_wander,Detected at sample 2479 with nearest true beat at 2237 (dist 968ms)
+data/59,277,baseline_wander,Detected at sample 277 with nearest true beat at 562 (dist 1140ms)
+data/59,332,baseline_wander,Detected at sample 332 with nearest true beat at 562 (dist 920ms)
+data/59,622,t_wave_misdetection,Occurred 240ms after true R-peak at 562 (typical T-wave window)
+data/59,911,t_wave_misdetection,Occurred 248ms after true R-peak at 849 (typical T-wave window)
+data/59,1191,t_wave_misdetection,Occurred 248ms after true R-peak at 1129 (typical T-wave window)
+data/59,1469,t_wave_misdetection,Occurred 244ms after true R-peak at 1408 (typical T-wave window)
+data/59,1739,t_wave_misdetection,Occurred 228ms after true R-peak at 1682 (typical T-wave window)
+data/59,2022,t_wave_misdetection,Occurred 264ms after true R-peak at 1956 (typical T-wave window)
+data/59,2238,baseline_wander,Detected at sample 2238 with nearest true beat at 1956 (dist 1128ms)
+data/59,2292,baseline_wander,Detected at sample 2292 with nearest true beat at 1956 (dist 1344ms)
+data/60,23,startup_transient,Detected at sample 23 (<1.0s) during filter and adaptive threshold settling
+data/60,2318,baseline_wander,Detected at sample 2318 with nearest true beat at 2065 (dist 1012ms)
+data/61,106,startup_transient,Detected at sample 106 (<1.0s) during filter and adaptive threshold settling
+data/61,2255,baseline_wander,Detected at sample 2255 with nearest true beat at 2012 (dist 972ms)
+data/61,2497,baseline_wander,Detected at sample 2497 with nearest true beat at 2012 (dist 1940ms)
+data/62,199,startup_transient,Detected at sample 199 (<1.0s) during filter and adaptive threshold settling
+data/62,2354,baseline_wander,Detected at sample 2354 with nearest true beat at 2138 (dist 864ms)
+data/63,139,startup_transient,Detected at sample 139 (<1.0s) during filter and adaptive threshold settling
+data/63,2439,baseline_wander,Detected at sample 2439 with nearest true beat at 2197 (dist 968ms)
+data/64,97,startup_transient,Detected at sample 97 (<1.0s) during filter and adaptive threshold settling
+data/64,167,startup_transient,Detected at sample 167 (<1.0s) during filter and adaptive threshold settling
+data/64,414,t_wave_misdetection,Occurred 292ms after true R-peak at 341 (typical T-wave window)
+data/64,646,t_wave_misdetection,Occurred 280ms after true R-peak at 576 (typical T-wave window)
+data/64,879,t_wave_misdetection,Occurred 296ms after true R-peak at 805 (typical T-wave window)
+data/64,1101,t_wave_misdetection,Occurred 284ms after true R-peak at 1030 (typical T-wave window)
+data/64,1318,t_wave_misdetection,Occurred 284ms after true R-peak at 1247 (typical T-wave window)
+data/64,1526,t_wave_misdetection,Occurred 284ms after true R-peak at 1455 (typical T-wave window)
+data/64,1744,t_wave_misdetection,Occurred 288ms after true R-peak at 1672 (typical T-wave window)
+data/64,1969,t_wave_misdetection,Occurred 284ms after true R-peak at 1898 (typical T-wave window)
+data/64,2209,t_wave_misdetection,Occurred 288ms after true R-peak at 2137 (typical T-wave window)
+data/64,2390,baseline_wander,Detected at sample 2390 with nearest true beat at 2137 (dist 1012ms)
+data/64,2460,baseline_wander,Detected at sample 2460 with nearest true beat at 2137 (dist 1292ms)
+data/65,90,startup_transient,Detected at sample 90 (<1.0s) during filter and adaptive threshold settling
+data/65,2352,baseline_wander,Detected at sample 2352 with nearest true beat at 2177 (dist 700ms)
+data/66,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/66,163,startup_transient,Detected at sample 163 (<1.0s) during filter and adaptive threshold settling
+data/66,2300,baseline_wander,Detected at sample 2300 with nearest true beat at 1989 (dist 1244ms)
+data/67,181,startup_transient,Detected at sample 181 (<1.0s) during filter and adaptive threshold settling
+data/67,2293,baseline_wander,Detected at sample 2293 with nearest true beat at 2027 (dist 1064ms)
+data/68,33,startup_transient,Detected at sample 33 (<1.0s) during filter and adaptive threshold settling
+data/68,2335,baseline_wander,Detected at sample 2335 with nearest true beat at 2111 (dist 896ms)
+data/69,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/69,184,startup_transient,Detected at sample 184 (<1.0s) during filter and adaptive threshold settling
+data/69,2469,baseline_wander,Detected at sample 2469 with nearest true beat at 2281 (dist 752ms)
+data/70,13,startup_transient,Detected at sample 13 (<1.0s) during filter and adaptive threshold settling
+data/70,2348,baseline_wander,Detected at sample 2348 with nearest true beat at 2171 (dist 708ms)
+data/71,21,startup_transient,Detected at sample 21 (<1.0s) during filter and adaptive threshold settling
+data/71,2374,baseline_wander,Detected at sample 2374 with nearest true beat at 2113 (dist 1044ms)
+data/72,3,startup_transient,Detected at sample 3 (<1.0s) during filter and adaptive threshold settling
+data/72,153,startup_transient,Detected at sample 153 (<1.0s) during filter and adaptive threshold settling
+data/72,607,baseline_wander,Detected at sample 607 with nearest true beat at 663 (dist 224ms)
+data/72,857,baseline_wander,Detected at sample 857 with nearest true beat at 914 (dist 228ms)
+data/72,1107,baseline_wander,Detected at sample 1107 with nearest true beat at 1163 (dist 224ms)
+data/72,1357,baseline_wander,Detected at sample 1357 with nearest true beat at 1415 (dist 232ms)
+data/72,1782,baseline_wander,Detected at sample 1782 with nearest true beat at 1840 (dist 232ms)
+data/72,2029,baseline_wander,Detected at sample 2029 with nearest true beat at 2088 (dist 236ms)
+data/72,2276,baseline_wander,Detected at sample 2276 with nearest true beat at 2088 (dist 752ms)
+data/72,2343,baseline_wander,Detected at sample 2343 with nearest true beat at 2088 (dist 1020ms)
+data/73,157,startup_transient,Detected at sample 157 (<1.0s) during filter and adaptive threshold settling
+data/73,2452,baseline_wander,Detected at sample 2452 with nearest true beat at 2200 (dist 1008ms)
+data/74,4,startup_transient,Detected at sample 4 (<1.0s) during filter and adaptive threshold settling
+data/74,65,startup_transient,Detected at sample 65 (<1.0s) during filter and adaptive threshold settling
+data/74,1383,t_wave_misdetection,Occurred 260ms after true R-peak at 1318 (typical T-wave window)
+data/74,1649,t_wave_misdetection,Occurred 324ms after true R-peak at 1568 (typical T-wave window)
+data/74,2124,t_wave_misdetection,Occurred 228ms after true R-peak at 2067 (typical T-wave window)
+data/74,2375,t_wave_misdetection,Occurred 232ms after true R-peak at 2317 (typical T-wave window)
+data/75,54,startup_transient,Detected at sample 54 (<1.0s) during filter and adaptive threshold settling
+data/75,2467,baseline_wander,Detected at sample 2467 with nearest true beat at 2225 (dist 968ms)
+data/76,5,startup_transient,Detected at sample 5 (<1.0s) during filter and adaptive threshold settling
+data/76,133,startup_transient,Detected at sample 133 (<1.0s) during filter and adaptive threshold settling
+data/77,165,startup_transient,Detected at sample 165 (<1.0s) during filter and adaptive threshold settling
+data/77,2362,baseline_wander,Detected at sample 2362 with nearest true beat at 2162 (dist 800ms)
+data/78,128,startup_transient,Detected at sample 128 (<1.0s) during filter and adaptive threshold settling
+data/78,2278,baseline_wander,Detected at sample 2278 with nearest true beat at 2035 (dist 972ms)
+data/79,39,startup_transient,Detected at sample 39 (<1.0s) during filter and adaptive threshold settling
+data/79,2426,baseline_wander,Detected at sample 2426 with nearest true beat at 2157 (dist 1076ms)
+data/80,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/80,2000,cross_window_boundary,Detected at sample 2000 near SQI 2-second window boundary 2000
+data/80,2400,baseline_wander,Detected at sample 2400 with nearest true beat at 2201 (dist 796ms)
+data/81,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/81,109,startup_transient,Detected at sample 109 (<1.0s) during filter and adaptive threshold settling
+data/82,147,startup_transient,Detected at sample 147 (<1.0s) during filter and adaptive threshold settling
+data/82,2483,baseline_wander,Detected at sample 2483 with nearest true beat at 2198 (dist 1140ms)
+data/83,69,startup_transient,Detected at sample 69 (<1.0s) during filter and adaptive threshold settling
+data/83,247,startup_transient,Detected at sample 247 (<1.0s) during filter and adaptive threshold settling
+data/83,407,t_wave_misdetection,Occurred 252ms after true R-peak at 344 (typical T-wave window)
+data/83,1135,t_wave_misdetection,Occurred 212ms after true R-peak at 1082 (typical T-wave window)
+data/83,1370,t_wave_misdetection,Occurred 264ms after true R-peak at 1304 (typical T-wave window)
+data/83,2125,t_wave_misdetection,Occurred 244ms after true R-peak at 2064 (typical T-wave window)
+data/83,2480,baseline_wander,Detected at sample 2480 with nearest true beat at 2295 (dist 740ms)
+data/84,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/84,115,startup_transient,Detected at sample 115 (<1.0s) during filter and adaptive threshold settling
+data/84,923,t_wave_misdetection,Occurred 236ms after true R-peak at 864 (typical T-wave window)
+data/84,2366,baseline_wander,Detected at sample 2366 with nearest true beat at 2114 (dist 1008ms)
+data/85,160,startup_transient,Detected at sample 160 (<1.0s) during filter and adaptive threshold settling
+data/85,2372,baseline_wander,Detected at sample 2372 with nearest true beat at 2167 (dist 820ms)
+data/86,3,startup_transient,Detected at sample 3 (<1.0s) during filter and adaptive threshold settling
+data/86,144,startup_transient,Detected at sample 144 (<1.0s) during filter and adaptive threshold settling
+data/86,2339,baseline_wander,Detected at sample 2339 with nearest true beat at 2167 (dist 688ms)
+data/87,159,startup_transient,Detected at sample 159 (<1.0s) during filter and adaptive threshold settling
+data/87,2374,baseline_wander,Detected at sample 2374 with nearest true beat at 2204 (dist 680ms)
+data/88,4,startup_transient,Detected at sample 4 (<1.0s) during filter and adaptive threshold settling
+data/88,145,startup_transient,Detected at sample 145 (<1.0s) during filter and adaptive threshold settling
+data/88,2356,baseline_wander,Detected at sample 2356 with nearest true beat at 2149 (dist 828ms)
+data/89,175,startup_transient,Detected at sample 175 (<1.0s) during filter and adaptive threshold settling
+data/89,2477,baseline_wander,Detected at sample 2477 with nearest true beat at 2276 (dist 804ms)
+data/90,5,startup_transient,Detected at sample 5 (<1.0s) during filter and adaptive threshold settling
+data/90,123,startup_transient,Detected at sample 123 (<1.0s) during filter and adaptive threshold settling
+data/90,175,startup_transient,Detected at sample 175 (<1.0s) during filter and adaptive threshold settling
+data/90,689,t_wave_misdetection,Occurred 264ms after true R-peak at 623 (typical T-wave window)
+data/90,940,t_wave_misdetection,Occurred 264ms after true R-peak at 874 (typical T-wave window)
+data/90,1189,t_wave_misdetection,Occurred 260ms after true R-peak at 1124 (typical T-wave window)
+data/90,1361,baseline_wander,Detected at sample 1361 with nearest true beat at 1374 (dist 52ms)
+data/90,1440,t_wave_misdetection,Occurred 264ms after true R-peak at 1374 (typical T-wave window)
+data/90,1695,t_wave_misdetection,Occurred 280ms after true R-peak at 1625 (typical T-wave window)
+data/90,1944,t_wave_misdetection,Occurred 280ms after true R-peak at 1874 (typical T-wave window)
+data/90,2260,baseline_wander,Detected at sample 2260 with nearest true beat at 2124 (dist 544ms)
+data/90,2375,baseline_wander,Detected at sample 2375 with nearest true beat at 2124 (dist 1004ms)
+data/90,2484,baseline_wander,Detected at sample 2484 with nearest true beat at 2124 (dist 1440ms)
+data/91,4,startup_transient,Detected at sample 4 (<1.0s) during filter and adaptive threshold settling
+data/91,97,startup_transient,Detected at sample 97 (<1.0s) during filter and adaptive threshold settling
+data/91,2296,baseline_wander,Detected at sample 2296 with nearest true beat at 2143 (dist 612ms)
+data/92,61,startup_transient,Detected at sample 61 (<1.0s) during filter and adaptive threshold settling
+data/92,490,cross_window_boundary,Detected at sample 490 near SQI 2-second window boundary 500
+data/92,2353,baseline_wander,Detected at sample 2353 with nearest true beat at 2199 (dist 616ms)
+data/93,10,startup_transient,Detected at sample 10 (<1.0s) during filter and adaptive threshold settling
+data/93,186,startup_transient,Detected at sample 186 (<1.0s) during filter and adaptive threshold settling
+data/93,248,startup_transient,Detected at sample 248 (<1.0s) during filter and adaptive threshold settling
+data/93,750,t_wave_misdetection,Occurred 276ms after true R-peak at 681 (typical T-wave window)
+data/93,905,baseline_wander,Detected at sample 905 with nearest true beat at 933 (dist 112ms)
+data/93,996,cross_window_boundary,Detected at sample 996 near SQI 2-second window boundary 1000
+data/93,1499,cross_window_boundary,Detected at sample 1499 near SQI 2-second window boundary 1500
+data/93,1980,t_wave_misdetection,Occurred 208ms after true R-peak at 1928 (typical T-wave window)
+data/93,2271,t_wave_misdetection,Occurred 376ms after true R-peak at 2177 (typical T-wave window)
+data/93,2424,baseline_wander,Detected at sample 2424 with nearest true beat at 2177 (dist 988ms)
+data/94,173,startup_transient,Detected at sample 173 (<1.0s) during filter and adaptive threshold settling
+data/94,2342,baseline_wander,Detected at sample 2342 with nearest true beat at 2151 (dist 764ms)
+data/95,6,startup_transient,Detected at sample 6 (<1.0s) during filter and adaptive threshold settling
+data/95,162,startup_transient,Detected at sample 162 (<1.0s) during filter and adaptive threshold settling
+data/95,472,t_wave_misdetection,Occurred 316ms after true R-peak at 393 (typical T-wave window)
+data/95,714,t_wave_misdetection,Occurred 284ms after true R-peak at 643 (typical T-wave window)
+data/95,972,t_wave_misdetection,Occurred 316ms after true R-peak at 893 (typical T-wave window)
+data/95,1222,t_wave_misdetection,Occurred 316ms after true R-peak at 1143 (typical T-wave window)
+data/95,2484,baseline_wander,Detected at sample 2484 with nearest true beat at 2248 (dist 944ms)
+data/96,86,startup_transient,Detected at sample 86 (<1.0s) during filter and adaptive threshold settling
+data/96,347,t_wave_misdetection,Occurred 268ms after true R-peak at 280 (typical T-wave window)
+data/96,1105,t_wave_misdetection,Occurred 200ms after true R-peak at 1055 (typical T-wave window)
+data/96,2414,baseline_wander,Detected at sample 2414 with nearest true beat at 2232 (dist 728ms)
+data/97,94,startup_transient,Detected at sample 94 (<1.0s) during filter and adaptive threshold settling
+data/97,2334,baseline_wander,Detected at sample 2334 with nearest true beat at 2080 (dist 1016ms)
+data/98,135,startup_transient,Detected at sample 135 (<1.0s) during filter and adaptive threshold settling
+data/98,2314,baseline_wander,Detected at sample 2314 with nearest true beat at 2072 (dist 968ms)
+data/99,8,startup_transient,Detected at sample 8 (<1.0s) during filter and adaptive threshold settling
+data/99,2460,baseline_wander,Detected at sample 2460 with nearest true beat at 2294 (dist 664ms)
+data/100,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/100,80,startup_transient,Detected at sample 80 (<1.0s) during filter and adaptive threshold settling
+data/100,2316,baseline_wander,Detected at sample 2316 with nearest true beat at 2089 (dist 908ms)
+data/101,114,startup_transient,Detected at sample 114 (<1.0s) during filter and adaptive threshold settling
+data/101,2007,cross_window_boundary,Detected at sample 2007 near SQI 2-second window boundary 2000
+data/101,2421,baseline_wander,Detected at sample 2421 with nearest true beat at 2208 (dist 852ms)
+data/102,162,startup_transient,Detected at sample 162 (<1.0s) during filter and adaptive threshold settling
+data/102,2456,baseline_wander,Detected at sample 2456 with nearest true beat at 2224 (dist 928ms)
+data/103,41,startup_transient,Detected at sample 41 (<1.0s) during filter and adaptive threshold settling
+data/103,279,baseline_wander,Detected at sample 279 with nearest true beat at 365 (dist 344ms)
+data/103,661,t_wave_misdetection,Occurred 272ms after true R-peak at 593 (typical T-wave window)
+data/103,812,t_wave_misdetection,Occurred 244ms after true R-peak at 751 (typical T-wave window)
+data/103,940,t_wave_misdetection,Occurred 284ms after true R-peak at 869 (typical T-wave window)
+data/103,1002,cross_window_boundary,Detected at sample 1002 near SQI 2-second window boundary 1000
+data/103,1163,t_wave_misdetection,Occurred 284ms after true R-peak at 1092 (typical T-wave window)
+data/103,1661,baseline_wander,Detected at sample 1661 with nearest true beat at 1750 (dist 356ms)
+data/103,1822,t_wave_misdetection,Occurred 288ms after true R-peak at 1750 (typical T-wave window)
+data/103,1976,t_wave_misdetection,Occurred 260ms after true R-peak at 1911 (typical T-wave window)
+data/103,2024,baseline_wander,Detected at sample 2024 with nearest true beat at 2133 (dist 436ms)
+data/103,2075,baseline_wander,Detected at sample 2075 with nearest true beat at 2133 (dist 232ms)
+data/103,2234,baseline_wander,Detected at sample 2234 with nearest true beat at 2293 (dist 236ms)
+data/103,2399,baseline_wander,Detected at sample 2399 with nearest true beat at 2293 (dist 424ms)
+data/103,2454,baseline_wander,Detected at sample 2454 with nearest true beat at 2293 (dist 644ms)
+data/104,8,startup_transient,Detected at sample 8 (<1.0s) during filter and adaptive threshold settling
+data/104,148,startup_transient,Detected at sample 148 (<1.0s) during filter and adaptive threshold settling
+data/104,661,t_wave_misdetection,Occurred 268ms after true R-peak at 594 (typical T-wave window)
+data/104,1126,t_wave_misdetection,Occurred 268ms after true R-peak at 1059 (typical T-wave window)
+data/104,1358,t_wave_misdetection,Occurred 268ms after true R-peak at 1291 (typical T-wave window)
+data/104,1584,t_wave_misdetection,Occurred 268ms after true R-peak at 1517 (typical T-wave window)
+data/104,1815,t_wave_misdetection,Occurred 276ms after true R-peak at 1746 (typical T-wave window)
+data/104,2042,t_wave_misdetection,Occurred 256ms after true R-peak at 1978 (typical T-wave window)
+data/104,2440,baseline_wander,Detected at sample 2440 with nearest true beat at 2205 (dist 940ms)
+data/105,32,startup_transient,Detected at sample 32 (<1.0s) during filter and adaptive threshold settling
+data/105,871,t_wave_misdetection,Occurred 232ms after true R-peak at 813 (typical T-wave window)
+data/105,2328,baseline_wander,Detected at sample 2328 with nearest true beat at 2095 (dist 932ms)
+data/106,102,startup_transient,Detected at sample 102 (<1.0s) during filter and adaptive threshold settling
+data/106,2397,baseline_wander,Detected at sample 2397 with nearest true beat at 2218 (dist 716ms)
+data/107,99,startup_transient,Detected at sample 99 (<1.0s) during filter and adaptive threshold settling
+data/107,2306,baseline_wander,Detected at sample 2306 with nearest true beat at 2062 (dist 976ms)
+data/108,107,startup_transient,Detected at sample 107 (<1.0s) during filter and adaptive threshold settling
+data/108,2313,baseline_wander,Detected at sample 2313 with nearest true beat at 2124 (dist 756ms)
+data/109,34,startup_transient,Detected at sample 34 (<1.0s) during filter and adaptive threshold settling
+data/109,1004,cross_window_boundary,Detected at sample 1004 near SQI 2-second window boundary 1000
+data/109,2494,baseline_wander,Detected at sample 2494 with nearest true beat at 2398 (dist 384ms)
+data/110,66,startup_transient,Detected at sample 66 (<1.0s) during filter and adaptive threshold settling
+data/110,979,t_wave_misdetection,Occurred 232ms after true R-peak at 921 (typical T-wave window)
+data/110,1373,t_wave_misdetection,Occurred 228ms after true R-peak at 1316 (typical T-wave window)
+data/110,1502,cross_window_boundary,Detected at sample 1502 near SQI 2-second window boundary 1500
+data/110,2476,baseline_wander,Detected at sample 2476 with nearest true beat at 2293 (dist 732ms)
+data/111,4,startup_transient,Detected at sample 4 (<1.0s) during filter and adaptive threshold settling
+data/111,212,startup_transient,Detected at sample 212 (<1.0s) during filter and adaptive threshold settling
+data/111,300,baseline_wander,Detected at sample 300 with nearest true beat at 459 (dist 636ms)
+data/111,551,t_wave_misdetection,Occurred 368ms after true R-peak at 459 (typical T-wave window)
+data/111,795,t_wave_misdetection,Occurred 336ms after true R-peak at 711 (typical T-wave window)
+data/111,1049,t_wave_misdetection,Occurred 348ms after true R-peak at 962 (typical T-wave window)
+data/111,1132,baseline_wander,Detected at sample 1132 with nearest true beat at 1210 (dist 312ms)
+data/111,1299,t_wave_misdetection,Occurred 356ms after true R-peak at 1210 (typical T-wave window)
+data/111,1553,t_wave_misdetection,Occurred 368ms after true R-peak at 1461 (typical T-wave window)
+data/111,1805,t_wave_misdetection,Occurred 372ms after true R-peak at 1712 (typical T-wave window)
+data/111,2049,t_wave_misdetection,Occurred 356ms after true R-peak at 1960 (typical T-wave window)
+data/111,2233,duplicate_refractory,Double detection only 88ms after R-peak at 2211
+data/111,2299,t_wave_misdetection,Occurred 352ms after true R-peak at 2211 (typical T-wave window)
+data/111,2478,baseline_wander,Detected at sample 2478 with nearest true beat at 2211 (dist 1068ms)
+data/112,37,startup_transient,Detected at sample 37 (<1.0s) during filter and adaptive threshold settling
+data/112,2476,baseline_wander,Detected at sample 2476 with nearest true beat at 2227 (dist 996ms)
+data/113,2,startup_transient,Detected at sample 2 (<1.0s) during filter and adaptive threshold settling
+data/113,180,startup_transient,Detected at sample 180 (<1.0s) during filter and adaptive threshold settling
+data/113,2443,baseline_wander,Detected at sample 2443 with nearest true beat at 2198 (dist 980ms)
+data/114,51,startup_transient,Detected at sample 51 (<1.0s) during filter and adaptive threshold settling
+data/114,2358,baseline_wander,Detected at sample 2358 with nearest true beat at 2193 (dist 660ms)
+data/115,6,startup_transient,Detected at sample 6 (<1.0s) during filter and adaptive threshold settling
+data/115,196,startup_transient,Detected at sample 196 (<1.0s) during filter and adaptive threshold settling
+data/115,2366,baseline_wander,Detected at sample 2366 with nearest true beat at 2093 (dist 1092ms)
+data/116,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/116,212,startup_transient,Detected at sample 212 (<1.0s) during filter and adaptive threshold settling
+data/116,378,t_wave_misdetection,Occurred 268ms after true R-peak at 311 (typical T-wave window)
+data/116,543,t_wave_misdetection,Occurred 260ms after true R-peak at 478 (typical T-wave window)
+data/116,708,t_wave_misdetection,Occurred 252ms after true R-peak at 645 (typical T-wave window)
+data/116,876,t_wave_misdetection,Occurred 260ms after true R-peak at 811 (typical T-wave window)
+data/116,1043,t_wave_misdetection,Occurred 272ms after true R-peak at 975 (typical T-wave window)
+data/116,1209,t_wave_misdetection,Occurred 268ms after true R-peak at 1142 (typical T-wave window)
+data/116,1373,t_wave_misdetection,Occurred 264ms after true R-peak at 1307 (typical T-wave window)
+data/116,1538,t_wave_misdetection,Occurred 260ms after true R-peak at 1473 (typical T-wave window)
+data/116,1707,t_wave_misdetection,Occurred 248ms after true R-peak at 1645 (typical T-wave window)
+data/116,1875,t_wave_misdetection,Occurred 244ms after true R-peak at 1814 (typical T-wave window)
+data/116,2044,t_wave_misdetection,Occurred 264ms after true R-peak at 1978 (typical T-wave window)
+data/116,2212,t_wave_misdetection,Occurred 268ms after true R-peak at 2145 (typical T-wave window)
+data/116,2314,baseline_wander,Detected at sample 2314 with nearest true beat at 2145 (dist 676ms)
+data/116,2377,baseline_wander,Detected at sample 2377 with nearest true beat at 2145 (dist 928ms)
+data/116,2481,baseline_wander,Detected at sample 2481 with nearest true beat at 2145 (dist 1344ms)
+data/117,120,startup_transient,Detected at sample 120 (<1.0s) during filter and adaptive threshold settling
+data/117,2382,baseline_wander,Detected at sample 2382 with nearest true beat at 2212 (dist 680ms)
+data/118,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/118,228,startup_transient,Detected at sample 228 (<1.0s) during filter and adaptive threshold settling
+data/118,2282,baseline_wander,Detected at sample 2282 with nearest true beat at 2052 (dist 920ms)
+data/119,3,startup_transient,Detected at sample 3 (<1.0s) during filter and adaptive threshold settling
+data/119,80,startup_transient,Detected at sample 80 (<1.0s) during filter and adaptive threshold settling
+data/119,2329,baseline_wander,Detected at sample 2329 with nearest true beat at 2081 (dist 992ms)
+data/120,2,startup_transient,Detected at sample 2 (<1.0s) during filter and adaptive threshold settling
+data/120,161,startup_transient,Detected at sample 161 (<1.0s) during filter and adaptive threshold settling
+data/120,2496,baseline_wander,Detected at sample 2496 with nearest true beat at 2216 (dist 1120ms)
+data/121,12,startup_transient,Detected at sample 12 (<1.0s) during filter and adaptive threshold settling
+data/121,688,t_wave_misdetection,Occurred 236ms after true R-peak at 629 (typical T-wave window)
+data/121,846,t_wave_misdetection,Occurred 244ms after true R-peak at 785 (typical T-wave window)
+data/121,1014,t_wave_misdetection,Occurred 284ms after true R-peak at 943 (typical T-wave window)
+data/121,1158,t_wave_misdetection,Occurred 244ms after true R-peak at 1097 (typical T-wave window)
+data/121,1323,t_wave_misdetection,Occurred 280ms after true R-peak at 1253 (typical T-wave window)
+data/121,1470,t_wave_misdetection,Occurred 244ms after true R-peak at 1409 (typical T-wave window)
+data/121,1624,t_wave_misdetection,Occurred 240ms after true R-peak at 1564 (typical T-wave window)
+data/121,1786,t_wave_misdetection,Occurred 280ms after true R-peak at 1716 (typical T-wave window)
+data/121,1925,t_wave_misdetection,Occurred 220ms after true R-peak at 1870 (typical T-wave window)
+data/121,2241,t_wave_misdetection,Occurred 252ms after true R-peak at 2178 (typical T-wave window)
+data/121,2391,t_wave_misdetection,Occurred 240ms after true R-peak at 2331 (typical T-wave window)
+data/121,2489,baseline_wander,Detected at sample 2489 with nearest true beat at 2331 (dist 632ms)
+data/122,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/122,241,startup_transient,Detected at sample 241 (<1.0s) during filter and adaptive threshold settling
+data/122,2497,baseline_wander,Detected at sample 2497 with nearest true beat at 2245 (dist 1008ms)
+data/123,42,startup_transient,Detected at sample 42 (<1.0s) during filter and adaptive threshold settling
+data/123,2314,baseline_wander,Detected at sample 2314 with nearest true beat at 2083 (dist 924ms)
+data/124,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/124,261,baseline_wander,Detected at sample 261 with nearest true beat at 522 (dist 1044ms)
+data/124,2394,baseline_wander,Detected at sample 2394 with nearest true beat at 2121 (dist 1092ms)
+data/125,26,startup_transient,Detected at sample 26 (<1.0s) during filter and adaptive threshold settling
+data/125,1165,t_wave_misdetection,Occurred 308ms after true R-peak at 1088 (typical T-wave window)
+data/125,1666,t_wave_misdetection,Occurred 224ms after true R-peak at 1610 (typical T-wave window)
+data/125,2215,baseline_wander,Detected at sample 2215 with nearest true beat at 1910 (dist 1220ms)
+data/126,4,startup_transient,Detected at sample 4 (<1.0s) during filter and adaptive threshold settling
+data/126,131,startup_transient,Detected at sample 131 (<1.0s) during filter and adaptive threshold settling
+data/126,1000,cross_window_boundary,Detected at sample 1000 near SQI 2-second window boundary 1000
+data/126,1700,t_wave_misdetection,Occurred 220ms after true R-peak at 1645 (typical T-wave window)
+data/126,2294,baseline_wander,Detected at sample 2294 with nearest true beat at 2074 (dist 880ms)
+data/126,2497,baseline_wander,Detected at sample 2497 with nearest true beat at 2074 (dist 1692ms)
+data/127,4,startup_transient,Detected at sample 4 (<1.0s) during filter and adaptive threshold settling
+data/127,308,baseline_wander,Detected at sample 308 with nearest true beat at 694 (dist 1544ms)
+data/127,1874,t_wave_misdetection,Occurred 220ms after true R-peak at 1819 (typical T-wave window)
+data/127,2183,baseline_wander,Detected at sample 2183 with nearest true beat at 1819 (dist 1456ms)
+data/127,2497,baseline_wander,Detected at sample 2497 with nearest true beat at 1819 (dist 2712ms)
+data/128,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/128,91,startup_transient,Detected at sample 91 (<1.0s) during filter and adaptive threshold settling
+data/128,2337,baseline_wander,Detected at sample 2337 with nearest true beat at 2059 (dist 1112ms)
+data/129,33,startup_transient,Detected at sample 33 (<1.0s) during filter and adaptive threshold settling
+data/129,2293,baseline_wander,Detected at sample 2293 with nearest true beat at 1989 (dist 1216ms)
+data/129,2497,baseline_wander,Detected at sample 2497 with nearest true beat at 1989 (dist 2032ms)
+data/130,238,startup_transient,Detected at sample 238 (<1.0s) during filter and adaptive threshold settling
+data/130,474,baseline_wander,Detected at sample 474 with nearest true beat at 501 (dist 108ms)
+data/130,1550,baseline_wander,Detected at sample 1550 with nearest true beat at 1562 (dist 48ms)
+data/130,1646,t_wave_misdetection,Occurred 336ms after true R-peak at 1562 (typical T-wave window)
+data/130,1814,baseline_wander,Detected at sample 1814 with nearest true beat at 1830 (dist 64ms)
+data/130,2328,baseline_wander,Detected at sample 2328 with nearest true beat at 2094 (dist 936ms)
+data/130,2497,baseline_wander,Detected at sample 2497 with nearest true beat at 2094 (dist 1612ms)
+data/131,2,startup_transient,Detected at sample 2 (<1.0s) during filter and adaptive threshold settling
+data/131,224,startup_transient,Detected at sample 224 (<1.0s) during filter and adaptive threshold settling
+data/131,2287,baseline_wander,Detected at sample 2287 with nearest true beat at 2057 (dist 920ms)
+data/132,127,startup_transient,Detected at sample 127 (<1.0s) during filter and adaptive threshold settling
+data/132,2434,baseline_wander,Detected at sample 2434 with nearest true beat at 2166 (dist 1072ms)
+data/133,4,startup_transient,Detected at sample 4 (<1.0s) during filter and adaptive threshold settling
+data/133,87,startup_transient,Detected at sample 87 (<1.0s) during filter and adaptive threshold settling
+data/133,2491,baseline_wander,Detected at sample 2491 with nearest true beat at 2165 (dist 1304ms)
+data/134,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/134,191,startup_transient,Detected at sample 191 (<1.0s) during filter and adaptive threshold settling
+data/134,2279,baseline_wander,Detected at sample 2279 with nearest true beat at 1985 (dist 1176ms)
+data/135,2,startup_transient,Detected at sample 2 (<1.0s) during filter and adaptive threshold settling
+data/135,214,startup_transient,Detected at sample 214 (<1.0s) during filter and adaptive threshold settling
+data/135,2398,baseline_wander,Detected at sample 2398 with nearest true beat at 2191 (dist 828ms)
+data/136,14,startup_transient,Detected at sample 14 (<1.0s) during filter and adaptive threshold settling
+data/136,2430,baseline_wander,Detected at sample 2430 with nearest true beat at 2254 (dist 704ms)
+data/137,160,startup_transient,Detected at sample 160 (<1.0s) during filter and adaptive threshold settling
+data/137,2490,baseline_wander,Detected at sample 2490 with nearest true beat at 2258 (dist 928ms)
+data/138,136,startup_transient,Detected at sample 136 (<1.0s) during filter and adaptive threshold settling
+data/138,2361,baseline_wander,Detected at sample 2361 with nearest true beat at 2099 (dist 1048ms)
+data/139,109,startup_transient,Detected at sample 109 (<1.0s) during filter and adaptive threshold settling
+data/139,2346,baseline_wander,Detected at sample 2346 with nearest true beat at 2149 (dist 788ms)
+data/140,124,startup_transient,Detected at sample 124 (<1.0s) during filter and adaptive threshold settling
+data/140,2427,baseline_wander,Detected at sample 2427 with nearest true beat at 2242 (dist 740ms)
+data/141,2,startup_transient,Detected at sample 2 (<1.0s) during filter and adaptive threshold settling
+data/141,110,startup_transient,Detected at sample 110 (<1.0s) during filter and adaptive threshold settling
+data/141,2306,baseline_wander,Detected at sample 2306 with nearest true beat at 2060 (dist 984ms)
+data/142,4,startup_transient,Detected at sample 4 (<1.0s) during filter and adaptive threshold settling
+data/142,65,startup_transient,Detected at sample 65 (<1.0s) during filter and adaptive threshold settling
+data/142,2308,baseline_wander,Detected at sample 2308 with nearest true beat at 2099 (dist 836ms)
+data/143,68,startup_transient,Detected at sample 68 (<1.0s) during filter and adaptive threshold settling
+data/143,2413,baseline_wander,Detected at sample 2413 with nearest true beat at 2220 (dist 772ms)
+data/144,86,startup_transient,Detected at sample 86 (<1.0s) during filter and adaptive threshold settling
+data/144,2366,baseline_wander,Detected at sample 2366 with nearest true beat at 2152 (dist 856ms)
+data/145,111,startup_transient,Detected at sample 111 (<1.0s) during filter and adaptive threshold settling
+data/145,2391,baseline_wander,Detected at sample 2391 with nearest true beat at 2165 (dist 904ms)
+data/146,13,startup_transient,Detected at sample 13 (<1.0s) during filter and adaptive threshold settling
+data/146,2444,baseline_wander,Detected at sample 2444 with nearest true beat at 2158 (dist 1144ms)
+data/147,64,startup_transient,Detected at sample 64 (<1.0s) during filter and adaptive threshold settling
+data/147,2324,baseline_wander,Detected at sample 2324 with nearest true beat at 2070 (dist 1016ms)
+data/148,108,startup_transient,Detected at sample 108 (<1.0s) during filter and adaptive threshold settling
+data/148,2476,baseline_wander,Detected at sample 2476 with nearest true beat at 2220 (dist 1024ms)
+data/149,119,startup_transient,Detected at sample 119 (<1.0s) during filter and adaptive threshold settling
+data/149,1000,cross_window_boundary,Detected at sample 1000 near SQI 2-second window boundary 1000
+data/149,2309,baseline_wander,Detected at sample 2309 with nearest true beat at 2086 (dist 892ms)
+data/150,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/150,230,startup_transient,Detected at sample 230 (<1.0s) during filter and adaptive threshold settling
+data/150,2415,baseline_wander,Detected at sample 2415 with nearest true beat at 2167 (dist 992ms)
+data/151,101,startup_transient,Detected at sample 101 (<1.0s) during filter and adaptive threshold settling
+data/151,500,cross_window_boundary,Detected at sample 500 near SQI 2-second window boundary 500
+data/151,2341,baseline_wander,Detected at sample 2341 with nearest true beat at 2139 (dist 808ms)
+data/152,36,startup_transient,Detected at sample 36 (<1.0s) during filter and adaptive threshold settling
+data/152,2358,baseline_wander,Detected at sample 2358 with nearest true beat at 2113 (dist 980ms)
+data/153,116,startup_transient,Detected at sample 116 (<1.0s) during filter and adaptive threshold settling
+data/153,2462,baseline_wander,Detected at sample 2462 with nearest true beat at 2193 (dist 1076ms)
+data/154,150,startup_transient,Detected at sample 150 (<1.0s) during filter and adaptive threshold settling
+data/154,2325,baseline_wander,Detected at sample 2325 with nearest true beat at 2104 (dist 884ms)
+data/155,108,startup_transient,Detected at sample 108 (<1.0s) during filter and adaptive threshold settling
+data/155,2337,baseline_wander,Detected at sample 2337 with nearest true beat at 2085 (dist 1008ms)
+data/156,3,startup_transient,Detected at sample 3 (<1.0s) during filter and adaptive threshold settling
+data/156,123,startup_transient,Detected at sample 123 (<1.0s) during filter and adaptive threshold settling
+data/156,2254,baseline_wander,Detected at sample 2254 with nearest true beat at 1987 (dist 1068ms)
+data/157,11,startup_transient,Detected at sample 11 (<1.0s) during filter and adaptive threshold settling
+data/157,208,startup_transient,Detected at sample 208 (<1.0s) during filter and adaptive threshold settling
+data/157,2377,baseline_wander,Detected at sample 2377 with nearest true beat at 2114 (dist 1052ms)
+data/158,2,startup_transient,Detected at sample 2 (<1.0s) during filter and adaptive threshold settling
+data/158,166,startup_transient,Detected at sample 166 (<1.0s) during filter and adaptive threshold settling
+data/158,2225,baseline_wander,Detected at sample 2225 with nearest true beat at 1950 (dist 1100ms)
+data/159,129,startup_transient,Detected at sample 129 (<1.0s) during filter and adaptive threshold settling
+data/159,2355,baseline_wander,Detected at sample 2355 with nearest true beat at 2133 (dist 888ms)
+data/160,163,startup_transient,Detected at sample 163 (<1.0s) during filter and adaptive threshold settling
+data/160,2200,baseline_wander,Detected at sample 2200 with nearest true beat at 1852 (dist 1392ms)
+data/161,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/161,224,startup_transient,Detected at sample 224 (<1.0s) during filter and adaptive threshold settling
+data/161,2332,baseline_wander,Detected at sample 2332 with nearest true beat at 2082 (dist 1000ms)
+data/162,86,startup_transient,Detected at sample 86 (<1.0s) during filter and adaptive threshold settling
+data/162,2410,baseline_wander,Detected at sample 2410 with nearest true beat at 2202 (dist 832ms)
+data/163,189,startup_transient,Detected at sample 189 (<1.0s) during filter and adaptive threshold settling
+data/163,2001,cross_window_boundary,Detected at sample 2001 near SQI 2-second window boundary 2000
+data/163,2404,baseline_wander,Detected at sample 2404 with nearest true beat at 2182 (dist 888ms)
+data/164,43,startup_transient,Detected at sample 43 (<1.0s) during filter and adaptive threshold settling
+data/164,2330,baseline_wander,Detected at sample 2330 with nearest true beat at 2095 (dist 940ms)
+data/165,4,startup_transient,Detected at sample 4 (<1.0s) during filter and adaptive threshold settling
+data/165,204,startup_transient,Detected at sample 204 (<1.0s) during filter and adaptive threshold settling
+data/165,2331,baseline_wander,Detected at sample 2331 with nearest true beat at 2118 (dist 852ms)
+data/166,213,startup_transient,Detected at sample 213 (<1.0s) during filter and adaptive threshold settling
+data/166,2312,baseline_wander,Detected at sample 2312 with nearest true beat at 2068 (dist 976ms)
+data/167,10,startup_transient,Detected at sample 10 (<1.0s) during filter and adaptive threshold settling
+data/167,129,startup_transient,Detected at sample 129 (<1.0s) during filter and adaptive threshold settling
+data/167,2362,baseline_wander,Detected at sample 2362 with nearest true beat at 2144 (dist 872ms)
+data/168,8,startup_transient,Detected at sample 8 (<1.0s) during filter and adaptive threshold settling
+data/168,163,startup_transient,Detected at sample 163 (<1.0s) during filter and adaptive threshold settling
+data/168,2386,baseline_wander,Detected at sample 2386 with nearest true beat at 2112 (dist 1096ms)
+data/169,206,startup_transient,Detected at sample 206 (<1.0s) during filter and adaptive threshold settling
+data/169,2421,baseline_wander,Detected at sample 2421 with nearest true beat at 2143 (dist 1112ms)
+data/170,33,startup_transient,Detected at sample 33 (<1.0s) during filter and adaptive threshold settling
+data/170,2344,baseline_wander,Detected at sample 2344 with nearest true beat at 2062 (dist 1128ms)
+data/171,1,startup_transient,Detected at sample 1 (<1.0s) during filter and adaptive threshold settling
+data/171,145,startup_transient,Detected at sample 145 (<1.0s) during filter and adaptive threshold settling
+data/171,2381,baseline_wander,Detected at sample 2381 with nearest true beat at 2153 (dist 912ms)
+data/172,9,startup_transient,Detected at sample 9 (<1.0s) during filter and adaptive threshold settling
+data/172,95,startup_transient,Detected at sample 95 (<1.0s) during filter and adaptive threshold settling
+data/172,2377,baseline_wander,Detected at sample 2377 with nearest true beat at 2086 (dist 1164ms)
+data/173,36,startup_transient,Detected at sample 36 (<1.0s) during filter and adaptive threshold settling
+data/173,1808,t_wave_misdetection,Occurred 240ms after true R-peak at 1748 (typical T-wave window)
+data/173,2367,baseline_wander,Detected at sample 2367 with nearest true beat at 2256 (dist 444ms)
+data/174,36,startup_transient,Detected at sample 36 (<1.0s) during filter and adaptive threshold settling
+data/174,2267,baseline_wander,Detected at sample 2267 with nearest true beat at 2019 (dist 992ms)
+data/175,121,startup_transient,Detected at sample 121 (<1.0s) during filter and adaptive threshold settling
+data/175,2377,baseline_wander,Detected at sample 2377 with nearest true beat at 2154 (dist 892ms)
+data/176,128,startup_transient,Detected at sample 128 (<1.0s) during filter and adaptive threshold settling
+data/176,1606,t_wave_misdetection,Occurred 224ms after true R-peak at 1550 (typical T-wave window)
+data/176,2269,baseline_wander,Detected at sample 2269 with nearest true beat at 2029 (dist 960ms)
+data/177,66,startup_transient,Detected at sample 66 (<1.0s) during filter and adaptive threshold settling
+data/177,2438,baseline_wander,Detected at sample 2438 with nearest true beat at 2239 (dist 796ms)
+data/178,134,startup_transient,Detected at sample 134 (<1.0s) during filter and adaptive threshold settling
+data/178,2482,baseline_wander,Detected at sample 2482 with nearest true beat at 2296 (dist 744ms)
+data/179,213,startup_transient,Detected at sample 213 (<1.0s) during filter and adaptive threshold settling
+data/179,2327,baseline_wander,Detected at sample 2327 with nearest true beat at 2090 (dist 948ms)
+data/180,120,startup_transient,Detected at sample 120 (<1.0s) during filter and adaptive threshold settling
+data/180,2361,baseline_wander,Detected at sample 2361 with nearest true beat at 2164 (dist 788ms)
+data/181,3,startup_transient,Detected at sample 3 (<1.0s) during filter and adaptive threshold settling
+data/181,220,startup_transient,Detected at sample 220 (<1.0s) during filter and adaptive threshold settling
+data/181,2364,baseline_wander,Detected at sample 2364 with nearest true beat at 2125 (dist 956ms)
+data/182,103,startup_transient,Detected at sample 103 (<1.0s) during filter and adaptive threshold settling
+data/182,2354,baseline_wander,Detected at sample 2354 with nearest true beat at 2185 (dist 676ms)
+data/183,78,startup_transient,Detected at sample 78 (<1.0s) during filter and adaptive threshold settling
+data/183,2372,baseline_wander,Detected at sample 2372 with nearest true beat at 2184 (dist 752ms)
+data/184,83,startup_transient,Detected at sample 83 (<1.0s) during filter and adaptive threshold settling
+data/184,2297,baseline_wander,Detected at sample 2297 with nearest true beat at 2042 (dist 1020ms)
+data/185,126,startup_transient,Detected at sample 126 (<1.0s) during filter and adaptive threshold settling
+data/185,2415,baseline_wander,Detected at sample 2415 with nearest true beat at 2244 (dist 684ms)
+data/186,88,startup_transient,Detected at sample 88 (<1.0s) during filter and adaptive threshold settling
+data/186,2475,baseline_wander,Detected at sample 2475 with nearest true beat at 2272 (dist 812ms)
+data/187,4,startup_transient,Detected at sample 4 (<1.0s) during filter and adaptive threshold settling
+data/187,193,startup_transient,Detected at sample 193 (<1.0s) during filter and adaptive threshold settling
+data/187,2469,baseline_wander,Detected at sample 2469 with nearest true beat at 2239 (dist 920ms)
+data/188,3,startup_transient,Detected at sample 3 (<1.0s) during filter and adaptive threshold settling
+data/188,53,startup_transient,Detected at sample 53 (<1.0s) during filter and adaptive threshold settling
+data/189,75,startup_transient,Detected at sample 75 (<1.0s) during filter and adaptive threshold settling
+data/190,2,startup_transient,Detected at sample 2 (<1.0s) during filter and adaptive threshold settling
+data/190,69,startup_transient,Detected at sample 69 (<1.0s) during filter and adaptive threshold settling
+data/190,2487,baseline_wander,Detected at sample 2487 with nearest true beat at 2326 (dist 644ms)
+data/191,7,startup_transient,Detected at sample 7 (<1.0s) during filter and adaptive threshold settling
+data/191,173,startup_transient,Detected at sample 173 (<1.0s) during filter and adaptive threshold settling
+data/191,2368,baseline_wander,Detected at sample 2368 with nearest true beat at 2122 (dist 984ms)
+data/192,255,baseline_wander,Detected at sample 255 with nearest true beat at 515 (dist 1040ms)
+data/192,2493,baseline_wander,Detected at sample 2493 with nearest true beat at 2248 (dist 980ms)
+data/193,59,startup_transient,Detected at sample 59 (<1.0s) during filter and adaptive threshold settling
+data/193,2457,baseline_wander,Detected at sample 2457 with nearest true beat at 2213 (dist 976ms)
+data/194,72,startup_transient,Detected at sample 72 (<1.0s) during filter and adaptive threshold settling
+data/194,2388,baseline_wander,Detected at sample 2388 with nearest true beat at 2117 (dist 1084ms)
+data/195,3,startup_transient,Detected at sample 3 (<1.0s) during filter and adaptive threshold settling
+data/195,65,startup_transient,Detected at sample 65 (<1.0s) during filter and adaptive threshold settling
+data/195,2288,baseline_wander,Detected at sample 2288 with nearest true beat at 2072 (dist 864ms)
+data/196,162,startup_transient,Detected at sample 162 (<1.0s) during filter and adaptive threshold settling
+data/196,2357,baseline_wander,Detected at sample 2357 with nearest true beat at 2154 (dist 812ms)
+data/197,75,startup_transient,Detected at sample 75 (<1.0s) during filter and adaptive threshold settling
+data/197,2357,baseline_wander,Detected at sample 2357 with nearest true beat at 2173 (dist 736ms)
+data/198,102,startup_transient,Detected at sample 102 (<1.0s) during filter and adaptive threshold settling
+data/198,2329,baseline_wander,Detected at sample 2329 with nearest true beat at 2085 (dist 976ms)
+data/199,29,startup_transient,Detected at sample 29 (<1.0s) during filter and adaptive threshold settling
+data/199,2341,baseline_wander,Detected at sample 2341 with nearest true beat at 2092 (dist 996ms)
+data/200,27,startup_transient,Detected at sample 27 (<1.0s) during filter and adaptive threshold settling
+data/200,2415,baseline_wander,Detected at sample 2415 with nearest true beat at 2171 (dist 976ms)

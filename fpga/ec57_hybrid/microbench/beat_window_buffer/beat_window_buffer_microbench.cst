@@ -1,0 +1,4 @@
+// Only the 27 MHz clock is physically constrained.  Any generated bitstream
+// is a synthesis artifact and is prohibited from board download.
+IO_LOC "clk" 4;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;

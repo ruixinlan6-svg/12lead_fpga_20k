@@ -1,0 +1,14 @@
+{
+  "database": "Lobachevsky University Electrocardiography Database",
+  "version": "1.0.1",
+  "official_fixed_version_url": "https://physionet.org/files/ludb/1.0.1/",
+  "download_archive_url": "https://physionet.org/content/ludb/get-zip/1.0.1/",
+  "doi": "10.13026/eegm-h675",
+  "license": "Open Data Commons Attribution License v1.0",
+  "license_summary": "Open data; attribution is required. See the bundled LICENSE.txt for controlling terms.",
+  "published_sha256_verification": {
+    "sha256s_file": "SHA256SUMS.txt",
+    "sha256s_file_sha256": "cccef1f3529519db8f26a333c97a6872a7d0e3e5c64a1448b76b161fd87fb75f",
+    "verified_file_count": 2805
+  }
+}

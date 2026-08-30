@@ -1,0 +1,14 @@
+{
+  "run_id": "20260828-0943-m1-software-reference-correction",
+  "generated_at": "2026-08-28T06:32:02.891897+00:00",
+  "database_accessed": false,
+  "ludb_present": false,
+  "ludb_evaluation_status": "not_evaluated",
+  "database_roots": "redacted; no database root was opened by this M1 run",
+  "contract_sha256": {
+    "D:/project/gowin_project/0_fpga_test/test3/contracts/ec57_hybrid_io_contract.json": "b8807311d36f42a141ac169c109bb707127e84d414f08e76f6c77d81f6adf718",
+    "D:/project/gowin_project/0_fpga_test/test3/contracts/ec57_hybrid_metrics_contract.json": "45a91e61ac4fd5f02a882b7a3ecc8c31d3d6f8c5e845f31bca7114fe5776aa95",
+    "D:/project/gowin_project/0_fpga_test/test3/contracts/ec57_label_mapping_v1.json": "e32911ceb539aa4844d81bffb02c6970b4ed1014db7e683be51e6a113308849e"
+  },
+  "synthetic_registry_manifest_sha256": "d761930c073e7545a2820d28062d577e626cf23d75f53778c0946e16dfbd6089"
+}

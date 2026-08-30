@@ -1,0 +1,25 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW2AR-18C" pn="GW2AR-LV18QN88C8/I7">gw2ar18c-000</Device>
+    <FileList>
+        <File path="D:/project/gowin_project/0_fpga_test/test3/fpga/model_full/ecg_sync_dp_ram.sv" type="file.verilog" enable="1"/>
+        <File path="D:/project/gowin_project/0_fpga_test/test3/fpga/model_full/qn88_uart_byte_rx.sv" type="file.verilog" enable="1"/>
+        <File path="D:/project/gowin_project/0_fpga_test/test3/fpga/scheme_b/qn88_scheme_b_top.sv" type="file.verilog" enable="1"/>
+        <File path="D:/project/gowin_project/0_fpga_test/test3/fpga/scheme_b/sdram_layer_dma.sv" type="file.verilog" enable="1"/>
+        <File path="D:/project/gowin_project/0_fpga_test/test3/fpga/scheme_b/tiny_ecgcnn_stream_core.sv" type="file.verilog" enable="1"/>
+        <File path="D:/project/gowin_project/0_fpga_test/test3/fpga/scheme_b/weight_storage_ram.sv" type="file.verilog" enable="1"/>
+        <File path="D:/project/gowin_project/0_fpga_test/test3/fpga/sdram_probe/sdrc_defines.v" type="file.verilog" enable="1"/>
+        <File path="D:/project/gowin_project/0_fpga_test/test3/fpga/uart_probe/qn88_uart_frame_tx.v" type="file.verilog" enable="1"/>
+        <File path="D:/software/Gowin/Gowin_V1.9.12.03_x64/IDE/ipcore/SDRC_EMB/data/GENERAL/SDRAM_controller_top_SIP.v" type="file.verilog" enable="1"/>
+        <File path="D:/software/Gowin/Gowin_V1.9.12.03_x64/IDE/ipcore/SDRC_EMB/data/GENERAL/sdrc_autorefresh.v" type="file.verilog" enable="1"/>
+        <File path="D:/software/Gowin/Gowin_V1.9.12.03_x64/IDE/ipcore/SDRC_EMB/data/GENERAL/sdrc_control_fsm.v" type="file.verilog" enable="1"/>
+        <File path="D:/software/Gowin/Gowin_V1.9.12.03_x64/IDE/ipcore/SDRC_EMB/data/GENERAL/sdrc_top.v" type="file.verilog" enable="1"/>
+        <File path="D:/software/Gowin/Gowin_V1.9.12.03_x64/IDE/ipcore/SDRC_EMB/data/GENERAL/sdrc_user_interface.v" type="file.verilog" enable="1"/>
+        <File path="D:/software/Gowin/Gowin_V1.9.12.03_x64/IDE/ipcore/SDRC_EMB/data/GENERAL/top_defines.v" type="file.verilog" enable="1"/>
+        <File path="D:/project/gowin_project/0_fpga_test/test3/fpga/sdram_probe/pins.cst" type="file.cst" enable="1"/>
+        <File path="D:/project/gowin_project/0_fpga_test/test3/fpga/sdram_probe/timing.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>

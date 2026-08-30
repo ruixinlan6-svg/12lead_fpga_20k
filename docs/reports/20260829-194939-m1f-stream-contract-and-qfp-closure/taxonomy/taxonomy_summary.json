@@ -1,0 +1,57 @@
+{
+  "dataset": "LUDB 1.0.1 (200 records)",
+  "total_references": 1832,
+  "fixed_causal": {
+    "total_qfp": 333,
+    "total_qfn": 8,
+    "fp_breakdown": {
+      "baseline_wander_noise": {
+        "count": 212,
+        "percentage": 63.66
+      },
+      "startup_transient": {
+        "count": 112,
+        "percentage": 33.63
+      },
+      "t_wave_misdetection": {
+        "count": 8,
+        "percentage": 2.4
+      },
+      "cross_window_boundary": {
+        "count": 1,
+        "percentage": 0.3
+      }
+    },
+    "fn_breakdown": {
+      "sub_threshold_amplitude": {
+        "count": 7,
+        "percentage": 87.5
+      },
+      "suboptimal_lead_selection": {
+        "count": 1,
+        "percentage": 12.5
+      }
+    }
+  },
+  "float_lookahead": {
+    "total_qfp": 657,
+    "fp_breakdown": {
+      "baseline_wander_noise": {
+        "count": 275,
+        "percentage": 41.86
+      },
+      "startup_transient": {
+        "count": 231,
+        "percentage": 35.16
+      },
+      "t_wave_misdetection": {
+        "count": 144,
+        "percentage": 21.92
+      },
+      "cross_window_boundary": {
+        "count": 7,
+        "percentage": 1.07
+      }
+    }
+  }
+}

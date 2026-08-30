@@ -1,0 +1,42 @@
+{
+  "candidate_name": "candidate_a_morph",
+  "description": "Candidate A: 160-sample waveform only (scalar features zeroed), gain augmentation (0.8-1.2), weighted CE loss",
+  "model": {
+    "architecture": "TinyECGCNN_NV",
+    "in_channels": 1,
+    "input_length": 160,
+    "num_features": 4,
+    "use_features": false,
+    "num_classes": 2
+  },
+  "data": {
+    "sample_rate_hz": 250,
+    "window_length": 160,
+    "r_peak_index": 64,
+    "max_beats_per_patient_epoch": 10000,
+    "max_pos_neg_ratio": "1:4"
+  },
+  "augmentation": {
+    "gain_range": [0.8, 1.2],
+    "baseline_wander": false,
+    "gaussian_noise": false
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 1024,
+    "max_epochs": 50,
+    "early_stopping_metric": "val_veb_f1",
+    "early_stopping_patience": 8,
+    "loss": "weighted_cross_entropy",
+    "veb_class_weight": 2.5
+  },
+  "threshold_search": {
+    "metric_priority": ["veb_plus_p_ge_95", "veb_fpr_le_0_25", "max_veb_se"],
+    "min_veb_plus_p": 0.95,
+    "max_veb_fpr": 0.0025,
+    "scan_range": [0.001, 0.999],
+    "scan_step": 0.001
+  }
+}

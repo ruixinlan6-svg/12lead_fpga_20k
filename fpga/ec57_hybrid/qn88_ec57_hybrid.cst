@@ -1,0 +1,32 @@
+// Tang Nano 20K Physical Pin Constraints for Twelve-Lead ECG EC57 Hybrid Architecture
+// Device: GW2AR-LV18QN88C8/I7
+
+IO_LOC "clk" 4;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+
+IO_LOC "rst_n" 88;
+IO_PORT "rst_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+IO_LOC "uart_tx" 69;
+IO_PORT "uart_tx" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8;
+
+IO_LOC "uart_rx" 70;
+IO_PORT "uart_rx" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+IO_LOC "led_heartbeat" 15;
+IO_PORT "led_heartbeat" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "led_qrs" 16;
+IO_PORT "led_qrs" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "led_veb" 17;
+IO_PORT "led_veb" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "led_arrhythmia" 18;
+IO_PORT "led_arrhythmia" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "led_sig_loss" 19;
+IO_PORT "led_sig_loss" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "led_uart_act" 20;
+IO_PORT "led_uart_act" IO_TYPE=LVCMOS33 DRIVE=8;

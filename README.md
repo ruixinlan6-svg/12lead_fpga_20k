@@ -2,7 +2,7 @@
 
 在 Sipeed Tang Nano 20K（Gowin GW2AR-18C）上研究十二导联 ECG 多标签模型的训练、INT8 量化、FPGA/NPU 部署和板级验证。
 
-> 当前状态：QN88/SDRAM 路线已确认；PTB-XL 全量下载、三 seed FP32 基线和完整 checkpoint INT8 PTQ 已通过。板卡有可用串口：COM9/COM10 均枚举为 FT2232，其中 COM10 已实测接收 FPGA PIN69 的 UART；INT8 算术 smoke 已通过 COM10 状态帧。QN88 SDRAM 非破坏性 volatile smoke 已通过八次清空缓冲后的 `P1 E0` 回读；首读为零的根因定位为 Gowin SDRAM 魔法端口未置于顶层，复位延长不是根因。项目不是医疗器械，公开数据集结果不能作为临床诊断声明。
+> 当前状态：QN88/SDRAM 路线已确认；EC57 混合架构的 M1 因果纯整数 QRS 开发基线已在 LUDB 1.0.1 的 200/200 条记录上正式验收，下一阶段是重新训练 M2 VEB 候选，旧 M2 候选保持撤销。板卡有可用串口：COM9/COM10 均枚举为 FT2232，其中 COM10 已实测接收 FPGA PIN69 的 UART；QN88 SDRAM 非破坏性 volatile smoke 和既有 TinyECGCNN 五 logits SRAM 实板闭环已有独立记录。项目不是医疗器械，LUDB 开发结果不代表通过 EC57、FDA 或临床验证。
 
 ## 首轮目标
 
@@ -20,17 +20,17 @@
 
 ## 已验证入口（2026-08-26）
 
-- 全量 PTB-XL 异步下载器：[train/download_ptbxl_async.py](train/download_ptbxl_async.py)。远端私有数据目录为 `C:/Users/Administrator/Desktop/LRX/12lead_fpga_20k_m1/data/ptb-xl/1.0.3`；最终验收为 21,799 对 `records100/*_lr` 文件、0 个 `.part` 文件，manifest SHA-256 记录在 `20260826-1611-m1-ptbxl-record-parser-fix`。
+- 全量 PTB-XL 异步下载器：[train/download_ptbxl_async.py](train/download_ptbxl_async.py)。数据保存在不进入 Git 的远端私有缓存；最终验收为 21,799 对 `records100/*_lr` 文件、0 个 `.part` 文件，manifest SHA-256 记录在 `20260826-1611-m1-ptbxl-record-parser-fix`。
 - 完整 FP32 基线：远端 `runs/20260826-1613-m1-ptbxl-full-fp32-retry`，三 seed 测试 macro AUROC 为 0.8578–0.8624；checkpoint 仅保留在远端，不进 Git。
 - 完整 checkpoint INT8 PTQ：远端 `runs/20260826-1634-m2-ptq-full-checkpoint/seed1`，验证集 AUROC 下降 0.00039；量化 contract 和 golden vectors 的哈希见对应迭代记录。
 - 模型复现验证：`20260826-1908-m2-model-verify` 在同一完整 registry、seed1 checkpoint 和 2,048 条校准样本上重新生成 PTQ；metrics、量化 contract、INT8 权重和 4 个 Golden 数组与既有结果逐项/逐元素一致。该结果确认软件模型与量化产物可复现，但尚未验证模型级 QN88 FPGA 推理。
-- 模型级 RTL 闭环：`20260826-2056-m3b-sync-bram` 已将 CNN 大型缓存改为同步读 BRAM 形式，并把互斥的第一/第二残差缓存合并；软件整数图、逐层 RTL、UART/SDRAM 行为回读和五个 logits 仍精确一致（`32,-22,-21,-19,-21`）。`20260827-0824-m3b-sram-download-retry` 修复了 QN88 Programmer 的 FTDI A 接口绑定，实测 `GW2AR-18C` SRAM 下载 100%、状态 `0x00006020`；正式模型 PnR 资源为 14,644 logic、2,303 FF、37/46 BSRAM、24/24 DSP，并生成 SHA-256 为 `1AB9719AF390A46243D0AF39F6370C24036C32EDD4346B48201A0ACAEC3DDC4C` 的 `.fs`。同时将 SDRAM 请求握手对齐已通过的 QN88 探针，并为 26-word 突发采用行安全地址间隔。当前 COM10 全量模型实测仍返回 `ECG P0 S0 D0 L=00 00 00 00 00`，因此时序（setup slack 约 `-134.070 ns`）和模型顶层 SDRAM 首次读回仍未闭合，不能宣称板级 ECG logits。
+- 模型级 RTL 闭环：`20260826-2056-m3b-sync-bram` 完成同步 BRAM 重构，`20260827-0824-m3b-sram-download-retry` 恢复 QN88 SRAM 下载链路；随后 `20260827-1055-m4-model-full-hardware-closure` 在实板得到三次一致、与整数 Golden bit-exact 的五 logits `[32,-22,-21,-19,-21]`，并完成 27 MHz 时序闭合。该闭环属于既有 TinyECGCNN 演示模型，不等同于当前 EC57 混合架构的 M2 VEB 模型或最终监管验证。
 - QN88 SDRAM 非破坏性探针：[fpga/sdram_probe/README.md](fpga/sdram_probe/README.md)。构建入口为 `fpga/sdram_probe/build_qn88.tcl`，只允许 SRAM 下载；当前接受构建在 COM10 稳定报告 `SD I1 P1 E0 C=19 D=0000 X=0000`。首读零、低位偏移、尾脉冲和突发状态泄漏均已按迭代记录闭合；`read_write_test_passed` 已更新为 true，但这仍不是长时保持或完整 ECG 模型流量证明。
 - QN88 INT8 算术实板 smoke：[fpga/inference_smoke/README.md](fpga/inference_smoke/README.md)。它验证 8 项 INT8 点积 240、重定标结果 120，并已在 COM10 读取 `INFER D=00F0 Q=78 P=1`；这不等同于完整 ECG 模型准确率。
 
 模型级 RTL 的可复用入口在 [fpga/model_full](fpga/model_full/) 和 [tools/model_full](tools/model_full/)：`ecg_integer_reference.py` 做 NumPy 整数参考，`tb_tiny_ecgcnn_full.sv` 做逐层对拍，`qn88_model_full_top.sv` 定义 `ECG0` + 输入/权重字节流、SDRAM 回读校验和五 logits UART 帧。硬件构建采用两步：先运行 `tools/model_full/build_core_synth.tcl` 生成 RAM/DSP 已映射的 `build_core/model_core_only/impl/gwsynthesis/model_core_only.vg`，再运行 `fpga/model_full/build_qn88_model_full.tcl` 完成顶层综合、布局布线和 bitstream。权重协议按 100 字节 SDRAM burst 分块；诊断镜像可用 HIL 的 `--wait-ack`，正式镜像应依照板端握手或足够长的块间暂停。完整结果见 [M3b 记录](docs/iterations/records/20260826-2056-m3b-sync-bram.md) 和 [下载重试记录](docs/iterations/records/20260827-0824-m3b-sram-download-retry.md)。
 
-M3b 生成的 `.fs` 只能通过 SRAM 直接运行方式下载；使用 Gowin Programmer 时应选择 `GW2AR-18C`、`--run 2` 和 `--fsFile`，不要使用 Flash/`--run 44`。当前已验证 Programmer 能识别 QN88 并完成 SRAM 下载，COM10 也能接收 UART；但正式模型全量实测尚未通过 `ECG P1 S1 D1` 和 Golden logits，下一轮应先解决模型顶层 SDRAM 首次读回/时序，再重复该闭环。
+所有 `.fs` 仍只允许通过 SRAM 直接运行方式下载；使用 Gowin Programmer 时应选择 `GW2AR-18C`、`--run 2` 和 `--fsFile`，不要使用 Flash/`--run 44`。既有 TinyECGCNN 模型闭环已完成，但 EC57 混合架构必须重新从 M2 训练、量化和整数 Golden 开始，不能把旧模型的实板结果当成新模型验收。
 
 后续 Agent 在任何训练、量化、RTL、综合或板测前，必须先为本轮创建新的 `docs/iterations/records/<run_id>.md` 并更新 `INDEX.md`；重试也必须使用新 ID。当前可用的机器可读状态通道为 COM10；JTAG “SRAM Program” 成功仍不能替代状态帧或 LED 观察。
 

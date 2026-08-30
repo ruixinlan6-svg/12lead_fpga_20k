@@ -1,0 +1,11 @@
+[SCENARIO 1] single exact 160-point window
+[SCENARIO 2] two overlapping QRS windows
+[SCENARIO 3] circular BSRAM address wrap
+[SCENARIO 4] warm-up event rejection
+[SCENARIO 5] pending queue overflow is explicit
+[SCENARIO 6] malformed sample sequence flushes pending work
+[SCENARIO 7] reset during output and clean recovery
+[SCENARIO 8] continuous write plus synchronous read alignment
+[SCENARIO 9] segment-local warm-up on first sample
+BEAT_WINDOW_BUFFER_ALL_PASS scenarios=9 completed_windows=10 checked_points=1621
+fpga/ec57_hybrid/tb/tb_beat_window_buffer.sv:439: $finish called at 46106000 (1ps)

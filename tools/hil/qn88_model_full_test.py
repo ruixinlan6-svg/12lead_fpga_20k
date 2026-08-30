@@ -45,10 +45,12 @@ def parse_frame(frame: bytes) -> dict:
     tokens = text.split()
     result = {"raw": text, "valid_prefix": bool(tokens and tokens[0] == "ECG")}
     for token in tokens[1:]:
-        if len(token) == 2 and all(ch in "0123456789ABCDEF" for ch in token.upper()):
-            result.setdefault("logits", []).append(signed_byte(int(token, 16)))
-        elif len(token) == 2 and token[0] in "PSD" and token[1] in "01":
+        if len(token) == 2 and token[0] in "PSD" and token[1] in "01":
             result[token[0]] = token[1] == "1"
+        elif token.startswith("L=") and len(token) == 4 and all(ch in "0123456789ABCDEF" for ch in token[2:].upper()):
+            result.setdefault("logits", []).append(signed_byte(int(token[2:], 16)))
+        elif len(token) == 2 and all(ch in "0123456789ABCDEF" for ch in token.upper()):
+            result.setdefault("logits", []).append(signed_byte(int(token, 16)))
     return result
 
 
@@ -98,8 +100,14 @@ def main() -> int:
         # are sent in 100-byte chunks because the FPGA keeps only one active
         # SDRAM burst on chip; after each chunk it writes, reads, compares, and
         # drains the burst before accepting the next chunk.
-        ser.write(b"ECG0" + input_bytes)
+        ser.write(b"ECG0")
         ser.flush()
+        time.sleep(0.01)
+        for offset in range(0, len(input_bytes), 100):
+            ser.write(input_bytes[offset : offset + 100])
+            ser.flush()
+            if args.burst_pause:
+                time.sleep(args.burst_pause)
         if args.input_pause:
             time.sleep(args.input_pause)
         received = bytearray()

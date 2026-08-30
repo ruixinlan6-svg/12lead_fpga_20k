@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="ecg_gowin_primitives_microbench_top" Register="146" Alu="32" Lut="171" T_Register="162(146)" T_Alu="96(32)" T_Lut="740(171)" T_MULT36X36="1(0)" T_Bsram="2(0)">
+ <SubModule name="u_sp_ram" Bsram="1" T_Bsram="1(1)"/>
+ <SubModule name="u_dp_ram" Bsram="1" T_Bsram="1(1)"/>
+ <SubModule name="u_requant_mac" Register="16" Alu="64" Lut="569" MULT36X36="1" T_Register="16(16)" T_Alu="64(64)" T_Lut="569(569)" T_MULT36X36="1(1)"/>
+</Module>

@@ -1,0 +1,268 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_id": "qn88-ec57-hybrid-metrics",
+  "contract_version": "1.1.0",
+  "status": "frozen-for-M1",
+  "scope": "research_prevalidation_not_fda_acceptance",
+  "standard_context": {
+    "method": "EC57-style reporting with WFDB bxb/sumstats reference implementation",
+    "match_window_ms": 150,
+    "learning_period_s": 300,
+    "aami_mapping": "freeze and sign the authorized ANSI/AAMI EC57:2012/(R)2020 mapping before formal evaluation",
+    "reporting_levels": [
+      "per_record",
+      "database_gross",
+      "database_average",
+      "per_patient"
+    ],
+    "database_isolation": "locked databases are not used for training, PTQ/calibration, tuning, golden generation, or debugging"
+  },
+  "raw_counts": {
+    "qrs": [
+      "QTP",
+      "QFN",
+      "QFP"
+    ],
+    "veb": [
+      "VTP",
+      "VFN",
+      "VFP",
+      "VTN"
+    ],
+    "require_raw_counts": true,
+    "zero_denominator_value": "N/A"
+  },
+  "ludb_qrs_evaluation": {
+    "purpose": "development gate only; not an EC57 locked-database claim",
+    "gate_scope": "annotation_support",
+    "support_rule": {
+      "start": "first_reference_minus_tolerance",
+      "stop": "last_reference_plus_tolerance",
+      "tolerance_ms": 150,
+      "inclusive": true,
+      "conversion": "exact time-domain bound; do not round outward to a whole sample"
+    },
+    "full_record_metrics": "required_diagnostic",
+    "detector_outputs_may_be_changed_by_scoring": false,
+    "medical_gate_reference": "causal_pure_integer",
+    "float_reference_role": "independent_diagnostic",
+    "float_integer_timestamp_equality_required": false
+  },
+  "metrics": {
+    "qrs_se": {
+      "display_name": "QRS Se",
+      "formula": "QTP / (QTP + QFN) * 100",
+      "numerator": "QTP",
+      "denominator": "QTP + QFN",
+      "unit": "percent",
+      "zero_denominator": "N/A",
+      "internal_thresholds_percent": {
+        "Icentia_internal_test": 99.0,
+        "LUDB": 99.5,
+        "INCART": 99.0,
+        "MIT_BIH_Arrhythmia": 99.5,
+        "AHA": 99.5,
+        "NST": 95.0
+      }
+    },
+    "qrs_plus_p": {
+      "display_name": "QRS +P",
+      "formula": "QTP / (QTP + QFP) * 100",
+      "numerator": "QTP",
+      "denominator": "QTP + QFP",
+      "unit": "percent",
+      "zero_denominator": "N/A",
+      "internal_thresholds_percent": {
+        "Icentia_internal_test": 99.0,
+        "LUDB": 99.5,
+        "INCART": 99.0,
+        "MIT_BIH_Arrhythmia": 99.5,
+        "AHA": 99.5,
+        "NST": 85.0
+      }
+    },
+    "veb_se": {
+      "display_name": "VEB Se",
+      "formula": "VTP / (VTP + VFN) * 100",
+      "numerator": "VTP",
+      "denominator": "VTP + VFN",
+      "unit": "percent",
+      "zero_denominator": "N/A",
+      "internal_thresholds_percent": {
+        "Icentia_internal_test": 90.0,
+        "INCART": 85.0,
+        "MIT_BIH_Arrhythmia": 85.0,
+        "AHA": 85.0,
+        "NST": 85.0
+      },
+      "competitive_target_percent": {
+        "MIT_BIH_Arrhythmia": 90.0,
+        "AHA": 90.0
+      }
+    },
+    "veb_plus_p": {
+      "display_name": "VEB +P",
+      "formula": "VTP / (VTP + VFP) * 100",
+      "numerator": "VTP",
+      "denominator": "VTP + VFP",
+      "unit": "percent",
+      "zero_denominator": "N/A",
+      "internal_thresholds_percent": {
+        "Icentia_internal_test": 95.0,
+        "INCART": 90.0,
+        "MIT_BIH_Arrhythmia": 95.0,
+        "AHA": 95.0,
+        "NST": 85.0
+      }
+    },
+    "veb_fpr": {
+      "display_name": "VEB FPR",
+      "formula": "VFP / (VTN + VFP) * 100",
+      "numerator": "VFP",
+      "denominator": "VTN + VFP",
+      "unit": "percent",
+      "zero_denominator": "N/A",
+      "internal_thresholds_percent": {
+        "Icentia_internal_test": 0.25,
+        "INCART": 0.5,
+        "MIT_BIH_Arrhythmia": 0.25,
+        "AHA": 0.25,
+        "NST": 1.0
+      },
+      "comparison": "less_than_or_equal"
+    }
+  },
+  "heart_rate": {
+    "declared_range_bpm": [
+      30,
+      220
+    ],
+    "maximum_absolute_error_bpm": 5,
+    "required_reports": [
+      "mean_error",
+      "MAE",
+      "RMSE",
+      "maximum_absolute_error",
+      "95_percent_error_interval",
+      "WFDB_normalized_RMS_measurement_error"
+    ],
+    "reference_generation": "must be recorded; no silent assumption that a single WFDB sample method is universal",
+    "invalid_output_reports": [
+      "no_output_count",
+      "timeout_count",
+      "stale_held_value_count",
+      "stale_held_duration_s",
+      "out_of_range_count"
+    ]
+  },
+  "quantization_degradation": {
+    "comparison": "same Icentia internal_test and frozen thresholds for FP32 versus PTQ/QAT",
+    "qrs_metric_absolute_degradation_max_percentage_points": 0.0,
+    "veb_se_absolute_degradation_max_percentage_points": 0.5,
+    "veb_plus_p_absolute_degradation_max_percentage_points": 0.5,
+    "veb_fpr_absolute_increase_max_percentage_points": 0.5,
+    "beat_class_agreement_min_percent": 99.9,
+    "failure_action": "create a new QAT run; do not relax the gate or edit individual outputs"
+  },
+  "bit_exact": {
+    "core_golden_beats": 4096,
+    "required_exact_outputs": [
+      "every_layer_signed_int8_activation",
+      "two_signed_int32_logits",
+      "final_beat_class"
+    ],
+    "implementations": [
+      "integer_python_reference",
+      "rtl_simulation",
+      "QN88_SRAM_FPGA"
+    ],
+    "streaming_exact_outputs": [
+      "qrs_sample_index",
+      "HR",
+      "SQI",
+      "lead_id",
+      "beat_class",
+      "research_event_start_end"
+    ],
+    "fixed_latency_compensation": "one predeclared constant only; never move timestamps per record"
+  },
+  "resources": {
+    "device": "GW2AR-LV18QN88C8/I7",
+    "device_capacity": {
+      "LUT4": 20736,
+      "BSRAM": 46,
+      "DSP_18x18": 48
+    },
+    "compute_core_max": {
+      "LUT4": 8000,
+      "BSRAM": 12,
+      "DSP_18x18": 8
+    },
+    "complete_system_max": {
+      "LUT4": 16000,
+      "BSRAM": 32,
+      "DSP_18x18": 24
+    },
+    "report_required": [
+      "synthesis_utilization",
+      "hierarchical_BSRAM_inference",
+      "hierarchical_DSP_inference",
+      "unmapped_RAM_or_DSP_warning"
+    ],
+    "gate": "RTL simulation alone is insufficient; synthesized reports must prove BSRAM/DSP inference"
+  },
+  "timing": {
+    "clock_hz": 27000000,
+    "clock_mhz": 27,
+    "pnr_worst_slack_min_ns": 0.0,
+    "qrs_output_latency_max_ms": 200,
+    "beat_output_latency_max_ms": 450,
+    "fixed_post_window_ms": 384,
+    "input_throughput_samples_per_s": 3000,
+    "continuous_run_duration_h": 2,
+    "continuous_run_error_max": 0
+  },
+  "hil": {
+    "download_mode": "SRAM_only",
+    "flash_write_authorized": false,
+    "core_golden_expected": "4096/4096 PASS, first_mismatch=none",
+    "mismatch_thresholds": {
+      "qrs_mismatch": 0,
+      "logit_mismatch": 0,
+      "event_mismatch": 0,
+      "transport_errors": 0,
+      "crc_errors": 0,
+      "sequence_errors": 0,
+      "overflow_errors": 0,
+      "reset_errors": 0,
+      "timeout_errors": 0
+    },
+    "latency_reports": [
+      "core_inference_latency",
+      "R_peak_to_beat_output_latency",
+      "host_serial_transport_latency"
+    ],
+    "development_hil_data_only": true,
+    "locked_database_hil_debug_forbidden": true
+  },
+  "confidence_intervals": {
+    "proportion": "Wilson 95%",
+    "patient_level_bootstrap_iterations": 10000,
+    "patient_level_bootstrap_seed": 20260827
+  },
+  "failure_accounting": {
+    "zero_denominator": "N/A",
+    "count_as_failures": [
+      "missing_output",
+      "CRC_error",
+      "timeout",
+      "cache_overflow",
+      "FIFO_overflow",
+      "unmarked_packet_loss",
+      "duplicate_sample",
+      "out_of_order_sample"
+    ],
+    "veb_fp_per_hour": "VFP / valid_test_hours; report separately from VEB FPR"
+  },
+  "regulatory_boundary": "All numeric gates in this contract are internal candidate research gates, not universal FDA or EC57 minimum scores."
+}

@@ -1,0 +1,8 @@
+record_id,status,QFN,QFP,float_fixed_mismatch_count,reason
+data/13,evaluated,0,1,0,QRS miss/false-positive or float/fixed mismatch
+data/24,evaluated,0,2,0,QRS miss/false-positive or float/fixed mismatch
+data/59,evaluated,0,1,0,QRS miss/false-positive or float/fixed mismatch
+data/74,evaluated,8,0,0,QRS miss/false-positive or float/fixed mismatch
+data/83,evaluated,0,1,0,QRS miss/false-positive or float/fixed mismatch
+data/103,evaluated,0,2,0,QRS miss/false-positive or float/fixed mismatch
+data/111,evaluated,0,1,0,QRS miss/false-positive or float/fixed mismatch

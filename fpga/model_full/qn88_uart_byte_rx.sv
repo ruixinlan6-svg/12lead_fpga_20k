@@ -1,8 +1,5 @@
 `timescale 1ns/1ps
 
-// Minimal 8-N-1 receiver for the model-loading path.  The board clock and
-// baud are deliberately parameters so the same protocol can be simulated at
-// a smaller divider; the production QN88 values are 27 MHz / 115200 baud.
 module qn88_uart_byte_rx #(
     parameter integer CLK_HZ = 27000000,
     parameter integer BAUD = 115200

@@ -1,0 +1,14 @@
+{
+  "sample_rate_hz": 250,
+  "qrs_bandpass_hz": [
+    5.0,
+    25.0
+  ],
+  "synthetic_learning_period_s": 0,
+  "locked_database_learning_period_s": 300,
+  "match_window_ms": 150,
+  "sqi_window_samples": 500,
+  "refractory_period_samples": 50,
+  "searchback_rr_multiplier": 1.66,
+  "synthetic_only": true
+}

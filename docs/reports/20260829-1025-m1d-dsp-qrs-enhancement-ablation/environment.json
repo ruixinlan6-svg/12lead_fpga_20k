@@ -1,0 +1,10 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "packages": {
+    "python": "3.10.19",
+    "wfdb": "4.3.0",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3"
+  },
+  "gpu_used": false
+}

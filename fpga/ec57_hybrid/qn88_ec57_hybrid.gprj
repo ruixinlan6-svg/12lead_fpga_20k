@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW2AR-18C" pn="GW2AR-LV18QN88C8/I7">gw2ar18c-000</Device>
+    <FileList>
+        <File path="ecg_sync_sp_ram.sv" type="file.verilog" enable="1"/>
+        <File path="ecg_sync_dp_ram.sv" type="file.verilog" enable="1"/>
+        <File path="ecg_requant_mac.sv" type="file.verilog" enable="1"/>
+        <File path="beat_window_buffer.sv" type="file.verilog" enable="1"/>
+        <File path="ecg_biquad_timeshare.sv" type="file.verilog" enable="1"/>
+        <File path="lead_sqi_select.sv" type="file.verilog" enable="1"/>
+        <File path="qrs_detector_fixed.sv" type="file.verilog" enable="1"/>
+        <File path="nv_cnn_core.sv" type="file.verilog" enable="1"/>
+        <File path="rhythm_engine.sv" type="file.verilog" enable="1"/>
+        <File path="ec57_uart_protocol.sv" type="file.verilog" enable="1"/>
+        <File path="qn88_ec57_hybrid_top.sv" type="file.verilog" enable="1"/>
+        <File path="qn88_ec57_hybrid.cst" type="file.cst" enable="1"/>
+        <File path="qn88_ec57_hybrid.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>

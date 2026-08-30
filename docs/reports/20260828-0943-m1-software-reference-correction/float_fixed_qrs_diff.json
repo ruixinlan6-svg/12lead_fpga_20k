@@ -1,0 +1,21 @@
+{
+  "synthetic_case": "m1_synthetic_qrs",
+  "reference_peak_indices": [
+    200,
+    500,
+    800
+  ],
+  "float_peak_indices": [
+    200,
+    500,
+    800
+  ],
+  "fixed_peak_indices": [
+    200,
+    500,
+    800
+  ],
+  "first_mismatch": null,
+  "mismatch_count": 0,
+  "status": "pass"
+}

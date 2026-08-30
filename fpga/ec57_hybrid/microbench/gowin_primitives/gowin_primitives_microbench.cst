@@ -1,0 +1,3 @@
+// Physical constraints for Gowin primitives microbenchmark
+IO_LOC "clk" 4;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;

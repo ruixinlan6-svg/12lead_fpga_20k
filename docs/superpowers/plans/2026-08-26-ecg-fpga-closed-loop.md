@@ -52,11 +52,14 @@
 | 优先级 | 数据集 | 用途 | 计划中的使用方式 |
 |---|---|---|---|
 | P0 | PTB-XL | 主训练与内部基准 | 先取官方 100 Hz 版本，按患者隔离 folds 做 5 诊断超类多标签基线；保存版本、许可、文件哈希和划分清单 |
+| P0-R | MIT-BIH Arrhythmia DB | EC57 QRS/VEB 逐搏预验证 | 使用完整适用记录生成冻结算法的 WFDB test annotations；以官方 `bxb`/`sumstats` 统计每记录、gross 和 average 结果，不与 PTB-XL 整段分类混算 |
+| P0-R | MIT-BIH Noise Stress Test DB | EC57 噪声鲁棒性预验证 | 按官方记录与噪声等级测试 QRS/VEB 事件输出，保留逐错误注释和 SNR 分层结果 |
+| P0-R（受控） | AHA Database for Evaluation of Ventricular Arrhythmia Detectors | EC57 QRS/VEB 完整测试的最低数据库之一 | 先确认合法访问与许可；未取得并完成全库适用记录测试前，不宣称“通过 EC57” |
 | P1 | Chapman-Shaoxing 12-lead ECG | 跨机构/设备外部验证 | 只在首轮闭环通过后下载；先建立标签本体映射，只报告可对齐标签，不把外部测试样本混入训练 |
 | P1 | PhysioNet/CinC Challenge 2020 的公开 12 导联训练数据（含 CPSC 来源） | 跨域鲁棒性与更广标签验证 | 分来源保留，不先合并；记录各来源许可和标签体系，形成公共标签交集后再评估 |
 | P2 | CODE-15% 或其他大规模公开/可申请 12 导联数据 | 规模化预训练与泛化研究 | 仅在 P0/P1 证明收益需求后评估访问条件、磁盘与训练成本 |
 
-MIT-BIH Arrhythmia 是双导联、心搏级任务，不作为十二导联记录级首轮核心基准。MIMIC-IV-ECG 需要凭证/数据使用流程，也不作为自动下载项。
+MIT-BIH/AHA/NST 是独立的双导联/逐搏 EC57 分支，不替代十二导联 PTB-XL 记录级诊断任务。MIMIC-IV-ECG 需要凭证/数据使用流程，也不作为自动下载项。
 
 执行下载前必须先产出 `data_registry.yaml`，记录官方来源、版本、许可、预计容量、用途、患者级划分规则和校验和；数据本体不进入代码仓库。
 
@@ -117,6 +120,14 @@ docs/research/             文献、数据集与硬件决策依据
 
 **出口门禁：** 算子集可由计划中的 RTL 核覆盖；权重/活动值分块能落入确认后的存储层级；量化误差在门禁内；量化公式、舍入、饱和和字节序完全冻结。
 
+### M2-R：EC57 QRS/VEB 逐搏分支
+
+**交付物：** 冻结的 QRS 时间戳/VEB 标签接口、每条记录的 WFDB test annotation、`bxb` 原始输出、`sumstats` 汇总、`metrics_ec57.json`、差异注释和复现报告。
+
+**内容：** QRS 检测器先输出逐搏时间戳，VEB 分类器再对匹配心搏输出 AAMI 类别；以标准 150 ms 匹配窗对比参考注释。必须报告 `QRS Se = QTP/(QTP+QFN)`、`QRS +P = QTP/(QTP+QFP)`、`VEB Se = VTP/(VTP+VFN)`、`VEB +P = VTP/(VTP+VFP)`、`VEB FPR = VFP/(VTN+VFP)`，全部以百分比表示，并保留分子分母。MIT-BIH、NST 和 AHA 分库报告，不用 PTB-XL 五超类指标代替。
+
+**出口门禁：** 模型、阈值和预处理在测试前冻结；WFDB 标准工具输出可复现；每记录、gross、average、排除记录、学习期和 shutdown 时间完整披露。EC57 本身主要规范测试与报告方法，不在本计划中虚构统一合格阈值；AHA 未完成时结论只能是“EC57 预验证不完整”。
+
 ### M3：NPU 基础内核与比特精确验证
 
 **交付物：** GoAI 目标器件/算子支持报告；若厂商路径不通过，再交付 Conv1D MAC、requantize/clip、pool、residual add、global average pool、dense、动态存储 DMA/缓存 RTL，以及对应自检 testbench 和逐层对比报告。
@@ -127,11 +138,11 @@ docs/research/             文献、数据集与硬件决策依据
 
 ### M4：综合、SRAM 上板与批量测试
 
-**交付物：** Gowin 综合/PnR 报告、资源/时序/功耗估算、`.fs` 哈希、板端批测日志、`board_report.json`。
+**交付物：** Gowin 综合/PnR 报告、资源/时序/功耗估算、`.fs` 哈希、板端批测日志、`board_report.json`；若本轮包含 QRS/VEB 分支，还需板端事件注释及五项 EC57 指标对比。
 
 **内容：** 先综合核对 BSRAM/DSP 推断和时序，再仅下载 SRAM；用公开测试样本走 UART；分别测“纯推理延迟”和“含通信端到端延迟”。
 
-**出口门禁：** 资源不超限、无时序违例；板端 logits/标签与整数参考一致；对完整保留测试集重新统计的指标满足 M2 量化门禁。Flash 持久化不属于此节点的自动动作。
+**出口门禁：** 资源不超限、无时序违例；板端 logits/标签与整数参考一致；对完整保留测试集重新统计的指标满足 M2 量化门禁。若包含 QRS/VEB 分支，板端逐搏时间戳/标签必须与整数参考一致，并重新计算 `QRS Se`、`QRS +P`、`VEB Se`、`VEB +P`、`VEB FPR`。Flash 持久化不属于此节点的自动动作。
 
 ### M5：结果反馈与下一轮决策
 

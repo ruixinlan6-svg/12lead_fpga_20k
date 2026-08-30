@@ -1,0 +1,680 @@
+sample_index,time_ms,category,mechanism,selected_leads,voting_leads,vote_count,reference_lead,local_raw_amplitude_lsb,local_energy,waveform_snippet_len,record_id
+6,24.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,173,29,86,data/1
+2314,9256.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1320ms from last QRS),I+II+III,I+II+III,3,I,169,6,160,data/1
+2,8.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+I+III,aVL+I+III,3,aVL,-94,9,82,data/2
+62,248.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+I+III,aVL+I+III,3,aVL,1,12,142,data/2
+2345,9380.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (944ms from last QRS),aVL+I+II,I+II,2,aVL,13,3,160,data/2
+98,392.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVR+I+II,aVR+I+II,3,aVR,-163,6,160,data/3
+2350,9400.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (928ms from last QRS),V1+I+II,V1+I+II,3,V1,-154,3,160,data/3
+8,32.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,-34,1,88,data/4
+2474,9896.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (976ms from last QRS),I+II+III,I+II+III,3,I,152,8,106,data/4
+223,892.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,III+aVL+V2,III+aVL+V2,3,III,-72,9,160,data/5
+500,2000.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,I+II+aVR,I+II+aVR,3,I,155,8,160,data/5
+2300,9200.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1032ms from last QRS),I+II+III,I+II+III,3,I,159,4,160,data/5
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+aVL+aVF,III+aVL+aVF,3,III,-71,0,81,data/6
+84,336.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+aVL+aVF,III+aVL+aVF,3,III,78,4,160,data/6
+2442,9768.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1180ms from last QRS),I+II+III,I+II+III,3,I,133,6,138,data/6
+2,8.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVR,II+III+aVR,3,II,87,8,82,data/7
+238,952.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,II+III+aVR,II+III+aVR,3,II,98,9,160,data/7
+2431,9724.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1020ms from last QRS),I+II+III,I+II+III,3,I,132,5,149,data/7
+133,532.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+V2+V3,V1+V2+V3,3,V1,-127,1,160,data/8
+189,756.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,V1+V2+V3,V1+V2+V3,3,V1,51,16,160,data/8
+399,1596.0,t_wave_misdetection,Peaked T-wave/ST segment 184ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,54,19,160,data/8
+608,2432.0,t_wave_misdetection,Peaked T-wave/ST segment 184ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,51,17,160,data/8
+1426,5704.0,t_wave_misdetection,Peaked T-wave/ST segment 184ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,54,18,160,data/8
+1638,6552.0,t_wave_misdetection,Peaked T-wave/ST segment 188ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,57,16,160,data/8
+1847,7388.0,t_wave_misdetection,Peaked T-wave/ST segment 184ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,43,16,160,data/8
+2059,8236.0,t_wave_misdetection,Peaked T-wave/ST segment 184ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,54,18,160,data/8
+2269,9076.0,t_wave_misdetection,Peaked T-wave/ST segment 152ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,55,19,160,data/8
+2424,9696.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (772ms from last QRS),V1+V2+V3,V1+V2+V3,3,V1,-128,2,156,data/8
+2480,9920.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (996ms from last QRS),V1+V2+V3,V1+V2+V3,3,V1,40,15,100,data/8
+166,664.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVF+V6+I,aVF+V6+I,3,aVF,85,3,160,data/9
+2287,9148.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (896ms from last QRS),aVF+I+II,I+II,2,aVF,45,3,160,data/9
+103,412.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVF+I+II,aVF+I+II,3,aVF,-123,1,160,data/10
+2305,9220.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (992ms from last QRS),I+II+III,I+II+III,3,I,138,6,160,data/10
+137,548.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+I+II,III+I+II,3,III,-36,4,160,data/11
+2388,9552.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (992ms from last QRS),III+I+II,III+I+II,3,III,-68,3,160,data/11
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+aVR,I+II+aVR,3,I,-51,0,81,data/12
+133,532.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+aVR,I+II+aVR,3,I,-52,15,160,data/12
+196,784.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+II+aVR,I+II+aVR,3,I,86,18,160,data/12
+2381,9524.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1112ms from last QRS),III+I+II,III+I+II,3,III,-30,8,160,data/12
+206,824.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+II+III,I+II+III,3,I,167,2,160,data/13
+2252,9008.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1036ms from last QRS),V6+I+II,V6+I+II,3,V6,145,3,160,data/13
+80,320.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,69,3,160,data/14
+2407,9628.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (692ms from last QRS),I+II+III,I+II+III,3,I,56,3,160,data/14
+182,728.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,145,15,160,data/15
+2317,9268.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (940ms from last QRS),I+II+III,I+II+III,3,I,141,9,160,data/15
+113,452.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,129,7,160,data/16
+2370,9480.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (848ms from last QRS),I+II+III,I+II+III,3,I,150,11,160,data/16
+3,12.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVR,II+III+aVR,3,II,-58,6,83,data/17
+181,724.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVR,II+III+aVR,3,II,120,12,160,data/17
+2464,9856.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (800ms from last QRS),I+II+III,I+II+III,3,I,135,5,116,data/17
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVL,II+III+aVL,3,II,62,0,81,data/18
+198,792.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,II+III+aVL,II+III+aVL,3,II,82,22,160,data/18
+2470,9880.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (756ms from last QRS),I+II+III,I+II+III,3,I,133,4,110,data/18
+201,804.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,aVF+I+II,aVF+I+II,3,aVF,63,5,160,data/19
+2418,9672.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (992ms from last QRS),aVF+I+II,aVF+I+II,3,aVF,68,5,160,data/19
+230,920.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+II+III,I+II+III,3,I,28,23,160,data/20
+1673,6692.0,t_wave_misdetection,Peaked T-wave/ST segment 224ms post-QRS exceeding detection threshold,aVR+V1+I,aVR+V1,2,aVR,21,20,160,data/20
+2311,9244.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (948ms from last QRS),V1+I+II,V1+I+II,3,V1,-154,3,160,data/20
+79,316.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+V3+V5,I+V3+V5,3,I,137,16,159,data/21
+1365,5460.0,t_wave_misdetection,Peaked T-wave/ST segment 212ms post-QRS exceeding detection threshold,I+V2+V3,I+V2+V3,3,I,-9,23,160,data/21
+1984,7936.0,t_wave_misdetection,Peaked T-wave/ST segment 224ms post-QRS exceeding detection threshold,I+V3+II,I+V3,2,I,-11,14,160,data/21
+2185,8740.0,t_wave_misdetection,Peaked T-wave/ST segment 212ms post-QRS exceeding detection threshold,I+V2+V3,I+V2+V3,3,I,-12,20,160,data/21
+2337,9348.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (820ms from last QRS),I+V2+V3,I+V2+V3,3,I,86,10,160,data/21
+14,56.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,128,3,94,data/22
+2363,9452.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (704ms from last QRS),I+II+III,I+II+III,3,I,115,3,160,data/22
+105,420.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+I+II,V1+I+II,3,V1,2,1,160,data/23
+2391,9564.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1076ms from last QRS),V1+I+II,V1+I+II,3,V1,141,7,160,data/23
+21,84.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+aVL+III,I+aVL+III,3,I,116,2,101,data/24
+90,360.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+aVL+III,I+aVL,2,I,-47,4,160,data/24
+400,1600.0,t_wave_misdetection,Peaked T-wave/ST segment 288ms post-QRS exceeding detection threshold,I+aVL+III,I+aVL+III,3,I,-46,7,160,data/24
+697,2788.0,t_wave_misdetection,Peaked T-wave/ST segment 296ms post-QRS exceeding detection threshold,aVL+I+aVR,aVL+I,2,aVL,-44,5,160,data/24
+996,3984.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,aVL+I+aVR,aVL+I+aVR,3,aVL,-53,7,160,data/24
+1005,4020.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,aVL+III+V5,aVL+III+V5,3,aVL,-58,2,160,data/24
+1299,5196.0,t_wave_misdetection,Peaked T-wave/ST segment 336ms post-QRS exceeding detection threshold,aVL+III+V5,aVL+III+V5,3,aVL,-65,3,160,data/24
+1592,6368.0,t_wave_misdetection,Peaked T-wave/ST segment 324ms post-QRS exceeding detection threshold,aVL+I+III,aVL+I+III,3,aVL,-68,3,160,data/24
+1871,7484.0,t_wave_misdetection,Peaked T-wave/ST segment 288ms post-QRS exceeding detection threshold,aVL+I+III,aVL+I+III,3,aVL,-55,11,160,data/24
+2184,8736.0,t_wave_misdetection,Peaked T-wave/ST segment 320ms post-QRS exceeding detection threshold,I+aVL+III,I+aVL+III,3,I,-54,4,160,data/24
+2407,9628.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1212ms from last QRS),I+aVL+III,I+III,2,I,109,2,160,data/24
+2478,9912.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1496ms from last QRS),I+aVL+III,I+aVL+III,3,I,-46,5,102,data/24
+3,12.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,-50,6,83,data/25
+260,1040.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+II+III,I+II+III,3,I,109,6,160,data/25
+2293,9172.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1080ms from last QRS),I+II+III,I+II+III,3,I,144,7,160,data/25
+186,744.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V6+I+II,V6+I+II,3,V6,138,6,160,data/26
+2312,9248.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (920ms from last QRS),I+II+III,I+II+III,3,I,136,15,160,data/26
+88,352.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,131,4,160,data/27
+2295,9180.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1112ms from last QRS),I+II+III,I+II+III,3,I,144,7,160,data/27
+119,476.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V3+I+II,V3+I+II,3,V3,-105,13,160,data/28
+2408,9632.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1028ms from last QRS),V2+V3+I,V2+V3+I,3,V2,-136,10,160,data/28
+2461,9844.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1240ms from last QRS),V2+V3+I,V2+V3,2,V2,33,11,119,data/28
+7,28.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,155,19,87,data/29
+2316,9264.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (920ms from last QRS),I+II+III,I+II+III,3,I,167,8,160,data/29
+56,224.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+V2+I,III+V2+I,3,III,131,6,136,data/30
+1304,5216.0,t_wave_misdetection,Peaked T-wave/ST segment 236ms post-QRS exceeding detection threshold,V2+III+I,V2+III,2,V2,30,14,160,data/30
+2459,9836.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1236ms from last QRS),V2+I+II,V2+I+II,3,V2,-108,4,121,data/30
+88,352.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,147,9,160,data/31
+2404,9616.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (936ms from last QRS),I+II+III,I+II+III,3,I,154,10,160,data/31
+92,368.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,167,7,160,data/32
+2474,9896.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (944ms from last QRS),I+II+III,I+II+III,3,I,170,8,106,data/32
+128,512.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,133,4,160,data/33
+2336,9344.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (956ms from last QRS),V1+I+II,V1+I+II,3,V1,-94,2,160,data/33
+3,12.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVR,II+aVR,2,II,34,3,83,data/34
+110,440.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVR,II+III+aVR,3,II,65,0,160,data/34
+704,2816.0,t_wave_misdetection,Peaked T-wave/ST segment 304ms post-QRS exceeding detection threshold,V1+III+aVR,V1+aVR,2,V1,23,1,160,data/34
+1197,4788.0,t_wave_misdetection,Peaked T-wave/ST segment 272ms post-QRS exceeding detection threshold,V1+II+V5,V1+II,2,V1,26,2,160,data/34
+1437,5748.0,t_wave_misdetection,Peaked T-wave/ST segment 232ms post-QRS exceeding detection threshold,V1+II+V5,V1+V5,2,V1,21,6,160,data/34
+1706,6824.0,t_wave_misdetection,Peaked T-wave/ST segment 308ms post-QRS exceeding detection threshold,V1+V5+I,V1+V5,2,V1,17,2,160,data/34
+1933,7732.0,t_wave_misdetection,Peaked T-wave/ST segment 220ms post-QRS exceeding detection threshold,V1+V5+I,V1+I,2,V1,20,9,160,data/34
+2184,8736.0,t_wave_misdetection,Peaked T-wave/ST segment 220ms post-QRS exceeding detection threshold,V1+V2+I,V1+V2,2,V1,22,7,160,data/34
+2372,9488.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (972ms from last QRS),V1+V2+I,V1+V2+I,3,V1,-59,2,160,data/34
+2432,9728.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1212ms from last QRS),V1+V2+I,V1+V2+I,3,V1,21,8,148,data/34
+82,328.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVR+I+II,aVR+I+II,3,aVR,-100,16,160,data/35
+1758,7032.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (456ms from last QRS),aVR+II+V1,aVR+V1,2,aVR,14,4,160,data/35
+1850,7400.0,t_wave_misdetection,Peaked T-wave/ST segment 244ms post-QRS exceeding detection threshold,aVR+II+V1,aVR+II,2,aVR,-41,6,160,data/35
+1961,7844.0,t_wave_misdetection,Peaked T-wave/ST segment 268ms post-QRS exceeding detection threshold,aVR+II+V1,aVR+II,2,aVR,41,2,160,data/35
+2468,9872.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (432ms from last QRS),aVR+I+III,aVR+I+III,3,aVR,-28,15,112,data/35
+186,744.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+I+II,III+I+II,3,III,-62,11,160,data/36
+2263,9052.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (964ms from last QRS),I+II+III,I+II,2,I,135,22,160,data/36
+30,120.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,150,10,110,data/37
+2000,8000.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,I+II+aVR,I+II+aVR,3,I,119,8,160,data/37
+2459,9836.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (924ms from last QRS),I+II+aVR,I+II+aVR,3,I,103,9,121,data/37
+155,620.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V2+I+II,V2+I+II,3,V2,-82,1,160,data/38
+242,968.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+II+III,I+II+III,3,I,101,7,160,data/39
+2482,9928.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1120ms from last QRS),I+II+III,I+II+III,3,I,142,18,98,data/39
+91,364.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,152,6,160,data/40
+2394,9576.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (980ms from last QRS),I+II+III,I+II+III,3,I,118,10,160,data/40
+64,256.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,144,14,144,data/41
+2204,8816.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1236ms from last QRS),I+II+III,I+II+III,3,I,120,9,160,data/41
+28,112.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,107,11,108,data/42
+2408,9632.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1072ms from last QRS),I+II+III,I+II+III,3,I,148,9,160,data/42
+98,392.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V4+I+II,V4+I+II,3,V4,63,2,160,data/43
+2322,9288.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1004ms from last QRS),III+I+II,III+I+II,3,III,16,2,160,data/43
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V2+V3+V4,V2+V3+V4,3,V2,39,0,81,data/44
+142,568.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V2+V3+V4,V2+V3+V4,3,V2,-120,1,160,data/44
+199,796.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,V2+V3+V4,V2+V3+V4,3,V2,42,17,160,data/44
+448,1792.0,t_wave_misdetection,Peaked T-wave/ST segment 208ms post-QRS exceeding detection threshold,V2+V3+V4,V2+V3+V4,3,V2,35,17,160,data/44
+694,2776.0,t_wave_misdetection,Peaked T-wave/ST segment 220ms post-QRS exceeding detection threshold,V1+V2+V3,V2+V3,2,V1,-10,14,160,data/44
+880,3520.0,t_wave_misdetection,Peaked T-wave/ST segment 224ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,15,12,160,data/44
+1067,4268.0,t_wave_misdetection,Peaked T-wave/ST segment 228ms post-QRS exceeding detection threshold,V2+V3+V4,V2+V3+V4,3,V2,45,16,160,data/44
+1304,5216.0,t_wave_misdetection,Peaked T-wave/ST segment 220ms post-QRS exceeding detection threshold,V2+V3+V4,V2+V3+V4,3,V2,36,18,160,data/44
+1485,5940.0,t_wave_misdetection,Peaked T-wave/ST segment 224ms post-QRS exceeding detection threshold,V2+V3+V4,V2+V3+V4,3,V2,43,20,160,data/44
+1770,7080.0,t_wave_misdetection,Peaked T-wave/ST segment 216ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,51,14,160,data/44
+2041,8164.0,t_wave_misdetection,Peaked T-wave/ST segment 224ms post-QRS exceeding detection threshold,V1+V3+V4,V1+V3+V4,3,V1,29,15,160,data/44
+2250,9000.0,t_wave_misdetection,Peaked T-wave/ST segment 220ms post-QRS exceeding detection threshold,V1+V3+V4,V3+V4,2,V1,-4,12,160,data/44
+2385,9540.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (760ms from last QRS),V1+V3+V4,V1+V3+V4,3,V1,-75,0,160,data/44
+2442,9768.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (988ms from last QRS),V1+V3+V4,V1+V3+V4,3,V1,37,13,138,data/44
+3,12.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+V3+aVL,III+V3+aVL,3,III,55,3,83,data/45
+72,288.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+V3+aVL,III+V3+aVL,3,III,-100,3,152,data/45
+138,552.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+V3+aVL,III+V3,2,III,31,5,160,data/45
+253,1012.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,III+V3+aVL,III+V3+aVL,3,III,26,0,160,data/45
+389,1556.0,t_wave_misdetection,Peaked T-wave/ST segment 324ms post-QRS exceeding detection threshold,III+V3+aVL,III+V3+aVL,3,III,26,4,160,data/45
+527,2108.0,t_wave_misdetection,Peaked T-wave/ST segment 244ms post-QRS exceeding detection threshold,I+III+aVR,I+aVR,2,I,-43,6,160,data/45
+716,2864.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1000ms from last QRS),I+III+aVR,I+III+aVR,3,I,-40,0,160,data/45
+966,3864.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (772ms from last QRS),I+III+aVR,I+III+aVR,3,I,-21,0,160,data/45
+1104,4416.0,t_wave_misdetection,Peaked T-wave/ST segment 328ms post-QRS exceeding detection threshold,III+aVL+V3,III+aVL+V3,3,III,27,4,160,data/45
+1216,4864.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (776ms from last QRS),III+aVL+V3,III+aVL+V3,3,III,19,0,160,data/45
+1354,5416.0,t_wave_misdetection,Peaked T-wave/ST segment 328ms post-QRS exceeding detection threshold,III+aVL+V3,III+aVL+V3,3,III,28,3,160,data/45
+1467,5868.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (780ms from last QRS),III+aVL+V3,III+aVL+V3,3,III,20,0,160,data/45
+1605,6420.0,t_wave_misdetection,Peaked T-wave/ST segment 332ms post-QRS exceeding detection threshold,III+aVL+V3,III+aVL+V3,3,III,34,3,160,data/45
+1717,6868.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (780ms from last QRS),III+aVL+V3,III+aVL+V3,3,III,25,0,160,data/45
+1845,7380.0,t_wave_misdetection,Peaked T-wave/ST segment 288ms post-QRS exceeding detection threshold,III+aVL+V3,III+aVL+V3,3,III,31,8,160,data/45
+1966,7864.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (772ms from last QRS),III+aVL+V3,III+aVL+V3,3,III,22,0,160,data/45
+2101,8404.0,t_wave_misdetection,Peaked T-wave/ST segment 320ms post-QRS exceeding detection threshold,III+V2+V3,III+V2+V3,3,III,26,5,160,data/45
+2215,8860.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (776ms from last QRS),III+V2+V3,III+V2+V3,3,III,-12,0,160,data/45
+2288,9152.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1068ms from last QRS),III+V2+V3,V2+V3,2,III,-86,11,160,data/45
+2353,9412.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1328ms from last QRS),III+V2+V3,III+V3,2,III,29,4,160,data/45
+182,728.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+aVL+I,V1+aVL+I,3,V1,-163,13,160,data/46
+237,948.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,V1+aVL+I,V1+aVL,2,V1,23,15,160,data/46
+956,3824.0,t_wave_misdetection,Peaked T-wave/ST segment 224ms post-QRS exceeding detection threshold,III+aVL+I,III+aVL,2,III,8,10,160,data/46
+1676,6704.0,t_wave_misdetection,Peaked T-wave/ST segment 220ms post-QRS exceeding detection threshold,V1+I+II,V1+I,2,V1,22,15,160,data/46
+2327,9308.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (952ms from last QRS),III+V1+I,III+V1+I,3,III,-137,4,160,data/46
+143,572.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,134,4,160,data/47
+2360,9440.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1268ms from last QRS),I+II+III,I+II+III,3,I,148,7,160,data/47
+2,8.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+III+I,V1+III,2,V1,-14,0,82,data/48
+232,928.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,V1+III+I,V1+III+I,3,V1,55,3,160,data/48
+997,3988.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,V1+III+I,V1+III,2,V1,-22,0,160,data/48
+2289,9156.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1004ms from last QRS),V1+I+II,I+II,2,V1,-1,4,160,data/48
+175,700.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,120,9,160,data/49
+2382,9528.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1116ms from last QRS),I+II+III,I+II+III,3,I,154,13,160,data/49
+148,592.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,141,5,160,data/50
+2298,9192.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (856ms from last QRS),I+II+III,I+II+III,3,I,160,7,160,data/50
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+III+aVL,I+III+aVL,3,I,112,0,81,data/51
+275,1100.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+III+aVL,I+III+aVL,3,I,141,3,160,data/51
+333,1332.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+III+aVL,I+III+aVL,3,I,-40,16,160,data/51
+506,2024.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,V1+I+aVL,V1+I+aVL,3,V1,38,14,160,data/51
+788,3152.0,t_wave_misdetection,Peaked T-wave/ST segment 264ms post-QRS exceeding detection threshold,V1+I+aVL,V1+I+aVL,3,V1,36,8,160,data/51
+1002,4008.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,I+III+aVL,I+III+aVL,3,I,-37,12,160,data/51
+1183,4732.0,t_wave_misdetection,Peaked T-wave/ST segment 256ms post-QRS exceeding detection threshold,I+III+aVL,I+III+aVL,3,I,-32,12,160,data/51
+1544,6176.0,t_wave_misdetection,Peaked T-wave/ST segment 248ms post-QRS exceeding detection threshold,I+aVL+V1,I+aVL+V1,3,I,-35,13,160,data/51
+1672,6688.0,t_wave_misdetection,Peaked T-wave/ST segment 240ms post-QRS exceeding detection threshold,I+aVL+V1,I+aVL+V1,3,I,-28,14,160,data/51
+2085,8340.0,t_wave_misdetection,Peaked T-wave/ST segment 252ms post-QRS exceeding detection threshold,I+III+aVL,I+III+aVL,3,I,-37,15,160,data/51
+2292,9168.0,t_wave_misdetection,Peaked T-wave/ST segment 256ms post-QRS exceeding detection threshold,I+III+aVL,I+III+aVL,3,I,-40,15,160,data/51
+2434,9736.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (824ms from last QRS),I+III+aVL,I+III+aVL,3,I,148,4,146,data/51
+2492,9968.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1056ms from last QRS),I+III+aVL,I+III+aVL,3,I,-43,15,88,data/51
+37,148.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,-15,5,117,data/52
+1457,5828.0,t_wave_misdetection,Peaked T-wave/ST segment 240ms post-QRS exceeding detection threshold,III+aVF+I,III+aVF,2,III,-24,14,160,data/52
+2272,9088.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (852ms from last QRS),I+II+III,I+II+III,3,I,24,2,160,data/52
+49,196.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVF+I+II,aVF+I+II,3,aVF,58,3,129,data/53
+1500,6000.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,V2+V3+I,V2+V3+I,3,V2,-114,7,160,data/53
+2446,9784.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (960ms from last QRS),I+II+III,I+II+III,3,I,177,9,134,data/53
+11,44.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,163,8,91,data/54
+2235,8940.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1116ms from last QRS),I+II+III,I+II+III,3,I,150,4,160,data/54
+3,12.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVR+V1+V2,aVR+V1+V2,3,aVR,46,5,83,data/55
+177,708.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVR+V1+V2,aVR+V1+V2,3,aVR,-137,3,160,data/55
+2369,9476.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (980ms from last QRS),I+II+III,I+II+III,3,I,142,2,160,data/55
+204,816.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+II+III,I+II+III,3,I,54,4,160,data/56
+2441,9764.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (812ms from last QRS),I+II+III,I+II+III,3,I,36,4,139,data/56
+35,140.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,168,8,115,data/57
+2437,9748.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (720ms from last QRS),I+II+III,I+II+III,3,I,171,8,143,data/57
+102,408.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,128,5,160,data/58
+2479,9916.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (968ms from last QRS),I+II+III,I+II+III,3,I,142,5,101,data/58
+277,1108.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,II+aVR+I,II+aVR+I,3,II,107,8,160,data/59
+332,1328.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,II+aVR+I,II+aVR,2,II,38,21,160,data/59
+622,2488.0,t_wave_misdetection,Peaked T-wave/ST segment 240ms post-QRS exceeding detection threshold,II+aVR+aVF,II+aVR+aVF,3,II,37,18,160,data/59
+911,3644.0,t_wave_misdetection,Peaked T-wave/ST segment 248ms post-QRS exceeding detection threshold,II+aVR+aVF,II+aVR+aVF,3,II,41,19,160,data/59
+1191,4764.0,t_wave_misdetection,Peaked T-wave/ST segment 248ms post-QRS exceeding detection threshold,II+aVR+aVF,II+aVR+aVF,3,II,41,17,160,data/59
+1469,5876.0,t_wave_misdetection,Peaked T-wave/ST segment 244ms post-QRS exceeding detection threshold,II+aVR+aVF,II+aVR+aVF,3,II,52,13,160,data/59
+1739,6956.0,t_wave_misdetection,Peaked T-wave/ST segment 228ms post-QRS exceeding detection threshold,II+aVR+I,II+aVR,2,II,34,10,160,data/59
+2022,8088.0,t_wave_misdetection,Peaked T-wave/ST segment 264ms post-QRS exceeding detection threshold,II+aVR+aVF,II+aVR,2,II,72,13,160,data/59
+2238,8952.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1128ms from last QRS),II+aVR+aVF,II+aVR+aVF,3,II,126,13,160,data/59
+2292,9168.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1344ms from last QRS),II+aVR+aVF,II+aVR+aVF,3,II,36,17,160,data/59
+23,92.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,119,13,103,data/60
+2318,9272.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1012ms from last QRS),I+II+III,I+II+III,3,I,148,11,160,data/60
+106,424.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,167,10,160,data/61
+2255,9020.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (972ms from last QRS),aVF+V1+I,aVF+V1+I,3,aVF,-80,6,160,data/61
+2497,9988.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1940ms from last QRS),aVF+V1+I,aVF+V1,2,aVF,-92,12,83,data/61
+199,796.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,V2+I+II,V2+I+II,3,V2,-55,2,160,data/62
+2354,9416.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (864ms from last QRS),I+II+III,I+II+III,3,I,139,5,160,data/62
+139,556.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,106,10,160,data/63
+2439,9756.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (968ms from last QRS),I+II+III,I+II+III,3,I,114,18,141,data/63
+97,388.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVF+III+V3,aVF+III+V3,3,aVF,82,5,160,data/64
+167,668.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVF+III+V3,aVF+III+V3,3,aVF,143,2,160,data/64
+414,1656.0,t_wave_misdetection,Peaked T-wave/ST segment 292ms post-QRS exceeding detection threshold,aVF+III+V3,aVF+III+V3,3,aVF,142,1,160,data/64
+646,2584.0,t_wave_misdetection,Peaked T-wave/ST segment 280ms post-QRS exceeding detection threshold,III+aVF+V3,III+aVF+V3,3,III,108,0,160,data/64
+879,3516.0,t_wave_misdetection,Peaked T-wave/ST segment 296ms post-QRS exceeding detection threshold,III+aVF+V3,III+aVF+V3,3,III,114,0,160,data/64
+1101,4404.0,t_wave_misdetection,Peaked T-wave/ST segment 284ms post-QRS exceeding detection threshold,aVF+III+V3,aVF+III+V3,3,aVF,143,1,160,data/64
+1318,5272.0,t_wave_misdetection,Peaked T-wave/ST segment 284ms post-QRS exceeding detection threshold,aVF+III+V3,aVF+III+V3,3,aVF,135,1,160,data/64
+1526,6104.0,t_wave_misdetection,Peaked T-wave/ST segment 284ms post-QRS exceeding detection threshold,III+aVF+V3,III+aVF+V3,3,III,107,0,160,data/64
+1744,6976.0,t_wave_misdetection,Peaked T-wave/ST segment 288ms post-QRS exceeding detection threshold,III+aVF+V3,III+aVF+V3,3,III,104,0,160,data/64
+1969,7876.0,t_wave_misdetection,Peaked T-wave/ST segment 284ms post-QRS exceeding detection threshold,III+aVF+V3,III+aVF+V3,3,III,106,0,160,data/64
+2209,8836.0,t_wave_misdetection,Peaked T-wave/ST segment 288ms post-QRS exceeding detection threshold,III+aVF+V3,III+aVF+V3,3,III,101,0,160,data/64
+2390,9560.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1012ms from last QRS),III+aVF+V3,III+aVF+V3,3,III,77,11,160,data/64
+2460,9840.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1292ms from last QRS),III+aVF+V3,III+aVF+V3,3,III,103,0,120,data/64
+90,360.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,161,10,160,data/65
+2352,9408.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (700ms from last QRS),I+II+III,I+II+III,3,I,147,10,160,data/65
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVL,II+III+aVL,3,II,86,0,81,data/66
+163,652.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVL,II+III+aVL,3,II,120,7,160,data/66
+2300,9200.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1244ms from last QRS),aVL+I+II,aVL+I+II,3,aVL,126,7,160,data/66
+181,724.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,153,13,160,data/67
+2293,9172.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1064ms from last QRS),I+II+III,I+II+III,3,I,139,6,160,data/67
+33,132.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,151,11,113,data/68
+2335,9340.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (896ms from last QRS),I+II+III,I+II+III,3,I,161,12,160,data/68
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+V1+V2,aVL+V1+V2,3,aVL,-8,0,81,data/69
+184,736.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+V1+V2,V1+V2,2,aVL,-20,3,160,data/69
+2469,9876.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (752ms from last QRS),aVL+I+II,I+II,2,aVL,-46,3,111,data/69
+13,52.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,137,24,93,data/70
+2348,9392.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (708ms from last QRS),I+II+III,I+II+III,3,I,131,12,160,data/70
+21,84.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,75,13,101,data/71
+2374,9496.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1044ms from last QRS),I+II+III,I+II+III,3,I,113,9,160,data/71
+3,12.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+aVR,I+II+aVR,3,I,-39,3,83,data/72
+153,612.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+aVR,I+II+aVR,3,I,-93,0,160,data/72
+607,2428.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (768ms from last QRS),aVL+aVF+V3,aVL+aVF+V3,3,aVL,-51,0,160,data/72
+857,3428.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (776ms from last QRS),aVL+aVF+V3,aVL+aVF+V3,3,aVL,-42,0,160,data/72
+1107,4428.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (772ms from last QRS),aVF+V3+I,aVF+V3+I,3,aVF,17,0,160,data/72
+1357,5428.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (776ms from last QRS),aVF+V3+I,aVF+V3+I,3,aVF,18,0,160,data/72
+1782,7128.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (788ms from last QRS),I+III+aVL,I+III+aVL,3,I,-18,0,160,data/72
+2029,8116.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (756ms from last QRS),aVL+V3+I,aVL+V3,2,aVL,8,0,160,data/72
+2276,9104.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (752ms from last QRS),aVL+V3+I,aVL+V3+I,3,aVL,25,0,160,data/72
+2343,9372.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1020ms from last QRS),aVL+V3+I,aVL+V3+I,3,aVL,59,10,160,data/72
+157,628.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,155,9,160,data/73
+2452,9808.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1008ms from last QRS),I+II+III,I+II+III,3,I,164,8,128,data/73
+4,16.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVR+V1+V4,aVR+V1,2,aVR,40,6,84,data/74
+65,260.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVR+V1+V4,aVR+V1+V4,3,aVR,28,2,145,data/74
+1383,5532.0,t_wave_misdetection,Peaked T-wave/ST segment 260ms post-QRS exceeding detection threshold,V4+V5+II,V4+V5,2,V4,31,4,160,data/74
+1649,6596.0,t_wave_misdetection,Peaked T-wave/ST segment 324ms post-QRS exceeding detection threshold,V4+II+aVR,V4+II+aVR,3,V4,39,1,160,data/74
+2124,8496.0,t_wave_misdetection,Peaked T-wave/ST segment 228ms post-QRS exceeding detection threshold,aVR+V4+II,aVR+V4,2,aVR,-33,1,160,data/74
+2375,9500.0,t_wave_misdetection,Peaked T-wave/ST segment 232ms post-QRS exceeding detection threshold,aVR+V4+II,aVR+V4+II,3,aVR,-41,1,160,data/74
+54,216.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,78,3,134,data/75
+2467,9868.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (968ms from last QRS),I+II+III,I+II+III,3,I,74,4,113,data/75
+5,20.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVL,II+III+aVL,3,II,59,11,85,data/76
+133,532.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVL,II+aVL,2,II,148,3,160,data/76
+165,660.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,115,6,160,data/77
+2362,9448.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (800ms from last QRS),V3+I+II,V3+I+II,3,V3,-69,3,160,data/77
+128,512.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V2+I+II,V2+I+II,3,V2,-146,5,160,data/78
+2278,9112.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (972ms from last QRS),I+II+III,I+II+III,3,I,130,6,160,data/78
+39,156.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,143,8,119,data/79
+2426,9704.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1076ms from last QRS),I+II+III,I+II+III,3,I,123,7,154,data/79
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+I+II,I+II,2,aVL,24,0,81,data/80
+2000,8000.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,aVL+II+III,aVL+II+III,3,aVL,-60,6,160,data/80
+2400,9600.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (796ms from last QRS),aVL+II+III,aVL+II+III,3,aVL,-94,6,160,data/80
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V6+V2+I,V6+V2,2,V6,53,0,81,data/81
+109,436.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V6+V2+I,V6+V2+I,3,V6,131,2,160,data/81
+147,588.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+V6+I,III+V6+I,3,III,-102,2,160,data/82
+2483,9932.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1140ms from last QRS),I+II+III,I+II+III,3,I,10,20,97,data/82
+69,276.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+aVL+V1,I+aVL+V1,3,I,55,11,149,data/83
+247,988.0,t_wave_misdetection,Peaked T-wave/ST segment 248ms post-QRS exceeding detection threshold,I+aVL+V1,I+aVL,2,I,48,11,160,data/83
+407,1628.0,t_wave_misdetection,Peaked T-wave/ST segment 252ms post-QRS exceeding detection threshold,I+aVL+V1,I+aVL+V1,3,I,39,7,160,data/83
+1135,4540.0,t_wave_misdetection,Peaked T-wave/ST segment 212ms post-QRS exceeding detection threshold,V2+V3+I,V2+V3,2,V2,36,13,160,data/83
+1370,5480.0,t_wave_misdetection,Peaked T-wave/ST segment 264ms post-QRS exceeding detection threshold,V2+V3+I,V2+V3+I,3,V2,19,9,160,data/83
+2125,8500.0,t_wave_misdetection,Peaked T-wave/ST segment 244ms post-QRS exceeding detection threshold,V3+III+aVL,V3+III+aVL,3,V3,53,7,160,data/83
+2480,9920.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (740ms from last QRS),V3+III+aVL,V3+III+aVL,3,V3,-27,38,100,data/83
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+aVR,I+II+aVR,3,I,99,0,81,data/84
+115,460.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+aVR,I+II+aVR,3,I,147,8,160,data/84
+923,3692.0,t_wave_misdetection,Peaked T-wave/ST segment 236ms post-QRS exceeding detection threshold,III+aVL+I,III+aVL,2,III,25,7,160,data/84
+2366,9464.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1008ms from last QRS),I+II+III,I+II+III,3,I,96,11,160,data/84
+160,640.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,148,5,160,data/85
+2372,9488.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (820ms from last QRS),I+II+III,I+II+III,3,I,139,5,160,data/85
+3,12.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+aVR,I+II+aVR,3,I,-38,4,83,data/86
+144,576.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+aVR,I+II+aVR,3,I,49,8,160,data/86
+2339,9356.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (688ms from last QRS),I+II+III,I+II+III,3,I,62,9,160,data/86
+159,636.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,55,4,160,data/87
+2374,9496.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (680ms from last QRS),I+II+III,I+II+III,3,I,95,4,160,data/87
+4,16.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVR,II+III+aVR,3,II,60,10,84,data/88
+145,580.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVR,II+III+aVR,3,II,130,2,160,data/88
+2356,9424.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (828ms from last QRS),I+II+III,I+II+III,3,I,149,3,160,data/88
+175,700.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+I+II,V1+I+II,3,V1,-69,5,160,data/89
+2477,9908.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (804ms from last QRS),I+II+III,I+II+III,3,I,150,3,103,data/89
+5,20.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+aVF+V4,V1+aVF,2,V1,69,15,85,data/90
+123,492.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+aVF+V4,V1+aVF+V4,3,V1,119,0,160,data/90
+175,700.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+aVF+V4,aVF+V4,2,V1,28,6,160,data/90
+689,2756.0,t_wave_misdetection,Peaked T-wave/ST segment 264ms post-QRS exceeding detection threshold,V1+V4+V5,V1+V4+V5,3,V1,-28,1,160,data/90
+940,3760.0,t_wave_misdetection,Peaked T-wave/ST segment 264ms post-QRS exceeding detection threshold,V1+V4+V5,V1+V4+V5,3,V1,-58,1,160,data/90
+1189,4756.0,t_wave_misdetection,Peaked T-wave/ST segment 260ms post-QRS exceeding detection threshold,V1+III+V5,V1+III+V5,3,V1,-79,1,160,data/90
+1361,5444.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (948ms from last QRS),V1+III+V5,V1+III+V5,3,V1,-2,0,160,data/90
+1440,5760.0,t_wave_misdetection,Peaked T-wave/ST segment 264ms post-QRS exceeding detection threshold,V1+III+V5,V1+III+V5,3,V1,-52,2,160,data/90
+1695,6780.0,t_wave_misdetection,Peaked T-wave/ST segment 280ms post-QRS exceeding detection threshold,V1+V4+V5,V1+V4+V5,3,V1,-31,0,160,data/90
+1944,7776.0,t_wave_misdetection,Peaked T-wave/ST segment 280ms post-QRS exceeding detection threshold,V1+V4+V5,V1+V4+V5,3,V1,-60,1,160,data/90
+2260,9040.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (544ms from last QRS),V1+I+II,I+II,2,V1,-25,4,160,data/90
+2375,9500.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1004ms from last QRS),V1+I+II,V1+I+II,3,V1,54,0,160,data/90
+2484,9936.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1440ms from last QRS),V1+I+II,I+II,2,V1,-4,2,96,data/90
+4,16.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVL,II+III+aVL,3,II,49,8,84,data/91
+97,388.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVL,II+III+aVL,3,II,71,14,160,data/91
+2296,9184.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (612ms from last QRS),I+II+III,I+II+III,3,I,121,6,160,data/91
+61,244.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVF+III+I,aVF+III+I,3,aVF,-16,1,141,data/92
+490,1960.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,aVF+III+I,aVF+III,2,aVF,21,0,160,data/92
+2353,9412.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (616ms from last QRS),I+II+III,I+II+III,3,I,70,9,160,data/92
+10,40.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+V1+V2,I+V1+V2,3,I,-28,6,90,data/93
+186,744.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+V1+V2,I+V1+V2,3,I,-90,6,160,data/93
+248,992.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+V1+V2,V1+V2,2,I,-11,3,160,data/93
+750,3000.0,t_wave_misdetection,Peaked T-wave/ST segment 276ms post-QRS exceeding detection threshold,I+aVR+aVL,I+aVR,2,I,39,2,160,data/93
+905,3620.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (896ms from last QRS),I+aVR+aVL,I+aVL,2,I,51,1,160,data/93
+996,3984.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,I+aVR+aVL,I+aVR,2,I,55,2,160,data/93
+1499,5996.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,I+aVR+II,I+aVR,2,I,39,1,160,data/93
+1980,7920.0,t_wave_misdetection,Peaked T-wave/ST segment 208ms post-QRS exceeding detection threshold,I+aVL+II,I+aVL+II,3,I,38,9,160,data/93
+2271,9084.0,t_wave_misdetection,Peaked T-wave/ST segment 376ms post-QRS exceeding detection threshold,I+aVL+III,I+aVL,2,I,-8,1,160,data/93
+2424,9696.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (988ms from last QRS),I+aVL+III,I+aVL+III,3,I,-57,16,156,data/93
+173,692.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,122,3,160,data/94
+2342,9368.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (764ms from last QRS),I+II+III,I+II+III,3,I,131,5,160,data/94
+6,24.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+V3+V4,II+V3+V4,3,II,55,8,86,data/95
+162,648.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+V3+V4,II+V3+V4,3,II,-68,3,160,data/95
+472,1888.0,t_wave_misdetection,Peaked T-wave/ST segment 316ms post-QRS exceeding detection threshold,II+V3+V4,II+V3+V4,3,II,64,13,160,data/95
+714,2856.0,t_wave_misdetection,Peaked T-wave/ST segment 284ms post-QRS exceeding detection threshold,II+aVF+III,II+aVF,2,II,27,6,160,data/95
+972,3888.0,t_wave_misdetection,Peaked T-wave/ST segment 316ms post-QRS exceeding detection threshold,II+aVF+III,II+aVF+III,3,II,49,13,160,data/95
+1222,4888.0,t_wave_misdetection,Peaked T-wave/ST segment 316ms post-QRS exceeding detection threshold,II+III+aVL,II+III+aVL,3,II,43,13,160,data/95
+2484,9936.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (944ms from last QRS),I+II+aVR,I+II+aVR,3,I,-58,0,96,data/95
+86,344.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+aVL+V4,III+aVL+V4,3,III,-65,1,160,data/96
+347,1388.0,t_wave_misdetection,Peaked T-wave/ST segment 268ms post-QRS exceeding detection threshold,III+aVL+V4,III+aVL,2,III,42,2,160,data/96
+1105,4420.0,t_wave_misdetection,Peaked T-wave/ST segment 200ms post-QRS exceeding detection threshold,I+aVL+II,I+aVL,2,I,-34,11,160,data/96
+2414,9656.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (728ms from last QRS),III+I+II,III+I+II,3,III,57,5,160,data/96
+94,376.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,135,7,160,data/97
+2334,9336.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1016ms from last QRS),I+II+III,I+II+III,3,I,60,10,160,data/97
+135,540.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V4+I+II,V4+I+II,3,V4,71,3,160,data/98
+2314,9256.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (968ms from last QRS),I+II+III,I+II+III,3,I,159,8,160,data/98
+8,32.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,-51,3,88,data/99
+2460,9840.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (664ms from last QRS),I+II+III,I+II+III,3,I,-40,1,120,data/99
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+aVL+aVF,III+aVL+aVF,3,III,-68,0,81,data/100
+80,320.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+aVL+aVF,III+aVL+aVF,3,III,-61,1,160,data/100
+2316,9264.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (908ms from last QRS),I+II+III,I+II+III,3,I,67,6,160,data/100
+114,456.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,75,2,160,data/101
+2007,8028.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,III+V2+I,III+V2,2,III,-55,29,160,data/101
+2421,9684.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (852ms from last QRS),III+V2+I,III+V2+I,3,III,72,7,159,data/101
+162,648.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V6+I+II,I+II,2,V6,-92,0,160,data/102
+2456,9824.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (928ms from last QRS),I+II+III,I+II+III,3,I,137,9,124,data/102
+41,164.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+aVF+I,aVF+I,2,III,49,27,121,data/103
+279,1116.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (500ms from last QRS),III+aVF+I,III+aVF,2,III,47,3,160,data/103
+661,2644.0,t_wave_misdetection,Peaked T-wave/ST segment 272ms post-QRS exceeding detection threshold,III+aVF+I,III+aVF,2,III,68,3,160,data/103
+812,3248.0,t_wave_misdetection,Peaked T-wave/ST segment 244ms post-QRS exceeding detection threshold,III+aVF+I,III+aVF,2,III,-55,3,160,data/103
+940,3760.0,t_wave_misdetection,Peaked T-wave/ST segment 284ms post-QRS exceeding detection threshold,III+aVF+I,III+aVF,2,III,39,8,160,data/103
+1002,4008.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,III+aVF+II,III+aVF,2,III,68,5,160,data/103
+1163,4652.0,t_wave_misdetection,Peaked T-wave/ST segment 284ms post-QRS exceeding detection threshold,III+aVF+II,III+aVF+II,3,III,73,4,160,data/103
+1661,6644.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (532ms from last QRS),III+aVF+II,III+aVF+II,3,III,89,6,160,data/103
+1822,7288.0,t_wave_misdetection,Peaked T-wave/ST segment 288ms post-QRS exceeding detection threshold,III+aVF+II,III+aVF+II,3,III,76,4,160,data/103
+1976,7904.0,t_wave_misdetection,Peaked T-wave/ST segment 260ms post-QRS exceeding detection threshold,III+aVF+II,III+aVF,2,III,2,2,160,data/103
+2024,8096.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (452ms from last QRS),III+aVF+II,III+II,2,III,-52,14,160,data/103
+2075,8300.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (656ms from last QRS),III+aVF+II,III+aVF,2,III,-65,28,160,data/103
+2234,8936.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (404ms from last QRS),III+aVF+II,III+aVF,2,III,-71,13,160,data/103
+2399,9596.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (424ms from last QRS),III+aVF+II,III+aVF,2,III,-69,8,160,data/103
+2454,9816.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (644ms from last QRS),III+aVF+II,aVF+II,2,III,-17,20,126,data/103
+8,32.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+aVR+aVL,I+aVR+aVL,3,I,20,2,88,data/104
+148,592.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+aVR+aVL,I+aVR+aVL,3,I,66,11,160,data/104
+661,2644.0,t_wave_misdetection,Peaked T-wave/ST segment 268ms post-QRS exceeding detection threshold,V1+V2+V3,V2+V3,2,V1,42,12,160,data/104
+1126,4504.0,t_wave_misdetection,Peaked T-wave/ST segment 268ms post-QRS exceeding detection threshold,V1+V2+V6,V1+V2,2,V1,42,13,160,data/104
+1358,5432.0,t_wave_misdetection,Peaked T-wave/ST segment 268ms post-QRS exceeding detection threshold,V1+V2+V6,V1+V2+V6,3,V1,34,13,160,data/104
+1584,6336.0,t_wave_misdetection,Peaked T-wave/ST segment 268ms post-QRS exceeding detection threshold,I+V2+V3,I+V2+V3,3,I,-15,3,160,data/104
+1815,7260.0,t_wave_misdetection,Peaked T-wave/ST segment 276ms post-QRS exceeding detection threshold,I+V2+V3,I+V2+V3,3,I,-19,3,160,data/104
+2042,8168.0,t_wave_misdetection,Peaked T-wave/ST segment 256ms post-QRS exceeding detection threshold,V4+V6+I,V6+I,2,V4,14,12,160,data/104
+2440,9760.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (940ms from last QRS),V4+V6+I,V4+V6+I,3,V4,124,15,140,data/104
+32,128.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+aVR,I+II+aVR,3,I,76,7,112,data/105
+871,3484.0,t_wave_misdetection,Peaked T-wave/ST segment 232ms post-QRS exceeding detection threshold,aVF+V2+I,aVF+V2,2,aVF,-42,19,160,data/105
+2328,9312.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (932ms from last QRS),aVL+I+II,aVL+I+II,3,aVL,38,0,160,data/105
+102,408.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V2+I+II,V2+I+II,3,V2,-50,0,160,data/106
+2397,9588.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (716ms from last QRS),I+II+III,I+II+III,3,I,122,3,160,data/106
+99,396.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,91,3,160,data/107
+2306,9224.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (976ms from last QRS),I+II+III,I+II+III,3,I,117,2,160,data/107
+107,428.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V6+I+II,V6+I+II,3,V6,78,5,160,data/108
+2313,9252.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (756ms from last QRS),I+II+III,I+II+III,3,I,97,4,160,data/108
+34,136.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+aVR,I+II+aVR,3,I,157,6,114,data/109
+1004,4016.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,I+II+III,I+II+III,3,I,163,15,160,data/109
+2494,9976.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (384ms from last QRS),II+III+aVR,II+III+aVR,3,II,-142,65,86,data/109
+66,264.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V5+I+III,V5+I+III,3,V5,-60,2,146,data/110
+979,3916.0,t_wave_misdetection,Peaked T-wave/ST segment 232ms post-QRS exceeding detection threshold,V5+I+aVL,V5+I+aVL,3,V5,-78,16,160,data/110
+1373,5492.0,t_wave_misdetection,Peaked T-wave/ST segment 228ms post-QRS exceeding detection threshold,V4+V5+I,V4+V5,2,V4,20,6,160,data/110
+1502,6008.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,III+aVF+I,III+aVF+I,3,III,-20,1,160,data/110
+2476,9904.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (732ms from last QRS),V5+I+II,V5+I+II,3,V5,-50,1,104,data/110
+4,16.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVR+II+I,aVR+II+I,3,aVR,24,1,84,data/111
+212,848.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,aVR+II+I,aVR+II+I,3,aVR,49,1,160,data/111
+300,1200.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,aVR+II+I,aVR+II,2,aVR,-29,1,160,data/111
+551,2204.0,t_wave_misdetection,Peaked T-wave/ST segment 368ms post-QRS exceeding detection threshold,aVR+II+III,aVR+II+III,3,aVR,-42,1,160,data/111
+795,3180.0,t_wave_misdetection,Peaked T-wave/ST segment 336ms post-QRS exceeding detection threshold,aVR+II+III,aVR+II+III,3,aVR,-64,1,160,data/111
+1049,4196.0,t_wave_misdetection,Peaked T-wave/ST segment 348ms post-QRS exceeding detection threshold,aVR+II+aVF,aVR+II+aVF,3,aVR,-32,4,160,data/111
+1132,4528.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (680ms from last QRS),aVR+II+aVF,aVR+II,2,aVR,23,1,160,data/111
+1299,5196.0,t_wave_misdetection,Peaked T-wave/ST segment 356ms post-QRS exceeding detection threshold,aVR+II+aVF,aVR+II+aVF,3,aVR,-65,1,160,data/111
+1553,6212.0,t_wave_misdetection,Peaked T-wave/ST segment 368ms post-QRS exceeding detection threshold,aVR+II+V3,aVR+II+V3,3,aVR,-72,1,160,data/111
+1805,7220.0,t_wave_misdetection,Peaked T-wave/ST segment 372ms post-QRS exceeding detection threshold,aVR+II+V3,aVR+II+V3,3,aVR,-66,1,160,data/111
+2049,8196.0,t_wave_misdetection,Peaked T-wave/ST segment 356ms post-QRS exceeding detection threshold,II+aVR+aVF,II+aVR+aVF,3,II,53,2,160,data/111
+2233,8932.0,duplicate_refractory,Duplicate trigger only 88ms after R-peak at sample 2211,II+aVR+aVF,II+aVR+aVF,3,II,-102,15,160,data/111
+2299,9196.0,t_wave_misdetection,Peaked T-wave/ST segment 352ms post-QRS exceeding detection threshold,II+aVR+aVF,II+aVR,2,II,28,3,160,data/111
+2478,9912.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1068ms from last QRS),II+aVR+aVF,II+aVR+aVF,3,II,-127,13,102,data/111
+37,148.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,140,3,117,data/112
+2476,9904.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (996ms from last QRS),I+II+III,I+II+III,3,I,131,12,104,data/112
+2,8.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+V3+I,aVL+V3,2,aVL,39,2,82,data/113
+180,720.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+V3+I,aVL+V3+I,3,aVL,25,11,160,data/113
+2443,9772.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (980ms from last QRS),I+II+III,I+II+III,3,I,89,11,137,data/113
+51,204.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,166,7,131,data/114
+2358,9432.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (660ms from last QRS),I+II+III,I+II+III,3,I,159,6,160,data/114
+6,24.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+aVF+V1,II+aVF+V1,3,II,-46,5,86,data/115
+196,784.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,II+aVF+V1,II+aVF+V1,3,II,47,15,160,data/115
+2366,9464.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1092ms from last QRS),V3+I+II,V3+I+II,3,V3,-28,1,160,data/115
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V4+V1+V2,V4+V1+V2,3,V4,-76,0,81,data/116
+212,848.0,t_wave_misdetection,Peaked T-wave/ST segment 252ms post-QRS exceeding detection threshold,V4+V1+V2,V4+V1+V2,3,V4,43,6,160,data/116
+378,1512.0,t_wave_misdetection,Peaked T-wave/ST segment 268ms post-QRS exceeding detection threshold,V4+V1+V2,V4+V1+V2,3,V4,59,4,160,data/116
+543,2172.0,t_wave_misdetection,Peaked T-wave/ST segment 260ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,46,7,160,data/116
+708,2832.0,t_wave_misdetection,Peaked T-wave/ST segment 252ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,56,7,160,data/116
+876,3504.0,t_wave_misdetection,Peaked T-wave/ST segment 260ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,67,7,160,data/116
+1043,4172.0,t_wave_misdetection,Peaked T-wave/ST segment 272ms post-QRS exceeding detection threshold,V2+V3+V4,V2+V3+V4,3,V2,56,13,160,data/116
+1209,4836.0,t_wave_misdetection,Peaked T-wave/ST segment 268ms post-QRS exceeding detection threshold,V2+V3+V4,V2+V3+V4,3,V2,50,11,160,data/116
+1373,5492.0,t_wave_misdetection,Peaked T-wave/ST segment 264ms post-QRS exceeding detection threshold,V2+V3+V4,V2+V3+V4,3,V2,52,10,160,data/116
+1538,6152.0,t_wave_misdetection,Peaked T-wave/ST segment 260ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,35,7,160,data/116
+1707,6828.0,t_wave_misdetection,Peaked T-wave/ST segment 248ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,40,7,160,data/116
+1875,7500.0,t_wave_misdetection,Peaked T-wave/ST segment 244ms post-QRS exceeding detection threshold,V1+V2+V3,V1+V2+V3,3,V1,41,7,160,data/116
+2044,8176.0,t_wave_misdetection,Peaked T-wave/ST segment 264ms post-QRS exceeding detection threshold,V2+V3+V4,V2+V3+V4,3,V2,61,13,160,data/116
+2212,8848.0,t_wave_misdetection,Peaked T-wave/ST segment 268ms post-QRS exceeding detection threshold,V2+V3+V4,V2+V3+V4,3,V2,62,11,160,data/116
+2314,9256.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (676ms from last QRS),V2+V3+V4,V2+V3+V4,3,V2,-110,2,160,data/116
+2377,9508.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (928ms from last QRS),V2+V3+V4,V2+V3+V4,3,V2,61,10,160,data/116
+2481,9924.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1344ms from last QRS),V2+V3+V4,V2+V3+V4,3,V2,-114,2,99,data/116
+120,480.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,38,4,160,data/117
+2382,9528.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (680ms from last QRS),I+II+III,I+II+III,3,I,-6,2,160,data/117
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,138,0,81,data/118
+228,912.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+II+III,I+II+III,3,I,145,8,160,data/118
+2282,9128.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (920ms from last QRS),I+II+III,I+II+III,3,I,149,9,160,data/118
+3,12.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+V2+V5,V1+V2+V5,3,V1,44,5,83,data/119
+80,320.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+V2+V5,V1+V2+V5,3,V1,-82,1,160,data/119
+2329,9316.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (992ms from last QRS),I+II+III,I+II+III,3,I,113,2,160,data/119
+2,8.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+V2+V3,V1+V2+V3,3,V1,-39,2,82,data/120
+161,644.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+V2+V3,V1+V2+V3,3,V1,-21,0,160,data/120
+2496,9984.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1120ms from last QRS),III+V1+I,III+V1,2,III,168,7,84,data/120
+12,48.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+I+II,V1+I+II,3,V1,-44,2,92,data/121
+688,2752.0,t_wave_misdetection,Peaked T-wave/ST segment 236ms post-QRS exceeding detection threshold,V1+II+V2,V1+II,2,V1,27,2,160,data/121
+846,3384.0,t_wave_misdetection,Peaked T-wave/ST segment 244ms post-QRS exceeding detection threshold,V1+II+V2,V1+V2,2,V1,24,2,160,data/121
+1014,4056.0,t_wave_misdetection,Peaked T-wave/ST segment 284ms post-QRS exceeding detection threshold,V1+V2+II,V1+V2,2,V1,-9,1,160,data/121
+1158,4632.0,t_wave_misdetection,Peaked T-wave/ST segment 244ms post-QRS exceeding detection threshold,V1+V2+II,V1+V2,2,V1,44,6,160,data/121
+1323,5292.0,t_wave_misdetection,Peaked T-wave/ST segment 280ms post-QRS exceeding detection threshold,V1+V2+II,V1+V2,2,V1,-35,2,160,data/121
+1470,5880.0,t_wave_misdetection,Peaked T-wave/ST segment 244ms post-QRS exceeding detection threshold,V1+V2+II,V1+V2,2,V1,51,3,160,data/121
+1624,6496.0,t_wave_misdetection,Peaked T-wave/ST segment 240ms post-QRS exceeding detection threshold,V1+V2+V4,V1+V2+V4,3,V1,9,2,160,data/121
+1786,7144.0,t_wave_misdetection,Peaked T-wave/ST segment 280ms post-QRS exceeding detection threshold,V1+V2+V4,V1+V2,2,V1,44,1,160,data/121
+1925,7700.0,t_wave_misdetection,Peaked T-wave/ST segment 220ms post-QRS exceeding detection threshold,V1+V2+V4,V1+V4,2,V1,34,2,160,data/121
+2241,8964.0,t_wave_misdetection,Peaked T-wave/ST segment 252ms post-QRS exceeding detection threshold,V1+V2+II,V1+V2,2,V1,31,2,160,data/121
+2391,9564.0,t_wave_misdetection,Peaked T-wave/ST segment 240ms post-QRS exceeding detection threshold,V1+V2+II,V1+V2+II,3,V1,82,2,160,data/121
+2489,9956.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (632ms from last QRS),V1+V2+II,V2+II,2,V1,-116,1,91,data/121
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,135,0,81,data/122
+241,964.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+II+III,I+II+III,3,I,72,5,160,data/122
+2497,9988.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1008ms from last QRS),III+aVL+I,III+aVL,2,III,152,2,83,data/122
+42,168.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,115,7,122,data/123
+2314,9256.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (924ms from last QRS),I+II+III,I+II+III,3,I,128,8,160,data/123
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,130,0,81,data/124
+261,1044.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+II+III,I+II+III,3,I,158,6,160,data/124
+2394,9576.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1092ms from last QRS),I+II+III,I+II+III,3,I,155,12,160,data/124
+26,104.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,74,10,106,data/125
+1165,4660.0,t_wave_misdetection,Peaked T-wave/ST segment 308ms post-QRS exceeding detection threshold,III+aVL+aVF,III+aVL+aVF,3,III,60,11,160,data/125
+1666,6664.0,t_wave_misdetection,Peaked T-wave/ST segment 224ms post-QRS exceeding detection threshold,I+III+aVL,I+aVL,2,I,-16,11,160,data/125
+2215,8860.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1220ms from last QRS),I+II+III,I+II+III,3,I,83,9,160,data/125
+4,16.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+V2+I,V1+V2,2,V1,-30,3,84,data/126
+131,524.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+V2+I,V1+V2+I,3,V1,-60,3,160,data/126
+1000,4000.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,I+II+aVR,I+II+aVR,3,I,146,8,160,data/126
+1700,6800.0,t_wave_misdetection,Peaked T-wave/ST segment 220ms post-QRS exceeding detection threshold,aVL+III+I,aVL+III,2,aVL,-9,4,160,data/126
+2294,9176.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (880ms from last QRS),II+III+aVF,II+III+aVF,3,II,-22,0,160,data/126
+2497,9988.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1692ms from last QRS),II+III+aVF,II+III+aVF,3,II,-144,1,83,data/126
+4,16.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+aVR+aVL,I+aVR+aVL,3,I,-48,8,84,data/127
+308,1232.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+aVR+aVL,I+aVR+aVL,3,I,127,1,160,data/127
+1874,7496.0,t_wave_misdetection,Peaked T-wave/ST segment 220ms post-QRS exceeding detection threshold,II+V5+V6,II+V5+V6,3,II,-5,2,160,data/127
+2183,8732.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1456ms from last QRS),II+III+aVL,II+III+aVL,3,II,51,1,160,data/127
+2497,9988.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (2712ms from last QRS),II+III+aVL,II+III+aVL,3,II,148,2,83,data/127
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+V3+V5,V1+V3+V5,3,V1,49,0,81,data/128
+91,364.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+V3+V5,V1+V3+V5,3,V1,-66,2,160,data/128
+2337,9348.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1112ms from last QRS),III+I+II,III+I+II,3,III,34,0,160,data/128
+33,132.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVF+I+II,I+II,2,aVF,34,2,113,data/129
+2293,9172.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1216ms from last QRS),aVF+V6+I,aVF+V6+I,3,aVF,21,0,160,data/129
+2497,9988.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (2032ms from last QRS),aVF+V6+I,aVF+V6,2,aVF,136,1,83,data/129
+238,952.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,aVF+III+V1,aVF+III+V1,3,aVF,18,0,160,data/130
+474,1896.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,aVF+III+V1,aVF+III,2,aVF,-12,1,160,data/130
+1550,6200.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1012ms from last QRS),aVF+III+I,aVF+III+I,3,aVF,-11,0,160,data/130
+1646,6584.0,t_wave_misdetection,Peaked T-wave/ST segment 336ms post-QRS exceeding detection threshold,aVF+III+I,aVF+III,2,aVF,13,0,160,data/130
+1814,7256.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1008ms from last QRS),aVF+III+I,aVF+III+I,3,aVF,-6,0,160,data/130
+2328,9312.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (936ms from last QRS),aVF+III+I,aVF+III,2,aVF,-23,0,160,data/130
+2497,9988.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1612ms from last QRS),aVF+III+I,aVF+III,2,aVF,140,1,83,data/130
+2,8.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+V2+V3,V1+V2+V3,3,V1,28,1,82,data/131
+224,896.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,V1+V2+V3,V1+V2+V3,3,V1,-68,10,160,data/131
+2287,9148.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (920ms from last QRS),I+II+III,I+II+III,3,I,168,6,160,data/131
+127,508.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVF+I+II,aVF+I+II,3,aVF,52,2,160,data/132
+2434,9736.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1072ms from last QRS),aVF+I+II,aVF+I+II,3,aVF,52,1,146,data/132
+4,16.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+V2+V3,aVL+V2+V3,3,aVL,14,1,84,data/133
+87,348.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+V2+V3,aVL+V2+V3,3,aVL,-31,1,160,data/133
+2491,9964.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1304ms from last QRS),I+II+III,I+II+III,3,I,54,9,89,data/133
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+V2+V3,V1+V2+V3,3,V1,65,0,81,data/134
+191,764.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,V1+V2+V3,V1+V2+V3,3,V1,-84,8,160,data/134
+2279,9116.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1176ms from last QRS),I+II+III,I+II+III,3,I,135,5,160,data/134
+2,8.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,83,6,82,data/135
+214,856.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+II+III,I+II+III,3,I,93,5,160,data/135
+2398,9592.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (828ms from last QRS),I+II+III,I+II+III,3,I,114,5,160,data/135
+14,56.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,18,22,94,data/136
+2430,9720.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (704ms from last QRS),I+II+III,I+II+III,3,I,32,4,150,data/136
+160,640.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+I+II,V1+I+II,3,V1,-108,1,160,data/137
+2490,9960.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (928ms from last QRS),I+II+III,I+II+III,3,I,87,5,90,data/137
+136,544.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,140,7,160,data/138
+2361,9444.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1048ms from last QRS),I+II+III,I+II+III,3,I,122,7,160,data/138
+109,436.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,135,6,160,data/139
+2346,9384.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (788ms from last QRS),III+aVF+I,III+aVF+I,3,III,-125,17,160,data/139
+124,496.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,120,3,160,data/140
+2427,9708.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (740ms from last QRS),I+II+III,I+II+III,3,I,50,3,153,data/140
+2,8.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVF+V2+I,aVF+V2,2,aVF,-49,2,82,data/141
+110,440.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVF+V2+I,aVF+V2+I,3,aVF,-66,7,160,data/141
+2306,9224.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (984ms from last QRS),aVF+I+II,aVF+I+II,3,aVF,78,9,160,data/141
+4,16.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+V5+I,V1+V5,2,V1,-39,5,84,data/142
+65,260.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V1+V5+I,V1+V5+I,3,V1,-140,3,145,data/142
+2308,9232.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (836ms from last QRS),I+II+III,I+II+III,3,I,105,3,160,data/142
+68,272.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,9,2,148,data/143
+2413,9652.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (772ms from last QRS),I+II+III,I+II+III,3,I,20,2,160,data/143
+86,344.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,129,10,160,data/144
+2366,9464.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (856ms from last QRS),I+II+III,I+II+III,3,I,119,3,160,data/144
+111,444.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,88,6,160,data/145
+2391,9564.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (904ms from last QRS),I+II+III,I+II+III,3,I,68,5,160,data/145
+13,52.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,16,19,93,data/146
+2444,9776.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1144ms from last QRS),V5+I+II,V5+I+II,3,V5,158,4,136,data/146
+64,256.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,160,12,144,data/147
+2324,9296.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1016ms from last QRS),I+II+III,I+II+III,3,I,163,13,160,data/147
+108,432.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,53,3,160,data/148
+2476,9904.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1024ms from last QRS),I+II+III,I+II+III,3,I,24,8,104,data/148
+119,476.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+I+II,III+I+II,3,III,-15,2,160,data/149
+1000,4000.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,II+III+aVR,II+III+aVR,3,II,144,10,160,data/149
+2309,9236.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (892ms from last QRS),I+II+III,I+II+III,3,I,116,13,160,data/149
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+aVL+aVF,III+aVL+aVF,3,III,-73,0,81,data/150
+230,920.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,III+aVL+aVF,III+aVL+aVF,3,III,-32,2,160,data/150
+2415,9660.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (992ms from last QRS),I+II+III,I+II+III,3,I,105,11,160,data/150
+101,404.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,158,10,160,data/151
+500,2000.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,V2+V3+I,V2+V3+I,3,V2,-124,18,160,data/151
+2341,9364.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (808ms from last QRS),I+II+III,I+II+III,3,I,148,12,160,data/151
+36,144.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,140,6,116,data/152
+2358,9432.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (980ms from last QRS),I+II+III,I+II+III,3,I,49,4,160,data/152
+116,464.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,159,10,160,data/153
+2462,9848.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1076ms from last QRS),I+II+III,I+II+III,3,I,127,10,118,data/153
+150,600.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,87,9,160,data/154
+2325,9300.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (884ms from last QRS),I+II+III,I+II+III,3,I,62,6,160,data/154
+108,432.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V6+I+II,V6+I+II,3,V6,156,3,160,data/155
+2337,9348.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1008ms from last QRS),I+II+III,I+II+III,3,I,161,10,160,data/155
+3,12.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVL,II+III+aVL,3,II,-43,5,83,data/156
+123,492.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVL,II+III+aVL,3,II,73,3,160,data/156
+2254,9016.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1068ms from last QRS),I+II+III,I+II+III,3,I,141,6,160,data/156
+11,44.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVR,II+III+aVR,3,II,64,29,91,data/157
+208,832.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,II+III+aVR,II+III+aVR,3,II,123,2,160,data/157
+2377,9508.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1052ms from last QRS),I+II+III,I+II+III,3,I,121,9,160,data/157
+2,8.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,-96,6,82,data/158
+166,664.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,-13,0,160,data/158
+2225,8900.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1100ms from last QRS),I+II+III,I+II+III,3,I,42,1,160,data/158
+129,516.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,70,11,160,data/159
+2355,9420.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (888ms from last QRS),I+II+III,I+II+III,3,I,92,11,160,data/159
+163,652.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,62,1,160,data/160
+2200,8800.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1392ms from last QRS),I+II+III,I+II+III,3,I,69,1,160,data/160
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVR,II+III+aVR,3,II,-57,0,81,data/161
+224,896.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,II+III+aVR,II+III+aVR,3,II,100,3,160,data/161
+2332,9328.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1000ms from last QRS),I+II+III,I+II+III,3,I,125,4,160,data/161
+86,344.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+I+II,aVL+I+II,3,aVL,11,8,160,data/162
+2410,9640.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (832ms from last QRS),aVL+I+II,I+II,2,aVL,74,6,160,data/162
+189,756.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,I+II+III,I+II+III,3,I,124,10,160,data/163
+2001,8004.0,cross_window_boundary,2.0-second SQI window boundary artifact / edge stitching,aVL+V2+V3,aVL+V2+V3,3,aVL,138,18,160,data/163
+2404,9616.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (888ms from last QRS),aVL+V2+V3,aVL+V2+V3,3,aVL,156,17,160,data/163
+43,172.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,68,22,123,data/164
+2330,9320.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (940ms from last QRS),I+II+III,I+II+III,3,I,83,21,160,data/164
+4,16.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+III+aVL,II+III+aVL,3,II,32,4,84,data/165
+204,816.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,II+III+aVL,II+III+aVL,3,II,135,2,160,data/165
+2331,9324.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (852ms from last QRS),I+II+III,I+II+III,3,I,153,5,160,data/165
+213,852.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,III+I+II,III+I+II,3,III,109,6,160,data/166
+2312,9248.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (976ms from last QRS),I+II+III,I+II+III,3,I,130,4,160,data/166
+10,40.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+aVL+aVF,III+aVL+aVF,3,III,-50,19,90,data/167
+129,516.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+aVL+aVF,III+aVL+aVF,3,III,118,3,160,data/167
+2362,9448.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (872ms from last QRS),I+II+III,I+II+III,3,I,98,12,160,data/167
+8,32.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+aVR+V6,II+aVR+V6,3,II,-49,7,88,data/168
+163,652.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),II+aVR+V6,II+aVR+V6,3,II,-81,37,160,data/168
+2386,9544.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1096ms from last QRS),I+II+III,I+II+III,3,I,-18,3,160,data/168
+206,824.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,V3+I+II,V3+I+II,3,V3,7,1,160,data/169
+2421,9684.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1112ms from last QRS),I+II+III,I+II+III,3,I,108,8,159,data/169
+33,132.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,83,4,113,data/170
+2344,9376.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1128ms from last QRS),I+II+III,I+II+III,3,I,110,3,160,data/170
+1,4.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+III+aVF,aVL+III+aVF,3,aVL,-76,0,81,data/171
+145,580.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+III+aVF,aVL+III+aVF,3,aVL,-71,1,160,data/171
+2381,9524.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (912ms from last QRS),aVL+I+II,aVL+I+II,3,aVL,12,2,160,data/171
+9,36.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+V2+I,aVL+V2,2,aVL,-34,8,89,data/172
+95,380.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+V2+I,aVL+V2+I,3,aVL,28,2,160,data/172
+2377,9508.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1164ms from last QRS),I+II+III,I+II+III,3,I,168,4,160,data/172
+36,144.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+I+II,III+I+II,3,III,-21,1,116,data/173
+1808,7232.0,t_wave_misdetection,Peaked T-wave/ST segment 240ms post-QRS exceeding detection threshold,V1+III+I,V1+III,2,V1,-33,5,160,data/173
+2367,9468.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (444ms from last QRS),III+I+II,III+I+II,3,III,36,3,160,data/173
+36,144.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,-87,7,116,data/174
+2267,9068.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (992ms from last QRS),I+II+III,I+II+III,3,I,-50,5,160,data/174
+121,484.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,93,12,160,data/175
+2377,9508.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (892ms from last QRS),I+II+III,I+II+III,3,I,114,8,160,data/175
+128,512.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V2+I+II,V2+I+II,3,V2,-137,19,160,data/176
+1606,6424.0,t_wave_misdetection,Peaked T-wave/ST segment 224ms post-QRS exceeding detection threshold,V2+V1+I,V2+V1,2,V2,49,12,160,data/176
+2269,9076.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (960ms from last QRS),V2+I+II,V2+I+II,3,V2,-77,2,160,data/176
+66,264.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V5+I+II,V5+I+II,3,V5,170,4,146,data/177
+2438,9752.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (796ms from last QRS),I+II+III,I+II+III,3,I,101,3,142,data/177
+134,536.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,122,16,160,data/178
+2482,9928.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (744ms from last QRS),I+II+III,I+II+III,3,I,136,14,98,data/178
+213,852.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,aVF+I+II,aVF+I+II,3,aVF,114,1,160,data/179
+2327,9308.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (948ms from last QRS),I+II+III,I+II+III,3,I,137,4,160,data/179
+120,480.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,169,7,160,data/180
+2361,9444.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (788ms from last QRS),I+II+III,I+II+III,3,I,138,6,160,data/180
+3,12.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+aVL+I,III+aVL,2,III,38,2,83,data/181
+220,880.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,III+aVL+I,III+aVL+I,3,III,136,2,160,data/181
+2364,9456.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (956ms from last QRS),I+II+III,I+II+III,3,I,129,10,160,data/181
+103,412.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V3+I+II,V3+I+II,3,V3,-30,2,160,data/182
+2354,9416.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (676ms from last QRS),V3+I+II,V3+I+II,3,V3,-33,1,160,data/182
+78,312.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVF+I+II,aVF+I+II,3,aVF,-65,1,158,data/183
+2372,9488.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (752ms from last QRS),I+II+III,I+II+III,3,I,174,9,160,data/183
+83,332.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,134,4,160,data/184
+2297,9188.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1020ms from last QRS),I+II+III,I+II+III,3,I,139,4,160,data/184
+126,504.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),V3+I+II,V3+I+II,3,V3,33,1,160,data/185
+2415,9660.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (684ms from last QRS),I+II+III,I+II+III,3,I,115,8,160,data/185
+88,352.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+I+II,aVL+I+II,3,aVL,-116,4,160,data/186
+2475,9900.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (812ms from last QRS),aVL+I+II,aVL+I+II,3,aVL,18,4,105,data/186
+4,16.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),III+aVL+I,III+aVL,2,III,-49,8,84,data/187
+193,772.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,III+aVL+I,III+aVL+I,3,III,3,1,160,data/187
+2469,9876.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (920ms from last QRS),I+II+III,I+II+III,3,I,140,5,111,data/187
+3,12.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+V1+I,aVL+V1,2,aVL,-59,9,83,data/188
+53,212.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+V1+I,aVL+V1+I,3,aVL,7,5,133,data/188
+75,300.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),aVL+I+II,I+II,2,aVL,93,15,155,data/189
+2,8.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+aVL+V6,I+aVL+V6,3,I,-50,3,82,data/190
+69,276.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+aVL+V6,I+aVL+V6,3,I,21,2,149,data/190
+2487,9948.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (644ms from last QRS),aVL+I+II,aVL+I+II,3,aVL,-75,5,93,data/190
+7,28.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+aVL+II,I+aVL,2,I,-57,6,87,data/191
+173,692.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+aVL+II,aVL+II,2,I,38,3,160,data/191
+2368,9472.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (984ms from last QRS),I+II+III,I+II+III,3,I,59,2,160,data/191
+255,1020.0,baseline_wander_noise,Pre-beat low frequency wander before first reference beat,V1+I+II,V1+I,2,V1,-100,21,160,data/192
+2493,9972.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (980ms from last QRS),II+I+III,II+I+III,3,II,39,16,87,data/192
+59,236.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,30,3,139,data/193
+2457,9828.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (976ms from last QRS),I+II+III,I+II+III,3,I,-26,3,123,data/193
+72,288.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,65,9,152,data/194
+2388,9552.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (1084ms from last QRS),I+II+III,I+II+III,3,I,48,7,160,data/194
+3,12.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+III+aVL,I+III+aVL,3,I,-65,10,83,data/195
+65,260.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+III+aVL,I+III+aVL,3,I,1,3,145,data/195
+2288,9152.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (864ms from last QRS),I+II+III,I+II+III,3,I,73,3,160,data/195
+162,648.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,113,3,160,data/196
+2357,9428.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (812ms from last QRS),I+II+III,I+II+III,3,I,121,2,160,data/196
+75,300.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,150,6,155,data/197
+2357,9428.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (736ms from last QRS),I+II+III,I+II+III,3,I,112,5,160,data/197
+102,408.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II+III,3,I,163,7,160,data/198
+2329,9316.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (976ms from last QRS),I+II+III,I+II+III,3,I,155,9,160,data/198
+29,116.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II,2,I,167,6,109,data/199
+2341,9364.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (996ms from last QRS),I+II+III,I+II,2,I,162,7,160,data/199
+27,108.0,startup_transient,Filter settling & initial adaptive threshold calibration phase (<0.75s),I+II+III,I+II,2,I,80,5,107,data/200
+2415,9660.0,baseline_wander_noise,Low frequency wander or sub-threshold noise ripple (976ms from last QRS),I+II+III,I+II+III,3,I,-54,41,160,data/200

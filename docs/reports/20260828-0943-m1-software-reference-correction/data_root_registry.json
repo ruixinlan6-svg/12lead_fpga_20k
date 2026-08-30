@@ -1,0 +1,38 @@
+{
+  "run_id": "20260828-0943-m1-software-reference-correction",
+  "database_roots_opened": false,
+  "path_policy": "paths are intentionally omitted from this report",
+  "registered_databases": [
+    {
+      "database": "Icentia11k",
+      "role": "development/internal",
+      "root_supplied": false
+    },
+    {
+      "database": "LUDB",
+      "role": "development",
+      "root_supplied": false
+    },
+    {
+      "database": "INCART",
+      "role": "locked",
+      "root_supplied": false
+    },
+    {
+      "database": "MIT-BIH Arrhythmia",
+      "role": "locked",
+      "root_supplied": false
+    },
+    {
+      "database": "AHA Ventricular Arrhythmia",
+      "role": "locked",
+      "root_supplied": false
+    },
+    {
+      "database": "MIT-BIH Noise Stress Test",
+      "role": "locked",
+      "root_supplied": false
+    }
+  ],
+  "repository_candidate_scan": "not performed; only a temporary synthetic registry root was opened"
+}

@@ -1,0 +1,37 @@
+{
+  "run_id": "20260828-0943-m1-software-reference-correction",
+  "status": "synthetic_reference_only",
+  "registry_executed": true,
+  "detector_executed": true,
+  "evaluator_executed": true,
+  "patient_leakage_count": 0,
+  "timestamp_error_gate_ms": 2,
+  "float_fixed_qrs_timestamp_mismatch": 0,
+  "synthetic_evaluation": {
+    "per_record": [
+      {
+        "record_id": "synthetic-qrs",
+        "learning_period_s": 0,
+        "QTP": 3,
+        "QFN": 0,
+        "QFP": 0,
+        "qrs_se_percent": 100.0,
+        "qrs_plus_p_percent": 100.0
+      }
+    ],
+    "gross": {
+      "QTP": 3,
+      "QFN": 0,
+      "QFP": 0,
+      "qrs_se_percent": 100.0,
+      "qrs_plus_p_percent": 100.0
+    },
+    "average": {
+      "qrs_se_percent": 100.0,
+      "qrs_plus_p_percent": 100.0
+    }
+  },
+  "ludb_qrs_se": "not_evaluated",
+  "ludb_qrs_plus_p": "not_evaluated",
+  "notes": "No score is fabricated for LUDB or any locked database."
+}

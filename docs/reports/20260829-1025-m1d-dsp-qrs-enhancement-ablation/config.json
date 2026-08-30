@@ -1,0 +1,28 @@
+{
+  "run_id": "20260829-1025-m1d-dsp-qrs-enhancement-ablation",
+  "source_rate_hz": 500,
+  "target_rate_hz": 250,
+  "record_duration_s": 10,
+  "learning_period_s": 0,
+  "canonical_leads": [
+    "I",
+    "II",
+    "III",
+    "aVR",
+    "aVL",
+    "aVF",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6"
+  ],
+  "sqi_window_samples": 500,
+  "sqi_windows_per_record": 5,
+  "selected_valid_leads": 3,
+  "lead_fusion": "inclusive 2-of-3 within 20 target samples (80 ms)",
+  "reference_construction": "median of independently annotated lead-specific WFDB N peaks clustered within 150 ms",
+  "match_tolerance_ms": 150,
+  "signal_interface": "signed int16, 1 LSB = 5 microvolts"
+}

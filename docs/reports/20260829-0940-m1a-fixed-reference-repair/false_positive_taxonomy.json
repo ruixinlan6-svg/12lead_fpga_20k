@@ -1,0 +1,29 @@
+{
+  "total_fp_count": 679,
+  "breakdown": {
+    "startup_transient": {
+      "count": 266,
+      "percentage": 39.18
+    },
+    "t_wave_misdetection": {
+      "count": 143,
+      "percentage": 21.06
+    },
+    "duplicate_refractory": {
+      "count": 1,
+      "percentage": 0.15
+    },
+    "cross_window_boundary": {
+      "count": 20,
+      "percentage": 2.95
+    },
+    "emg_noise": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "baseline_wander": {
+      "count": 249,
+      "percentage": 36.67
+    }
+  }
+}

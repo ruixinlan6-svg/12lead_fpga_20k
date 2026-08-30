@@ -1,0 +1,96 @@
+{
+  "run_id": "20260829-215835-m1g-formal-contract-and-acceptance",
+  "generated_at_utc": "2026-08-29T14:09:24.170074+00:00",
+  "database": "LUDB",
+  "database_version": "1.0.1",
+  "role": "qrs_development_only",
+  "record_count_discovered": 200,
+  "record_count_evaluated": 200,
+  "record_count_failed": 0,
+  "gross": {
+    "QTP": 1824,
+    "QFN": 8,
+    "QFP": 333,
+    "qrs_se_percent": 99.56331877729258,
+    "qrs_plus_p_percent": 84.56189151599443
+  },
+  "average": {
+    "qrs_se_percent": 99.55555555555554,
+    "qrs_plus_p_percent": 84.18194215914798
+  },
+  "gross_float": {
+    "QTP": 1830,
+    "QFN": 2,
+    "QFP": 657,
+    "qrs_se_percent": 99.89082969432314,
+    "qrs_plus_p_percent": 73.58262967430639
+  },
+  "average_float": {
+    "qrs_se_percent": 99.9125,
+    "qrs_plus_p_percent": 75.4167479490529
+  },
+  "gross_fixed": {
+    "QTP": 1824,
+    "QFN": 8,
+    "QFP": 333,
+    "qrs_se_percent": 99.56331877729258,
+    "qrs_plus_p_percent": 84.56189151599443
+  },
+  "average_fixed": {
+    "qrs_se_percent": 99.55555555555554,
+    "qrs_plus_p_percent": 84.18194215914798
+  },
+  "gate_scope": "fixed_annotation_support",
+  "gate_metrics": {
+    "gross": {
+      "QTP": 1824,
+      "QFN": 8,
+      "QFP": 9,
+      "qrs_se_percent": 99.56331877729258,
+      "qrs_plus_p_percent": 99.50900163666121
+    },
+    "average": {
+      "qrs_se_percent": 99.55555555555554,
+      "qrs_plus_p_percent": 99.56571492233256
+    }
+  },
+  "gross_fixed_annotation_support": {
+    "QTP": 1824,
+    "QFN": 8,
+    "QFP": 9,
+    "qrs_se_percent": 99.56331877729258,
+    "qrs_plus_p_percent": 99.50900163666121
+  },
+  "average_fixed_annotation_support": {
+    "qrs_se_percent": 99.55555555555554,
+    "qrs_plus_p_percent": 99.56571492233256
+  },
+  "gross_float_annotation_support": {
+    "QTP": 1830,
+    "QFN": 2,
+    "QFP": 153,
+    "qrs_se_percent": 99.89082969432314,
+    "qrs_plus_p_percent": 92.28441754916793
+  },
+  "average_float_annotation_support": {
+    "qrs_se_percent": 99.9125,
+    "qrs_plus_p_percent": 95.01999312778725
+  },
+  "full_record_metrics_role": "required_diagnostic",
+  "float_reference_role": "independent_diagnostic",
+  "bit_exact_chain": [
+    "integer_python_reference",
+    "rtl_simulation",
+    "QN88_SRAM_FPGA"
+  ],
+  "float_fixed_timestamp_mismatch_count": 1672,
+  "max_annotation_mapping_error_ms": 2.000000000000668,
+  "thresholds": {
+    "qrs_se_percent_min": 99.5,
+    "qrs_plus_p_percent_min": 99.5
+  },
+  "accepted": true,
+  "decision": "接受",
+  "milestone": "M1-reference-accepted",
+  "locked_databases_accessed": false
+}

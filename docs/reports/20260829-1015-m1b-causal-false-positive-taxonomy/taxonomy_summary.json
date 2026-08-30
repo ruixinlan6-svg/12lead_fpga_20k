@@ -1,0 +1,69 @@
+{
+  "dataset": "LUDB 1.0.1 (200 records)",
+  "total_references": 1832,
+  "fixed_causal": {
+    "total_qfp": 392,
+    "total_qfn": 85,
+    "fp_breakdown": {
+      "baseline_wander_noise": {
+        "count": 209,
+        "percentage": 53.32
+      },
+      "startup_transient": {
+        "count": 160,
+        "percentage": 40.82
+      },
+      "t_wave_misdetection": {
+        "count": 14,
+        "percentage": 3.57
+      },
+      "cross_window_boundary": {
+        "count": 9,
+        "percentage": 2.3
+      }
+    },
+    "fn_breakdown": {
+      "sub_threshold_amplitude": {
+        "count": 39,
+        "percentage": 45.88
+      },
+      "voting_insufficient": {
+        "count": 30,
+        "percentage": 35.29
+      },
+      "suboptimal_lead_selection": {
+        "count": 14,
+        "percentage": 16.47
+      },
+      "startup_unsettled": {
+        "count": 2,
+        "percentage": 2.35
+      }
+    }
+  },
+  "float_lookahead": {
+    "total_qfp": 679,
+    "fp_breakdown": {
+      "baseline_wander_noise": {
+        "count": 282,
+        "percentage": 41.53
+      },
+      "startup_transient": {
+        "count": 231,
+        "percentage": 34.02
+      },
+      "t_wave_misdetection": {
+        "count": 145,
+        "percentage": 21.35
+      },
+      "cross_window_boundary": {
+        "count": 20,
+        "percentage": 2.95
+      },
+      "duplicate_refractory": {
+        "count": 1,
+        "percentage": 0.15
+      }
+    }
+  }
+}

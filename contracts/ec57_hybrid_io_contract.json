@@ -1,0 +1,287 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_id": "qn88-ec57-hybrid-io",
+  "contract_version": "1.0.0",
+  "status": "frozen-for-M0",
+  "scope": "research_prototype_only",
+  "clinical_use": false,
+  "hardware_target": "Sipeed Tang Nano 20K / GW2AR-LV18QN88C8/I7",
+  "sampling": {
+    "rate_hz": 250,
+    "native_input_rate_required_hz": 250,
+    "resampling": "All source databases are resampled on the host with a versioned rational polyphase resampler before this interface.",
+    "event_time_mapping": "Represent event time in seconds first, then map to the target sample index.",
+    "sample_index": {
+      "type": "uint64",
+      "monotonic": true,
+      "gap_policy": "error",
+      "duplicate_policy": "error",
+      "out_of_order_policy": "error"
+    }
+  },
+  "leads": {
+    "count": 12,
+    "order": [
+      "I",
+      "II",
+      "III",
+      "aVR",
+      "aVL",
+      "aVF",
+      "V1",
+      "V2",
+      "V3",
+      "V4",
+      "V5",
+      "V6"
+    ],
+    "order_id": "standard-12-lead-i-ii-iii-avr-avl-avf-v1-v2-v3-v4-v5-v6",
+    "polarity": "standard",
+    "order_validation": "A frame with any other order is rejected as INVALID_LEAD_ORDER; no silent permutation is allowed."
+  },
+  "transport": {
+    "sample_dtype": "signed_int16",
+    "endianness": "little",
+    "microvolts_per_lsb": 5,
+    "sample_layout": "one sample_index carries exactly 12 lead values in the frozen lead order",
+    "frame_integrity": "CRC16",
+    "frame_sequence": "strictly increasing uint32 sequence",
+    "input_error_policy": "CRC, sequence, missing-sample, duplicate-sample, and overflow errors are explicit and invalidate the affected output."
+  },
+  "front_end": {
+    "morphology_path": {
+      "bandpass_hz": [
+        0.5,
+        40.0
+      ],
+      "butterworth_order": 4,
+      "representation": "SOS",
+      "coefficient_quantization": "Q2.14",
+      "accumulator_bits": 40,
+      "section_output": "signed_int24_saturation",
+      "model_input_conversion": "frozen_scale_then_signed_int8_saturation"
+    },
+    "qrs_path": {
+      "bandpass_hz": [
+        5.0,
+        25.0
+      ],
+      "butterworth_order": 4,
+      "representation": "SOS",
+      "coefficient_quantization": "Q2.14",
+      "accumulator_bits": 40,
+      "derivative_kernel": [
+        -1,
+        -2,
+        0,
+        2,
+        1
+      ],
+      "derivative_divisor": 8,
+      "moving_integrator_length_samples": 30,
+      "moving_integrator_duration_ms": 120,
+      "refractory_period_samples": 50,
+      "refractory_period_ms": 200,
+      "searchback_rr_multiplier": 1.66,
+      "searchback_rr_history_length": 8,
+      "adaptive_threshold": "signal_and_noise_thresholds"
+    },
+    "sqi": {
+      "window_length_samples": 500,
+      "window_duration_s": 2.0,
+      "flatline_peak_to_peak_less_than_uv": 50,
+      "flatline_std_less_than_uv": 10,
+      "saturation_consecutive_samples": 3,
+      "saturation_window_fraction_at_or_near_int16_rail": 0.01,
+      "impulsive_noise_adjacent_delta_greater_than_uv": 2000,
+      "impulsive_noise_window_fraction_greater_than": 0.01,
+      "lead_ranking_keys": [
+        "valid_qrs_candidate_count_desc",
+        "differential_noise_fraction_asc",
+        "saturation_fraction_asc"
+      ],
+      "threshold_change_requires_new_run": true
+    },
+    "lead_fusion": {
+      "selected_lead_count": 3,
+      "candidate_consensus_window_ms": 80,
+      "consensus_rule": "at least 2 of 3 candidates; output the median candidate timestamp",
+      "single_valid_lead_policy": "allow one-lead output only with DEGRADED_ONE_LEAD",
+      "zero_valid_lead_policy": "SIGNAL_LOSS",
+      "fixed_pipeline_delay_compensation": {
+        "allowed": true,
+        "count": 1,
+        "per_record_movement": false
+      }
+    },
+    "heart_rate": {
+      "valid_rr_ms": [
+        250,
+        2000
+      ],
+      "recent_rr_median_length": 5,
+      "update": "on_each_valid_qrs",
+      "formula": "60000 / median(valid_recent_rr_ms)",
+      "invalidate_after_no_valid_qrs_s": 3.0,
+      "stale_value_policy": "do_not_hold_old_hr"
+    }
+  },
+  "beat_window": {
+    "length_samples": 160,
+    "r_peak_index": 64,
+    "start_offset_samples": -64,
+    "end_offset_samples_exclusive": 96,
+    "coverage_ms": [
+      -256,
+      384
+    ],
+    "main_lead": "highest-ranked-valid-sqi-lead",
+    "boundary_policy": "window coverage failure is an explicit WINDOW_OVERWRITE or INVALID_WINDOW state"
+  },
+  "beat_preprocessing": {
+    "waveform": {
+      "centering": "subtract_window_median",
+      "scale_statistic": "train_split_abs_deviation_99_5_percentile",
+      "scale_floor_uv": 100,
+      "output_scale": 127,
+      "rounding": "round_half_away_from_zero",
+      "saturation": "signed_int8"
+    },
+    "auxiliary_features": [
+      {
+        "name": "previous_rr_over_recent_8_rr_median",
+        "source": "previous_valid_rr_ms / median(recent_8_valid_rr_ms)",
+        "quantization": "round(32 * (x - train_median) / (train_iqr / 2))",
+        "output_dtype": "signed_int8",
+        "zero_iqr_policy": "build_fails"
+      },
+      {
+        "name": "qrs_width_ms",
+        "source": "detected_qrs_width_ms",
+        "quantization": "round(32 * (x - train_median) / (train_iqr / 2))",
+        "output_dtype": "signed_int8",
+        "zero_iqr_policy": "build_fails"
+      },
+      {
+        "name": "peak_over_recent_8_peak_median",
+        "source": "main_lead_peak / median(recent_8_peak_values)",
+        "quantization": "round(32 * (x - train_median) / (train_iqr / 2))",
+        "output_dtype": "signed_int8",
+        "zero_iqr_policy": "build_fails"
+      },
+      {
+        "name": "main_lead_sqi",
+        "source": "selected_main_lead_sqi",
+        "quantization": "round(32 * (x - train_median) / (train_iqr / 2))",
+        "output_dtype": "signed_int8",
+        "zero_iqr_policy": "build_fails"
+      }
+    ],
+    "feature_count": 4,
+    "statistics_source": "Icentia11k train split only; no validation, internal_test, or locked data"
+  },
+  "model": {
+    "input_shape": [
+      1,
+      160
+    ],
+    "architecture": [
+      "Conv1d(1, 8, kernel=7, padding=3)",
+      "ReLU",
+      "MaxPool1d(2)",
+      "Conv1d(8, 16, kernel=5, padding=2)",
+      "ReLU",
+      "MaxPool1d(2)",
+      "Conv1d(16, 16, kernel=3, padding=1)",
+      "ReLU",
+      "GlobalAveragePool",
+      "Concat four scalar features",
+      "Linear(20, 2)"
+    ],
+    "parameter_budget": 2048,
+    "expected_parameter_count": 1546,
+    "mac_budget_per_beat": 100000,
+    "expected_mac_per_beat": 90920,
+    "max_single_layer_activation_bytes": 2048,
+    "forbidden_before_new_run": [
+      "additional_channels",
+      "Transformer",
+      "LSTM",
+      "BatchNorm",
+      "dynamic_shape"
+    ]
+  },
+  "outputs": {
+    "beat_classifier": {
+      "logit_order": [
+        "non_VEB",
+        "VEB"
+      ],
+      "class_output": [
+        "non_VEB",
+        "VEB"
+      ],
+      "unknown_policy": "unknown_or_unclassifiable has no forced class output and is represented by UNCLASSIFIED_BEAT",
+      "clinical_interpretation": false
+    },
+    "status_outputs": [
+      "FULL_12_LEAD",
+      "DEGRADED_ONE_LEAD",
+      "SIGNAL_LOSS",
+      "UNCLASSIFIED_BEAT"
+    ],
+    "error_states": [
+      "INVALID_LEAD_ORDER",
+      "INVALID_SAMPLING_RATE",
+      "INVALID_WINDOW",
+      "INVALID_R_INDEX",
+      "MISSING_SAMPLE",
+      "DUPLICATE_SAMPLE",
+      "OUT_OF_ORDER_SAMPLE",
+      "CRC_ERROR",
+      "FIFO_OVERFLOW",
+      "WINDOW_OVERWRITE",
+      "TIMEOUT",
+      "RESET_SEEN",
+      "INVALID_CONFIGURATION"
+    ],
+    "error_policy": "Any error that affects integrity is explicit, counted, and prevents an unqualified beat class or research event from being emitted."
+  },
+  "research_events": {
+    "status": "research_only_not_medical_diagnosis",
+    "definitions": {
+      "BRADY_CANDIDATE": {
+        "assertion": "valid HR < 50 bpm continuously for 10 s",
+        "clear": "valid HR >= 55 bpm continuously for 5 s"
+      },
+      "TACHY_CANDIDATE": {
+        "assertion": "valid HR > 100 bpm continuously for 10 s",
+        "clear": "valid HR <= 95 bpm continuously for 5 s"
+      },
+      "ASYSTOLE_CANDIDATE": {
+        "assertion": "at least one lead is valid and no valid QRS for 3.0 s",
+        "clear": "next valid QRS",
+        "zero_valid_leads": "SIGNAL_LOSS"
+      },
+      "PVC_COUPLET": {
+        "assertion": "exactly two consecutive VEB beats; emit on beat two",
+        "upgrade": "a third consecutive VEB upgrades the sequence to VENTRICULAR_RUN"
+      },
+      "VENTRICULAR_RUN": {
+        "assertion": "at least three consecutive VEB beats; start on beat three",
+        "update": "update end time while the run continues"
+      },
+      "VT_CANDIDATE": {
+        "assertion": "at least three consecutive VEB beats and median V-to-V run heart rate >= 100 bpm"
+      },
+      "BIGEMINY_CANDIDATE": {
+        "assertion": "nonV, V alternation accumulating three V beats (six beats)",
+        "clear": "two consecutive pattern violations"
+      },
+      "TRIGEMINY_CANDIDATE": {
+        "assertion": "nonV, nonV, V repetition accumulating three V beats (nine beats)",
+        "clear": "two consecutive pattern violations"
+      }
+    }
+  }
+}

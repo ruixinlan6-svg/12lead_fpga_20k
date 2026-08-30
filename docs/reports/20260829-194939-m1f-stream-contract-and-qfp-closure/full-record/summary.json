@@ -1,0 +1,53 @@
+{
+  "run_id": "20260829-194939-m1f-stream-contract-and-qfp-closure",
+  "generated_at_utc": "2026-08-29T12:06:46.170118+00:00",
+  "database": "LUDB",
+  "database_version": "1.0.1",
+  "role": "qrs_development_only",
+  "record_count_discovered": 200,
+  "record_count_evaluated": 200,
+  "record_count_failed": 0,
+  "gross": {
+    "QTP": 1824,
+    "QFN": 8,
+    "QFP": 333,
+    "qrs_se_percent": 99.56331877729258,
+    "qrs_plus_p_percent": 84.56189151599443
+  },
+  "average": {
+    "qrs_se_percent": 99.55555555555554,
+    "qrs_plus_p_percent": 84.18194215914798
+  },
+  "gross_float": {
+    "QTP": 1830,
+    "QFN": 2,
+    "QFP": 657,
+    "qrs_se_percent": 99.89082969432314,
+    "qrs_plus_p_percent": 73.58262967430639
+  },
+  "average_float": {
+    "qrs_se_percent": 99.9125,
+    "qrs_plus_p_percent": 75.4167479490529
+  },
+  "gross_fixed": {
+    "QTP": 1824,
+    "QFN": 8,
+    "QFP": 333,
+    "qrs_se_percent": 99.56331877729258,
+    "qrs_plus_p_percent": 84.56189151599443
+  },
+  "average_fixed": {
+    "qrs_se_percent": 99.55555555555554,
+    "qrs_plus_p_percent": 84.18194215914798
+  },
+  "float_fixed_timestamp_mismatch_count": 1672,
+  "max_annotation_mapping_error_ms": 2.000000000000668,
+  "thresholds": {
+    "qrs_se_percent_min": 99.5,
+    "qrs_plus_p_percent_min": 99.5
+  },
+  "accepted": false,
+  "decision": "回到训练",
+  "milestone": "M1-reference-open",
+  "locked_databases_accessed": false
+}

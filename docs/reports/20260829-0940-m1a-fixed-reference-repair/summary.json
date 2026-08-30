@@ -1,0 +1,53 @@
+{
+  "run_id": "20260829-0940-m1a-fixed-reference-repair",
+  "generated_at_utc": "2026-08-29T01:45:29.542514+00:00",
+  "database": "LUDB",
+  "database_version": "1.0.1",
+  "role": "qrs_development_only",
+  "record_count_discovered": 200,
+  "record_count_evaluated": 200,
+  "record_count_failed": 0,
+  "gross": {
+    "QTP": 1832,
+    "QFN": 0,
+    "QFP": 578,
+    "qrs_se_percent": 100.0,
+    "qrs_plus_p_percent": 76.01659751037344
+  },
+  "average": {
+    "qrs_se_percent": 100.0,
+    "qrs_plus_p_percent": 77.36625674675082
+  },
+  "gross_float": {
+    "QTP": 1831,
+    "QFN": 1,
+    "QFP": 679,
+    "qrs_se_percent": 99.94541484716157,
+    "qrs_plus_p_percent": 72.94820717131473
+  },
+  "average_float": {
+    "qrs_se_percent": 99.9375,
+    "qrs_plus_p_percent": 74.90846161286674
+  },
+  "gross_fixed": {
+    "QTP": 1832,
+    "QFN": 0,
+    "QFP": 578,
+    "qrs_se_percent": 100.0,
+    "qrs_plus_p_percent": 76.01659751037344
+  },
+  "average_fixed": {
+    "qrs_se_percent": 100.0,
+    "qrs_plus_p_percent": 77.36625674675082
+  },
+  "float_fixed_timestamp_mismatch_count": 802,
+  "max_annotation_mapping_error_ms": 2.000000000000668,
+  "thresholds": {
+    "qrs_se_percent_min": 99.5,
+    "qrs_plus_p_percent_min": 99.5
+  },
+  "accepted": false,
+  "decision": "回到训练",
+  "milestone": "M1-reference-open",
+  "locked_databases_accessed": false
+}

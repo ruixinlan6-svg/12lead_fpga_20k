@@ -1,0 +1,8622 @@
+[
+  {
+    "record_id": "data/1",
+    "fixed": {
+      "full": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        293,
+        2022
+      ],
+      "unsupported_detected_indices": [
+        2314
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        293,
+        2022
+      ],
+      "unsupported_detected_indices": [
+        6,
+        2314
+      ]
+    }
+  },
+  {
+    "record_id": "data/2",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        247,
+        2147
+      ],
+      "unsupported_detected_indices": [
+        2345
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        247,
+        2147
+      ],
+      "unsupported_detected_indices": [
+        2,
+        62,
+        2345
+      ]
+    }
+  },
+  {
+    "record_id": "data/3",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        282,
+        2156
+      ],
+      "unsupported_detected_indices": [
+        100,
+        2352
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        282,
+        2156
+      ],
+      "unsupported_detected_indices": [
+        98,
+        2350
+      ]
+    }
+  },
+  {
+    "record_id": "data/4",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        228,
+        2268
+      ],
+      "unsupported_detected_indices": []
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        228,
+        2268
+      ],
+      "unsupported_detected_indices": [
+        8,
+        2474
+      ]
+    }
+  },
+  {
+    "record_id": "data/5",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        461,
+        2080
+      ],
+      "unsupported_detected_indices": [
+        222,
+        2300
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        461,
+        2080
+      ],
+      "unsupported_detected_indices": [
+        223,
+        2300
+      ]
+    }
+  },
+  {
+    "record_id": "data/6",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        342,
+        2185
+      ],
+      "unsupported_detected_indices": [
+        84,
+        2442
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        342,
+        2185
+      ],
+      "unsupported_detected_indices": [
+        1,
+        84,
+        2442
+      ]
+    }
+  },
+  {
+    "record_id": "data/7",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        450,
+        2214
+      ],
+      "unsupported_detected_indices": [
+        240,
+        2431
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        450,
+        2214
+      ],
+      "unsupported_detected_indices": [
+        2,
+        238,
+        2431
+      ]
+    }
+  },
+  {
+    "record_id": "data/8",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        315,
+        2269
+      ],
+      "unsupported_detected_indices": [
+        140,
+        2431
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 11
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 7
+      },
+      "support_samples": [
+        315,
+        2269
+      ],
+      "unsupported_detected_indices": [
+        133,
+        189,
+        2424,
+        2480
+      ]
+    }
+  },
+  {
+    "record_id": "data/9",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        330,
+        2101
+      ],
+      "unsupported_detected_indices": [
+        165,
+        2287
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        330,
+        2101
+      ],
+      "unsupported_detected_indices": [
+        166,
+        2287
+      ]
+    }
+  },
+  {
+    "record_id": "data/10",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        313,
+        2095
+      ],
+      "unsupported_detected_indices": [
+        107,
+        2305
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        313,
+        2095
+      ],
+      "unsupported_detected_indices": [
+        103,
+        2305
+      ]
+    }
+  },
+  {
+    "record_id": "data/11",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        353,
+        2178
+      ],
+      "unsupported_detected_indices": [
+        137,
+        2388
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        353,
+        2178
+      ],
+      "unsupported_detected_indices": [
+        137,
+        2388
+      ]
+    }
+  },
+  {
+    "record_id": "data/12",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        354,
+        2141
+      ],
+      "unsupported_detected_indices": [
+        133,
+        2381
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 4
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        354,
+        2141
+      ],
+      "unsupported_detected_indices": [
+        1,
+        133,
+        196,
+        2381
+      ]
+    }
+  },
+  {
+    "record_id": "data/13",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 4
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        425,
+        2031
+      ],
+      "unsupported_detected_indices": [
+        206,
+        2049,
+        2251
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        425,
+        2031
+      ],
+      "unsupported_detected_indices": [
+        206,
+        2252
+      ]
+    }
+  },
+  {
+    "record_id": "data/14",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        222,
+        2272
+      ],
+      "unsupported_detected_indices": [
+        80,
+        2407
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        222,
+        2272
+      ],
+      "unsupported_detected_indices": [
+        80,
+        2407
+      ]
+    }
+  },
+  {
+    "record_id": "data/15",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        390,
+        2120
+      ],
+      "unsupported_detected_indices": [
+        182,
+        2317
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        390,
+        2120
+      ],
+      "unsupported_detected_indices": [
+        182,
+        2317
+      ]
+    }
+  },
+  {
+    "record_id": "data/16",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        278,
+        2196
+      ],
+      "unsupported_detected_indices": [
+        113,
+        2370
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        278,
+        2196
+      ],
+      "unsupported_detected_indices": [
+        113,
+        2370
+      ]
+    }
+  },
+  {
+    "record_id": "data/17",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        350,
+        2302
+      ],
+      "unsupported_detected_indices": [
+        181,
+        2464
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        350,
+        2302
+      ],
+      "unsupported_detected_indices": [
+        3,
+        181,
+        2464
+      ]
+    }
+  },
+  {
+    "record_id": "data/18",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        348,
+        2319
+      ],
+      "unsupported_detected_indices": [
+        193
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        348,
+        2319
+      ],
+      "unsupported_detected_indices": [
+        1,
+        198,
+        2470
+      ]
+    }
+  },
+  {
+    "record_id": "data/19",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        412,
+        2208
+      ],
+      "unsupported_detected_indices": [
+        201,
+        2418
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        412,
+        2208
+      ],
+      "unsupported_detected_indices": [
+        201,
+        2418
+      ]
+    }
+  },
+  {
+    "record_id": "data/20",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        419,
+        2112
+      ],
+      "unsupported_detected_indices": [
+        230,
+        2313
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        419,
+        2112
+      ],
+      "unsupported_detected_indices": [
+        230,
+        2311
+      ]
+    }
+  },
+  {
+    "record_id": "data/21",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        242,
+        2170
+      ],
+      "unsupported_detected_indices": [
+        80,
+        2340
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 5
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "support_samples": [
+        242,
+        2170
+      ],
+      "unsupported_detected_indices": [
+        79,
+        2185,
+        2337
+      ]
+    }
+  },
+  {
+    "record_id": "data/22",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        187,
+        2225
+      ],
+      "unsupported_detected_indices": [
+        2363
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        187,
+        2225
+      ],
+      "unsupported_detected_indices": [
+        14,
+        2363
+      ]
+    }
+  },
+  {
+    "record_id": "data/23",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        324,
+        2160
+      ],
+      "unsupported_detected_indices": [
+        105,
+        2380
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        324,
+        2160
+      ],
+      "unsupported_detected_indices": [
+        105,
+        2391
+      ]
+    }
+  },
+  {
+    "record_id": "data/24",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 5
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "support_samples": [
+        290,
+        2142
+      ],
+      "unsupported_detected_indices": [
+        2170,
+        2408,
+        2468
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 11
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 6
+      },
+      "support_samples": [
+        290,
+        2142
+      ],
+      "unsupported_detected_indices": [
+        21,
+        90,
+        2184,
+        2407,
+        2478
+      ]
+    }
+  },
+  {
+    "record_id": "data/25",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        492,
+        2061
+      ],
+      "unsupported_detected_indices": [
+        260,
+        2293
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        492,
+        2061
+      ],
+      "unsupported_detected_indices": [
+        3,
+        260,
+        2293
+      ]
+    }
+  },
+  {
+    "record_id": "data/26",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        388,
+        2120
+      ],
+      "unsupported_detected_indices": [
+        190,
+        2312
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        388,
+        2120
+      ],
+      "unsupported_detected_indices": [
+        186,
+        2312
+      ]
+    }
+  },
+  {
+    "record_id": "data/27",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        325,
+        2055
+      ],
+      "unsupported_detected_indices": [
+        88,
+        2294
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        325,
+        2055
+      ],
+      "unsupported_detected_indices": [
+        88,
+        2295
+      ]
+    }
+  },
+  {
+    "record_id": "data/28",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        332,
+        2189
+      ],
+      "unsupported_detected_indices": [
+        120,
+        2409
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        332,
+        2189
+      ],
+      "unsupported_detected_indices": [
+        119,
+        2408,
+        2461
+      ]
+    }
+  },
+  {
+    "record_id": "data/29",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        204,
+        2124
+      ],
+      "unsupported_detected_indices": [
+        2316
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        204,
+        2124
+      ],
+      "unsupported_detected_indices": [
+        7,
+        2316
+      ]
+    }
+  },
+  {
+    "record_id": "data/30",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        320,
+        2188
+      ],
+      "unsupported_detected_indices": [
+        2459
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        320,
+        2188
+      ],
+      "unsupported_detected_indices": [
+        56,
+        2459
+      ]
+    }
+  },
+  {
+    "record_id": "data/31",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        281,
+        2208
+      ],
+      "unsupported_detected_indices": [
+        88,
+        2404
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        281,
+        2208
+      ],
+      "unsupported_detected_indices": [
+        88,
+        2404
+      ]
+    }
+  },
+  {
+    "record_id": "data/32",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        302,
+        2276
+      ],
+      "unsupported_detected_indices": [
+        92
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        302,
+        2276
+      ],
+      "unsupported_detected_indices": [
+        92,
+        2474
+      ]
+    }
+  },
+  {
+    "record_id": "data/33",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        342,
+        2135
+      ],
+      "unsupported_detected_indices": [
+        128,
+        2336
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        342,
+        2135
+      ],
+      "unsupported_detected_indices": [
+        128,
+        2336
+      ]
+    }
+  },
+  {
+    "record_id": "data/34",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        338,
+        2167
+      ],
+      "unsupported_detected_indices": [
+        130,
+        2376
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 10
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 5
+      },
+      "support_samples": [
+        338,
+        2167
+      ],
+      "unsupported_detected_indices": [
+        3,
+        110,
+        2184,
+        2372,
+        2432
+      ]
+    }
+  },
+  {
+    "record_id": "data/35",
+    "fixed": {
+      "full": {
+        "QTP": 20,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 20,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        147,
+        2398
+      ],
+      "unsupported_detected_indices": [
+        84,
+        2468
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 19,
+        "QFN": 1,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 19,
+        "QFN": 1,
+        "QFP": 1
+      },
+      "support_samples": [
+        147,
+        2398
+      ],
+      "unsupported_detected_indices": [
+        82,
+        2468
+      ]
+    }
+  },
+  {
+    "record_id": "data/36",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        379,
+        2060
+      ],
+      "unsupported_detected_indices": [
+        195,
+        2262
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        379,
+        2060
+      ],
+      "unsupported_detected_indices": [
+        186,
+        2263
+      ]
+    }
+  },
+  {
+    "record_id": "data/37",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        217,
+        2266
+      ],
+      "unsupported_detected_indices": [
+        2459
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        217,
+        2266
+      ],
+      "unsupported_detected_indices": [
+        30,
+        2459
+      ]
+    }
+  },
+  {
+    "record_id": "data/38",
+    "fixed": {
+      "full": {
+        "QTP": 16,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 16,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        227,
+        2351
+      ],
+      "unsupported_detected_indices": [
+        155
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 16,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 16,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        227,
+        2351
+      ],
+      "unsupported_detected_indices": [
+        155
+      ]
+    }
+  },
+  {
+    "record_id": "data/39",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        475,
+        2240
+      ],
+      "unsupported_detected_indices": [
+        242
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        475,
+        2240
+      ],
+      "unsupported_detected_indices": [
+        242,
+        2482
+      ]
+    }
+  },
+  {
+    "record_id": "data/40",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        267,
+        2187
+      ],
+      "unsupported_detected_indices": [
+        91,
+        2394
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        267,
+        2187
+      ],
+      "unsupported_detected_indices": [
+        91,
+        2394
+      ]
+    }
+  },
+  {
+    "record_id": "data/41",
+    "fixed": {
+      "full": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        333,
+        1933
+      ],
+      "unsupported_detected_indices": [
+        2204
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        333,
+        1933
+      ],
+      "unsupported_detected_indices": [
+        64,
+        2204
+      ]
+    }
+  },
+  {
+    "record_id": "data/42",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        266,
+        2178
+      ],
+      "unsupported_detected_indices": [
+        2408
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        266,
+        2178
+      ],
+      "unsupported_detected_indices": [
+        28,
+        2408
+      ]
+    }
+  },
+  {
+    "record_id": "data/43",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        311,
+        2109
+      ],
+      "unsupported_detected_indices": [
+        98,
+        2322
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        311,
+        2109
+      ],
+      "unsupported_detected_indices": [
+        98,
+        2322
+      ]
+    }
+  },
+  {
+    "record_id": "data/44",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        358,
+        2233
+      ],
+      "unsupported_detected_indices": [
+        148,
+        2391
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 14
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 8
+      },
+      "support_samples": [
+        358,
+        2233
+      ],
+      "unsupported_detected_indices": [
+        1,
+        142,
+        199,
+        2250,
+        2385,
+        2442
+      ]
+    }
+  },
+  {
+    "record_id": "data/45",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        270,
+        2059
+      ],
+      "unsupported_detected_indices": [
+        71,
+        2285
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 20
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 12
+      },
+      "support_samples": [
+        270,
+        2059
+      ],
+      "unsupported_detected_indices": [
+        3,
+        72,
+        138,
+        253,
+        2101,
+        2215,
+        2288,
+        2353
+      ]
+    }
+  },
+  {
+    "record_id": "data/46",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        384,
+        2127
+      ],
+      "unsupported_detected_indices": [
+        183,
+        2328
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 5
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "support_samples": [
+        384,
+        2127
+      ],
+      "unsupported_detected_indices": [
+        182,
+        237,
+        2327
+      ]
+    }
+  },
+  {
+    "record_id": "data/47",
+    "fixed": {
+      "full": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        427,
+        2081
+      ],
+      "unsupported_detected_indices": [
+        143,
+        2360
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        427,
+        2081
+      ],
+      "unsupported_detected_indices": [
+        143,
+        2360
+      ]
+    }
+  },
+  {
+    "record_id": "data/48",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        450,
+        2076
+      ],
+      "unsupported_detected_indices": [
+        235,
+        2289
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        450,
+        2076
+      ],
+      "unsupported_detected_indices": [
+        2,
+        232,
+        2289
+      ]
+    }
+  },
+  {
+    "record_id": "data/49",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        416,
+        2141
+      ],
+      "unsupported_detected_indices": [
+        175,
+        2382
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        416,
+        2141
+      ],
+      "unsupported_detected_indices": [
+        175,
+        2382
+      ]
+    }
+  },
+  {
+    "record_id": "data/50",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        331,
+        2122
+      ],
+      "unsupported_detected_indices": [
+        148,
+        2298
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        331,
+        2122
+      ],
+      "unsupported_detected_indices": [
+        148,
+        2298
+      ]
+    }
+  },
+  {
+    "record_id": "data/51",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        407,
+        2266
+      ],
+      "unsupported_detected_indices": [
+        277,
+        2436,
+        2496
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 13
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 7
+      },
+      "support_samples": [
+        407,
+        2266
+      ],
+      "unsupported_detected_indices": [
+        1,
+        275,
+        333,
+        2292,
+        2434,
+        2492
+      ]
+    }
+  },
+  {
+    "record_id": "data/52",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        221,
+        2097
+      ],
+      "unsupported_detected_indices": [
+        2272
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        221,
+        2097
+      ],
+      "unsupported_detected_indices": [
+        37,
+        2272
+      ]
+    }
+  },
+  {
+    "record_id": "data/53",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        252,
+        2244
+      ],
+      "unsupported_detected_indices": [
+        2446
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        252,
+        2244
+      ],
+      "unsupported_detected_indices": [
+        49,
+        2446
+      ]
+    }
+  },
+  {
+    "record_id": "data/54",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        251,
+        1994
+      ],
+      "unsupported_detected_indices": [
+        2235
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        251,
+        1994
+      ],
+      "unsupported_detected_indices": [
+        11,
+        2235
+      ]
+    }
+  },
+  {
+    "record_id": "data/55",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        386,
+        2162
+      ],
+      "unsupported_detected_indices": [
+        179,
+        2369
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        386,
+        2162
+      ],
+      "unsupported_detected_indices": [
+        3,
+        177,
+        2369
+      ]
+    }
+  },
+  {
+    "record_id": "data/56",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        377,
+        2276
+      ],
+      "unsupported_detected_indices": [
+        204,
+        2441
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        377,
+        2276
+      ],
+      "unsupported_detected_indices": [
+        204,
+        2441
+      ]
+    }
+  },
+  {
+    "record_id": "data/57",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        184,
+        2295
+      ],
+      "unsupported_detected_indices": [
+        2437
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        184,
+        2295
+      ],
+      "unsupported_detected_indices": [
+        35,
+        2437
+      ]
+    }
+  },
+  {
+    "record_id": "data/58",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        310,
+        2275
+      ],
+      "unsupported_detected_indices": [
+        102
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        310,
+        2275
+      ],
+      "unsupported_detected_indices": [
+        102,
+        2479
+      ]
+    }
+  },
+  {
+    "record_id": "data/59",
+    "fixed": {
+      "full": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 4
+      },
+      "annotation_support": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        524,
+        1994
+      ],
+      "unsupported_detected_indices": [
+        277,
+        335,
+        2234
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 10
+      },
+      "annotation_support": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 5
+      },
+      "support_samples": [
+        524,
+        1994
+      ],
+      "unsupported_detected_indices": [
+        277,
+        332,
+        2022,
+        2238,
+        2292
+      ]
+    }
+  },
+  {
+    "record_id": "data/60",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        257,
+        2103
+      ],
+      "unsupported_detected_indices": [
+        2318
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        257,
+        2103
+      ],
+      "unsupported_detected_indices": [
+        23,
+        2318
+      ]
+    }
+  },
+  {
+    "record_id": "data/61",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        301,
+        2050
+      ],
+      "unsupported_detected_indices": [
+        106,
+        2255
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        301,
+        2050
+      ],
+      "unsupported_detected_indices": [
+        106,
+        2255,
+        2497
+      ]
+    }
+  },
+  {
+    "record_id": "data/62",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        374,
+        2176
+      ],
+      "unsupported_detected_indices": [
+        198,
+        2354
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        374,
+        2176
+      ],
+      "unsupported_detected_indices": [
+        199,
+        2354
+      ]
+    }
+  },
+  {
+    "record_id": "data/63",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        285,
+        2235
+      ],
+      "unsupported_detected_indices": [
+        139,
+        2439
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        285,
+        2235
+      ],
+      "unsupported_detected_indices": [
+        139,
+        2439
+      ]
+    }
+  },
+  {
+    "record_id": "data/64",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        303,
+        2175
+      ],
+      "unsupported_detected_indices": [
+        93,
+        2387
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 13
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 8
+      },
+      "support_samples": [
+        303,
+        2175
+      ],
+      "unsupported_detected_indices": [
+        97,
+        167,
+        2209,
+        2390,
+        2460
+      ]
+    }
+  },
+  {
+    "record_id": "data/65",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        226,
+        2215
+      ],
+      "unsupported_detected_indices": [
+        90,
+        2352
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        226,
+        2215
+      ],
+      "unsupported_detected_indices": [
+        90,
+        2352
+      ]
+    }
+  },
+  {
+    "record_id": "data/66",
+    "fixed": {
+      "full": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        433,
+        2027
+      ],
+      "unsupported_detected_indices": [
+        162,
+        2300
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        433,
+        2027
+      ],
+      "unsupported_detected_indices": [
+        1,
+        163,
+        2300
+      ]
+    }
+  },
+  {
+    "record_id": "data/67",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        406,
+        2065
+      ],
+      "unsupported_detected_indices": [
+        181,
+        2293
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        406,
+        2065
+      ],
+      "unsupported_detected_indices": [
+        181,
+        2293
+      ]
+    }
+  },
+  {
+    "record_id": "data/68",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        227,
+        2149
+      ],
+      "unsupported_detected_indices": [
+        2335
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        227,
+        2149
+      ],
+      "unsupported_detected_indices": [
+        33,
+        2335
+      ]
+    }
+  },
+  {
+    "record_id": "data/69",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        329,
+        2319
+      ],
+      "unsupported_detected_indices": [
+        181
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        329,
+        2319
+      ],
+      "unsupported_detected_indices": [
+        1,
+        184,
+        2469
+      ]
+    }
+  },
+  {
+    "record_id": "data/70",
+    "fixed": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        141,
+        2209
+      ],
+      "unsupported_detected_indices": [
+        2348
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        141,
+        2209
+      ],
+      "unsupported_detected_indices": [
+        13,
+        2348
+      ]
+    }
+  },
+  {
+    "record_id": "data/71",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        236,
+        2151
+      ],
+      "unsupported_detected_indices": [
+        2374
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        236,
+        2151
+      ],
+      "unsupported_detected_indices": [
+        21,
+        2374
+      ]
+    }
+  },
+  {
+    "record_id": "data/72",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        377,
+        2126
+      ],
+      "unsupported_detected_indices": [
+        153,
+        2343
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 1,
+        "QFP": 10
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 1,
+        "QFP": 6
+      },
+      "support_samples": [
+        377,
+        2126
+      ],
+      "unsupported_detected_indices": [
+        3,
+        153,
+        2276,
+        2343
+      ]
+    }
+  },
+  {
+    "record_id": "data/73",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        374,
+        2238
+      ],
+      "unsupported_detected_indices": [
+        157,
+        2452
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        374,
+        2238
+      ],
+      "unsupported_detected_indices": [
+        157,
+        2452
+      ]
+    }
+  },
+  {
+    "record_id": "data/74",
+    "fixed": {
+      "full": {
+        "QTP": 1,
+        "QFN": 8,
+        "QFP": 0
+      },
+      "annotation_support": {
+        "QTP": 1,
+        "QFN": 8,
+        "QFP": 0
+      },
+      "support_samples": [
+        278,
+        2355
+      ],
+      "unsupported_detected_indices": []
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 6
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "support_samples": [
+        278,
+        2355
+      ],
+      "unsupported_detected_indices": [
+        4,
+        65,
+        2375
+      ]
+    }
+  },
+  {
+    "record_id": "data/75",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        260,
+        2263
+      ],
+      "unsupported_detected_indices": [
+        2465
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        260,
+        2263
+      ],
+      "unsupported_detected_indices": [
+        54,
+        2467
+      ]
+    }
+  },
+  {
+    "record_id": "data/76",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        291,
+        2366
+      ],
+      "unsupported_detected_indices": [
+        132
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        291,
+        2366
+      ],
+      "unsupported_detected_indices": [
+        5,
+        133
+      ]
+    }
+  },
+  {
+    "record_id": "data/77",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        321,
+        2200
+      ],
+      "unsupported_detected_indices": [
+        165,
+        2362
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        321,
+        2200
+      ],
+      "unsupported_detected_indices": [
+        165,
+        2362
+      ]
+    }
+  },
+  {
+    "record_id": "data/78",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        327,
+        2073
+      ],
+      "unsupported_detected_indices": [
+        128,
+        2278
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        327,
+        2073
+      ],
+      "unsupported_detected_indices": [
+        128,
+        2278
+      ]
+    }
+  },
+  {
+    "record_id": "data/79",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        273,
+        2195
+      ],
+      "unsupported_detected_indices": [
+        2426
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        273,
+        2195
+      ],
+      "unsupported_detected_indices": [
+        39,
+        2426
+      ]
+    }
+  },
+  {
+    "record_id": "data/80",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        153,
+        2239
+      ],
+      "unsupported_detected_indices": [
+        2400
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        153,
+        2239
+      ],
+      "unsupported_detected_indices": [
+        1,
+        2400
+      ]
+    }
+  },
+  {
+    "record_id": "data/81",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        269,
+        2296
+      ],
+      "unsupported_detected_indices": [
+        110
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        269,
+        2296
+      ],
+      "unsupported_detected_indices": [
+        1,
+        109
+      ]
+    }
+  },
+  {
+    "record_id": "data/82",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        424,
+        2236
+      ],
+      "unsupported_detected_indices": [
+        151
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        424,
+        2236
+      ],
+      "unsupported_detected_indices": [
+        147,
+        2483
+      ]
+    }
+  },
+  {
+    "record_id": "data/83",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        147,
+        2333
+      ],
+      "unsupported_detected_indices": [
+        2464
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 7
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 5
+      },
+      "support_samples": [
+        147,
+        2333
+      ],
+      "unsupported_detected_indices": [
+        69,
+        2480
+      ]
+    }
+  },
+  {
+    "record_id": "data/84",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        327,
+        2152
+      ],
+      "unsupported_detected_indices": [
+        115,
+        2366
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 4
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        327,
+        2152
+      ],
+      "unsupported_detected_indices": [
+        1,
+        115,
+        2366
+      ]
+    }
+  },
+  {
+    "record_id": "data/85",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        322,
+        2205
+      ],
+      "unsupported_detected_indices": [
+        160,
+        2372
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        322,
+        2205
+      ],
+      "unsupported_detected_indices": [
+        160,
+        2372
+      ]
+    }
+  },
+  {
+    "record_id": "data/86",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        272,
+        2205
+      ],
+      "unsupported_detected_indices": [
+        145,
+        2339
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        272,
+        2205
+      ],
+      "unsupported_detected_indices": [
+        3,
+        144,
+        2339
+      ]
+    }
+  },
+  {
+    "record_id": "data/87",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        282,
+        2242
+      ],
+      "unsupported_detected_indices": [
+        159,
+        2374
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        282,
+        2242
+      ],
+      "unsupported_detected_indices": [
+        159,
+        2374
+      ]
+    }
+  },
+  {
+    "record_id": "data/88",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        267,
+        2187
+      ],
+      "unsupported_detected_indices": [
+        145,
+        2356
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        267,
+        2187
+      ],
+      "unsupported_detected_indices": [
+        4,
+        145,
+        2356
+      ]
+    }
+  },
+  {
+    "record_id": "data/89",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        332,
+        2314
+      ],
+      "unsupported_detected_indices": [
+        175
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        332,
+        2314
+      ],
+      "unsupported_detected_indices": [
+        175,
+        2477
+      ]
+    }
+  },
+  {
+    "record_id": "data/90",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        335,
+        2162
+      ],
+      "unsupported_detected_indices": [
+        120,
+        2375
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 12
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 6
+      },
+      "support_samples": [
+        335,
+        2162
+      ],
+      "unsupported_detected_indices": [
+        5,
+        123,
+        175,
+        2260,
+        2375,
+        2484
+      ]
+    }
+  },
+  {
+    "record_id": "data/91",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        234,
+        2181
+      ],
+      "unsupported_detected_indices": [
+        89,
+        2296
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        234,
+        2181
+      ],
+      "unsupported_detected_indices": [
+        4,
+        97,
+        2296
+      ]
+    }
+  },
+  {
+    "record_id": "data/92",
+    "fixed": {
+      "full": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        177,
+        2237
+      ],
+      "unsupported_detected_indices": [
+        2351
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        177,
+        2237
+      ],
+      "unsupported_detected_indices": [
+        61,
+        2353
+      ]
+    }
+  },
+  {
+    "record_id": "data/93",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        394,
+        2215
+      ],
+      "unsupported_detected_indices": [
+        195,
+        2437
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 9
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 4
+      },
+      "support_samples": [
+        394,
+        2215
+      ],
+      "unsupported_detected_indices": [
+        10,
+        186,
+        248,
+        2271,
+        2424
+      ]
+    }
+  },
+  {
+    "record_id": "data/94",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        327,
+        2189
+      ],
+      "unsupported_detected_indices": [
+        173,
+        2342
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        327,
+        2189
+      ],
+      "unsupported_detected_indices": [
+        173,
+        2342
+      ]
+    }
+  },
+  {
+    "record_id": "data/95",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        355,
+        2286
+      ],
+      "unsupported_detected_indices": [
+        164
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 7
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 4
+      },
+      "support_samples": [
+        355,
+        2286
+      ],
+      "unsupported_detected_indices": [
+        6,
+        162,
+        2484
+      ]
+    }
+  },
+  {
+    "record_id": "data/96",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        242,
+        2270
+      ],
+      "unsupported_detected_indices": [
+        89,
+        2414
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 4
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "support_samples": [
+        242,
+        2270
+      ],
+      "unsupported_detected_indices": [
+        86,
+        2414
+      ]
+    }
+  },
+  {
+    "record_id": "data/97",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        309,
+        2118
+      ],
+      "unsupported_detected_indices": [
+        94,
+        2333
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        309,
+        2118
+      ],
+      "unsupported_detected_indices": [
+        94,
+        2334
+      ]
+    }
+  },
+  {
+    "record_id": "data/98",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        338,
+        2110
+      ],
+      "unsupported_detected_indices": [
+        135,
+        2314
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        338,
+        2110
+      ],
+      "unsupported_detected_indices": [
+        135,
+        2314
+      ]
+    }
+  },
+  {
+    "record_id": "data/99",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        154,
+        2332
+      ],
+      "unsupported_detected_indices": [
+        2460
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        154,
+        2332
+      ],
+      "unsupported_detected_indices": [
+        8,
+        2460
+      ]
+    }
+  },
+  {
+    "record_id": "data/100",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        269,
+        2127
+      ],
+      "unsupported_detected_indices": [
+        80,
+        2316
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        269,
+        2127
+      ],
+      "unsupported_detected_indices": [
+        1,
+        80,
+        2316
+      ]
+    }
+  },
+  {
+    "record_id": "data/101",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        253,
+        2246
+      ],
+      "unsupported_detected_indices": [
+        114,
+        2418
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        253,
+        2246
+      ],
+      "unsupported_detected_indices": [
+        114,
+        2421
+      ]
+    }
+  },
+  {
+    "record_id": "data/102",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        354,
+        2262
+      ],
+      "unsupported_detected_indices": [
+        163,
+        2456
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        354,
+        2262
+      ],
+      "unsupported_detected_indices": [
+        162,
+        2456
+      ]
+    }
+  },
+  {
+    "record_id": "data/103",
+    "fixed": {
+      "full": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 4
+      },
+      "annotation_support": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "support_samples": [
+        116,
+        2331
+      ],
+      "unsupported_detected_indices": [
+        2452
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 14
+      },
+      "annotation_support": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 11
+      },
+      "support_samples": [
+        116,
+        2331
+      ],
+      "unsupported_detected_indices": [
+        41,
+        2399,
+        2454
+      ]
+    }
+  },
+  {
+    "record_id": "data/104",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        327,
+        2243
+      ],
+      "unsupported_detected_indices": [
+        152,
+        2433
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 9
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 6
+      },
+      "support_samples": [
+        327,
+        2243
+      ],
+      "unsupported_detected_indices": [
+        8,
+        148,
+        2440
+      ]
+    }
+  },
+  {
+    "record_id": "data/105",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        217,
+        2133
+      ],
+      "unsupported_detected_indices": [
+        2328
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        217,
+        2133
+      ],
+      "unsupported_detected_indices": [
+        32,
+        2328
+      ]
+    }
+  },
+  {
+    "record_id": "data/106",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        197,
+        2256
+      ],
+      "unsupported_detected_indices": [
+        102,
+        2397
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        197,
+        2256
+      ],
+      "unsupported_detected_indices": [
+        102,
+        2397
+      ]
+    }
+  },
+  {
+    "record_id": "data/107",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        302,
+        2100
+      ],
+      "unsupported_detected_indices": [
+        99,
+        2306
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        302,
+        2100
+      ],
+      "unsupported_detected_indices": [
+        99,
+        2306
+      ]
+    }
+  },
+  {
+    "record_id": "data/108",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        203,
+        2162
+      ],
+      "unsupported_detected_indices": [
+        112,
+        2313
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        203,
+        2162
+      ],
+      "unsupported_detected_indices": [
+        107,
+        2313
+      ]
+    }
+  },
+  {
+    "record_id": "data/109",
+    "fixed": {
+      "full": {
+        "QTP": 15,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "annotation_support": {
+        "QTP": 15,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        195,
+        2436
+      ],
+      "unsupported_detected_indices": []
+    },
+    "float": {
+      "full": {
+        "QTP": 15,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 15,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        195,
+        2436
+      ],
+      "unsupported_detected_indices": [
+        34,
+        2494
+      ]
+    }
+  },
+  {
+    "record_id": "data/110",
+    "fixed": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        190,
+        2331
+      ],
+      "unsupported_detected_indices": []
+    },
+    "float": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 4
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "support_samples": [
+        190,
+        2331
+      ],
+      "unsupported_detected_indices": [
+        66,
+        2476
+      ]
+    }
+  },
+  {
+    "record_id": "data/111",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        421,
+        2249
+      ],
+      "unsupported_detected_indices": [
+        210,
+        2478
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 13
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 8
+      },
+      "support_samples": [
+        421,
+        2249
+      ],
+      "unsupported_detected_indices": [
+        4,
+        212,
+        300,
+        2299,
+        2478
+      ]
+    }
+  },
+  {
+    "record_id": "data/112",
+    "fixed": {
+      "full": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "annotation_support": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        174,
+        2265
+      ],
+      "unsupported_detected_indices": []
+    },
+    "float": {
+      "full": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        174,
+        2265
+      ],
+      "unsupported_detected_indices": [
+        37,
+        2476
+      ]
+    }
+  },
+  {
+    "record_id": "data/113",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        389,
+        2236
+      ],
+      "unsupported_detected_indices": [
+        181,
+        2443
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        389,
+        2236
+      ],
+      "unsupported_detected_indices": [
+        2,
+        180,
+        2443
+      ]
+    }
+  },
+  {
+    "record_id": "data/114",
+    "fixed": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        177,
+        2231
+      ],
+      "unsupported_detected_indices": [
+        2358
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        177,
+        2231
+      ],
+      "unsupported_detected_indices": [
+        51,
+        2358
+      ]
+    }
+  },
+  {
+    "record_id": "data/115",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        429,
+        2131
+      ],
+      "unsupported_detected_indices": [
+        191,
+        2366
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        429,
+        2131
+      ],
+      "unsupported_detected_indices": [
+        6,
+        196,
+        2366
+      ]
+    }
+  },
+  {
+    "record_id": "data/116",
+    "fixed": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        111,
+        2183
+      ],
+      "unsupported_detected_indices": [
+        2317
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 17
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 12
+      },
+      "support_samples": [
+        111,
+        2183
+      ],
+      "unsupported_detected_indices": [
+        1,
+        2212,
+        2314,
+        2377,
+        2481
+      ]
+    }
+  },
+  {
+    "record_id": "data/117",
+    "fixed": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        246,
+        2250
+      ],
+      "unsupported_detected_indices": [
+        120,
+        2382
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        246,
+        2250
+      ],
+      "unsupported_detected_indices": [
+        120,
+        2382
+      ]
+    }
+  },
+  {
+    "record_id": "data/118",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        411,
+        2090
+      ],
+      "unsupported_detected_indices": [
+        228,
+        2282
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        411,
+        2090
+      ],
+      "unsupported_detected_indices": [
+        1,
+        228,
+        2282
+      ]
+    }
+  },
+  {
+    "record_id": "data/119",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        299,
+        2119
+      ],
+      "unsupported_detected_indices": [
+        80,
+        2329
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        299,
+        2119
+      ],
+      "unsupported_detected_indices": [
+        3,
+        80,
+        2329
+      ]
+    }
+  },
+  {
+    "record_id": "data/120",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        375,
+        2254
+      ],
+      "unsupported_detected_indices": [
+        159
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        375,
+        2254
+      ],
+      "unsupported_detected_indices": [
+        2,
+        161,
+        2496
+      ]
+    }
+  },
+  {
+    "record_id": "data/121",
+    "fixed": {
+      "full": {
+        "QTP": 15,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "annotation_support": {
+        "QTP": 15,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        127,
+        2369
+      ],
+      "unsupported_detected_indices": []
+    },
+    "float": {
+      "full": {
+        "QTP": 15,
+        "QFN": 0,
+        "QFP": 13
+      },
+      "annotation_support": {
+        "QTP": 15,
+        "QFN": 0,
+        "QFP": 10
+      },
+      "support_samples": [
+        127,
+        2369
+      ],
+      "unsupported_detected_indices": [
+        12,
+        2391,
+        2489
+      ]
+    }
+  },
+  {
+    "record_id": "data/122",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        434,
+        2283
+      ],
+      "unsupported_detected_indices": [
+        241
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        434,
+        2283
+      ],
+      "unsupported_detected_indices": [
+        1,
+        241,
+        2497
+      ]
+    }
+  },
+  {
+    "record_id": "data/123",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        217,
+        2121
+      ],
+      "unsupported_detected_indices": [
+        2314
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        217,
+        2121
+      ],
+      "unsupported_detected_indices": [
+        42,
+        2314
+      ]
+    }
+  },
+  {
+    "record_id": "data/124",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        484,
+        2159
+      ],
+      "unsupported_detected_indices": [
+        261,
+        2394
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        484,
+        2159
+      ],
+      "unsupported_detected_indices": [
+        1,
+        261,
+        2394
+      ]
+    }
+  },
+  {
+    "record_id": "data/125",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        285,
+        1948
+      ],
+      "unsupported_detected_indices": [
+        2215
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 4
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "support_samples": [
+        285,
+        1948
+      ],
+      "unsupported_detected_indices": [
+        26,
+        2215
+      ]
+    }
+  },
+  {
+    "record_id": "data/126",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        309,
+        2112
+      ],
+      "unsupported_detected_indices": [
+        130,
+        2290
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 5
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        309,
+        2112
+      ],
+      "unsupported_detected_indices": [
+        4,
+        131,
+        2294,
+        2497
+      ]
+    }
+  },
+  {
+    "record_id": "data/127",
+    "fixed": {
+      "full": {
+        "QTP": 4,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 4,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        656,
+        1857
+      ],
+      "unsupported_detected_indices": [
+        308,
+        2183
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 4,
+        "QFN": 0,
+        "QFP": 5
+      },
+      "annotation_support": {
+        "QTP": 4,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        656,
+        1857
+      ],
+      "unsupported_detected_indices": [
+        4,
+        308,
+        1874,
+        2183,
+        2497
+      ]
+    }
+  },
+  {
+    "record_id": "data/128",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        326,
+        2097
+      ],
+      "unsupported_detected_indices": [
+        91,
+        2337
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        326,
+        2097
+      ],
+      "unsupported_detected_indices": [
+        1,
+        91,
+        2337
+      ]
+    }
+  },
+  {
+    "record_id": "data/129",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        250,
+        2027
+      ],
+      "unsupported_detected_indices": [
+        2294
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        250,
+        2027
+      ],
+      "unsupported_detected_indices": [
+        33,
+        2293,
+        2497
+      ]
+    }
+  },
+  {
+    "record_id": "data/130",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        463,
+        2132
+      ],
+      "unsupported_detected_indices": [
+        238,
+        2358
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 4
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        463,
+        2132
+      ],
+      "unsupported_detected_indices": [
+        238,
+        2328,
+        2497
+      ]
+    }
+  },
+  {
+    "record_id": "data/131",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        412,
+        2095
+      ],
+      "unsupported_detected_indices": [
+        220,
+        2287
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        412,
+        2095
+      ],
+      "unsupported_detected_indices": [
+        2,
+        224,
+        2287
+      ]
+    }
+  },
+  {
+    "record_id": "data/132",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        297,
+        2204
+      ],
+      "unsupported_detected_indices": [
+        127,
+        2434
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        297,
+        2204
+      ],
+      "unsupported_detected_indices": [
+        127,
+        2434
+      ]
+    }
+  },
+  {
+    "record_id": "data/133",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        349,
+        2203
+      ],
+      "unsupported_detected_indices": [
+        84
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        349,
+        2203
+      ],
+      "unsupported_detected_indices": [
+        4,
+        87,
+        2491
+      ]
+    }
+  },
+  {
+    "record_id": "data/134",
+    "fixed": {
+      "full": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        450,
+        2023
+      ],
+      "unsupported_detected_indices": [
+        187,
+        2279
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 6,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        450,
+        2023
+      ],
+      "unsupported_detected_indices": [
+        1,
+        191,
+        2279
+      ]
+    }
+  },
+  {
+    "record_id": "data/135",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        394,
+        2229
+      ],
+      "unsupported_detected_indices": [
+        214,
+        2398
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        394,
+        2229
+      ],
+      "unsupported_detected_indices": [
+        2,
+        214,
+        2398
+      ]
+    }
+  },
+  {
+    "record_id": "data/136",
+    "fixed": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        136,
+        2292
+      ],
+      "unsupported_detected_indices": [
+        2430
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        136,
+        2292
+      ],
+      "unsupported_detected_indices": [
+        14,
+        2430
+      ]
+    }
+  },
+  {
+    "record_id": "data/137",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        352,
+        2296
+      ],
+      "unsupported_detected_indices": [
+        160
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        352,
+        2296
+      ],
+      "unsupported_detected_indices": [
+        160,
+        2490
+      ]
+    }
+  },
+  {
+    "record_id": "data/138",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        337,
+        2137
+      ],
+      "unsupported_detected_indices": [
+        136,
+        2361
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        337,
+        2137
+      ],
+      "unsupported_detected_indices": [
+        136,
+        2361
+      ]
+    }
+  },
+  {
+    "record_id": "data/139",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        267,
+        2187
+      ],
+      "unsupported_detected_indices": [
+        109,
+        2346
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        267,
+        2187
+      ],
+      "unsupported_detected_indices": [
+        109,
+        2346
+      ]
+    }
+  },
+  {
+    "record_id": "data/140",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        269,
+        2280
+      ],
+      "unsupported_detected_indices": [
+        124,
+        2427
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        269,
+        2280
+      ],
+      "unsupported_detected_indices": [
+        124,
+        2427
+      ]
+    }
+  },
+  {
+    "record_id": "data/141",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        324,
+        2098
+      ],
+      "unsupported_detected_indices": [
+        120,
+        2306
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        324,
+        2098
+      ],
+      "unsupported_detected_indices": [
+        2,
+        110,
+        2306
+      ]
+    }
+  },
+  {
+    "record_id": "data/142",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        230,
+        2137
+      ],
+      "unsupported_detected_indices": [
+        2308
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        230,
+        2137
+      ],
+      "unsupported_detected_indices": [
+        4,
+        65,
+        2308
+      ]
+    }
+  },
+  {
+    "record_id": "data/143",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        195,
+        2258
+      ],
+      "unsupported_detected_indices": [
+        2413
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        195,
+        2258
+      ],
+      "unsupported_detected_indices": [
+        68,
+        2413
+      ]
+    }
+  },
+  {
+    "record_id": "data/144",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        269,
+        2190
+      ],
+      "unsupported_detected_indices": [
+        86,
+        2366
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        269,
+        2190
+      ],
+      "unsupported_detected_indices": [
+        86,
+        2366
+      ]
+    }
+  },
+  {
+    "record_id": "data/145",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        299,
+        2203
+      ],
+      "unsupported_detected_indices": [
+        111,
+        2391
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        299,
+        2203
+      ],
+      "unsupported_detected_indices": [
+        111,
+        2391
+      ]
+    }
+  },
+  {
+    "record_id": "data/146",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        267,
+        2196
+      ],
+      "unsupported_detected_indices": [
+        2444
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        267,
+        2196
+      ],
+      "unsupported_detected_indices": [
+        13,
+        2444
+      ]
+    }
+  },
+  {
+    "record_id": "data/147",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        277,
+        2108
+      ],
+      "unsupported_detected_indices": [
+        2324
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        277,
+        2108
+      ],
+      "unsupported_detected_indices": [
+        64,
+        2324
+      ]
+    }
+  },
+  {
+    "record_id": "data/148",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        263,
+        2258
+      ],
+      "unsupported_detected_indices": [
+        107
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        263,
+        2258
+      ],
+      "unsupported_detected_indices": [
+        108,
+        2476
+      ]
+    }
+  },
+  {
+    "record_id": "data/149",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        303,
+        2124
+      ],
+      "unsupported_detected_indices": [
+        119,
+        2309
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        303,
+        2124
+      ],
+      "unsupported_detected_indices": [
+        119,
+        2309
+      ]
+    }
+  },
+  {
+    "record_id": "data/150",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        432,
+        2205
+      ],
+      "unsupported_detected_indices": [
+        232,
+        2415
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        432,
+        2205
+      ],
+      "unsupported_detected_indices": [
+        1,
+        230,
+        2415
+      ]
+    }
+  },
+  {
+    "record_id": "data/151",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        260,
+        2177
+      ],
+      "unsupported_detected_indices": [
+        101,
+        2341
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        260,
+        2177
+      ],
+      "unsupported_detected_indices": [
+        101,
+        2341
+      ]
+    }
+  },
+  {
+    "record_id": "data/152",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        251,
+        2151
+      ],
+      "unsupported_detected_indices": [
+        2358
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        251,
+        2151
+      ],
+      "unsupported_detected_indices": [
+        36,
+        2358
+      ]
+    }
+  },
+  {
+    "record_id": "data/153",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        342,
+        2231
+      ],
+      "unsupported_detected_indices": [
+        116,
+        2462
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        342,
+        2231
+      ],
+      "unsupported_detected_indices": [
+        116,
+        2462
+      ]
+    }
+  },
+  {
+    "record_id": "data/154",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        331,
+        2142
+      ],
+      "unsupported_detected_indices": [
+        150,
+        2325
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        331,
+        2142
+      ],
+      "unsupported_detected_indices": [
+        150,
+        2325
+      ]
+    }
+  },
+  {
+    "record_id": "data/155",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        326,
+        2123
+      ],
+      "unsupported_detected_indices": [
+        109,
+        2337
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        326,
+        2123
+      ],
+      "unsupported_detected_indices": [
+        108,
+        2337
+      ]
+    }
+  },
+  {
+    "record_id": "data/156",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        362,
+        2025
+      ],
+      "unsupported_detected_indices": [
+        123,
+        2254
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        362,
+        2025
+      ],
+      "unsupported_detected_indices": [
+        3,
+        123,
+        2254
+      ]
+    }
+  },
+  {
+    "record_id": "data/157",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        424,
+        2152
+      ],
+      "unsupported_detected_indices": [
+        208,
+        2377
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        424,
+        2152
+      ],
+      "unsupported_detected_indices": [
+        11,
+        208,
+        2377
+      ]
+    }
+  },
+  {
+    "record_id": "data/158",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        302,
+        1988
+      ],
+      "unsupported_detected_indices": [
+        166,
+        2225
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        302,
+        1988
+      ],
+      "unsupported_detected_indices": [
+        2,
+        166,
+        2225
+      ]
+    }
+  },
+  {
+    "record_id": "data/159",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        306,
+        2171
+      ],
+      "unsupported_detected_indices": [
+        129,
+        2355
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        306,
+        2171
+      ],
+      "unsupported_detected_indices": [
+        129,
+        2355
+      ]
+    }
+  },
+  {
+    "record_id": "data/160",
+    "fixed": {
+      "full": {
+        "QTP": 5,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 5,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        454,
+        1890
+      ],
+      "unsupported_detected_indices": [
+        163,
+        2200
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 5,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 5,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        454,
+        1890
+      ],
+      "unsupported_detected_indices": [
+        163,
+        2200
+      ]
+    }
+  },
+  {
+    "record_id": "data/161",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        416,
+        2120
+      ],
+      "unsupported_detected_indices": [
+        224,
+        2332
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        416,
+        2120
+      ],
+      "unsupported_detected_indices": [
+        1,
+        224,
+        2332
+      ]
+    }
+  },
+  {
+    "record_id": "data/162",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        258,
+        2240
+      ],
+      "unsupported_detected_indices": [
+        86,
+        2410
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        258,
+        2240
+      ],
+      "unsupported_detected_indices": [
+        86,
+        2410
+      ]
+    }
+  },
+  {
+    "record_id": "data/163",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        351,
+        2220
+      ],
+      "unsupported_detected_indices": [
+        189,
+        2404
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        351,
+        2220
+      ],
+      "unsupported_detected_indices": [
+        189,
+        2404
+      ]
+    }
+  },
+  {
+    "record_id": "data/164",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        241,
+        2133
+      ],
+      "unsupported_detected_indices": [
+        2330
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        241,
+        2133
+      ],
+      "unsupported_detected_indices": [
+        43,
+        2330
+      ]
+    }
+  },
+  {
+    "record_id": "data/165",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        385,
+        2156
+      ],
+      "unsupported_detected_indices": [
+        204,
+        2331
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        385,
+        2156
+      ],
+      "unsupported_detected_indices": [
+        4,
+        204,
+        2331
+      ]
+    }
+  },
+  {
+    "record_id": "data/166",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        386,
+        2106
+      ],
+      "unsupported_detected_indices": [
+        213,
+        2312
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        386,
+        2106
+      ],
+      "unsupported_detected_indices": [
+        213,
+        2312
+      ]
+    }
+  },
+  {
+    "record_id": "data/167",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        308,
+        2182
+      ],
+      "unsupported_detected_indices": [
+        129,
+        2362
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        308,
+        2182
+      ],
+      "unsupported_detected_indices": [
+        10,
+        129,
+        2362
+      ]
+    }
+  },
+  {
+    "record_id": "data/168",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        373,
+        2150
+      ],
+      "unsupported_detected_indices": [
+        160,
+        2386
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        373,
+        2150
+      ],
+      "unsupported_detected_indices": [
+        8,
+        163,
+        2386
+      ]
+    }
+  },
+  {
+    "record_id": "data/169",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        435,
+        2181
+      ],
+      "unsupported_detected_indices": [
+        206,
+        2421
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        435,
+        2181
+      ],
+      "unsupported_detected_indices": [
+        206,
+        2421
+      ]
+    }
+  },
+  {
+    "record_id": "data/170",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        294,
+        2100
+      ],
+      "unsupported_detected_indices": [
+        2344
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        294,
+        2100
+      ],
+      "unsupported_detected_indices": [
+        33,
+        2344
+      ]
+    }
+  },
+  {
+    "record_id": "data/171",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        334,
+        2191
+      ],
+      "unsupported_detected_indices": [
+        145,
+        2381
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        334,
+        2191
+      ],
+      "unsupported_detected_indices": [
+        1,
+        145,
+        2381
+      ]
+    }
+  },
+  {
+    "record_id": "data/172",
+    "fixed": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        334,
+        2124
+      ],
+      "unsupported_detected_indices": [
+        94,
+        2377
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 7,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        334,
+        2124
+      ],
+      "unsupported_detected_indices": [
+        9,
+        95,
+        2377
+      ]
+    }
+  },
+  {
+    "record_id": "data/173",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        197,
+        2294
+      ],
+      "unsupported_detected_indices": [
+        2367
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        197,
+        2294
+      ],
+      "unsupported_detected_indices": [
+        36,
+        2367
+      ]
+    }
+  },
+  {
+    "record_id": "data/174",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        232,
+        2057
+      ],
+      "unsupported_detected_indices": [
+        2267
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        232,
+        2057
+      ],
+      "unsupported_detected_indices": [
+        36,
+        2267
+      ]
+    }
+  },
+  {
+    "record_id": "data/175",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        305,
+        2192
+      ],
+      "unsupported_detected_indices": [
+        121,
+        2377
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        305,
+        2192
+      ],
+      "unsupported_detected_indices": [
+        121,
+        2377
+      ]
+    }
+  },
+  {
+    "record_id": "data/176",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        324,
+        2067
+      ],
+      "unsupported_detected_indices": [
+        128,
+        2269
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "support_samples": [
+        324,
+        2067
+      ],
+      "unsupported_detected_indices": [
+        128,
+        2269
+      ]
+    }
+  },
+  {
+    "record_id": "data/177",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        230,
+        2277
+      ],
+      "unsupported_detected_indices": [
+        2438
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        230,
+        2277
+      ],
+      "unsupported_detected_indices": [
+        66,
+        2438
+      ]
+    }
+  },
+  {
+    "record_id": "data/178",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        258,
+        2334
+      ],
+      "unsupported_detected_indices": [
+        134
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        258,
+        2334
+      ],
+      "unsupported_detected_indices": [
+        134,
+        2482
+      ]
+    }
+  },
+  {
+    "record_id": "data/179",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        409,
+        2128
+      ],
+      "unsupported_detected_indices": [
+        212,
+        2327
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        409,
+        2128
+      ],
+      "unsupported_detected_indices": [
+        213,
+        2327
+      ]
+    }
+  },
+  {
+    "record_id": "data/180",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        288,
+        2202
+      ],
+      "unsupported_detected_indices": [
+        120,
+        2361
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        288,
+        2202
+      ],
+      "unsupported_detected_indices": [
+        120,
+        2361
+      ]
+    }
+  },
+  {
+    "record_id": "data/181",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        415,
+        2163
+      ],
+      "unsupported_detected_indices": [
+        221,
+        2364
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        415,
+        2163
+      ],
+      "unsupported_detected_indices": [
+        3,
+        220,
+        2364
+      ]
+    }
+  },
+  {
+    "record_id": "data/182",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        237,
+        2223
+      ],
+      "unsupported_detected_indices": [
+        102,
+        2354
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        237,
+        2223
+      ],
+      "unsupported_detected_indices": [
+        103,
+        2354
+      ]
+    }
+  },
+  {
+    "record_id": "data/183",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        242,
+        2222
+      ],
+      "unsupported_detected_indices": [
+        78,
+        2372
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        242,
+        2222
+      ],
+      "unsupported_detected_indices": [
+        78,
+        2372
+      ]
+    }
+  },
+  {
+    "record_id": "data/184",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        254,
+        2080
+      ],
+      "unsupported_detected_indices": [
+        83,
+        2297
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        254,
+        2080
+      ],
+      "unsupported_detected_indices": [
+        83,
+        2297
+      ]
+    }
+  },
+  {
+    "record_id": "data/185",
+    "fixed": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        247,
+        2282
+      ],
+      "unsupported_detected_indices": [
+        126,
+        2415
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 13,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        247,
+        2282
+      ],
+      "unsupported_detected_indices": [
+        126,
+        2415
+      ]
+    }
+  },
+  {
+    "record_id": "data/186",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        253,
+        2310
+      ],
+      "unsupported_detected_indices": [
+        88
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        253,
+        2310
+      ],
+      "unsupported_detected_indices": [
+        88,
+        2475
+      ]
+    }
+  },
+  {
+    "record_id": "data/187",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        374,
+        2277
+      ],
+      "unsupported_detected_indices": [
+        194
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        374,
+        2277
+      ],
+      "unsupported_detected_indices": [
+        4,
+        193,
+        2469
+      ]
+    }
+  },
+  {
+    "record_id": "data/188",
+    "fixed": {
+      "full": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "annotation_support": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        173,
+        2382
+      ],
+      "unsupported_detected_indices": []
+    },
+    "float": {
+      "full": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 14,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        173,
+        2382
+      ],
+      "unsupported_detected_indices": [
+        3,
+        53
+      ]
+    }
+  },
+  {
+    "record_id": "data/189",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        312,
+        2362
+      ],
+      "unsupported_detected_indices": [
+        75
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        312,
+        2362
+      ],
+      "unsupported_detected_indices": [
+        75
+      ]
+    }
+  },
+  {
+    "record_id": "data/190",
+    "fixed": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        264,
+        2364
+      ],
+      "unsupported_detected_indices": [
+        69
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 12,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        264,
+        2364
+      ],
+      "unsupported_detected_indices": [
+        2,
+        69,
+        2487
+      ]
+    }
+  },
+  {
+    "record_id": "data/191",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        382,
+        2160
+      ],
+      "unsupported_detected_indices": [
+        173,
+        2368
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        382,
+        2160
+      ],
+      "unsupported_detected_indices": [
+        7,
+        173,
+        2368
+      ]
+    }
+  },
+  {
+    "record_id": "data/192",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        477,
+        2286
+      ],
+      "unsupported_detected_indices": [
+        254
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        477,
+        2286
+      ],
+      "unsupported_detected_indices": [
+        255,
+        2493
+      ]
+    }
+  },
+  {
+    "record_id": "data/193",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        266,
+        2251
+      ],
+      "unsupported_detected_indices": [
+        2457
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        266,
+        2251
+      ],
+      "unsupported_detected_indices": [
+        59,
+        2457
+      ]
+    }
+  },
+  {
+    "record_id": "data/194",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        284,
+        2155
+      ],
+      "unsupported_detected_indices": [
+        72,
+        2388
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        284,
+        2155
+      ],
+      "unsupported_detected_indices": [
+        72,
+        2388
+      ]
+    }
+  },
+  {
+    "record_id": "data/195",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        268,
+        2110
+      ],
+      "unsupported_detected_indices": [
+        2288
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 3
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        268,
+        2110
+      ],
+      "unsupported_detected_indices": [
+        3,
+        65,
+        2288
+      ]
+    }
+  },
+  {
+    "record_id": "data/196",
+    "fixed": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        325,
+        2192
+      ],
+      "unsupported_detected_indices": [
+        162,
+        2357
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 10,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        325,
+        2192
+      ],
+      "unsupported_detected_indices": [
+        162,
+        2357
+      ]
+    }
+  },
+  {
+    "record_id": "data/197",
+    "fixed": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        234,
+        2211
+      ],
+      "unsupported_detected_indices": [
+        75,
+        2357
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 11,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        234,
+        2211
+      ],
+      "unsupported_detected_indices": [
+        75,
+        2357
+      ]
+    }
+  },
+  {
+    "record_id": "data/198",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        304,
+        2123
+      ],
+      "unsupported_detected_indices": [
+        102,
+        2329
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        304,
+        2123
+      ],
+      "unsupported_detected_indices": [
+        102,
+        2329
+      ]
+    }
+  },
+  {
+    "record_id": "data/199",
+    "fixed": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        227,
+        2130
+      ],
+      "unsupported_detected_indices": [
+        2341
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 8,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        227,
+        2130
+      ],
+      "unsupported_detected_indices": [
+        29,
+        2341
+      ]
+    }
+  },
+  {
+    "record_id": "data/200",
+    "fixed": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 1
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        227,
+        2209
+      ],
+      "unsupported_detected_indices": [
+        2415
+      ]
+    },
+    "float": {
+      "full": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 2
+      },
+      "annotation_support": {
+        "QTP": 9,
+        "QFN": 0,
+        "QFP": 0
+      },
+      "support_samples": [
+        227,
+        2209
+      ],
+      "unsupported_detected_indices": [
+        27,
+        2415
+      ]
+    }
+  }
+]

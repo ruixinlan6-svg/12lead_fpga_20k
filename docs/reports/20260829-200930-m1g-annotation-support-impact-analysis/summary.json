@@ -1,0 +1,61 @@
+{
+  "run_id": "20260829-200930-m1g-annotation-support-impact-analysis",
+  "status": "diagnostic_only_contract_unchanged",
+  "record_count": 200,
+  "sample_rate_hz": 250,
+  "matching_tolerance_ms": 150.0,
+  "support_rule": "inclusive [first_reference-150ms, last_reference+150ms]",
+  "fixed": {
+    "unsupported_detection_count": 324,
+    "full": {
+      "counts": {
+        "QTP": 1824,
+        "QFN": 8,
+        "QFP": 333
+      },
+      "qrs_se_percent": 99.56331877729258,
+      "qrs_plus_p_percent": 84.56189151599443,
+      "average_qrs_se_percent": 99.55555555555554,
+      "average_qrs_plus_p_percent": 84.18194215914798
+    },
+    "annotation_support": {
+      "counts": {
+        "QTP": 1824,
+        "QFN": 8,
+        "QFP": 9
+      },
+      "qrs_se_percent": 99.56331877729258,
+      "qrs_plus_p_percent": 99.50900163666121,
+      "average_qrs_se_percent": 99.55555555555554,
+      "average_qrs_plus_p_percent": 99.56571492233256
+    }
+  },
+  "float": {
+    "unsupported_detection_count": 503,
+    "full": {
+      "counts": {
+        "QTP": 1830,
+        "QFN": 2,
+        "QFP": 657
+      },
+      "qrs_se_percent": 99.89082969432314,
+      "qrs_plus_p_percent": 73.58262967430639,
+      "average_qrs_se_percent": 99.9125,
+      "average_qrs_plus_p_percent": 75.4167479490529
+    },
+    "annotation_support": {
+      "counts": {
+        "QTP": 1830,
+        "QFN": 2,
+        "QFP": 154
+      },
+      "qrs_se_percent": 99.89082969432314,
+      "qrs_plus_p_percent": 92.23790322580645,
+      "average_qrs_se_percent": 99.9125,
+      "average_qrs_plus_p_percent": 95.00161077484604
+    }
+  },
+  "detector_outputs_modified": false,
+  "shared_contract_modified": false,
+  "locked_databases_accessed": false
+}

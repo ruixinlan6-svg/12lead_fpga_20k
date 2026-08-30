@@ -1,0 +1,1472 @@
+{
+  "mismatch_count": 1672,
+  "records": [
+    {
+      "record_id": "data/1",
+      "mismatch_count": 8,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 6,
+        "fixed_peak": 333
+      }
+    },
+    {
+      "record_id": "data/2",
+      "mismatch_count": 12,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 2,
+        "fixed_peak": 285
+      }
+    },
+    {
+      "record_id": "data/3",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 98,
+        "fixed_peak": 100
+      }
+    },
+    {
+      "record_id": "data/4",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 8,
+        "fixed_peak": 268
+      }
+    },
+    {
+      "record_id": "data/5",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 223,
+        "fixed_peak": 222
+      }
+    },
+    {
+      "record_id": "data/6",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 84
+      }
+    },
+    {
+      "record_id": "data/7",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 2,
+        "fixed_peak": 240
+      }
+    },
+    {
+      "record_id": "data/8",
+      "mismatch_count": 21,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 133,
+        "fixed_peak": 140
+      }
+    },
+    {
+      "record_id": "data/9",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 166,
+        "fixed_peak": 165
+      }
+    },
+    {
+      "record_id": "data/10",
+      "mismatch_count": 2,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 103,
+        "fixed_peak": 107
+      }
+    },
+    {
+      "record_id": "data/11",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 7,
+        "float_peak": 1894,
+        "fixed_peak": 1895
+      }
+    },
+    {
+      "record_id": "data/12",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 133
+      }
+    },
+    {
+      "record_id": "data/13",
+      "mismatch_count": 9,
+      "first_mismatch": {
+        "position": 2,
+        "float_peak": 715,
+        "fixed_peak": 713
+      }
+    },
+    {
+      "record_id": "data/17",
+      "mismatch_count": 13,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 3,
+        "fixed_peak": 181
+      }
+    },
+    {
+      "record_id": "data/18",
+      "mismatch_count": 14,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 193
+      }
+    },
+    {
+      "record_id": "data/19",
+      "mismatch_count": 2,
+      "first_mismatch": {
+        "position": 1,
+        "float_peak": 450,
+        "fixed_peak": 451
+      }
+    },
+    {
+      "record_id": "data/20",
+      "mismatch_count": 7,
+      "first_mismatch": {
+        "position": 4,
+        "float_peak": 1163,
+        "fixed_peak": 1165
+      }
+    },
+    {
+      "record_id": "data/21",
+      "mismatch_count": 14,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 79,
+        "fixed_peak": 80
+      }
+    },
+    {
+      "record_id": "data/22",
+      "mismatch_count": 13,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 14,
+        "fixed_peak": 224
+      }
+    },
+    {
+      "record_id": "data/23",
+      "mismatch_count": 4,
+      "first_mismatch": {
+        "position": 3,
+        "float_peak": 889,
+        "fixed_peak": 878
+      }
+    },
+    {
+      "record_id": "data/24",
+      "mismatch_count": 18,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 21,
+        "fixed_peak": 332
+      }
+    },
+    {
+      "record_id": "data/25",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 3,
+        "fixed_peak": 260
+      }
+    },
+    {
+      "record_id": "data/26",
+      "mismatch_count": 2,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 186,
+        "fixed_peak": 190
+      }
+    },
+    {
+      "record_id": "data/27",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 8,
+        "float_peak": 2295,
+        "fixed_peak": 2294
+      }
+    },
+    {
+      "record_id": "data/28",
+      "mismatch_count": 9,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 119,
+        "fixed_peak": 120
+      }
+    },
+    {
+      "record_id": "data/29",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 7,
+        "fixed_peak": 243
+      }
+    },
+    {
+      "record_id": "data/30",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 56,
+        "fixed_peak": 359
+      }
+    },
+    {
+      "record_id": "data/32",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 10,
+        "float_peak": 2474,
+        "fixed_peak": null
+      }
+    },
+    {
+      "record_id": "data/34",
+      "mismatch_count": 18,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 3,
+        "fixed_peak": 130
+      }
+    },
+    {
+      "record_id": "data/35",
+      "mismatch_count": 16,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 82,
+        "fixed_peak": 84
+      }
+    },
+    {
+      "record_id": "data/36",
+      "mismatch_count": 8,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 186,
+        "fixed_peak": 195
+      }
+    },
+    {
+      "record_id": "data/37",
+      "mismatch_count": 12,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 30,
+        "fixed_peak": 256
+      }
+    },
+    {
+      "record_id": "data/38",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 2,
+        "float_peak": 391,
+        "fixed_peak": 390
+      }
+    },
+    {
+      "record_id": "data/39",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 8,
+        "float_peak": 2482,
+        "fixed_peak": null
+      }
+    },
+    {
+      "record_id": "data/41",
+      "mismatch_count": 8,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 64,
+        "fixed_peak": 371
+      }
+    },
+    {
+      "record_id": "data/42",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 28,
+        "fixed_peak": 305
+      }
+    },
+    {
+      "record_id": "data/43",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 1,
+        "float_peak": 350,
+        "fixed_peak": 348
+      }
+    },
+    {
+      "record_id": "data/44",
+      "mismatch_count": 23,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 148
+      }
+    },
+    {
+      "record_id": "data/45",
+      "mismatch_count": 28,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 3,
+        "fixed_peak": 71
+      }
+    },
+    {
+      "record_id": "data/46",
+      "mismatch_count": 13,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 182,
+        "fixed_peak": 183
+      }
+    },
+    {
+      "record_id": "data/48",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 2,
+        "fixed_peak": 235
+      }
+    },
+    {
+      "record_id": "data/50",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 1,
+        "float_peak": 371,
+        "fixed_peak": 370
+      }
+    },
+    {
+      "record_id": "data/51",
+      "mismatch_count": 21,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 277
+      }
+    },
+    {
+      "record_id": "data/52",
+      "mismatch_count": 12,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 37,
+        "fixed_peak": 264
+      }
+    },
+    {
+      "record_id": "data/53",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 49,
+        "fixed_peak": 290
+      }
+    },
+    {
+      "record_id": "data/54",
+      "mismatch_count": 9,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 11,
+        "fixed_peak": 290
+      }
+    },
+    {
+      "record_id": "data/55",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 3,
+        "fixed_peak": 179
+      }
+    },
+    {
+      "record_id": "data/57",
+      "mismatch_count": 14,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 35,
+        "fixed_peak": 222
+      }
+    },
+    {
+      "record_id": "data/58",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 10,
+        "float_peak": 2479,
+        "fixed_peak": null
+      }
+    },
+    {
+      "record_id": "data/59",
+      "mismatch_count": 15,
+      "first_mismatch": {
+        "position": 1,
+        "float_peak": 332,
+        "fixed_peak": 335
+      }
+    },
+    {
+      "record_id": "data/60",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 23,
+        "fixed_peak": 297
+      }
+    },
+    {
+      "record_id": "data/61",
+      "mismatch_count": 2,
+      "first_mismatch": {
+        "position": 8,
+        "float_peak": 2014,
+        "fixed_peak": 2013
+      }
+    },
+    {
+      "record_id": "data/62",
+      "mismatch_count": 2,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 199,
+        "fixed_peak": 198
+      }
+    },
+    {
+      "record_id": "data/64",
+      "mismatch_count": 22,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 97,
+        "fixed_peak": 93
+      }
+    },
+    {
+      "record_id": "data/66",
+      "mismatch_count": 9,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 162
+      }
+    },
+    {
+      "record_id": "data/68",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 33,
+        "fixed_peak": 266
+      }
+    },
+    {
+      "record_id": "data/69",
+      "mismatch_count": 14,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 181
+      }
+    },
+    {
+      "record_id": "data/70",
+      "mismatch_count": 15,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 13,
+        "fixed_peak": 180
+      }
+    },
+    {
+      "record_id": "data/71",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 21,
+        "fixed_peak": 276
+      }
+    },
+    {
+      "record_id": "data/72",
+      "mismatch_count": 17,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 3,
+        "fixed_peak": 153
+      }
+    },
+    {
+      "record_id": "data/74",
+      "mismatch_count": 15,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 4,
+        "fixed_peak": 1804
+      }
+    },
+    {
+      "record_id": "data/75",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 54,
+        "fixed_peak": 299
+      }
+    },
+    {
+      "record_id": "data/76",
+      "mismatch_count": 13,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 5,
+        "fixed_peak": 132
+      }
+    },
+    {
+      "record_id": "data/79",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 39,
+        "fixed_peak": 315
+      }
+    },
+    {
+      "record_id": "data/80",
+      "mismatch_count": 13,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 192
+      }
+    },
+    {
+      "record_id": "data/81",
+      "mismatch_count": 13,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 110
+      }
+    },
+    {
+      "record_id": "data/82",
+      "mismatch_count": 4,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 147,
+        "fixed_peak": 151
+      }
+    },
+    {
+      "record_id": "data/83",
+      "mismatch_count": 17,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 69,
+        "fixed_peak": 193
+      }
+    },
+    {
+      "record_id": "data/84",
+      "mismatch_count": 12,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 115
+      }
+    },
+    {
+      "record_id": "data/86",
+      "mismatch_count": 15,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 3,
+        "fixed_peak": 145
+      }
+    },
+    {
+      "record_id": "data/88",
+      "mismatch_count": 15,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 4,
+        "fixed_peak": 145
+      }
+    },
+    {
+      "record_id": "data/89",
+      "mismatch_count": 4,
+      "first_mismatch": {
+        "position": 2,
+        "float_peak": 574,
+        "fixed_peak": 575
+      }
+    },
+    {
+      "record_id": "data/90",
+      "mismatch_count": 20,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 5,
+        "fixed_peak": 120
+      }
+    },
+    {
+      "record_id": "data/91",
+      "mismatch_count": 14,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 4,
+        "fixed_peak": 89
+      }
+    },
+    {
+      "record_id": "data/92",
+      "mismatch_count": 16,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 61,
+        "fixed_peak": 215
+      }
+    },
+    {
+      "record_id": "data/93",
+      "mismatch_count": 17,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 10,
+        "fixed_peak": 195
+      }
+    },
+    {
+      "record_id": "data/95",
+      "mismatch_count": 16,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 6,
+        "fixed_peak": 164
+      }
+    },
+    {
+      "record_id": "data/96",
+      "mismatch_count": 16,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 86,
+        "fixed_peak": 89
+      }
+    },
+    {
+      "record_id": "data/97",
+      "mismatch_count": 2,
+      "first_mismatch": {
+        "position": 1,
+        "float_peak": 351,
+        "fixed_peak": 350
+      }
+    },
+    {
+      "record_id": "data/99",
+      "mismatch_count": 14,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 8,
+        "fixed_peak": 196
+      }
+    },
+    {
+      "record_id": "data/100",
+      "mismatch_count": 12,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 80
+      }
+    },
+    {
+      "record_id": "data/101",
+      "mismatch_count": 6,
+      "first_mismatch": {
+        "position": 1,
+        "float_peak": 294,
+        "fixed_peak": 292
+      }
+    },
+    {
+      "record_id": "data/102",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 162,
+        "fixed_peak": 163
+      }
+    },
+    {
+      "record_id": "data/103",
+      "mismatch_count": 28,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 41,
+        "fixed_peak": 154
+      }
+    },
+    {
+      "record_id": "data/104",
+      "mismatch_count": 18,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 8,
+        "fixed_peak": 152
+      }
+    },
+    {
+      "record_id": "data/105",
+      "mismatch_count": 14,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 32,
+        "fixed_peak": 255
+      }
+    },
+    {
+      "record_id": "data/106",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 1,
+        "float_peak": 239,
+        "fixed_peak": 242
+      }
+    },
+    {
+      "record_id": "data/108",
+      "mismatch_count": 3,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 107,
+        "fixed_peak": 112
+      }
+    },
+    {
+      "record_id": "data/109",
+      "mismatch_count": 17,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 34,
+        "fixed_peak": 233
+      }
+    },
+    {
+      "record_id": "data/110",
+      "mismatch_count": 17,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 66,
+        "fixed_peak": 233
+      }
+    },
+    {
+      "record_id": "data/111",
+      "mismatch_count": 21,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 4,
+        "fixed_peak": 210
+      }
+    },
+    {
+      "record_id": "data/112",
+      "mismatch_count": 16,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 37,
+        "fixed_peak": 213
+      }
+    },
+    {
+      "record_id": "data/113",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 2,
+        "fixed_peak": 181
+      }
+    },
+    {
+      "record_id": "data/114",
+      "mismatch_count": 15,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 51,
+        "fixed_peak": 215
+      }
+    },
+    {
+      "record_id": "data/115",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 6,
+        "fixed_peak": 191
+      }
+    },
+    {
+      "record_id": "data/116",
+      "mismatch_count": 30,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 166
+      }
+    },
+    {
+      "record_id": "data/118",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 228
+      }
+    },
+    {
+      "record_id": "data/119",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 3,
+        "fixed_peak": 80
+      }
+    },
+    {
+      "record_id": "data/120",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 2,
+        "fixed_peak": 159
+      }
+    },
+    {
+      "record_id": "data/121",
+      "mismatch_count": 28,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 12,
+        "fixed_peak": 171
+      }
+    },
+    {
+      "record_id": "data/122",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 241
+      }
+    },
+    {
+      "record_id": "data/123",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 42,
+        "fixed_peak": 256
+      }
+    },
+    {
+      "record_id": "data/124",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 261
+      }
+    },
+    {
+      "record_id": "data/125",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 26,
+        "fixed_peak": 326
+      }
+    },
+    {
+      "record_id": "data/126",
+      "mismatch_count": 14,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 4,
+        "fixed_peak": 130
+      }
+    },
+    {
+      "record_id": "data/127",
+      "mismatch_count": 9,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 4,
+        "fixed_peak": 308
+      }
+    },
+    {
+      "record_id": "data/128",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 91
+      }
+    },
+    {
+      "record_id": "data/129",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 33,
+        "fixed_peak": 290
+      }
+    },
+    {
+      "record_id": "data/130",
+      "mismatch_count": 8,
+      "first_mismatch": {
+        "position": 1,
+        "float_peak": 474,
+        "fixed_peak": 503
+      }
+    },
+    {
+      "record_id": "data/131",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 2,
+        "fixed_peak": 220
+      }
+    },
+    {
+      "record_id": "data/132",
+      "mismatch_count": 2,
+      "first_mismatch": {
+        "position": 3,
+        "float_peak": 852,
+        "fixed_peak": 853
+      }
+    },
+    {
+      "record_id": "data/133",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 4,
+        "fixed_peak": 84
+      }
+    },
+    {
+      "record_id": "data/134",
+      "mismatch_count": 9,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 187
+      }
+    },
+    {
+      "record_id": "data/135",
+      "mismatch_count": 12,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 2,
+        "fixed_peak": 214
+      }
+    },
+    {
+      "record_id": "data/136",
+      "mismatch_count": 15,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 14,
+        "fixed_peak": 176
+      }
+    },
+    {
+      "record_id": "data/137",
+      "mismatch_count": 2,
+      "first_mismatch": {
+        "position": 6,
+        "float_peak": 1557,
+        "fixed_peak": 1556
+      }
+    },
+    {
+      "record_id": "data/138",
+      "mismatch_count": 4,
+      "first_mismatch": {
+        "position": 2,
+        "float_peak": 613,
+        "fixed_peak": 612
+      }
+    },
+    {
+      "record_id": "data/141",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 2,
+        "fixed_peak": 120
+      }
+    },
+    {
+      "record_id": "data/142",
+      "mismatch_count": 13,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 4,
+        "fixed_peak": 268
+      }
+    },
+    {
+      "record_id": "data/143",
+      "mismatch_count": 14,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 68,
+        "fixed_peak": 234
+      }
+    },
+    {
+      "record_id": "data/145",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 4,
+        "float_peak": 1011,
+        "fixed_peak": 1010
+      }
+    },
+    {
+      "record_id": "data/146",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 13,
+        "fixed_peak": 306
+      }
+    },
+    {
+      "record_id": "data/147",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 64,
+        "fixed_peak": 316
+      }
+    },
+    {
+      "record_id": "data/148",
+      "mismatch_count": 2,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 108,
+        "fixed_peak": 107
+      }
+    },
+    {
+      "record_id": "data/150",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 232
+      }
+    },
+    {
+      "record_id": "data/152",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 36,
+        "fixed_peak": 291
+      }
+    },
+    {
+      "record_id": "data/154",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 9,
+        "float_peak": 2105,
+        "fixed_peak": 2104
+      }
+    },
+    {
+      "record_id": "data/155",
+      "mismatch_count": 2,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 108,
+        "fixed_peak": 109
+      }
+    },
+    {
+      "record_id": "data/156",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 3,
+        "fixed_peak": 123
+      }
+    },
+    {
+      "record_id": "data/157",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 11,
+        "fixed_peak": 208
+      }
+    },
+    {
+      "record_id": "data/158",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 2,
+        "fixed_peak": 166
+      }
+    },
+    {
+      "record_id": "data/160",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 3,
+        "float_peak": 1188,
+        "fixed_peak": 1187
+      }
+    },
+    {
+      "record_id": "data/161",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 224
+      }
+    },
+    {
+      "record_id": "data/162",
+      "mismatch_count": 4,
+      "first_mismatch": {
+        "position": 1,
+        "float_peak": 297,
+        "fixed_peak": 296
+      }
+    },
+    {
+      "record_id": "data/163",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 7,
+        "float_peak": 1602,
+        "fixed_peak": 1601
+      }
+    },
+    {
+      "record_id": "data/164",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 43,
+        "fixed_peak": 283
+      }
+    },
+    {
+      "record_id": "data/165",
+      "mismatch_count": 12,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 4,
+        "fixed_peak": 204
+      }
+    },
+    {
+      "record_id": "data/167",
+      "mismatch_count": 12,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 10,
+        "fixed_peak": 129
+      }
+    },
+    {
+      "record_id": "data/168",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 8,
+        "fixed_peak": 160
+      }
+    },
+    {
+      "record_id": "data/170",
+      "mismatch_count": 9,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 33,
+        "fixed_peak": 334
+      }
+    },
+    {
+      "record_id": "data/171",
+      "mismatch_count": 12,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 1,
+        "fixed_peak": 145
+      }
+    },
+    {
+      "record_id": "data/172",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 9,
+        "fixed_peak": 94
+      }
+    },
+    {
+      "record_id": "data/173",
+      "mismatch_count": 15,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 36,
+        "fixed_peak": 236
+      }
+    },
+    {
+      "record_id": "data/174",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 36,
+        "fixed_peak": 274
+      }
+    },
+    {
+      "record_id": "data/175",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 9,
+        "float_peak": 2155,
+        "fixed_peak": 2154
+      }
+    },
+    {
+      "record_id": "data/176",
+      "mismatch_count": 5,
+      "first_mismatch": {
+        "position": 6,
+        "float_peak": 1552,
+        "fixed_peak": 1551
+      }
+    },
+    {
+      "record_id": "data/177",
+      "mismatch_count": 13,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 66,
+        "fixed_peak": 269
+      }
+    },
+    {
+      "record_id": "data/178",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 13,
+        "float_peak": 2482,
+        "fixed_peak": null
+      }
+    },
+    {
+      "record_id": "data/179",
+      "mismatch_count": 2,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 213,
+        "fixed_peak": 212
+      }
+    },
+    {
+      "record_id": "data/181",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 3,
+        "fixed_peak": 221
+      }
+    },
+    {
+      "record_id": "data/182",
+      "mismatch_count": 3,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 103,
+        "fixed_peak": 102
+      }
+    },
+    {
+      "record_id": "data/183",
+      "mismatch_count": 1,
+      "first_mismatch": {
+        "position": 7,
+        "float_peak": 1433,
+        "fixed_peak": 1432
+      }
+    },
+    {
+      "record_id": "data/186",
+      "mismatch_count": 2,
+      "first_mismatch": {
+        "position": 1,
+        "float_peak": 293,
+        "fixed_peak": 291
+      }
+    },
+    {
+      "record_id": "data/187",
+      "mismatch_count": 12,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 4,
+        "fixed_peak": 194
+      }
+    },
+    {
+      "record_id": "data/188",
+      "mismatch_count": 16,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 3,
+        "fixed_peak": 211
+      }
+    },
+    {
+      "record_id": "data/189",
+      "mismatch_count": 4,
+      "first_mismatch": {
+        "position": 1,
+        "float_peak": 350,
+        "fixed_peak": 351
+      }
+    },
+    {
+      "record_id": "data/190",
+      "mismatch_count": 15,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 2,
+        "fixed_peak": 69
+      }
+    },
+    {
+      "record_id": "data/191",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 7,
+        "fixed_peak": 173
+      }
+    },
+    {
+      "record_id": "data/192",
+      "mismatch_count": 3,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 255,
+        "fixed_peak": 254
+      }
+    },
+    {
+      "record_id": "data/193",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 59,
+        "fixed_peak": 305
+      }
+    },
+    {
+      "record_id": "data/195",
+      "mismatch_count": 12,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 3,
+        "fixed_peak": 307
+      }
+    },
+    {
+      "record_id": "data/199",
+      "mismatch_count": 10,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 29,
+        "fixed_peak": 265
+      }
+    },
+    {
+      "record_id": "data/200",
+      "mismatch_count": 11,
+      "first_mismatch": {
+        "position": 0,
+        "float_peak": 27,
+        "fixed_peak": 265
+      }
+    }
+  ]
+}

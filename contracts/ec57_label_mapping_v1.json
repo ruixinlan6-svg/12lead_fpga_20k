@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_id": "ec57-label-mapping",
+  "contract_version": "1.0.0",
+  "status": "frozen-for-M0",
+  "database": {
+    "name": "Icentia11k",
+    "version": "1.0",
+    "source_labels": [
+      "N",
+      "S",
+      "V",
+      "Q"
+    ]
+  },
+  "semantic_boundary": "This is a research N/V mapping. It does not convert PTB-XL record-level labels into beat labels and does not establish a clinical diagnosis.",
+  "source_label_definitions": {
+    "N": "normal beat; explicitly named non_VEB source label",
+    "S": "supraventricular ectopic beat; explicitly named non_VEB source label for this binary task, reported separately",
+    "V": "ventricular ectopic beat / VEB; positive class",
+    "Q": "unknown, paced, or otherwise unclassifiable source beat; excluded from loss and metric denominators but counted"
+  },
+  "training_mapping": {
+    "positive": {
+      "target_class": "VEB",
+      "source_labels": [
+        "V"
+      ],
+      "is_positive": true
+    },
+    "negative": {
+      "target_class": "non_VEB",
+      "source_labels": [
+        "N",
+        "S"
+      ],
+      "is_negative": true,
+      "explicitly_named": true
+    },
+    "excluded": {
+      "source_labels": [
+        "Q"
+      ],
+      "target_class": null,
+      "from_loss": true,
+      "from_performance_denominators": true,
+      "count_required": true
+    },
+    "class_order": [
+      "non_VEB",
+      "VEB"
+    ]
+  },
+  "reporting_mapping": {
+    "binary_outputs": [
+      "non_VEB",
+      "VEB"
+    ],
+    "source_support_required": {
+      "N": "report support and confusion contribution",
+      "S": "report support, confusion contribution, and S-specific error rate separately",
+      "V": "report support and VEB sensitivity/precision contribution",
+      "Q": "report count and exclusion reason; never put into loss or performance denominators"
+    },
+    "s_separate_report": true,
+    "q_exclusion_count": true,
+    "unknown_or_unclassifiable_policy": "do not silently map to non_VEB; emit UNCLASSIFIED_BEAT or an explicit exclusion/error record"
+  },
+  "evaluation_mapping": {
+    "wfdb_ec57_style": {
+      "mapping_source": "authorized ANSI/AAMI EC57:2012/(R)2020 text plus frozen WFDB implementation notes",
+      "must_be_signed_before_formal_evaluation": true,
+      "aami_classes_are_not_silent_aliases": true,
+      "raw_source_label_and_mapped_label_both_preserved": true
+    }
+  },
+  "silent_conversion_forbidden": true,
+  "change_control": "Any label or exclusion change requires a new contract_version and run_id; existing records are immutable."
+}

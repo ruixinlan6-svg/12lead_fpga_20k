@@ -1,0 +1,30 @@
+Reading netlist file: "D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\microbench\beat_window_buffer\build\beat_window_buffer_microbench\impl\gwsynthesis\beat_window_buffer_microbench.vg"
+Parsing netlist file "D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\microbench\beat_window_buffer\build\beat_window_buffer_microbench\impl\gwsynthesis\beat_window_buffer_microbench.vg" completed
+Processing netlist completed
+Reading constraint file: "D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\microbench\beat_window_buffer\beat_window_buffer_microbench.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+WARN  (PR1014) : Generic routing resource will be used to clock signal 'clk_d' by the specified constraint. And then it may lead to the excessive delay or skew
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\microbench\beat_window_buffer\build\beat_window_buffer_microbench\impl\pnr\beat_window_buffer_microbench.power.html" completed
+Generate file "D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\microbench\beat_window_buffer\build\beat_window_buffer_microbench\impl\pnr\beat_window_buffer_microbench.pin.html" completed
+Generate file "D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\microbench\beat_window_buffer\build\beat_window_buffer_microbench\impl\pnr\beat_window_buffer_microbench.rpt.html" completed
+Generate file "D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\microbench\beat_window_buffer\build\beat_window_buffer_microbench\impl\pnr\beat_window_buffer_microbench.rpt.txt" completed
+Generate file "D:\project\gowin_project\0_fpga_test\test3\fpga\ec57_hybrid\microbench\beat_window_buffer\build\beat_window_buffer_microbench\impl\pnr\beat_window_buffer_microbench.tr.html" completed
+Fri Aug 28 14:43:07 2026
+
