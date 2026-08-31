@@ -14,14 +14,20 @@ Total MACs/beat: 90,920
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 from typing import Tuple, Dict, Any
 
 
 class TinyECGCNN_NV(nn.Module):
     """Frozen 1.6k parameter INT8-deployable ECG beat classifier."""
 
-    def __init__(self):
+    def __init__(self, temporal_pool_bins: int = 1):
         super().__init__()
+        if not isinstance(temporal_pool_bins, int) or temporal_pool_bins <= 0:
+            raise ValueError("temporal_pool_bins must be a positive integer")
+        if 40 % temporal_pool_bins != 0:
+            raise ValueError("temporal_pool_bins must divide the final temporal length 40")
+        self.temporal_pool_bins = temporal_pool_bins
         # Conv Layer 1: 1 -> 8 (k=7, p=3, s=1)
         self.conv1 = nn.Conv1d(in_channels=1, out_channels=8, kernel_size=7, padding=3, bias=True)
         self.act1 = nn.ReLU()
@@ -37,8 +43,20 @@ class TinyECGCNN_NV(nn.Module):
         self.act3 = nn.ReLU()
         self.gap = nn.AdaptiveAvgPool1d(1)
 
-        # Classifier: 20 -> 2
-        self.classifier = nn.Linear(in_features=20, out_features=2, bias=True)
+        # Classifier: (16 * temporal_pool_bins + 4) -> 2
+        self.classifier = nn.Linear(
+            in_features=16 * self.temporal_pool_bins + 4,
+            out_features=2,
+            bias=True,
+        )
+
+    def temporal_pool(self, activation: torch.Tensor) -> torch.Tensor:
+        """Pool fixed contiguous bins and flatten in temporal-bin-major order."""
+        if activation.ndim != 3 or activation.shape[1:] != (16, 40):
+            raise ValueError("temporal_pool expects activation shape [B, 16, 40]")
+        bin_size = 40 // self.temporal_pool_bins
+        pooled = F.avg_pool1d(activation, kernel_size=bin_size, stride=bin_size)
+        return pooled.transpose(1, 2).contiguous().view(activation.size(0), -1)
 
     def forward(self, x_wave: torch.Tensor, x_feat: torch.Tensor) -> torch.Tensor:
         """
@@ -60,10 +78,10 @@ class TinyECGCNN_NV(nn.Module):
 
         # Layer 3
         h3 = self.act3(self.conv3(h2))                  # [B, 16, 40]
-        h_gap = self.gap(h3).view(x_wave.size(0), 16)   # [B, 16]
+        h_gap = self.temporal_pool(h3)                   # [B, 16 * bins]
 
         # Concat with 4 auxiliary features
-        h_concat = torch.cat([h_gap, x_feat], dim=1)    # [B, 20]
+        h_concat = torch.cat([h_gap, x_feat], dim=1)
 
         # Output logits
         logits = self.classifier(h_concat)              # [B, 2]
@@ -94,7 +112,7 @@ class TinyECGCNN_NV(nn.Module):
 
         c3 = self.conv3(p2)
         a3 = self.act3(c3)
-        gap = self.gap(a3).view(x_wave.size(0), 16)
+        gap = self.temporal_pool(a3)
         activations['conv3'] = c3
         activations['act3'] = a3
         activations['gap'] = gap
@@ -105,6 +123,72 @@ class TinyECGCNN_NV(nn.Module):
         activations['logits'] = logits
 
         return activations
+
+
+class TinyECGCNN_NV_Depthwise(nn.Module):
+    """Depthwise-separable morphology encoder within the frozen QN88 budget."""
+
+    def __init__(self, temporal_pool_bins: int = 5):
+        super().__init__()
+        if not isinstance(temporal_pool_bins, int) or temporal_pool_bins <= 0:
+            raise ValueError("temporal_pool_bins must be a positive integer")
+        if 40 % temporal_pool_bins != 0:
+            raise ValueError("temporal_pool_bins must divide the final temporal length 40")
+        self.temporal_pool_bins = temporal_pool_bins
+        self.conv1 = nn.Conv1d(1, 8, kernel_size=7, padding=3, bias=True)
+        self.pool1 = nn.MaxPool1d(2, 2)
+        self.dw2 = nn.Conv1d(8, 8, kernel_size=5, padding=2, groups=8, bias=True)
+        self.pw2 = nn.Conv1d(8, 24, kernel_size=1, bias=True)
+        self.pool2 = nn.MaxPool1d(2, 2)
+        self.dw3 = nn.Conv1d(24, 24, kernel_size=7, padding=3, groups=24, bias=True)
+        self.pw3 = nn.Conv1d(24, 32, kernel_size=1, bias=True)
+        self.classifier = nn.Linear(32 * temporal_pool_bins + 4, 2, bias=True)
+
+    def temporal_pool(self, activation: torch.Tensor) -> torch.Tensor:
+        if activation.ndim != 3 or activation.shape[1:] != (32, 40):
+            raise ValueError("temporal_pool expects activation shape [B, 32, 40]")
+        bin_size = 40 // self.temporal_pool_bins
+        pooled = F.avg_pool1d(activation, kernel_size=bin_size, stride=bin_size)
+        return pooled.transpose(1, 2).contiguous().view(activation.size(0), -1)
+
+    def forward(self, x_wave: torch.Tensor, x_feat: torch.Tensor) -> torch.Tensor:
+        if x_wave.ndim == 2:
+            x_wave = x_wave.unsqueeze(1)
+        h1 = self.pool1(F.relu(self.conv1(x_wave)))
+        h2 = self.pool2(F.relu(self.pw2(self.dw2(h1))))
+        h3 = F.relu(self.pw3(self.dw3(h2)))
+        pooled = self.temporal_pool(h3)
+        return self.classifier(torch.cat([pooled, x_feat], dim=1))
+
+    def extract_layer_activations(self, x_wave: torch.Tensor, x_feat: torch.Tensor) -> Dict[str, torch.Tensor]:
+        if x_wave.ndim == 2:
+            x_wave = x_wave.unsqueeze(1)
+        c1 = self.conv1(x_wave)
+        p1 = self.pool1(F.relu(c1))
+        d2 = self.dw2(p1)
+        p2c = self.pw2(d2)
+        p2 = self.pool2(F.relu(p2c))
+        d3 = self.dw3(p2)
+        p3c = self.pw3(d3)
+        a3 = F.relu(p3c)
+        pooled = self.temporal_pool(a3)
+        concat = torch.cat([pooled, x_feat], dim=1)
+        logits = self.classifier(concat)
+        return {
+            "input_wave": x_wave,
+            "input_feat": x_feat,
+            "conv1": c1,
+            "pool1": p1,
+            "dw2": d2,
+            "pw2": p2c,
+            "pool2": p2,
+            "dw3": d3,
+            "pw3": p3c,
+            "act3": a3,
+            "gap": pooled,
+            "concat": concat,
+            "logits": logits,
+        }
 
 
 def count_parameters(model: nn.Module) -> int:
@@ -128,7 +212,11 @@ def count_macs(model: nn.Module, input_len: int = 160) -> int:
     l3 = l2 // 2
 
     mac_conv1 = 1 * 8 * 7 * l1
-    mac_conv2 = 8 * 16 * 5 * l2
-    mac_conv3 = 16 * 16 * 3 * l3
-    mac_linear = 20 * 2
+    if isinstance(model, TinyECGCNN_NV_Depthwise):
+        mac_conv2 = (8 * 5 * l2) + (8 * 24 * l2)
+        mac_conv3 = (24 * 7 * l3) + (24 * 32 * l3)
+    else:
+        mac_conv2 = 8 * 16 * 5 * l2
+        mac_conv3 = 16 * 16 * 3 * l3
+    mac_linear = model.classifier.in_features * 2
     return mac_conv1 + mac_conv2 + mac_conv3 + mac_linear

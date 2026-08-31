@@ -1,0 +1,86 @@
+{
+  "database": "Icentia11k",
+  "database_version": "1.0",
+  "scope": "frozen M2a train cohort and selected 1:4 native beats",
+  "record_count": 72,
+  "symbol_counts": {
+    "N": 10049,
+    "S": 476,
+    "V": 2632
+  },
+  "validity_counts": {
+    "valid": 13157
+  },
+  "measures": {
+    "original_score": {
+      "count": 13157,
+      "min": 1.0,
+      "q25": 1.0,
+      "median": 1.0,
+      "q75": 1.0,
+      "max": 1.0,
+      "iqr": 0.0,
+      "unique_count": 1
+    },
+    "continuous_score_q15": {
+      "count": 13157,
+      "min": 0.0,
+      "q25": 19837.0,
+      "median": 23997.0,
+      "q75": 26480.0,
+      "max": 30635.0,
+      "iqr": 6643.0,
+      "unique_count": 8602
+    },
+    "peak_to_peak_uv": {
+      "count": 13157,
+      "min": 110.0,
+      "q25": 430.0,
+      "median": 645.0,
+      "q75": 1145.0,
+      "max": 4600.0,
+      "iqr": 715.0,
+      "unique_count": 459
+    },
+    "std_uv": {
+      "count": 13157,
+      "min": 12.912799851310329,
+      "q25": 53.748312531650704,
+      "median": 94.85143963061392,
+      "q75": 157.10295987027106,
+      "max": 545.0437724623591,
+      "iqr": 103.35464733862037,
+      "unique_count": 13155
+    },
+    "std_to_peak_ratio": {
+      "count": 13157,
+      "min": 0.0637655050224589,
+      "q25": 0.10950694446761432,
+      "median": 0.12933474164313913,
+      "q75": 0.15704239199405876,
+      "max": 0.3014830016878597,
+      "iqr": 0.04753544752644444,
+      "unique_count": 13157
+    },
+    "differential_noise_fraction": {
+      "count": 13157,
+      "min": 0.0,
+      "q25": 0.0,
+      "median": 0.0,
+      "q75": 0.0,
+      "max": 0.0,
+      "iqr": 0.0,
+      "unique_count": 1
+    },
+    "saturation_fraction": {
+      "count": 13157,
+      "min": 0.0,
+      "q25": 0.0,
+      "median": 0.0,
+      "q75": 0.0,
+      "max": 0.0,
+      "iqr": 0.0,
+      "unique_count": 1
+    }
+  }
+}

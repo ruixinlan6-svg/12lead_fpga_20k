@@ -1,0 +1,21 @@
+{
+  "run_id": "20260830-212025-m2j-q-only-duplicate-timestamps",
+  "stage": "native_cache_build",
+  "status": "failed",
+  "processed_record_position": 461,
+  "record_count": 912,
+  "split": "train",
+  "patient_id": "p05750",
+  "record_id": "p05750_s31",
+  "source_dat_sha256": "23447882b420fedd38979ff6ed38a2dbb5e7b4db1bf72d1780e093bd9f679090",
+  "signal_length": 1048577,
+  "sample_rate_hz": 250,
+  "nonfinite_sample_count": 2,
+  "nonfinite_sample_indices": [95720, 101495],
+  "digital_values_at_nonfinite_samples": [-32768, -32768],
+  "error_type": "ValueError",
+  "error": "non-finite signal samples in p05750_s31",
+  "cache_written": false,
+  "gpu_training_started": false,
+  "internal_test_model_evaluated": false
+}

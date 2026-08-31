@@ -1,0 +1,63 @@
+{
+  "path": "C:\\Users\\Administrator\\Desktop\\LRX\\ecg_ti_pipeline_3\\runs\\20260831-073532-m2l-finite-record-replacement-and-cache\\native_cache\\internal_test_beats.npz",
+  "split": "internal_test",
+  "keys": [
+    "database",
+    "database_version",
+    "features",
+    "labels",
+    "native_symbols",
+    "patient_ids",
+    "record_ids",
+    "sample_indices",
+    "source_file_sha256",
+    "waveforms"
+  ],
+  "shapes": {
+    "database": [
+      288363
+    ],
+    "database_version": [
+      288363
+    ],
+    "features": [
+      288363,
+      4
+    ],
+    "labels": [
+      288363
+    ],
+    "native_symbols": [
+      288363
+    ],
+    "patient_ids": [
+      288363
+    ],
+    "record_ids": [
+      288363
+    ],
+    "sample_indices": [
+      288363
+    ],
+    "source_file_sha256": [
+      288363
+    ],
+    "waveforms": [
+      288363,
+      160
+    ]
+  },
+  "source_counts": {},
+  "validation": {
+    "split": "internal_test",
+    "sample_count": 288363,
+    "patient_count": 24,
+    "native_symbol_counts": {
+      "N": 285375,
+      "S": 2186,
+      "V": 802
+    }
+  },
+  "accepted": true,
+  "error": null
+}

@@ -1,0 +1,10 @@
+{
+  "run_id": "20260831-073532-m2l-finite-record-replacement-and-cache",
+  "database": "Icentia11k 1.0",
+  "sample_rate_hz": 250,
+  "window_length": 160,
+  "r_peak_index": 64,
+  "train_negative_per_positive_max": 4,
+  "validation_and_internal_test_prevalence": "natural within frozen cohort",
+  "normalization_statistics": "train split only"
+}

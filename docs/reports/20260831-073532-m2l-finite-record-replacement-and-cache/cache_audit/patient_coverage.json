@@ -1,0 +1,76 @@
+{
+  "accepted": true,
+  "splits": {
+    "train": {
+      "source_patient_count": 256,
+      "cache_patient_count": 251,
+      "missing_patients": [
+        "p01101",
+        "p01670",
+        "p01966",
+        "p05750",
+        "p10757"
+      ],
+      "unexpected_patients": [],
+      "missing_patient_native_counts": {
+        "p01101": {
+          "N": 0,
+          "Q": 14436,
+          "S": 0,
+          "V": 0
+        },
+        "p01670": {
+          "N": 0,
+          "Q": 15709,
+          "S": 0,
+          "V": 0
+        },
+        "p01966": {
+          "N": 0,
+          "Q": 17685,
+          "S": 0,
+          "V": 0
+        },
+        "p05750": {
+          "N": 0,
+          "Q": 13983,
+          "S": 0,
+          "V": 0
+        },
+        "p10757": {
+          "N": 0,
+          "Q": 13810,
+          "S": 0,
+          "V": 0
+        }
+      },
+      "missing_patients_q_only": true,
+      "accepted": true
+    },
+    "validation": {
+      "source_patient_count": 24,
+      "cache_patient_count": 24,
+      "missing_patients": [],
+      "unexpected_patients": [],
+      "missing_patient_native_counts": {},
+      "missing_patients_q_only": true,
+      "accepted": true
+    },
+    "internal_test": {
+      "source_patient_count": 24,
+      "cache_patient_count": 24,
+      "missing_patients": [],
+      "unexpected_patients": [],
+      "missing_patient_native_counts": {},
+      "missing_patients_q_only": true,
+      "accepted": true
+    }
+  },
+  "annotation_audit_path": "C:\\Users\\Administrator\\Desktop\\LRX\\ecg_ti_pipeline_3\\runs\\20260831-073532-m2l-finite-record-replacement-and-cache\\replacement_audit\\revised_annotation_audit.json",
+  "annotation_audit_sha256": "cf3687eacabd8ea9cc772019f9666a6fb24d9b8f4bcc384e3579c7e861c9c4a4",
+  "npz_sha256": {
+    "train": "762c61f7520b4d1f5cb9a0e648bee083a74c6bdf8bd2f42468a114ba869c674a",
+    "validation": "792149cb7948b0f88235bc619361ce5d05a78edba0a4bf9dc8abe23fcd0f0fc9",
+    "internal_test": "c95e3b95d4d2e61cb45e4ed86eb11302e7231bf2d9b1adb0598fb5ac20364c36"
+  }
+}

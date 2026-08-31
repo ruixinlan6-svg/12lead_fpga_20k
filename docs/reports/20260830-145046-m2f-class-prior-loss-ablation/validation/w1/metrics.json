@@ -1,0 +1,99 @@
+{
+  "status": "rejected",
+  "checkpoint_freezable": false,
+  "seed": 17,
+  "evaluation_scope": "validation_only",
+  "best_epoch": 1,
+  "total_epochs": 9,
+  "best_val_veb_f1": 0.0010167768174885613,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6362176792567431,
+      "val_loss": 0.4764645891658311,
+      "val_veb_f1": 0.0010167768174885613
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.5752232202083187,
+      "val_loss": 0.3353495667609674,
+      "val_veb_f1": 0.0
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.5307393719507241,
+      "val_loss": 0.22297959825352967,
+      "val_veb_f1": 0.0
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.5184610119985484,
+      "val_loss": 0.2247793896971756,
+      "val_veb_f1": 0.0
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.5065378322421558,
+      "val_loss": 0.2431649122365337,
+      "val_veb_f1": 0.0
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.49630412666632917,
+      "val_loss": 0.2359399923794875,
+      "val_veb_f1": 0.0
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.4863578678898928,
+      "val_loss": 0.2229178403224067,
+      "val_veb_f1": 0.0
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.4758704824451981,
+      "val_loss": 0.22753698904687558,
+      "val_veb_f1": 0.0
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.46598313711348605,
+      "val_loss": 0.21872683155648628,
+      "val_veb_f1": 0.0
+    }
+  ],
+  "parameter_count": 1546,
+  "macs_per_beat": 90920,
+  "threshold_gate_failure": {
+    "status": "rejected",
+    "checkpoint_freezable": false,
+    "valid_threshold_count": 0,
+    "total_thresholds_scanned": 999,
+    "scan_step": 0.001,
+    "frozen_min_veb_plus_p_percent": 95.0,
+    "frozen_max_veb_fpr_percent": 0.25,
+    "best_f1_diagnostic": {
+      "threshold": 0.253,
+      "vtp": 1414,
+      "vfn": 1,
+      "vfp": 289952,
+      "vtn": 222,
+      "se_percent": 99.92932862190813,
+      "plus_p_percent": 0.48530027525517727,
+      "fpr_percent": 99.92349417935445,
+      "meets_gate": false
+    },
+    "best_se_under_fpr_gate": {
+      "threshold": 0.508,
+      "vtp": 1,
+      "vfn": 1414,
+      "vfp": 311,
+      "vtn": 289863,
+      "se_percent": 0.0706713780918728,
+      "plus_p_percent": 0.3205128205128205,
+      "fpr_percent": 0.10717707306650492,
+      "meets_gate": false
+    },
+    "best_se_under_plus_p_gate": null
+  }
+}

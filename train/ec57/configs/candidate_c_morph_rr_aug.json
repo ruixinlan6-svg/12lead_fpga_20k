@@ -32,13 +32,12 @@
     "optimizer": "AdamW",
     "lr": 0.001,
     "weight_decay": 0.0001,
-    "batch_size": 512,
-    "max_epochs": 60,
+    "batch_size": 1024,
+    "max_epochs": 50,
     "early_stopping_metric": "val_veb_f1",
-    "early_stopping_patience": 12,
+    "early_stopping_patience": 8,
     "loss": "weighted_cross_entropy",
-    "veb_class_weight": 4.5,
-    "scheduler": "cosine"
+    "veb_class_weight": 2.5
   },
   "threshold_search": {
     "metric_priority": ["veb_plus_p_ge_95", "veb_fpr_le_0_25", "max_veb_se"],

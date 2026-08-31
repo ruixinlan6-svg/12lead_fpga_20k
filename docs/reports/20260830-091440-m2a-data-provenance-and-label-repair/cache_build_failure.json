@@ -1,0 +1,17 @@
+{
+  "run_id": "20260830-091440-m2a-data-provenance-and-label-repair",
+  "database": "Icentia11k",
+  "database_version": "1.0",
+  "records_processed": 216,
+  "records_expected": 216,
+  "examples_before_normalization": {
+    "train": 13157,
+    "validation": 291589,
+    "internal_test": 288363
+  },
+  "failure_stage": "train-only feature normalization",
+  "exception": "ValueError",
+  "message": "train-only feature IQR is zero at indices [3]",
+  "gpu_training_started": false,
+  "cache_accepted": false
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "20260830-141150-m2c-pilot-candidate-ablation",
+  "evaluation_scope": "validation_only",
+  "internal_test_loaded": false,
+  "seed": 17,
+  "candidates": {
+    "candidate_a_morph": {
+      "gpu": 0,
+      "status": "rejected",
+      "reason": "no validation threshold meets VEB +P >= 95% and FPR <= 0.25%"
+    },
+    "candidate_b_morph_rr": {
+      "gpu": 1,
+      "status": "rejected",
+      "reason": "no validation threshold meets VEB +P >= 95% and FPR <= 0.25%"
+    },
+    "candidate_c_morph_rr_aug": {
+      "gpu": 2,
+      "status": "rejected",
+      "reason": "no validation threshold meets VEB +P >= 95% and FPR <= 0.25%"
+    }
+  },
+  "winner": null,
+  "internal_test_evaluated": false,
+  "m2_closed": false
+}

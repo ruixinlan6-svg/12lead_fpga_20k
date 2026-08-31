@@ -1,0 +1,18 @@
+{
+  "statistics_source": "Icentia11k train split only",
+  "waveform_scale_statistic": "abs_deviation_99_5_percentile",
+  "waveform_scale_ref_lsb": 201.0,
+  "microvolts_per_lsb": 5,
+  "feature_medians": [
+    0.9825327396392822,
+    44.0,
+    1.0,
+    0.7432172894477844
+  ],
+  "feature_iqrs": [
+    0.23295438289642334,
+    20.0,
+    0.11490678787231445,
+    0.14383375644683838
+  ]
+}

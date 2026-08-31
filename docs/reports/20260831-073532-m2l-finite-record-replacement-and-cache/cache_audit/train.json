@@ -1,0 +1,63 @@
+{
+  "path": "C:\\Users\\Administrator\\Desktop\\LRX\\ecg_ti_pipeline_3\\runs\\20260831-073532-m2l-finite-record-replacement-and-cache\\native_cache\\train_beats.npz",
+  "split": "train",
+  "keys": [
+    "database",
+    "database_version",
+    "features",
+    "labels",
+    "native_symbols",
+    "patient_ids",
+    "record_ids",
+    "sample_indices",
+    "source_file_sha256",
+    "waveforms"
+  ],
+  "shapes": {
+    "database": [
+      145172
+    ],
+    "database_version": [
+      145172
+    ],
+    "features": [
+      145172,
+      4
+    ],
+    "labels": [
+      145172
+    ],
+    "native_symbols": [
+      145172
+    ],
+    "patient_ids": [
+      145172
+    ],
+    "record_ids": [
+      145172
+    ],
+    "sample_indices": [
+      145172
+    ],
+    "source_file_sha256": [
+      145172
+    ],
+    "waveforms": [
+      145172,
+      160
+    ]
+  },
+  "source_counts": {},
+  "validation": {
+    "split": "train",
+    "sample_count": 145172,
+    "patient_count": 251,
+    "native_symbol_counts": {
+      "N": 89386,
+      "S": 26753,
+      "V": 29033
+    }
+  },
+  "accepted": true,
+  "error": null
+}

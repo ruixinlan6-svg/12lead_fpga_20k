@@ -18,16 +18,72 @@ import argparse
 import numpy as np
 import torch
 import torch.nn as nn
-from torch.utils.data import Dataset, DataLoader
+import torch.nn.functional as F
+from torch.utils.data import Dataset, DataLoader, Sampler
 from typing import Dict, List, Tuple, Optional, Any
 
-from train.ec57.model_nv import TinyECGCNN_NV, count_parameters, count_macs
+from train.ec57.model_nv import TinyECGCNN_NV, TinyECGCNN_NV_Depthwise, count_parameters, count_macs
 from train.ec57.metrics import (
     VEBConfusionCounts,
     compute_patient_level_metrics,
     wilson_score_interval,
     patient_bootstrap_ci
 )
+
+
+def asymmetric_focal_cross_entropy(
+    logits: torch.Tensor,
+    targets: torch.Tensor,
+    *,
+    class_weights: torch.Tensor,
+    negative_gamma: float,
+    reduction: str = "mean",
+) -> torch.Tensor:
+    """Apply focal modulation only to negative-class weighted CE terms."""
+    gamma = float(negative_gamma)
+    if not math.isfinite(gamma) or gamma < 0.0:
+        raise ValueError("negative_gamma must be a finite non-negative value")
+    if reduction not in {"none", "sum", "mean"}:
+        raise ValueError("reduction must be none, sum or mean")
+    losses = F.cross_entropy(logits, targets, weight=class_weights, reduction="none")
+    probabilities = torch.softmax(logits, dim=1)
+    target_probabilities = probabilities.gather(1, targets.unsqueeze(1)).squeeze(1)
+    negative_mask = targets == 0
+    focal_factors = torch.ones_like(losses)
+    focal_factors[negative_mask] = (1.0 - target_probabilities[negative_mask]).pow(gamma)
+    losses = losses * focal_factors
+    if reduction == "none":
+        return losses
+    if reduction == "sum":
+        return losses.sum()
+    denominator = class_weights[targets].sum().clamp_min(torch.finfo(losses.dtype).tiny)
+    return losses.sum() / denominator
+
+
+class AsymmetricNegativeFocalCrossEntropyLoss(nn.Module):
+    def __init__(self, class_weights: torch.Tensor, negative_gamma: float):
+        super().__init__()
+        self.register_buffer("class_weights", class_weights.detach().clone())
+        self.negative_gamma = float(negative_gamma)
+
+    def forward(self, logits: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
+        return asymmetric_focal_cross_entropy(
+            logits,
+            targets,
+            class_weights=self.class_weights,
+            negative_gamma=self.negative_gamma,
+        )
+
+
+class ThresholdGateError(ValueError):
+    """A fail-closed threshold rejection with auditable validation diagnostics."""
+
+    def __init__(self, summary: Dict[str, Any]):
+        super().__init__(
+            "no validation threshold meets the frozen VEB +P and FPR gates; "
+            "candidate must be rejected without internal-test evaluation"
+        )
+        self.summary = summary
 
 
 def compute_sha256(filepath: str) -> str:
@@ -39,6 +95,84 @@ def compute_sha256(filepath: str) -> str:
     return h.hexdigest()
 
 
+def build_epoch_sample_indices(
+    labels: np.ndarray,
+    patient_ids: np.ndarray,
+    *,
+    max_beats_per_patient: int,
+    max_negative_per_positive: int,
+    seed: int,
+    epoch: int,
+) -> np.ndarray:
+    """Create one deterministic patient-capped, class-capped epoch index list."""
+    labels = np.asarray(labels, dtype=np.int64)
+    patient_ids = np.asarray(patient_ids).astype(str)
+    if labels.ndim != 1 or patient_ids.shape != labels.shape:
+        raise ValueError("labels and patient_ids must be aligned one-dimensional arrays")
+    if max_beats_per_patient <= 0 or max_negative_per_positive <= 0:
+        raise ValueError("epoch sampling caps must be positive")
+    rng = np.random.RandomState(int(seed) + 1_000_003 * int(epoch))
+    patient_capped: List[int] = []
+    for patient_id in sorted(set(patient_ids.tolist())):
+        patient_indices = np.flatnonzero(patient_ids == patient_id)
+        positive = patient_indices[labels[patient_indices] == 1].copy()
+        negative = patient_indices[labels[patient_indices] == 0].copy()
+        rng.shuffle(positive)
+        rng.shuffle(negative)
+        keep_positive = positive[:max_beats_per_patient]
+        remaining = max_beats_per_patient - len(keep_positive)
+        patient_capped.extend(keep_positive.tolist())
+        patient_capped.extend(negative[:remaining].tolist())
+
+    capped = np.asarray(patient_capped, dtype=np.int64)
+    positive = capped[labels[capped] == 1]
+    negative = capped[labels[capped] == 0]
+    rng.shuffle(negative)
+    negative = negative[: max_negative_per_positive * len(positive)]
+    selected = np.concatenate((positive, negative))
+    rng.shuffle(selected)
+    return selected
+
+
+class EpochPatientCappedSampler(Sampler[int]):
+    """Advance a reproducible capped sample selection each time an epoch starts."""
+
+    def __init__(
+        self,
+        labels: np.ndarray,
+        patient_ids: np.ndarray,
+        *,
+        max_beats_per_patient: int,
+        max_negative_per_positive: int,
+        seed: int,
+    ) -> None:
+        self.labels = np.asarray(labels, dtype=np.int64)
+        self.patient_ids = np.asarray(patient_ids)
+        self.max_beats_per_patient = int(max_beats_per_patient)
+        self.max_negative_per_positive = int(max_negative_per_positive)
+        self.seed = int(seed)
+        self.epoch = 0
+        self._length = len(self._indices(0))
+
+    def _indices(self, epoch: int) -> np.ndarray:
+        return build_epoch_sample_indices(
+            self.labels,
+            self.patient_ids,
+            max_beats_per_patient=self.max_beats_per_patient,
+            max_negative_per_positive=self.max_negative_per_positive,
+            seed=self.seed,
+            epoch=epoch,
+        )
+
+    def __iter__(self):
+        indices = self._indices(self.epoch)
+        self.epoch += 1
+        return iter(indices.tolist())
+
+    def __len__(self) -> int:
+        return self._length
+
+
 class BeatDataset(Dataset):
     """In-memory or array-backed beat dataset with augmentation support."""
 
@@ -48,6 +182,11 @@ class BeatDataset(Dataset):
         features: np.ndarray,        # [N, 4] float32 or int8
         labels: np.ndarray,          # [N] int64 (0: non_VEB, 1: VEB)
         patient_ids: np.ndarray,     # [N] str or int
+        record_ids: Optional[np.ndarray] = None,
+        sample_indices: Optional[np.ndarray] = None,
+        native_symbols: Optional[np.ndarray] = None,
+        source_file_sha256: Optional[np.ndarray] = None,
+        input_divisor: float = 1.0,
         use_features: bool = True,
         augmentation_cfg: Optional[Dict[str, Any]] = None,
         is_training: bool = False
@@ -56,6 +195,14 @@ class BeatDataset(Dataset):
         self.features = np.asarray(features, dtype=np.float32) if use_features else np.zeros_like(features, dtype=np.float32)
         self.labels = np.asarray(labels, dtype=np.int64)
         self.patient_ids = np.asarray(patient_ids)
+        sample_count = len(self.labels)
+        self.record_ids = np.asarray(record_ids) if record_ids is not None else np.asarray(["unknown"] * sample_count)
+        self.sample_indices = np.asarray(sample_indices, dtype=np.int64) if sample_indices is not None else np.arange(sample_count, dtype=np.int64)
+        self.native_symbols = np.asarray(native_symbols) if native_symbols is not None else np.asarray(["unknown"] * sample_count)
+        self.source_file_sha256 = np.asarray(source_file_sha256) if source_file_sha256 is not None else np.asarray(["unknown"] * sample_count)
+        self.input_divisor = float(input_divisor)
+        if not math.isfinite(self.input_divisor) or self.input_divisor <= 0.0:
+            raise ValueError("input_divisor must be a positive finite value")
         self.use_features = use_features
         self.aug_cfg = augmentation_cfg or {}
         self.is_training = is_training
@@ -100,19 +247,29 @@ class BeatDataset(Dataset):
                 wave = wave + noise
 
         # Unsqueeze waveform to [1, 160]
-        x_wave = torch.from_numpy(wave).unsqueeze(0).float()
-        x_feat = torch.from_numpy(feat).float()
+        x_wave = torch.from_numpy(wave / self.input_divisor).unsqueeze(0).float()
+        x_feat = torch.from_numpy(feat / self.input_divisor).float()
         y = torch.tensor(label, dtype=torch.long)
 
         return x_wave, x_feat, y, pat_id
+
+    def sample_metadata(self, idx: int) -> Dict[str, Any]:
+        return {
+            "patient_id": str(self.patient_ids[idx]),
+            "record_id": str(self.record_ids[idx]),
+            "sample_index": int(self.sample_indices[idx]),
+            "native_symbol": str(self.native_symbols[idx]),
+            "source_file_sha256": str(self.source_file_sha256[idx]),
+        }
 
 
 def evaluate_model_at_threshold(
     model: nn.Module,
     dataloader: DataLoader,
     threshold: float,
-    device: torch.device
-) -> Tuple[Dict[str, VEBConfusionCounts], float, float]:
+    device: torch.device,
+    return_failures: bool = False,
+):
     """
     Evaluates model across dataloader at a given VEB probability threshold.
     Returns (patient_confusion_map, overall_veb_f1, total_loss).
@@ -125,9 +282,11 @@ def evaluate_model_at_threshold(
 
     all_preds: List[int] = []
     all_targets: List[int] = []
+    failures: List[Dict[str, Any]] = []
 
     with torch.no_grad():
         for x_wave, x_feat, y, pat_ids in dataloader:
+            batch_start = total_samples
             x_wave = x_wave.to(device)
             x_feat = x_feat.to(device)
             y = y.to(device)
@@ -141,7 +300,7 @@ def evaluate_model_at_threshold(
             targets = y.cpu().numpy()
             preds = (probs >= threshold).astype(np.int64)
 
-            for p, t, pid in zip(preds, targets, pat_ids):
+            for offset, (p, t, pid, probability) in enumerate(zip(preds, targets, pat_ids, probs)):
                 if pid not in patient_counts:
                     patient_counts[pid] = VEBConfusionCounts()
                 c = patient_counts[pid]
@@ -155,6 +314,17 @@ def evaluate_model_at_threshold(
                         c.vfp += 1
                     else:
                         c.vtn += 1
+                if return_failures and int(p) != int(t):
+                    metadata = dataloader.dataset.sample_metadata(batch_start + offset)
+                    metadata.update(
+                        {
+                            "target": int(t),
+                            "prediction": int(p),
+                            "veb_probability": float(probability),
+                            "error_type": "VFN" if int(t) == 1 else "VFP",
+                        }
+                    )
+                    failures.append(metadata)
 
             all_preds.extend(preds.tolist())
             all_targets.extend(targets.tolist())
@@ -169,6 +339,8 @@ def evaluate_model_at_threshold(
     f1 = (2.0 * precision * recall / (precision + recall)) if (precision + recall) > 0 else 0.0
 
     avg_loss = total_loss / max(1, total_samples)
+    if return_failures:
+        return patient_counts, f1, avg_loss, failures
     return patient_counts, f1, avg_loss
 
 
@@ -237,19 +409,41 @@ def scan_optimal_threshold(
     # Filter matching candidates
     valid_candidates = [c for c in candidate_thresholds if c["meets_gate"]]
 
-    if valid_candidates:
-        # Sort by: -se_percent, -plus_p_percent, abs(threshold - 0.5)
-        valid_candidates.sort(key=lambda c: (-c["se_percent"], -c["plus_p_percent"], abs(c["threshold"] - 0.5)))
-        best = valid_candidates[0]
-        chosen_th = best["threshold"]
-    else:
-        # Fallback: maximize F1
-        candidate_thresholds.sort(key=lambda c: (
-            -((2 * c["se_percent"] * c["plus_p_percent"]) / max(c["se_percent"] + c["plus_p_percent"], 1e-8)),
-            abs(c["threshold"] - 0.5)
-        ))
-        best = candidate_thresholds[0]
-        chosen_th = best["threshold"]
+    if not valid_candidates:
+        def f1_percent(candidate: Dict[str, Any]) -> float:
+            se = float(candidate["se_percent"])
+            plus_p = float(candidate["plus_p_percent"])
+            return (2.0 * se * plus_p / (se + plus_p)) if se + plus_p > 0 else 0.0
+
+        under_fpr = [c for c in candidate_thresholds if c["fpr_percent"] <= max_veb_fpr * 100.0]
+        under_plus_p = [c for c in candidate_thresholds if c["plus_p_percent"] >= min_veb_plus_p * 100.0]
+        summary = {
+            "status": "rejected",
+            "checkpoint_freezable": False,
+            "valid_threshold_count": 0,
+            "total_thresholds_scanned": len(candidate_thresholds),
+            "scan_step": scan_step,
+            "frozen_min_veb_plus_p_percent": min_veb_plus_p * 100.0,
+            "frozen_max_veb_fpr_percent": max_veb_fpr * 100.0,
+            "best_f1_diagnostic": max(candidate_thresholds, key=f1_percent),
+            "best_se_under_fpr_gate": max(
+                under_fpr,
+                key=lambda c: (c["se_percent"], c["plus_p_percent"]),
+                default=None,
+            ),
+            "best_se_under_plus_p_gate": max(
+                under_plus_p,
+                key=lambda c: (c["se_percent"], -c["fpr_percent"]),
+                default=None,
+            ),
+            "thresholds": candidate_thresholds,
+        }
+        raise ThresholdGateError(summary)
+
+    # Sort by: -se_percent, -plus_p_percent, abs(threshold - 0.5)
+    valid_candidates.sort(key=lambda c: (-c["se_percent"], -c["plus_p_percent"], abs(c["threshold"] - 0.5)))
+    best = valid_candidates[0]
+    chosen_th = best["threshold"]
 
     summary = {
         "selected_threshold": chosen_th,
@@ -265,10 +459,12 @@ def train_single_run(
     config: Dict[str, Any],
     train_data: Dict[str, np.ndarray],
     val_data: Dict[str, np.ndarray],
-    test_data: Dict[str, np.ndarray],
+    test_data: Optional[Dict[str, np.ndarray]],
+    normalization: Dict[str, Any],
     output_dir: str,
     seed: int = 17,
-    device_str: str = "cuda"
+    device_str: str = "cuda",
+    evaluate_internal_test: bool = True,
 ) -> Dict[str, Any]:
     """Executes a single end-to-end training and evaluation run with seed."""
     os.makedirs(output_dir, exist_ok=True)
@@ -283,12 +479,18 @@ def train_single_run(
 
     use_features = config["model"]["use_features"]
     aug_cfg = config.get("augmentation", {})
+    input_divisor = float(config.get("data", {}).get("fp32_input_divisor", 1.0))
 
     train_ds = BeatDataset(
         waveforms=train_data["waveforms"],
         features=train_data["features"],
         labels=train_data["labels"],
         patient_ids=train_data["patient_ids"],
+        record_ids=train_data.get("record_ids"),
+        sample_indices=train_data.get("sample_indices"),
+        native_symbols=train_data.get("native_symbols"),
+        source_file_sha256=train_data.get("source_file_sha256"),
+        input_divisor=input_divisor,
         use_features=use_features,
         augmentation_cfg=aug_cfg,
         is_training=True
@@ -298,24 +500,59 @@ def train_single_run(
         features=val_data["features"],
         labels=val_data["labels"],
         patient_ids=val_data["patient_ids"],
+        record_ids=val_data.get("record_ids"),
+        sample_indices=val_data.get("sample_indices"),
+        native_symbols=val_data.get("native_symbols"),
+        source_file_sha256=val_data.get("source_file_sha256"),
+        input_divisor=input_divisor,
         use_features=use_features,
         is_training=False
     )
-    test_ds = BeatDataset(
-        waveforms=test_data["waveforms"],
-        features=test_data["features"],
-        labels=test_data["labels"],
-        patient_ids=test_data["patient_ids"],
-        use_features=use_features,
-        is_training=False
-    )
+    test_ds = None
+    if evaluate_internal_test:
+        if test_data is None:
+            raise ValueError("internal-test evaluation requested without test_data")
+        test_ds = BeatDataset(
+            waveforms=test_data["waveforms"],
+            features=test_data["features"],
+            labels=test_data["labels"],
+            patient_ids=test_data["patient_ids"],
+            record_ids=test_data.get("record_ids"),
+            sample_indices=test_data.get("sample_indices"),
+            native_symbols=test_data.get("native_symbols"),
+            source_file_sha256=test_data.get("source_file_sha256"),
+            input_divisor=input_divisor,
+            use_features=use_features,
+            is_training=False
+        )
 
     batch_size = config["training"]["batch_size"]
-    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, drop_last=False)
+    data_cfg = config.get("data", {})
+    ratio_text = str(data_cfg.get("max_pos_neg_ratio", "1:4"))
+    try:
+        max_negative_per_positive = int(ratio_text.split(":", 1)[1])
+    except (IndexError, ValueError) as error:
+        raise ValueError(f"invalid max_pos_neg_ratio: {ratio_text}") from error
+    train_sampler = EpochPatientCappedSampler(
+        train_ds.labels,
+        train_ds.patient_ids,
+        max_beats_per_patient=int(data_cfg.get("max_beats_per_patient_epoch", 10000)),
+        max_negative_per_positive=max_negative_per_positive,
+        seed=seed,
+    )
+    train_loader = DataLoader(train_ds, batch_size=batch_size, sampler=train_sampler, drop_last=False)
     val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False)
-    test_loader = DataLoader(test_ds, batch_size=batch_size, shuffle=False)
+    test_loader = DataLoader(test_ds, batch_size=batch_size, shuffle=False) if test_ds is not None else None
 
-    model = TinyECGCNN_NV().to(device)
+    model_cfg = config.get("model", {})
+    temporal_pool_bins = int(model_cfg.get("temporal_pool_bins", 1))
+    architecture = str(model_cfg.get("architecture", "TinyECGCNN_NV"))
+    if architecture == "TinyECGCNN_NV":
+        model = TinyECGCNN_NV(temporal_pool_bins=temporal_pool_bins).to(device)
+    elif architecture == "TinyECGCNN_NV_Depthwise":
+        model = TinyECGCNN_NV_Depthwise(temporal_pool_bins=temporal_pool_bins).to(device)
+    else:
+        raise ValueError(f"unsupported model architecture: {architecture}")
 
     # Optimizer and Loss
     lr = config["training"]["lr"]
@@ -324,7 +561,16 @@ def train_single_run(
 
     veb_weight = config["training"].get("veb_class_weight", 2.5)
     class_weights = torch.tensor([1.0, float(veb_weight)], dtype=torch.float32).to(device)
-    criterion = nn.CrossEntropyLoss(weight=class_weights)
+    loss_name = str(config["training"].get("loss", "weighted_cross_entropy"))
+    if loss_name == "weighted_cross_entropy":
+        criterion = nn.CrossEntropyLoss(weight=class_weights)
+    elif loss_name == "asymmetric_negative_focal_cross_entropy":
+        criterion = AsymmetricNegativeFocalCrossEntropyLoss(
+            class_weights,
+            float(config["training"].get("negative_focal_gamma", -1.0)),
+        ).to(device)
+    else:
+        raise ValueError(f"unsupported training loss: {loss_name}")
 
     max_epochs = config["training"]["max_epochs"]
     patience = config["training"]["early_stopping_patience"]
@@ -391,20 +637,66 @@ def train_single_run(
     th_cfg = config.get("threshold_search", {})
     min_plus_p = th_cfg.get("min_veb_plus_p", 0.95)
     max_fpr = th_cfg.get("max_veb_fpr", 0.0025)
-    optimal_th, th_summary = scan_optimal_threshold(
-        model, val_loader, device=device,
-        min_veb_plus_p=min_plus_p, max_veb_fpr=max_fpr
-    )
+    try:
+        optimal_th, th_summary = scan_optimal_threshold(
+            model, val_loader, device=device,
+            min_veb_plus_p=min_plus_p, max_veb_fpr=max_fpr
+        )
+    except ThresholdGateError as error:
+        model_path = os.path.join(output_dir, "model_fp32.pt")
+        torch.save(model.state_dict(), model_path)
+        with open(os.path.join(output_dir, "config.json"), "w", encoding="utf-8") as handle:
+            json.dump(config, handle, indent=2)
+        with open(os.path.join(output_dir, "normalization.json"), "w", encoding="utf-8") as handle:
+            json.dump(normalization, handle, indent=2)
+        with open(os.path.join(output_dir, "threshold_gate_failure.json"), "w", encoding="utf-8") as handle:
+            json.dump(error.summary, handle, indent=2)
+        rejected_metrics = {
+            "status": "rejected",
+            "checkpoint_freezable": False,
+            "seed": seed,
+            "evaluation_scope": "validation_only",
+            "best_epoch": best_epoch,
+            "total_epochs": len(history),
+            "best_val_veb_f1": best_val_f1,
+            "history": history,
+            "parameter_count": count_parameters(model),
+            "macs_per_beat": count_macs(model),
+            "threshold_gate_failure": {
+                key: value for key, value in error.summary.items() if key != "thresholds"
+            },
+        }
+        with open(os.path.join(output_dir, "metrics.json"), "w", encoding="utf-8") as handle:
+            json.dump(rejected_metrics, handle, indent=2)
+        model_hash = compute_sha256(model_path)
+        with open(os.path.join(output_dir, "model_sha256.txt"), "w", encoding="utf-8") as handle:
+            handle.write(f"{model_hash}  model_fp32.pt\n")
+        rejected_names = [
+            "config.json",
+            "normalization.json",
+            "threshold_gate_failure.json",
+            "metrics.json",
+            "model_fp32.pt",
+            "model_sha256.txt",
+        ]
+        with open(os.path.join(output_dir, "manifest_sha256.txt"), "w", encoding="utf-8") as handle:
+            for filename in rejected_names:
+                handle.write(f"{compute_sha256(os.path.join(output_dir, filename))}  {filename}\n")
+        raise
 
-    # Final evaluation on test set at optimal threshold
-    test_patient_counts, test_f1, test_loss = evaluate_model_at_threshold(
-        model, test_loader, threshold=optimal_th, device=device
-    )
-    test_metrics = compute_patient_level_metrics(test_patient_counts)
-    bootstrap_ci = patient_bootstrap_ci(test_patient_counts, n_resamples=10000, seed=20260827)
-    test_metrics["patient_bootstrap_ci_10k"] = bootstrap_ci
-    test_metrics["test_loss"] = test_loss
-    test_metrics["test_veb_f1"] = test_f1
+    # Internal test is intentionally inaccessible during A/B/C candidate selection.
+    test_metrics = None
+    test_failures: List[Dict[str, Any]] = []
+    if evaluate_internal_test:
+        assert test_loader is not None
+        test_patient_counts, test_f1, test_loss, test_failures = evaluate_model_at_threshold(
+            model, test_loader, threshold=optimal_th, device=device, return_failures=True
+        )
+        test_metrics = compute_patient_level_metrics(test_patient_counts)
+        bootstrap_ci = patient_bootstrap_ci(test_patient_counts, n_resamples=10000, seed=20260827)
+        test_metrics["patient_bootstrap_ci_10k"] = bootstrap_ci
+        test_metrics["test_loss"] = test_loss
+        test_metrics["test_veb_f1"] = test_f1
 
     # Save artifacts
     model_path = os.path.join(output_dir, "model_fp32.pt")
@@ -414,23 +706,36 @@ def train_single_run(
     with open(config_out_path, "w", encoding="utf-8") as f:
         json.dump(config, f, indent=2)
 
+    normalization_out_path = os.path.join(output_dir, "normalization.json")
+    with open(normalization_out_path, "w", encoding="utf-8") as f:
+        json.dump(normalization, f, indent=2)
+
     threshold_out_path = os.path.join(output_dir, "decision_threshold.json")
     with open(threshold_out_path, "w", encoding="utf-8") as f:
         json.dump(th_summary, f, indent=2)
 
     metrics_out_path = os.path.join(output_dir, "metrics.json")
-    with open(metrics_out_path, "w", encoding="utf-8") as f:
-        json.dump({
+    metrics_payload = {
             "seed": seed,
+            "evaluation_scope": "internal_test_once_after_freeze" if evaluate_internal_test else "validation_only",
             "best_epoch": best_epoch,
             "total_epochs": len(history),
             "best_val_veb_f1": best_val_f1,
             "optimal_threshold": optimal_th,
-            "test_metrics": test_metrics,
+            "validation_threshold_search": th_summary,
             "history": history,
             "parameter_count": count_parameters(model),
             "macs_per_beat": count_macs(model)
-        }, f, indent=2)
+        }
+    if test_metrics is not None:
+        metrics_payload["test_metrics"] = test_metrics
+    with open(metrics_out_path, "w", encoding="utf-8") as f:
+        json.dump(metrics_payload, f, indent=2)
+
+    if evaluate_internal_test:
+        failures_out_path = os.path.join(output_dir, "vfp_vfn.json")
+        with open(failures_out_path, "w", encoding="utf-8") as f:
+            json.dump(test_failures, f, indent=2)
 
     # Compute hashes
     model_hash = compute_sha256(model_path)
@@ -438,16 +743,22 @@ def train_single_run(
         f.write(f"{model_hash}  model_fp32.pt\n")
 
     manifest_lines = []
-    for fname in ["config.json", "decision_threshold.json", "metrics.json", "model_fp32.pt", "model_sha256.txt"]:
+    artifact_names = ["config.json", "normalization.json", "decision_threshold.json", "metrics.json", "model_fp32.pt", "model_sha256.txt"]
+    if evaluate_internal_test:
+        artifact_names.append("vfp_vfn.json")
+    for fname in artifact_names:
         fpath = os.path.join(output_dir, fname)
         if os.path.exists(fpath):
             manifest_lines.append(f"{compute_sha256(fpath)}  {fname}\n")
     with open(os.path.join(output_dir, "manifest_sha256.txt"), "w", encoding="utf-8") as f:
         f.writelines(manifest_lines)
 
-    return {
+    result = {
         "seed": seed,
+        "evaluation_scope": "internal_test_once_after_freeze" if evaluate_internal_test else "validation_only",
         "optimal_threshold": optimal_th,
-        "test_metrics": test_metrics,
         "model_sha256": model_hash
     }
+    if test_metrics is not None:
+        result["test_metrics"] = test_metrics
+    return result

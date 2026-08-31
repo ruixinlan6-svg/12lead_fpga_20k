@@ -1,0 +1,3501 @@
+{
+  "run_id": "20260830-091440-m2a-data-provenance-and-label-repair",
+  "generated_at_utc": "2026-08-30T01:25:25.855467+00:00",
+  "database": "Icentia11k",
+  "database_version": "1.0",
+  "pn_dir": "icentia11k-continuous-ecg/1.0",
+  "patients_per_split": 24,
+  "segments_per_patient": 3,
+  "cohort": {
+    "train": [
+      "p00998",
+      "p07432",
+      "p02945",
+      "p04199",
+      "p07119",
+      "p09372",
+      "p06234",
+      "p07378",
+      "p00038",
+      "p03072",
+      "p00647",
+      "p03626",
+      "p02165",
+      "p09420",
+      "p00943",
+      "p05568",
+      "p05793",
+      "p01086",
+      "p00923",
+      "p03547",
+      "p08462",
+      "p08681",
+      "p02400",
+      "p08125"
+    ],
+    "validation": [
+      "p01718",
+      "p09846",
+      "p09874",
+      "p09261",
+      "p02716",
+      "p07616",
+      "p09252",
+      "p08854",
+      "p08015",
+      "p03646",
+      "p01569",
+      "p09195",
+      "p06922",
+      "p05335",
+      "p03217",
+      "p00989",
+      "p06885",
+      "p03008",
+      "p06034",
+      "p06544",
+      "p02430",
+      "p06894",
+      "p03555",
+      "p03515"
+    ],
+    "internal_test": [
+      "p01003",
+      "p07142",
+      "p10938",
+      "p00225",
+      "p03275",
+      "p01846",
+      "p01216",
+      "p01426",
+      "p07472",
+      "p03894",
+      "p10412",
+      "p00284",
+      "p00773",
+      "p09655",
+      "p00793",
+      "p10213",
+      "p06565",
+      "p09002",
+      "p10209",
+      "p04945",
+      "p01451",
+      "p09300",
+      "p10138",
+      "p07284"
+    ]
+  },
+  "record_count": 216,
+  "error_count": 0,
+  "native_beat_counts": {
+    "N": 856203,
+    "Q": 270385,
+    "S": 4338,
+    "V": 4850
+  },
+  "other_symbol_counts": {
+    "+": 13940
+  },
+  "records": [
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00998",
+      "record_id": "p00998_s19",
+      "annotation_count": 4692,
+      "native_beat_counts": {
+        "N": 4636,
+        "S": 27,
+        "V": 27
+      },
+      "other_symbol_counts": {
+        "+": 2
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00998",
+      "record_id": "p00998_s32",
+      "annotation_count": 4805,
+      "native_beat_counts": {
+        "N": 4716,
+        "Q": 38,
+        "S": 18,
+        "V": 21
+      },
+      "other_symbol_counts": {
+        "+": 12
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00998",
+      "record_id": "p00998_s25",
+      "annotation_count": 5043,
+      "native_beat_counts": {
+        "N": 4343,
+        "Q": 571,
+        "S": 25,
+        "V": 22
+      },
+      "other_symbol_counts": {
+        "+": 82
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p07432",
+      "record_id": "p07432_s27",
+      "annotation_count": 6453,
+      "native_beat_counts": {
+        "N": 35,
+        "Q": 6412
+      },
+      "other_symbol_counts": {
+        "+": 6
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p07432",
+      "record_id": "p07432_s03",
+      "annotation_count": 4275,
+      "native_beat_counts": {
+        "N": 3761,
+        "Q": 476
+      },
+      "other_symbol_counts": {
+        "+": 38
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p07432",
+      "record_id": "p07432_s22",
+      "annotation_count": 4804,
+      "native_beat_counts": {
+        "N": 4579,
+        "Q": 191
+      },
+      "other_symbol_counts": {
+        "+": 34
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p02945",
+      "record_id": "p02945_s08",
+      "annotation_count": 4402,
+      "native_beat_counts": {
+        "N": 4362,
+        "Q": 32
+      },
+      "other_symbol_counts": {
+        "+": 8
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p02945",
+      "record_id": "p02945_s09",
+      "annotation_count": 3952,
+      "native_beat_counts": {
+        "N": 3828,
+        "Q": 108,
+        "S": 6
+      },
+      "other_symbol_counts": {
+        "+": 10
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p02945",
+      "record_id": "p02945_s21",
+      "annotation_count": 4220,
+      "native_beat_counts": {
+        "N": 3828,
+        "Q": 242,
+        "S": 134
+      },
+      "other_symbol_counts": {
+        "+": 16
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p04199",
+      "record_id": "p04199_s36",
+      "annotation_count": 6314,
+      "native_beat_counts": {
+        "N": 3601,
+        "Q": 2515
+      },
+      "other_symbol_counts": {
+        "+": 198
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p04199",
+      "record_id": "p04199_s24",
+      "annotation_count": 4754,
+      "native_beat_counts": {
+        "N": 3863,
+        "Q": 789
+      },
+      "other_symbol_counts": {
+        "+": 102
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p04199",
+      "record_id": "p04199_s48",
+      "annotation_count": 4288,
+      "native_beat_counts": {
+        "N": 4170,
+        "Q": 98
+      },
+      "other_symbol_counts": {
+        "+": 20
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p07119",
+      "record_id": "p07119_s32",
+      "annotation_count": 5331,
+      "native_beat_counts": {
+        "N": 5192,
+        "Q": 123
+      },
+      "other_symbol_counts": {
+        "+": 16
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p07119",
+      "record_id": "p07119_s11",
+      "annotation_count": 4746,
+      "native_beat_counts": {
+        "N": 4669,
+        "Q": 67
+      },
+      "other_symbol_counts": {
+        "+": 10
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p07119",
+      "record_id": "p07119_s37",
+      "annotation_count": 6808,
+      "native_beat_counts": {
+        "N": 3540,
+        "Q": 3076
+      },
+      "other_symbol_counts": {
+        "+": 192
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p09372",
+      "record_id": "p09372_s13",
+      "annotation_count": 5157,
+      "native_beat_counts": {
+        "N": 1055,
+        "Q": 4027,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 74
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p09372",
+      "record_id": "p09372_s35",
+      "annotation_count": 4361,
+      "native_beat_counts": {
+        "N": 4345,
+        "Q": 11,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 4
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p09372",
+      "record_id": "p09372_s41",
+      "annotation_count": 4663,
+      "native_beat_counts": {
+        "N": 3362,
+        "Q": 1280,
+        "S": 2,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 18
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p06234",
+      "record_id": "p06234_s38",
+      "annotation_count": 5490,
+      "native_beat_counts": {
+        "N": 5374,
+        "Q": 96
+      },
+      "other_symbol_counts": {
+        "+": 20
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p06234",
+      "record_id": "p06234_s13",
+      "annotation_count": 4309,
+      "native_beat_counts": {
+        "N": 4246,
+        "Q": 49
+      },
+      "other_symbol_counts": {
+        "+": 14
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p06234",
+      "record_id": "p06234_s18",
+      "annotation_count": 7177,
+      "native_beat_counts": {
+        "N": 4478,
+        "Q": 2425
+      },
+      "other_symbol_counts": {
+        "+": 274
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p07378",
+      "record_id": "p07378_s04",
+      "annotation_count": 4917,
+      "native_beat_counts": {
+        "N": 4204,
+        "Q": 630,
+        "S": 5
+      },
+      "other_symbol_counts": {
+        "+": 78
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p07378",
+      "record_id": "p07378_s32",
+      "annotation_count": 6280,
+      "native_beat_counts": {
+        "N": 2859,
+        "Q": 3267,
+        "S": 2
+      },
+      "other_symbol_counts": {
+        "+": 152
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p07378",
+      "record_id": "p07378_s44",
+      "annotation_count": 4484,
+      "native_beat_counts": {
+        "N": 3754,
+        "Q": 636
+      },
+      "other_symbol_counts": {
+        "+": 94
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00038",
+      "record_id": "p00038_s01",
+      "annotation_count": 6711,
+      "native_beat_counts": {
+        "N": 5998,
+        "Q": 647
+      },
+      "other_symbol_counts": {
+        "+": 66
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00038",
+      "record_id": "p00038_s36",
+      "annotation_count": 5462,
+      "native_beat_counts": {
+        "Q": 5462
+      },
+      "other_symbol_counts": {}
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00038",
+      "record_id": "p00038_s18",
+      "annotation_count": 4170,
+      "native_beat_counts": {
+        "N": 4002,
+        "Q": 144
+      },
+      "other_symbol_counts": {
+        "+": 24
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p03072",
+      "record_id": "p03072_s03",
+      "annotation_count": 6122,
+      "native_beat_counts": {
+        "N": 5823,
+        "Q": 257
+      },
+      "other_symbol_counts": {
+        "+": 42
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p03072",
+      "record_id": "p03072_s07",
+      "annotation_count": 5229,
+      "native_beat_counts": {
+        "N": 4909,
+        "Q": 276
+      },
+      "other_symbol_counts": {
+        "+": 44
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p03072",
+      "record_id": "p03072_s15",
+      "annotation_count": 5001,
+      "native_beat_counts": {
+        "N": 4772,
+        "Q": 185
+      },
+      "other_symbol_counts": {
+        "+": 44
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00647",
+      "record_id": "p00647_s32",
+      "annotation_count": 4057,
+      "native_beat_counts": {
+        "N": 3966,
+        "Q": 70,
+        "S": 2,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 18
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00647",
+      "record_id": "p00647_s16",
+      "annotation_count": 4177,
+      "native_beat_counts": {
+        "N": 4074,
+        "Q": 86,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 16
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00647",
+      "record_id": "p00647_s00",
+      "annotation_count": 6997,
+      "native_beat_counts": {
+        "N": 5248,
+        "Q": 1573,
+        "V": 2
+      },
+      "other_symbol_counts": {
+        "+": 174
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p03626",
+      "record_id": "p03626_s27",
+      "annotation_count": 7054,
+      "native_beat_counts": {
+        "N": 1018,
+        "Q": 5862,
+        "V": 68
+      },
+      "other_symbol_counts": {
+        "+": 106
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p03626",
+      "record_id": "p03626_s13",
+      "annotation_count": 5008,
+      "native_beat_counts": {
+        "N": 4012,
+        "Q": 113,
+        "V": 861
+      },
+      "other_symbol_counts": {
+        "+": 22
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p03626",
+      "record_id": "p03626_s29",
+      "annotation_count": 5515,
+      "native_beat_counts": {
+        "N": 3671,
+        "Q": 839,
+        "V": 975
+      },
+      "other_symbol_counts": {
+        "+": 30
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p02165",
+      "record_id": "p02165_s47",
+      "annotation_count": 6520,
+      "native_beat_counts": {
+        "N": 878,
+        "Q": 5566
+      },
+      "other_symbol_counts": {
+        "+": 76
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p02165",
+      "record_id": "p02165_s13",
+      "annotation_count": 5171,
+      "native_beat_counts": {
+        "N": 4932,
+        "Q": 226,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 12
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p02165",
+      "record_id": "p02165_s18",
+      "annotation_count": 6438,
+      "native_beat_counts": {
+        "N": 581,
+        "Q": 5785
+      },
+      "other_symbol_counts": {
+        "+": 72
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p09420",
+      "record_id": "p09420_s36",
+      "annotation_count": 5977,
+      "native_beat_counts": {
+        "N": 5890,
+        "Q": 56,
+        "V": 17
+      },
+      "other_symbol_counts": {
+        "+": 14
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p09420",
+      "record_id": "p09420_s15",
+      "annotation_count": 6939,
+      "native_beat_counts": {
+        "N": 6845,
+        "Q": 57,
+        "V": 25
+      },
+      "other_symbol_counts": {
+        "+": 12
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p09420",
+      "record_id": "p09420_s20",
+      "annotation_count": 9965,
+      "native_beat_counts": {
+        "N": 9327,
+        "Q": 528,
+        "V": 20
+      },
+      "other_symbol_counts": {
+        "+": 90
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00943",
+      "record_id": "p00943_s01",
+      "annotation_count": 5442,
+      "native_beat_counts": {
+        "N": 2343,
+        "Q": 2736,
+        "S": 11,
+        "V": 234
+      },
+      "other_symbol_counts": {
+        "+": 118
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00943",
+      "record_id": "p00943_s38",
+      "annotation_count": 8568,
+      "native_beat_counts": {
+        "N": 6805,
+        "Q": 1547,
+        "V": 76
+      },
+      "other_symbol_counts": {
+        "+": 140
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00943",
+      "record_id": "p00943_s34",
+      "annotation_count": 7739,
+      "native_beat_counts": {
+        "N": 5557,
+        "Q": 1769,
+        "S": 4,
+        "V": 253
+      },
+      "other_symbol_counts": {
+        "+": 156
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p05568",
+      "record_id": "p05568_s27",
+      "annotation_count": 6463,
+      "native_beat_counts": {
+        "N": 6171,
+        "Q": 256
+      },
+      "other_symbol_counts": {
+        "+": 36
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p05568",
+      "record_id": "p05568_s37",
+      "annotation_count": 5579,
+      "native_beat_counts": {
+        "N": 5343,
+        "Q": 213,
+        "S": 3
+      },
+      "other_symbol_counts": {
+        "+": 20
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p05568",
+      "record_id": "p05568_s07",
+      "annotation_count": 5212,
+      "native_beat_counts": {
+        "N": 4946,
+        "Q": 240
+      },
+      "other_symbol_counts": {
+        "+": 26
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p05793",
+      "record_id": "p05793_s20",
+      "annotation_count": 4606,
+      "native_beat_counts": {
+        "N": 4100,
+        "Q": 440,
+        "S": 2
+      },
+      "other_symbol_counts": {
+        "+": 64
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p05793",
+      "record_id": "p05793_s49",
+      "annotation_count": 4110,
+      "native_beat_counts": {
+        "N": 3420,
+        "Q": 637,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 52
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p05793",
+      "record_id": "p05793_s33",
+      "annotation_count": 5059,
+      "native_beat_counts": {
+        "N": 4494,
+        "Q": 505
+      },
+      "other_symbol_counts": {
+        "+": 60
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p01086",
+      "record_id": "p01086_s03",
+      "annotation_count": 4546,
+      "native_beat_counts": {
+        "N": 959,
+        "Q": 3501
+      },
+      "other_symbol_counts": {
+        "+": 86
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p01086",
+      "record_id": "p01086_s45",
+      "annotation_count": 3433,
+      "native_beat_counts": {
+        "N": 3311,
+        "Q": 101,
+        "S": 3
+      },
+      "other_symbol_counts": {
+        "+": 18
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p01086",
+      "record_id": "p01086_s34",
+      "annotation_count": 4236,
+      "native_beat_counts": {
+        "N": 1345,
+        "Q": 2766,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 124
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00923",
+      "record_id": "p00923_s45",
+      "annotation_count": 4721,
+      "native_beat_counts": {
+        "N": 4619,
+        "Q": 86
+      },
+      "other_symbol_counts": {
+        "+": 16
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00923",
+      "record_id": "p00923_s06",
+      "annotation_count": 5465,
+      "native_beat_counts": {
+        "N": 4076,
+        "Q": 1281
+      },
+      "other_symbol_counts": {
+        "+": 108
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p00923",
+      "record_id": "p00923_s37",
+      "annotation_count": 5459,
+      "native_beat_counts": {
+        "N": 4125,
+        "Q": 1186
+      },
+      "other_symbol_counts": {
+        "+": 148
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p03547",
+      "record_id": "p03547_s34",
+      "annotation_count": 6599,
+      "native_beat_counts": {
+        "N": 4433,
+        "Q": 2001,
+        "V": 9
+      },
+      "other_symbol_counts": {
+        "+": 156
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p03547",
+      "record_id": "p03547_s20",
+      "annotation_count": 5859,
+      "native_beat_counts": {
+        "N": 5423,
+        "Q": 344,
+        "V": 14
+      },
+      "other_symbol_counts": {
+        "+": 78
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p03547",
+      "record_id": "p03547_s27",
+      "annotation_count": 5302,
+      "native_beat_counts": {
+        "N": 4862,
+        "Q": 376,
+        "V": 2
+      },
+      "other_symbol_counts": {
+        "+": 62
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p08462",
+      "record_id": "p08462_s22",
+      "annotation_count": 3595,
+      "native_beat_counts": {
+        "N": 3545,
+        "S": 47,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 2
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p08462",
+      "record_id": "p08462_s45",
+      "annotation_count": 4046,
+      "native_beat_counts": {
+        "N": 3718,
+        "Q": 261,
+        "S": 13
+      },
+      "other_symbol_counts": {
+        "+": 54
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p08462",
+      "record_id": "p08462_s33",
+      "annotation_count": 3962,
+      "native_beat_counts": {
+        "N": 3551,
+        "Q": 356,
+        "S": 11
+      },
+      "other_symbol_counts": {
+        "+": 44
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p08681",
+      "record_id": "p08681_s12",
+      "annotation_count": 3365,
+      "native_beat_counts": {
+        "N": 3312,
+        "Q": 34,
+        "S": 11
+      },
+      "other_symbol_counts": {
+        "+": 8
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p08681",
+      "record_id": "p08681_s28",
+      "annotation_count": 3512,
+      "native_beat_counts": {
+        "N": 3495,
+        "Q": 6,
+        "S": 7
+      },
+      "other_symbol_counts": {
+        "+": 4
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p08681",
+      "record_id": "p08681_s35",
+      "annotation_count": 4001,
+      "native_beat_counts": {
+        "N": 3868,
+        "Q": 108,
+        "S": 7,
+        "V": 2
+      },
+      "other_symbol_counts": {
+        "+": 16
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p02400",
+      "record_id": "p02400_s12",
+      "annotation_count": 4617,
+      "native_beat_counts": {
+        "N": 4419,
+        "Q": 138,
+        "S": 35,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 24
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p02400",
+      "record_id": "p02400_s45",
+      "annotation_count": 4565,
+      "native_beat_counts": {
+        "N": 1276,
+        "Q": 3279,
+        "S": 6
+      },
+      "other_symbol_counts": {
+        "+": 4
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p02400",
+      "record_id": "p02400_s06",
+      "annotation_count": 5975,
+      "native_beat_counts": {
+        "N": 3881,
+        "Q": 1860,
+        "S": 90
+      },
+      "other_symbol_counts": {
+        "+": 144
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p08125",
+      "record_id": "p08125_s24",
+      "annotation_count": 7036,
+      "native_beat_counts": {
+        "N": 711,
+        "Q": 6249
+      },
+      "other_symbol_counts": {
+        "+": 76
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p08125",
+      "record_id": "p08125_s17",
+      "annotation_count": 5295,
+      "native_beat_counts": {
+        "N": 1678,
+        "Q": 3475
+      },
+      "other_symbol_counts": {
+        "+": 142
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "train",
+      "patient_id": "p08125",
+      "record_id": "p08125_s12",
+      "annotation_count": 5687,
+      "native_beat_counts": {
+        "N": 3697,
+        "Q": 1932
+      },
+      "other_symbol_counts": {
+        "+": 58
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p01718",
+      "record_id": "p01718_s26",
+      "annotation_count": 5188,
+      "native_beat_counts": {
+        "Q": 5188
+      },
+      "other_symbol_counts": {}
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p01718",
+      "record_id": "p01718_s46",
+      "annotation_count": 5452,
+      "native_beat_counts": {
+        "N": 163,
+        "Q": 5265,
+        "S": 8
+      },
+      "other_symbol_counts": {
+        "+": 16
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p01718",
+      "record_id": "p01718_s24",
+      "annotation_count": 5558,
+      "native_beat_counts": {
+        "Q": 5558
+      },
+      "other_symbol_counts": {}
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09846",
+      "record_id": "p09846_s22",
+      "annotation_count": 5819,
+      "native_beat_counts": {
+        "N": 5206,
+        "Q": 566,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 46
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09846",
+      "record_id": "p09846_s31",
+      "annotation_count": 6585,
+      "native_beat_counts": {
+        "N": 5956,
+        "Q": 569,
+        "V": 4
+      },
+      "other_symbol_counts": {
+        "+": 56
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09846",
+      "record_id": "p09846_s12",
+      "annotation_count": 5892,
+      "native_beat_counts": {
+        "N": 4941,
+        "Q": 884,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 66
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09874",
+      "record_id": "p09874_s25",
+      "annotation_count": 5411,
+      "native_beat_counts": {
+        "N": 5170,
+        "Q": 177,
+        "S": 9,
+        "V": 7
+      },
+      "other_symbol_counts": {
+        "+": 48
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09874",
+      "record_id": "p09874_s40",
+      "annotation_count": 4783,
+      "native_beat_counts": {
+        "N": 3626,
+        "Q": 1005,
+        "S": 6,
+        "V": 19
+      },
+      "other_symbol_counts": {
+        "+": 127
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09874",
+      "record_id": "p09874_s04",
+      "annotation_count": 5894,
+      "native_beat_counts": {
+        "N": 4566,
+        "Q": 1148,
+        "S": 10,
+        "V": 22
+      },
+      "other_symbol_counts": {
+        "+": 148
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09261",
+      "record_id": "p09261_s18",
+      "annotation_count": 6224,
+      "native_beat_counts": {
+        "N": 2605,
+        "Q": 3456,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 162
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09261",
+      "record_id": "p09261_s19",
+      "annotation_count": 5640,
+      "native_beat_counts": {
+        "N": 4197,
+        "Q": 1307,
+        "S": 1,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 134
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09261",
+      "record_id": "p09261_s25",
+      "annotation_count": 5613,
+      "native_beat_counts": {
+        "N": 3252,
+        "Q": 2267
+      },
+      "other_symbol_counts": {
+        "+": 94
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p02716",
+      "record_id": "p02716_s04",
+      "annotation_count": 4101,
+      "native_beat_counts": {
+        "N": 3985,
+        "Q": 96,
+        "S": 6
+      },
+      "other_symbol_counts": {
+        "+": 14
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p02716",
+      "record_id": "p02716_s02",
+      "annotation_count": 4575,
+      "native_beat_counts": {
+        "N": 4404,
+        "Q": 138,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 32
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p02716",
+      "record_id": "p02716_s12",
+      "annotation_count": 4261,
+      "native_beat_counts": {
+        "N": 4040,
+        "Q": 188,
+        "S": 3
+      },
+      "other_symbol_counts": {
+        "+": 30
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p07616",
+      "record_id": "p07616_s16",
+      "annotation_count": 3522,
+      "native_beat_counts": {
+        "N": 3482,
+        "Q": 29,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 10
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p07616",
+      "record_id": "p07616_s27",
+      "annotation_count": 3374,
+      "native_beat_counts": {
+        "N": 3360,
+        "Q": 8,
+        "S": 2
+      },
+      "other_symbol_counts": {
+        "+": 4
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p07616",
+      "record_id": "p07616_s20",
+      "annotation_count": 5639,
+      "native_beat_counts": {
+        "N": 5057,
+        "Q": 525,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 56
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09252",
+      "record_id": "p09252_s24",
+      "annotation_count": 4269,
+      "native_beat_counts": {
+        "N": 4164,
+        "Q": 92,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 12
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09252",
+      "record_id": "p09252_s45",
+      "annotation_count": 5434,
+      "native_beat_counts": {
+        "N": 2942,
+        "Q": 2334
+      },
+      "other_symbol_counts": {
+        "+": 158
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09252",
+      "record_id": "p09252_s46",
+      "annotation_count": 5949,
+      "native_beat_counts": {
+        "N": 2519,
+        "Q": 3288
+      },
+      "other_symbol_counts": {
+        "+": 142
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p08854",
+      "record_id": "p08854_s09",
+      "annotation_count": 4798,
+      "native_beat_counts": {
+        "N": 561,
+        "Q": 4215
+      },
+      "other_symbol_counts": {
+        "+": 22
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p08854",
+      "record_id": "p08854_s08",
+      "annotation_count": 5233,
+      "native_beat_counts": {
+        "N": 4131,
+        "Q": 993,
+        "S": 1,
+        "V": 4
+      },
+      "other_symbol_counts": {
+        "+": 104
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p08854",
+      "record_id": "p08854_s49",
+      "annotation_count": 5121,
+      "native_beat_counts": {
+        "N": 4562,
+        "Q": 479,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 79
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p08015",
+      "record_id": "p08015_s40",
+      "annotation_count": 5565,
+      "native_beat_counts": {
+        "N": 5409,
+        "Q": 43,
+        "S": 101
+      },
+      "other_symbol_counts": {
+        "+": 12
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p08015",
+      "record_id": "p08015_s16",
+      "annotation_count": 5357,
+      "native_beat_counts": {
+        "N": 5176,
+        "Q": 109,
+        "S": 40
+      },
+      "other_symbol_counts": {
+        "+": 32
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p08015",
+      "record_id": "p08015_s18",
+      "annotation_count": 6304,
+      "native_beat_counts": {
+        "N": 6189,
+        "Q": 86,
+        "S": 9
+      },
+      "other_symbol_counts": {
+        "+": 20
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03646",
+      "record_id": "p03646_s23",
+      "annotation_count": 5372,
+      "native_beat_counts": {
+        "N": 2415,
+        "Q": 2867,
+        "S": 2
+      },
+      "other_symbol_counts": {
+        "+": 88
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03646",
+      "record_id": "p03646_s38",
+      "annotation_count": 5601,
+      "native_beat_counts": {
+        "N": 4607,
+        "Q": 886,
+        "S": 6,
+        "V": 4
+      },
+      "other_symbol_counts": {
+        "+": 98
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03646",
+      "record_id": "p03646_s35",
+      "annotation_count": 3897,
+      "native_beat_counts": {
+        "N": 3744,
+        "Q": 133
+      },
+      "other_symbol_counts": {
+        "+": 20
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p01569",
+      "record_id": "p01569_s38",
+      "annotation_count": 5596,
+      "native_beat_counts": {
+        "N": 4642,
+        "Q": 861,
+        "S": 3
+      },
+      "other_symbol_counts": {
+        "+": 90
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p01569",
+      "record_id": "p01569_s09",
+      "annotation_count": 7096,
+      "native_beat_counts": {
+        "N": 6739,
+        "Q": 270,
+        "S": 17
+      },
+      "other_symbol_counts": {
+        "+": 70
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p01569",
+      "record_id": "p01569_s00",
+      "annotation_count": 6454,
+      "native_beat_counts": {
+        "N": 5910,
+        "Q": 471,
+        "S": 4,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 68
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09195",
+      "record_id": "p09195_s08",
+      "annotation_count": 5425,
+      "native_beat_counts": {
+        "N": 4987,
+        "Q": 403,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 34
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09195",
+      "record_id": "p09195_s07",
+      "annotation_count": 6065,
+      "native_beat_counts": {
+        "N": 5211,
+        "Q": 787,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 66
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p09195",
+      "record_id": "p09195_s04",
+      "annotation_count": 7255,
+      "native_beat_counts": {
+        "N": 3596,
+        "Q": 3406,
+        "S": 43
+      },
+      "other_symbol_counts": {
+        "+": 210
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06922",
+      "record_id": "p06922_s18",
+      "annotation_count": 4415,
+      "native_beat_counts": {
+        "N": 4282,
+        "Q": 109
+      },
+      "other_symbol_counts": {
+        "+": 24
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06922",
+      "record_id": "p06922_s02",
+      "annotation_count": 6010,
+      "native_beat_counts": {
+        "N": 5708,
+        "Q": 244
+      },
+      "other_symbol_counts": {
+        "+": 58
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06922",
+      "record_id": "p06922_s17",
+      "annotation_count": 4295,
+      "native_beat_counts": {
+        "N": 4190,
+        "Q": 87
+      },
+      "other_symbol_counts": {
+        "+": 18
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p05335",
+      "record_id": "p05335_s30",
+      "annotation_count": 6172,
+      "native_beat_counts": {
+        "N": 5486,
+        "Q": 451,
+        "S": 178,
+        "V": 5
+      },
+      "other_symbol_counts": {
+        "+": 52
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p05335",
+      "record_id": "p05335_s04",
+      "annotation_count": 5951,
+      "native_beat_counts": {
+        "N": 5758,
+        "Q": 156,
+        "S": 10,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 26
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p05335",
+      "record_id": "p05335_s49",
+      "annotation_count": 5519,
+      "native_beat_counts": {
+        "N": 5024,
+        "Q": 12,
+        "S": 477
+      },
+      "other_symbol_counts": {
+        "+": 6
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03217",
+      "record_id": "p03217_s17",
+      "annotation_count": 5753,
+      "native_beat_counts": {
+        "N": 4509,
+        "Q": 961,
+        "V": 149
+      },
+      "other_symbol_counts": {
+        "+": 134
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03217",
+      "record_id": "p03217_s20",
+      "annotation_count": 4531,
+      "native_beat_counts": {
+        "N": 4176,
+        "Q": 258,
+        "V": 33
+      },
+      "other_symbol_counts": {
+        "+": 64
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03217",
+      "record_id": "p03217_s08",
+      "annotation_count": 5225,
+      "native_beat_counts": {
+        "N": 4322,
+        "Q": 714,
+        "V": 61
+      },
+      "other_symbol_counts": {
+        "+": 128
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p00989",
+      "record_id": "p00989_s29",
+      "annotation_count": 5818,
+      "native_beat_counts": {
+        "Q": 5818
+      },
+      "other_symbol_counts": {}
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p00989",
+      "record_id": "p00989_s11",
+      "annotation_count": 3672,
+      "native_beat_counts": {
+        "N": 3585,
+        "Q": 70,
+        "S": 2,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 14
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p00989",
+      "record_id": "p00989_s14",
+      "annotation_count": 5761,
+      "native_beat_counts": {
+        "N": 1785,
+        "Q": 3900
+      },
+      "other_symbol_counts": {
+        "+": 76
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06885",
+      "record_id": "p06885_s43",
+      "annotation_count": 6344,
+      "native_beat_counts": {
+        "N": 2807,
+        "Q": 3384,
+        "V": 3
+      },
+      "other_symbol_counts": {
+        "+": 150
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06885",
+      "record_id": "p06885_s03",
+      "annotation_count": 4446,
+      "native_beat_counts": {
+        "N": 4079,
+        "Q": 308,
+        "S": 3,
+        "V": 26
+      },
+      "other_symbol_counts": {
+        "+": 30
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06885",
+      "record_id": "p06885_s01",
+      "annotation_count": 6007,
+      "native_beat_counts": {
+        "N": 2537,
+        "Q": 3301,
+        "V": 7
+      },
+      "other_symbol_counts": {
+        "+": 162
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03008",
+      "record_id": "p03008_s33",
+      "annotation_count": 5138,
+      "native_beat_counts": {
+        "N": 4308,
+        "Q": 317,
+        "S": 461
+      },
+      "other_symbol_counts": {
+        "+": 52
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03008",
+      "record_id": "p03008_s34",
+      "annotation_count": 4650,
+      "native_beat_counts": {
+        "N": 3652,
+        "Q": 829,
+        "S": 47
+      },
+      "other_symbol_counts": {
+        "+": 122
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03008",
+      "record_id": "p03008_s35",
+      "annotation_count": 4312,
+      "native_beat_counts": {
+        "N": 3921,
+        "Q": 350,
+        "S": 5
+      },
+      "other_symbol_counts": {
+        "+": 36
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06034",
+      "record_id": "p06034_s10",
+      "annotation_count": 5058,
+      "native_beat_counts": {
+        "N": 4943,
+        "Q": 80,
+        "S": 13
+      },
+      "other_symbol_counts": {
+        "+": 22
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06034",
+      "record_id": "p06034_s11",
+      "annotation_count": 4462,
+      "native_beat_counts": {
+        "N": 4357,
+        "Q": 35,
+        "S": 60
+      },
+      "other_symbol_counts": {
+        "+": 10
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06034",
+      "record_id": "p06034_s06",
+      "annotation_count": 4087,
+      "native_beat_counts": {
+        "N": 3841,
+        "Q": 154,
+        "S": 56
+      },
+      "other_symbol_counts": {
+        "+": 36
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06544",
+      "record_id": "p06544_s04",
+      "annotation_count": 4479,
+      "native_beat_counts": {
+        "N": 4458,
+        "S": 19
+      },
+      "other_symbol_counts": {
+        "+": 2
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06544",
+      "record_id": "p06544_s12",
+      "annotation_count": 8113,
+      "native_beat_counts": {
+        "N": 8021,
+        "Q": 12,
+        "S": 26
+      },
+      "other_symbol_counts": {
+        "+": 54
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06544",
+      "record_id": "p06544_s17",
+      "annotation_count": 4935,
+      "native_beat_counts": {
+        "N": 4854,
+        "Q": 6,
+        "S": 33
+      },
+      "other_symbol_counts": {
+        "+": 42
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p02430",
+      "record_id": "p02430_s18",
+      "annotation_count": 6282,
+      "native_beat_counts": {
+        "N": 4327,
+        "Q": 1463,
+        "S": 4,
+        "V": 286
+      },
+      "other_symbol_counts": {
+        "+": 202
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p02430",
+      "record_id": "p02430_s16",
+      "annotation_count": 4198,
+      "native_beat_counts": {
+        "N": 3812,
+        "Q": 326,
+        "V": 4
+      },
+      "other_symbol_counts": {
+        "+": 56
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p02430",
+      "record_id": "p02430_s38",
+      "annotation_count": 6296,
+      "native_beat_counts": {
+        "N": 4833,
+        "Q": 607,
+        "V": 774
+      },
+      "other_symbol_counts": {
+        "+": 82
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06894",
+      "record_id": "p06894_s25",
+      "annotation_count": 4752,
+      "native_beat_counts": {
+        "N": 3144,
+        "Q": 1569,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 38
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06894",
+      "record_id": "p06894_s38",
+      "annotation_count": 6706,
+      "native_beat_counts": {
+        "N": 3892,
+        "Q": 2658
+      },
+      "other_symbol_counts": {
+        "+": 156
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p06894",
+      "record_id": "p06894_s28",
+      "annotation_count": 5718,
+      "native_beat_counts": {
+        "N": 3890,
+        "Q": 1695,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 132
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03555",
+      "record_id": "p03555_s02",
+      "annotation_count": 4763,
+      "native_beat_counts": {
+        "N": 4549,
+        "Q": 184
+      },
+      "other_symbol_counts": {
+        "+": 30
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03555",
+      "record_id": "p03555_s48",
+      "annotation_count": 4699,
+      "native_beat_counts": {
+        "N": 3820,
+        "Q": 813
+      },
+      "other_symbol_counts": {
+        "+": 66
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03555",
+      "record_id": "p03555_s17",
+      "annotation_count": 5424,
+      "native_beat_counts": {
+        "N": 3241,
+        "Q": 2006,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 176
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03515",
+      "record_id": "p03515_s34",
+      "annotation_count": 5363,
+      "native_beat_counts": {
+        "N": 4367,
+        "Q": 924
+      },
+      "other_symbol_counts": {
+        "+": 72
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03515",
+      "record_id": "p03515_s47",
+      "annotation_count": 5607,
+      "native_beat_counts": {
+        "N": 3628,
+        "Q": 1859
+      },
+      "other_symbol_counts": {
+        "+": 120
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "validation",
+      "patient_id": "p03515",
+      "record_id": "p03515_s04",
+      "annotation_count": 5057,
+      "native_beat_counts": {
+        "N": 2922,
+        "Q": 2050
+      },
+      "other_symbol_counts": {
+        "+": 85
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01003",
+      "record_id": "p01003_s09",
+      "annotation_count": 5074,
+      "native_beat_counts": {
+        "N": 2214,
+        "Q": 2716
+      },
+      "other_symbol_counts": {
+        "+": 144
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01003",
+      "record_id": "p01003_s29",
+      "annotation_count": 4224,
+      "native_beat_counts": {
+        "N": 3995,
+        "Q": 201,
+        "S": 4
+      },
+      "other_symbol_counts": {
+        "+": 24
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01003",
+      "record_id": "p01003_s30",
+      "annotation_count": 5714,
+      "native_beat_counts": {
+        "N": 1576,
+        "Q": 3992
+      },
+      "other_symbol_counts": {
+        "+": 146
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p07142",
+      "record_id": "p07142_s12",
+      "annotation_count": 8308,
+      "native_beat_counts": {
+        "N": 3827,
+        "Q": 4266,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 214
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p07142",
+      "record_id": "p07142_s18",
+      "annotation_count": 5800,
+      "native_beat_counts": {
+        "N": 5561,
+        "Q": 224,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 14
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p07142",
+      "record_id": "p07142_s26",
+      "annotation_count": 6129,
+      "native_beat_counts": {
+        "N": 5673,
+        "Q": 421,
+        "S": 7
+      },
+      "other_symbol_counts": {
+        "+": 28
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10938",
+      "record_id": "p10938_s17",
+      "annotation_count": 5871,
+      "native_beat_counts": {
+        "N": 3263,
+        "Q": 2480
+      },
+      "other_symbol_counts": {
+        "+": 128
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10938",
+      "record_id": "p10938_s24",
+      "annotation_count": 5404,
+      "native_beat_counts": {
+        "N": 3249,
+        "Q": 1982,
+        "S": 5
+      },
+      "other_symbol_counts": {
+        "+": 168
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10938",
+      "record_id": "p10938_s03",
+      "annotation_count": 6035,
+      "native_beat_counts": {
+        "N": 1685,
+        "Q": 4224
+      },
+      "other_symbol_counts": {
+        "+": 126
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p00225",
+      "record_id": "p00225_s12",
+      "annotation_count": 4582,
+      "native_beat_counts": {
+        "N": 4346,
+        "Q": 7,
+        "S": 225
+      },
+      "other_symbol_counts": {
+        "+": 4
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p00225",
+      "record_id": "p00225_s15",
+      "annotation_count": 5664,
+      "native_beat_counts": {
+        "N": 2803,
+        "Q": 2336,
+        "S": 391
+      },
+      "other_symbol_counts": {
+        "+": 134
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p00225",
+      "record_id": "p00225_s45",
+      "annotation_count": 4341,
+      "native_beat_counts": {
+        "N": 3564,
+        "Q": 204,
+        "S": 547
+      },
+      "other_symbol_counts": {
+        "+": 26
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p03275",
+      "record_id": "p03275_s21",
+      "annotation_count": 6522,
+      "native_beat_counts": {
+        "N": 5622,
+        "Q": 787
+      },
+      "other_symbol_counts": {
+        "+": 113
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p03275",
+      "record_id": "p03275_s24",
+      "annotation_count": 6409,
+      "native_beat_counts": {
+        "N": 6261,
+        "Q": 124
+      },
+      "other_symbol_counts": {
+        "+": 24
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p03275",
+      "record_id": "p03275_s32",
+      "annotation_count": 6159,
+      "native_beat_counts": {
+        "N": 6075,
+        "Q": 68
+      },
+      "other_symbol_counts": {
+        "+": 16
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01846",
+      "record_id": "p01846_s12",
+      "annotation_count": 5523,
+      "native_beat_counts": {
+        "N": 1872,
+        "Q": 3423,
+        "V": 124
+      },
+      "other_symbol_counts": {
+        "+": 104
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01846",
+      "record_id": "p01846_s31",
+      "annotation_count": 6126,
+      "native_beat_counts": {
+        "N": 2623,
+        "Q": 3198,
+        "S": 2,
+        "V": 187
+      },
+      "other_symbol_counts": {
+        "+": 116
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01846",
+      "record_id": "p01846_s22",
+      "annotation_count": 5839,
+      "native_beat_counts": {
+        "N": 1350,
+        "Q": 4361,
+        "V": 78
+      },
+      "other_symbol_counts": {
+        "+": 50
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01216",
+      "record_id": "p01216_s26",
+      "annotation_count": 4364,
+      "native_beat_counts": {
+        "Q": 4364
+      },
+      "other_symbol_counts": {}
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01216",
+      "record_id": "p01216_s34",
+      "annotation_count": 4553,
+      "native_beat_counts": {
+        "N": 1553,
+        "Q": 2956
+      },
+      "other_symbol_counts": {
+        "+": 44
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01216",
+      "record_id": "p01216_s04",
+      "annotation_count": 4046,
+      "native_beat_counts": {
+        "N": 2395,
+        "Q": 1603
+      },
+      "other_symbol_counts": {
+        "+": 48
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01426",
+      "record_id": "p01426_s16",
+      "annotation_count": 4958,
+      "native_beat_counts": {
+        "N": 4343,
+        "Q": 533
+      },
+      "other_symbol_counts": {
+        "+": 82
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01426",
+      "record_id": "p01426_s49",
+      "annotation_count": 4778,
+      "native_beat_counts": {
+        "N": 4429,
+        "Q": 289,
+        "S": 2
+      },
+      "other_symbol_counts": {
+        "+": 58
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01426",
+      "record_id": "p01426_s08",
+      "annotation_count": 4756,
+      "native_beat_counts": {
+        "N": 4183,
+        "Q": 497,
+        "S": 4
+      },
+      "other_symbol_counts": {
+        "+": 72
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p07472",
+      "record_id": "p07472_s44",
+      "annotation_count": 5024,
+      "native_beat_counts": {
+        "N": 4772,
+        "Q": 199,
+        "S": 3
+      },
+      "other_symbol_counts": {
+        "+": 50
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p07472",
+      "record_id": "p07472_s36",
+      "annotation_count": 5506,
+      "native_beat_counts": {
+        "N": 5413,
+        "Q": 69
+      },
+      "other_symbol_counts": {
+        "+": 24
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p07472",
+      "record_id": "p07472_s24",
+      "annotation_count": 4446,
+      "native_beat_counts": {
+        "N": 4220,
+        "Q": 185,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 40
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p03894",
+      "record_id": "p03894_s45",
+      "annotation_count": 6507,
+      "native_beat_counts": {
+        "N": 2040,
+        "Q": 4264,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 202
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p03894",
+      "record_id": "p03894_s15",
+      "annotation_count": 6001,
+      "native_beat_counts": {
+        "N": 5798,
+        "Q": 183
+      },
+      "other_symbol_counts": {
+        "+": 20
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p03894",
+      "record_id": "p03894_s10",
+      "annotation_count": 3968,
+      "native_beat_counts": {
+        "N": 3898,
+        "Q": 53,
+        "S": 3
+      },
+      "other_symbol_counts": {
+        "+": 14
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10412",
+      "record_id": "p10412_s20",
+      "annotation_count": 4578,
+      "native_beat_counts": {
+        "N": 4266,
+        "Q": 266,
+        "S": 5,
+        "V": 3
+      },
+      "other_symbol_counts": {
+        "+": 38
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10412",
+      "record_id": "p10412_s33",
+      "annotation_count": 6033,
+      "native_beat_counts": {
+        "N": 5792,
+        "Q": 211,
+        "S": 2,
+        "V": 2
+      },
+      "other_symbol_counts": {
+        "+": 26
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10412",
+      "record_id": "p10412_s14",
+      "annotation_count": 4730,
+      "native_beat_counts": {
+        "N": 2639,
+        "Q": 1972,
+        "S": 4,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 114
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p00284",
+      "record_id": "p00284_s10",
+      "annotation_count": 5525,
+      "native_beat_counts": {
+        "N": 5287,
+        "Q": 36,
+        "S": 143,
+        "V": 53
+      },
+      "other_symbol_counts": {
+        "+": 6
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p00284",
+      "record_id": "p00284_s46",
+      "annotation_count": 5713,
+      "native_beat_counts": {
+        "N": 5373,
+        "Q": 99,
+        "S": 149,
+        "V": 74
+      },
+      "other_symbol_counts": {
+        "+": 18
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p00284",
+      "record_id": "p00284_s43",
+      "annotation_count": 5685,
+      "native_beat_counts": {
+        "N": 5286,
+        "Q": 15,
+        "S": 300,
+        "V": 80
+      },
+      "other_symbol_counts": {
+        "+": 4
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p00773",
+      "record_id": "p00773_s04",
+      "annotation_count": 5054,
+      "native_beat_counts": {
+        "N": 3872,
+        "Q": 1132,
+        "S": 1,
+        "V": 3
+      },
+      "other_symbol_counts": {
+        "+": 46
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p00773",
+      "record_id": "p00773_s03",
+      "annotation_count": 4965,
+      "native_beat_counts": {
+        "N": 2072,
+        "Q": 2860,
+        "S": 2,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 30
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p00773",
+      "record_id": "p00773_s29",
+      "annotation_count": 4485,
+      "native_beat_counts": {
+        "N": 4085,
+        "Q": 353,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 46
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p09655",
+      "record_id": "p09655_s29",
+      "annotation_count": 3937,
+      "native_beat_counts": {
+        "N": 3845,
+        "Q": 74,
+        "S": 9,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 8
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p09655",
+      "record_id": "p09655_s01",
+      "annotation_count": 4513,
+      "native_beat_counts": {
+        "N": 4473,
+        "Q": 29,
+        "S": 3
+      },
+      "other_symbol_counts": {
+        "+": 8
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p09655",
+      "record_id": "p09655_s00",
+      "annotation_count": 3910,
+      "native_beat_counts": {
+        "N": 3811,
+        "Q": 77,
+        "S": 4
+      },
+      "other_symbol_counts": {
+        "+": 18
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p00793",
+      "record_id": "p00793_s20",
+      "annotation_count": 5318,
+      "native_beat_counts": {
+        "N": 3646,
+        "Q": 1454,
+        "S": 81,
+        "V": 35
+      },
+      "other_symbol_counts": {
+        "+": 102
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p00793",
+      "record_id": "p00793_s41",
+      "annotation_count": 5396,
+      "native_beat_counts": {
+        "N": 4468,
+        "Q": 633,
+        "S": 125,
+        "V": 98
+      },
+      "other_symbol_counts": {
+        "+": 72
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p00793",
+      "record_id": "p00793_s31",
+      "annotation_count": 6116,
+      "native_beat_counts": {
+        "N": 3532,
+        "Q": 2328,
+        "S": 23,
+        "V": 51
+      },
+      "other_symbol_counts": {
+        "+": 182
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10213",
+      "record_id": "p10213_s31",
+      "annotation_count": 6573,
+      "native_beat_counts": {
+        "N": 6034,
+        "Q": 463
+      },
+      "other_symbol_counts": {
+        "+": 76
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10213",
+      "record_id": "p10213_s21",
+      "annotation_count": 4266,
+      "native_beat_counts": {
+        "N": 4233,
+        "Q": 27
+      },
+      "other_symbol_counts": {
+        "+": 6
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10213",
+      "record_id": "p10213_s08",
+      "annotation_count": 4950,
+      "native_beat_counts": {
+        "N": 4836,
+        "Q": 98
+      },
+      "other_symbol_counts": {
+        "+": 16
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p06565",
+      "record_id": "p06565_s19",
+      "annotation_count": 5053,
+      "native_beat_counts": {
+        "N": 4460,
+        "Q": 523,
+        "V": 4
+      },
+      "other_symbol_counts": {
+        "+": 66
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p06565",
+      "record_id": "p06565_s18",
+      "annotation_count": 4158,
+      "native_beat_counts": {
+        "N": 4141,
+        "Q": 11,
+        "V": 2
+      },
+      "other_symbol_counts": {
+        "+": 4
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p06565",
+      "record_id": "p06565_s31",
+      "annotation_count": 5162,
+      "native_beat_counts": {
+        "N": 5003,
+        "Q": 130,
+        "V": 3
+      },
+      "other_symbol_counts": {
+        "+": 26
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p09002",
+      "record_id": "p09002_s39",
+      "annotation_count": 6994,
+      "native_beat_counts": {
+        "N": 5631,
+        "Q": 1201
+      },
+      "other_symbol_counts": {
+        "+": 162
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p09002",
+      "record_id": "p09002_s10",
+      "annotation_count": 5111,
+      "native_beat_counts": {
+        "N": 4499,
+        "Q": 552
+      },
+      "other_symbol_counts": {
+        "+": 60
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p09002",
+      "record_id": "p09002_s08",
+      "annotation_count": 7187,
+      "native_beat_counts": {
+        "N": 4296,
+        "Q": 2665
+      },
+      "other_symbol_counts": {
+        "+": 226
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10209",
+      "record_id": "p10209_s32",
+      "annotation_count": 5411,
+      "native_beat_counts": {
+        "N": 4494,
+        "Q": 755,
+        "S": 42
+      },
+      "other_symbol_counts": {
+        "+": 120
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10209",
+      "record_id": "p10209_s15",
+      "annotation_count": 5225,
+      "native_beat_counts": {
+        "N": 4848,
+        "Q": 284,
+        "S": 27
+      },
+      "other_symbol_counts": {
+        "+": 66
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10209",
+      "record_id": "p10209_s44",
+      "annotation_count": 4685,
+      "native_beat_counts": {
+        "N": 4592,
+        "Q": 43,
+        "S": 34
+      },
+      "other_symbol_counts": {
+        "+": 16
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p04945",
+      "record_id": "p04945_s42",
+      "annotation_count": 4697,
+      "native_beat_counts": {
+        "N": 4652,
+        "Q": 32,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 12
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p04945",
+      "record_id": "p04945_s48",
+      "annotation_count": 4897,
+      "native_beat_counts": {
+        "N": 23,
+        "Q": 4870
+      },
+      "other_symbol_counts": {
+        "+": 4
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p04945",
+      "record_id": "p04945_s43",
+      "annotation_count": 4566,
+      "native_beat_counts": {
+        "N": 4201,
+        "Q": 331,
+        "S": 2
+      },
+      "other_symbol_counts": {
+        "+": 32
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01451",
+      "record_id": "p01451_s48",
+      "annotation_count": 3396,
+      "native_beat_counts": {
+        "N": 266,
+        "Q": 3116
+      },
+      "other_symbol_counts": {
+        "+": 14
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01451",
+      "record_id": "p01451_s18",
+      "annotation_count": 4341,
+      "native_beat_counts": {
+        "N": 3825,
+        "Q": 467,
+        "S": 9
+      },
+      "other_symbol_counts": {
+        "+": 40
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p01451",
+      "record_id": "p01451_s28",
+      "annotation_count": 4120,
+      "native_beat_counts": {
+        "N": 3996,
+        "Q": 93,
+        "S": 17
+      },
+      "other_symbol_counts": {
+        "+": 14
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p09300",
+      "record_id": "p09300_s00",
+      "annotation_count": 6723,
+      "native_beat_counts": {
+        "N": 6258,
+        "Q": 404,
+        "S": 1
+      },
+      "other_symbol_counts": {
+        "+": 60
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p09300",
+      "record_id": "p09300_s09",
+      "annotation_count": 6794,
+      "native_beat_counts": {
+        "N": 4520,
+        "Q": 2146
+      },
+      "other_symbol_counts": {
+        "+": 128
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p09300",
+      "record_id": "p09300_s36",
+      "annotation_count": 6166,
+      "native_beat_counts": {
+        "N": 6079,
+        "Q": 71
+      },
+      "other_symbol_counts": {
+        "+": 16
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10138",
+      "record_id": "p10138_s04",
+      "annotation_count": 6824,
+      "native_beat_counts": {
+        "N": 1525,
+        "Q": 5187
+      },
+      "other_symbol_counts": {
+        "+": 112
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10138",
+      "record_id": "p10138_s38",
+      "annotation_count": 4912,
+      "native_beat_counts": {
+        "N": 4880,
+        "Q": 25,
+        "V": 1
+      },
+      "other_symbol_counts": {
+        "+": 6
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p10138",
+      "record_id": "p10138_s45",
+      "annotation_count": 5754,
+      "native_beat_counts": {
+        "N": 4157,
+        "Q": 1481,
+        "V": 2
+      },
+      "other_symbol_counts": {
+        "+": 114
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p07284",
+      "record_id": "p07284_s16",
+      "annotation_count": 4132,
+      "native_beat_counts": {
+        "N": 4130
+      },
+      "other_symbol_counts": {
+        "+": 2
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p07284",
+      "record_id": "p07284_s49",
+      "annotation_count": 6370,
+      "native_beat_counts": {
+        "N": 3355,
+        "Q": 2799,
+        "S": 4
+      },
+      "other_symbol_counts": {
+        "+": 212
+      }
+    },
+    {
+      "database": "Icentia11k",
+      "database_version": "1.0",
+      "split": "internal_test",
+      "patient_id": "p07284",
+      "record_id": "p07284_s22",
+      "annotation_count": 6028,
+      "native_beat_counts": {
+        "N": 5448,
+        "Q": 482
+      },
+      "other_symbol_counts": {
+        "+": 98
+      }
+    }
+  ],
+  "errors": [],
+  "signals_downloaded": false,
+  "locked_databases_accessed": false
+}

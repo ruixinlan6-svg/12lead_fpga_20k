@@ -1,0 +1,51 @@
+{
+  "candidate_name": "candidate_c_temporal_pool5_cap2000_focal_g2",
+  "description": "Five-bin temporal cap-2000 model with asymmetric negative focal gamma 2",
+  "model": {
+    "architecture": "TinyECGCNN_NV",
+    "in_channels": 1,
+    "input_length": 160,
+    "num_features": 4,
+    "use_features": true,
+    "num_classes": 2,
+    "temporal_pool_bins": 5
+  },
+  "data": {
+    "sample_rate_hz": 250,
+    "window_length": 160,
+    "r_peak_index": 64,
+    "max_beats_per_patient_epoch": 2000,
+    "max_pos_neg_ratio": "1:4"
+  },
+  "augmentation": {
+    "gain_range": [0.8, 1.2],
+    "baseline_wander": {
+      "enabled": true,
+      "freq_hz_range": [0.05, 0.5],
+      "max_peak_uv": 100.0
+    },
+    "gaussian_noise": {
+      "enabled": true,
+      "snr_db_range": [12.0, 30.0]
+    }
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 1024,
+    "max_epochs": 50,
+    "early_stopping_metric": "val_veb_f1",
+    "early_stopping_patience": 8,
+    "loss": "asymmetric_negative_focal_cross_entropy",
+    "veb_class_weight": 2.5,
+    "negative_focal_gamma": 2.0
+  },
+  "threshold_search": {
+    "metric_priority": ["veb_plus_p_ge_95", "veb_fpr_le_0_25", "max_veb_se"],
+    "min_veb_plus_p": 0.95,
+    "max_veb_fpr": 0.0025,
+    "scan_range": [0.001, 0.999],
+    "scan_step": 0.001
+  }
+}

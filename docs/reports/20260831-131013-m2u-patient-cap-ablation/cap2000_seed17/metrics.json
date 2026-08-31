@@ -1,0 +1,165 @@
+{
+  "status": "rejected",
+  "checkpoint_freezable": false,
+  "seed": 17,
+  "evaluation_scope": "validation_only",
+  "best_epoch": 12,
+  "total_epochs": 20,
+  "best_val_veb_f1": 0.6894300778307808,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.5425060043480687,
+      "val_loss": 0.14492027257276538,
+      "val_veb_f1": 0.2816624850005454
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.22475143456694993,
+      "val_loss": 0.12892960245438573,
+      "val_veb_f1": 0.274856740725847
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.17790837806960202,
+      "val_loss": 0.09049659334529789,
+      "val_veb_f1": 0.35160051216389243
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.15565749097788545,
+      "val_loss": 0.06781171511754412,
+      "val_veb_f1": 0.4527116402116401
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.14507045116244605,
+      "val_loss": 0.04590281839120435,
+      "val_veb_f1": 0.6197632058287796
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.1395304186270978,
+      "val_loss": 0.06236795325973938,
+      "val_veb_f1": 0.44645745713361373
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.133430389001692,
+      "val_loss": 0.04357842525302475,
+      "val_veb_f1": 0.6074600355239786
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.13186595244183197,
+      "val_loss": 0.05271976028080454,
+      "val_veb_f1": 0.4388454791899218
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.12839515438912136,
+      "val_loss": 0.06290448901687937,
+      "val_veb_f1": 0.35397553516819574
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.12596066299095826,
+      "val_loss": 0.03527944738034948,
+      "val_veb_f1": 0.6424242424242425
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.12422968937826577,
+      "val_loss": 0.03999266952879287,
+      "val_veb_f1": 0.5567973989026621
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.12054703237398895,
+      "val_loss": 0.02829031367288885,
+      "val_veb_f1": 0.6894300778307808
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.11934111470834327,
+      "val_loss": 0.039108606474545775,
+      "val_veb_f1": 0.5787929589270746
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.11935870356176978,
+      "val_loss": 0.04628181220493786,
+      "val_veb_f1": 0.49936902830358754
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.1155364863995515,
+      "val_loss": 0.06608039305859027,
+      "val_veb_f1": 0.3418217433888344
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.11294125438809285,
+      "val_loss": 0.043027791707452176,
+      "val_veb_f1": 0.515291936978684
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.112393831817349,
+      "val_loss": 0.04468627980082205,
+      "val_veb_f1": 0.5085797736400146
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.11328956803967678,
+      "val_loss": 0.041240367451480096,
+      "val_veb_f1": 0.5121004987991872
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.10966817497222953,
+      "val_loss": 0.03995435566107051,
+      "val_veb_f1": 0.5617658971243418
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.11081104666550898,
+      "val_loss": 0.04476409341332054,
+      "val_veb_f1": 0.5119970468807679
+    }
+  ],
+  "parameter_count": 1674,
+  "macs_per_beat": 91048,
+  "threshold_gate_failure": {
+    "status": "rejected",
+    "checkpoint_freezable": false,
+    "valid_threshold_count": 0,
+    "total_thresholds_scanned": 999,
+    "scan_step": 0.001,
+    "frozen_min_veb_plus_p_percent": 95.0,
+    "frozen_max_veb_fpr_percent": 0.25,
+    "best_f1_diagnostic": {
+      "threshold": 0.841,
+      "vtp": 1252,
+      "vfn": 163,
+      "vfp": 386,
+      "vtn": 289788,
+      "se_percent": 88.48056537102474,
+      "plus_p_percent": 76.43467643467643,
+      "fpr_percent": 0.13302363409540482,
+      "meets_gate": false
+    },
+    "best_se_under_fpr_gate": {
+      "threshold": 0.655,
+      "vtp": 1339,
+      "vfn": 76,
+      "vfp": 693,
+      "vtn": 289481,
+      "se_percent": 94.62897526501767,
+      "plus_p_percent": 65.89566929133859,
+      "fpr_percent": 0.23882222390703509,
+      "meets_gate": false
+    },
+    "best_se_under_plus_p_gate": null
+  }
+}

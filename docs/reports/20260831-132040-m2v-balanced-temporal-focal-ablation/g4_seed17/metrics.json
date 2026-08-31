@@ -1,0 +1,111 @@
+{
+  "status": "rejected",
+  "checkpoint_freezable": false,
+  "seed": 17,
+  "evaluation_scope": "validation_only",
+  "best_epoch": 3,
+  "total_epochs": 11,
+  "best_val_veb_f1": 0.16439322671683915,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.3672804047130167,
+      "val_loss": 0.3150626597811581,
+      "val_veb_f1": 0.12513852973771702
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.10037617253796918,
+      "val_loss": 0.36256951040296304,
+      "val_veb_f1": 0.10707325461423822
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.08891488395508296,
+      "val_loss": 0.300552208797797,
+      "val_veb_f1": 0.16439322671683915
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.08087643163165806,
+      "val_loss": 0.32837415689492616,
+      "val_veb_f1": 0.10976562499999999
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.07567439913801653,
+      "val_loss": 0.2687657257920134,
+      "val_veb_f1": 0.1541504147667967
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.07292102587642077,
+      "val_loss": 0.34374095380909875,
+      "val_veb_f1": 0.09417115339598034
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.06981225382953457,
+      "val_loss": 0.2962255365728412,
+      "val_veb_f1": 0.11361981063364895
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.06841846268863608,
+      "val_loss": 0.30028836007465753,
+      "val_veb_f1": 0.10997803577031691
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.06539577211053442,
+      "val_loss": 0.3100990631493383,
+      "val_veb_f1": 0.10196676101313591
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.06345624405351642,
+      "val_loss": 0.24206356841110166,
+      "val_veb_f1": 0.1543291473892928
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.06272576205625728,
+      "val_loss": 0.25850518776011233,
+      "val_veb_f1": 0.13967399431733216
+    }
+  ],
+  "parameter_count": 1674,
+  "macs_per_beat": 91048,
+  "threshold_gate_failure": {
+    "status": "rejected",
+    "checkpoint_freezable": false,
+    "valid_threshold_count": 0,
+    "total_thresholds_scanned": 999,
+    "scan_step": 0.001,
+    "frozen_min_veb_plus_p_percent": 95.0,
+    "frozen_max_veb_fpr_percent": 0.25,
+    "best_f1_diagnostic": {
+      "threshold": 0.761,
+      "vtp": 1104,
+      "vfn": 311,
+      "vfp": 703,
+      "vtn": 289471,
+      "se_percent": 78.02120141342756,
+      "plus_p_percent": 61.09573879358052,
+      "fpr_percent": 0.24226843204422174,
+      "meets_gate": false
+    },
+    "best_se_under_fpr_gate": {
+      "threshold": 0.759,
+      "vtp": 1107,
+      "vfn": 308,
+      "vfp": 720,
+      "vtn": 289454,
+      "se_percent": 78.23321554770318,
+      "plus_p_percent": 60.591133004926114,
+      "fpr_percent": 0.24812698587743906,
+      "meets_gate": false
+    },
+    "best_se_under_plus_p_gate": null
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "seed": 17,
+  "evaluation_scope": "validation_only",
+  "best_epoch": 1,
+  "total_epochs": 1,
+  "best_val_veb_f1": 0.008765232263384541,
+  "optimal_threshold": 0.001,
+  "validation_threshold_search": {
+    "selected_threshold": 0.001,
+    "selected_metrics": {
+      "threshold": 0.001,
+      "vtp": 661,
+      "vfn": 754,
+      "vfp": 168013,
+      "vtn": 122161,
+      "se_percent": 46.71378091872791,
+      "plus_p_percent": 0.39188019493223614,
+      "fpr_percent": 57.90077677531412,
+      "meets_gate": true
+    },
+    "valid_threshold_count": 999,
+    "total_thresholds_scanned": 999,
+    "scan_step": 0.001
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 18.87391052121421,
+      "val_loss": 7.335343404299849,
+      "val_veb_f1": 0.008765232263384541
+    }
+  ],
+  "parameter_count": 1546,
+  "macs_per_beat": 90920
+}

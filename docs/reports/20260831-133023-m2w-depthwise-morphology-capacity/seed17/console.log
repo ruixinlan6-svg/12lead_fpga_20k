@@ -1,0 +1,20 @@
+==================================================
+Candidate: candidate_ds_temporal_pool5_cap2000
+Seed:      17
+Device:    cuda:0
+Output:    runs\20260831-133023-m2w-depthwise-morphology-capacity\seed17
+==================================================
+Loading native Icentia11k cache from runs\20260831-073532-m2l-finite-record-replacement-and-cache\native_cache...
+Train: 145172 samples (VEB: 29033)
+Validation: 291589 samples (VEB: 1415)
+Internal test: not loaded (validation-only isolation)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\LRX\ecg_ti_pipeline_3\train\ec57\train_nv_remote.py", line 138, in <module>
+    main()
+  File "C:\Users\Administrator\Desktop\LRX\ecg_ti_pipeline_3\train\ec57\train_nv_remote.py", line 111, in main
+    results = train_single_run(
+  File "C:\Users\Administrator\Desktop\LRX\ecg_ti_pipeline_3\train\ec57\train_nv.py", line 641, in train_single_run
+    optimal_th, th_summary = scan_optimal_threshold(
+  File "C:\Users\Administrator\Desktop\LRX\ecg_ti_pipeline_3\train\ec57\train_nv.py", line 441, in scan_optimal_threshold
+    raise ThresholdGateError(summary)
+train.ec57.train_nv.ThresholdGateError: no validation threshold meets the frozen VEB +P and FPR gates; candidate must be rejected without internal-test evaluation

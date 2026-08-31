@@ -1,0 +1,63 @@
+{
+  "path": "C:\\Users\\Administrator\\Desktop\\LRX\\ecg_ti_pipeline_3\\runs\\20260831-073532-m2l-finite-record-replacement-and-cache\\native_cache\\validation_beats.npz",
+  "split": "validation",
+  "keys": [
+    "database",
+    "database_version",
+    "features",
+    "labels",
+    "native_symbols",
+    "patient_ids",
+    "record_ids",
+    "sample_indices",
+    "source_file_sha256",
+    "waveforms"
+  ],
+  "shapes": {
+    "database": [
+      291589
+    ],
+    "database_version": [
+      291589
+    ],
+    "features": [
+      291589,
+      4
+    ],
+    "labels": [
+      291589
+    ],
+    "native_symbols": [
+      291589
+    ],
+    "patient_ids": [
+      291589
+    ],
+    "record_ids": [
+      291589
+    ],
+    "sample_indices": [
+      291589
+    ],
+    "source_file_sha256": [
+      291589
+    ],
+    "waveforms": [
+      291589,
+      160
+    ]
+  },
+  "source_counts": {},
+  "validation": {
+    "split": "validation",
+    "sample_count": 291589,
+    "patient_count": 24,
+    "native_symbol_counts": {
+      "N": 288499,
+      "S": 1675,
+      "V": 1415
+    }
+  },
+  "accepted": true,
+  "error": null
+}

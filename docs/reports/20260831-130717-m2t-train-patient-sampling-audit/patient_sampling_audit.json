@@ -1,0 +1,1558 @@
+{
+  "scope": "train_only",
+  "validation_loaded": false,
+  "internal_test_loaded": false,
+  "train_npz_name": "train_beats.npz",
+  "train_npz_sha256": "762c61f7520b4d1f5cb9a0e648bee083a74c6bdf8bd2f42468a114ba869c674a",
+  "seed": 17,
+  "epoch": 0,
+  "max_beats_per_patient": 10000,
+  "max_negative_to_positive": 4,
+  "raw": {
+    "patients": 251,
+    "total": 145172,
+    "min": 78,
+    "median": 421.0,
+    "p90": 825.0,
+    "p95": 1656.5,
+    "p99": 3790.0,
+    "max": 9013,
+    "p99_median_ratio": 9.002375296912113,
+    "top1_share": 0.06208497506406194,
+    "top5_share": 0.17716915107596506,
+    "top10_share": 0.2538574931805031,
+    "gini": 0.4067921958324363
+  },
+  "selected": {
+    "patients": 251,
+    "total": 145165,
+    "min": 78,
+    "median": 421.0,
+    "p90": 825.0,
+    "p95": 1656.5,
+    "p99": 3790.0,
+    "max": 9013,
+    "p99_median_ratio": 9.002375296912113,
+    "top1_share": 0.06208796886301794,
+    "top5_share": 0.1771708056349671,
+    "top10_share": 0.25386284572727585,
+    "gini": 0.4068001750446635
+  },
+  "raw_class_counts": {
+    "negative": 116139,
+    "veb": 29033
+  },
+  "selected_class_counts": {
+    "negative": 116132,
+    "veb": 29033
+  },
+  "patients_over_cap_raw": 0,
+  "selected_patient_rows": [
+    {
+      "patient_id": "p07240",
+      "total": 9013,
+      "negative": 297,
+      "veb": 8716
+    },
+    {
+      "patient_id": "p06670",
+      "total": 6282,
+      "negative": 6268,
+      "veb": 14
+    },
+    {
+      "patient_id": "p06162",
+      "total": 4551,
+      "negative": 418,
+      "veb": 4133
+    },
+    {
+      "patient_id": "p07880",
+      "total": 3029,
+      "negative": 446,
+      "veb": 2583
+    },
+    {
+      "patient_id": "p06844",
+      "total": 2844,
+      "negative": 2800,
+      "veb": 44
+    },
+    {
+      "patient_id": "p10560",
+      "total": 2504,
+      "negative": 405,
+      "veb": 2099
+    },
+    {
+      "patient_id": "p09204",
+      "total": 2298,
+      "negative": 2237,
+      "veb": 61
+    },
+    {
+      "patient_id": "p03626",
+      "total": 2182,
+      "negative": 278,
+      "veb": 1904
+    },
+    {
+      "patient_id": "p04985",
+      "total": 2138,
+      "negative": 2138,
+      "veb": 0
+    },
+    {
+      "patient_id": "p02729",
+      "total": 2011,
+      "negative": 2011,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01929",
+      "total": 1910,
+      "negative": 1904,
+      "veb": 6
+    },
+    {
+      "patient_id": "p10859",
+      "total": 1856,
+      "negative": 1836,
+      "veb": 20
+    },
+    {
+      "patient_id": "p00498",
+      "total": 1840,
+      "negative": 361,
+      "veb": 1479
+    },
+    {
+      "patient_id": "p08536",
+      "total": 1473,
+      "negative": 252,
+      "veb": 1221
+    },
+    {
+      "patient_id": "p04447",
+      "total": 1436,
+      "negative": 1176,
+      "veb": 260
+    },
+    {
+      "patient_id": "p06985",
+      "total": 1419,
+      "negative": 968,
+      "veb": 451
+    },
+    {
+      "patient_id": "p02308",
+      "total": 1309,
+      "negative": 1309,
+      "veb": 0
+    },
+    {
+      "patient_id": "p09569",
+      "total": 1142,
+      "negative": 331,
+      "veb": 811
+    },
+    {
+      "patient_id": "p08064",
+      "total": 1139,
+      "negative": 873,
+      "veb": 266
+    },
+    {
+      "patient_id": "p00943",
+      "total": 997,
+      "negative": 434,
+      "veb": 563
+    },
+    {
+      "patient_id": "p02769",
+      "total": 965,
+      "negative": 948,
+      "veb": 17
+    },
+    {
+      "patient_id": "p02255",
+      "total": 953,
+      "negative": 952,
+      "veb": 1
+    },
+    {
+      "patient_id": "p05478",
+      "total": 921,
+      "negative": 849,
+      "veb": 72
+    },
+    {
+      "patient_id": "p10030",
+      "total": 852,
+      "negative": 593,
+      "veb": 259
+    },
+    {
+      "patient_id": "p07533",
+      "total": 842,
+      "negative": 440,
+      "veb": 402
+    },
+    {
+      "patient_id": "p01908",
+      "total": 825,
+      "negative": 796,
+      "veb": 29
+    },
+    {
+      "patient_id": "p05804",
+      "total": 802,
+      "negative": 792,
+      "veb": 10
+    },
+    {
+      "patient_id": "p07001",
+      "total": 787,
+      "negative": 628,
+      "veb": 159
+    },
+    {
+      "patient_id": "p10620",
+      "total": 765,
+      "negative": 579,
+      "veb": 186
+    },
+    {
+      "patient_id": "p02571",
+      "total": 735,
+      "negative": 735,
+      "veb": 0
+    },
+    {
+      "patient_id": "p09420",
+      "total": 714,
+      "negative": 652,
+      "veb": 62
+    },
+    {
+      "patient_id": "p04331",
+      "total": 705,
+      "negative": 705,
+      "veb": 0
+    },
+    {
+      "patient_id": "p08641",
+      "total": 687,
+      "negative": 671,
+      "veb": 16
+    },
+    {
+      "patient_id": "p02474",
+      "total": 635,
+      "negative": 383,
+      "veb": 252
+    },
+    {
+      "patient_id": "p06315",
+      "total": 629,
+      "negative": 626,
+      "veb": 3
+    },
+    {
+      "patient_id": "p01221",
+      "total": 617,
+      "negative": 617,
+      "veb": 0
+    },
+    {
+      "patient_id": "p03833",
+      "total": 607,
+      "negative": 405,
+      "veb": 202
+    },
+    {
+      "patient_id": "p01150",
+      "total": 606,
+      "negative": 545,
+      "veb": 61
+    },
+    {
+      "patient_id": "p09029",
+      "total": 601,
+      "negative": 594,
+      "veb": 7
+    },
+    {
+      "patient_id": "p07390",
+      "total": 598,
+      "negative": 598,
+      "veb": 0
+    },
+    {
+      "patient_id": "p02420",
+      "total": 594,
+      "negative": 593,
+      "veb": 1
+    },
+    {
+      "patient_id": "p02988",
+      "total": 593,
+      "negative": 587,
+      "veb": 6
+    },
+    {
+      "patient_id": "p10012",
+      "total": 574,
+      "negative": 452,
+      "veb": 122
+    },
+    {
+      "patient_id": "p00998",
+      "total": 573,
+      "negative": 503,
+      "veb": 70
+    },
+    {
+      "patient_id": "p02218",
+      "total": 568,
+      "negative": 568,
+      "veb": 0
+    },
+    {
+      "patient_id": "p08764",
+      "total": 566,
+      "negative": 565,
+      "veb": 1
+    },
+    {
+      "patient_id": "p03445",
+      "total": 563,
+      "negative": 402,
+      "veb": 161
+    },
+    {
+      "patient_id": "p04922",
+      "total": 558,
+      "negative": 557,
+      "veb": 1
+    },
+    {
+      "patient_id": "p06634",
+      "total": 551,
+      "negative": 551,
+      "veb": 0
+    },
+    {
+      "patient_id": "p00826",
+      "total": 546,
+      "negative": 266,
+      "veb": 280
+    },
+    {
+      "patient_id": "p10678",
+      "total": 542,
+      "negative": 448,
+      "veb": 94
+    },
+    {
+      "patient_id": "p08444",
+      "total": 541,
+      "negative": 541,
+      "veb": 0
+    },
+    {
+      "patient_id": "p05779",
+      "total": 539,
+      "negative": 434,
+      "veb": 105
+    },
+    {
+      "patient_id": "p06605",
+      "total": 529,
+      "negative": 529,
+      "veb": 0
+    },
+    {
+      "patient_id": "p10289",
+      "total": 527,
+      "negative": 518,
+      "veb": 9
+    },
+    {
+      "patient_id": "p02945",
+      "total": 519,
+      "negative": 519,
+      "veb": 0
+    },
+    {
+      "patient_id": "p05432",
+      "total": 518,
+      "negative": 518,
+      "veb": 0
+    },
+    {
+      "patient_id": "p05568",
+      "total": 518,
+      "negative": 518,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01933",
+      "total": 517,
+      "negative": 517,
+      "veb": 0
+    },
+    {
+      "patient_id": "p08995",
+      "total": 516,
+      "negative": 446,
+      "veb": 70
+    },
+    {
+      "patient_id": "p07570",
+      "total": 512,
+      "negative": 497,
+      "veb": 15
+    },
+    {
+      "patient_id": "p03419",
+      "total": 511,
+      "negative": 511,
+      "veb": 0
+    },
+    {
+      "patient_id": "p00001",
+      "total": 509,
+      "negative": 470,
+      "veb": 39
+    },
+    {
+      "patient_id": "p10601",
+      "total": 505,
+      "negative": 504,
+      "veb": 1
+    },
+    {
+      "patient_id": "p02736",
+      "total": 503,
+      "negative": 484,
+      "veb": 19
+    },
+    {
+      "patient_id": "p04322",
+      "total": 503,
+      "negative": 503,
+      "veb": 0
+    },
+    {
+      "patient_id": "p04803",
+      "total": 502,
+      "negative": 501,
+      "veb": 1
+    },
+    {
+      "patient_id": "p09034",
+      "total": 502,
+      "negative": 502,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07948",
+      "total": 497,
+      "negative": 497,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01525",
+      "total": 495,
+      "negative": 495,
+      "veb": 0
+    },
+    {
+      "patient_id": "p00549",
+      "total": 491,
+      "negative": 491,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07848",
+      "total": 491,
+      "negative": 479,
+      "veb": 12
+    },
+    {
+      "patient_id": "p05363",
+      "total": 486,
+      "negative": 486,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07090",
+      "total": 486,
+      "negative": 398,
+      "veb": 88
+    },
+    {
+      "patient_id": "p08742",
+      "total": 486,
+      "negative": 469,
+      "veb": 17
+    },
+    {
+      "patient_id": "p03561",
+      "total": 483,
+      "negative": 483,
+      "veb": 0
+    },
+    {
+      "patient_id": "p03547",
+      "total": 482,
+      "negative": 457,
+      "veb": 25
+    },
+    {
+      "patient_id": "p09400",
+      "total": 481,
+      "negative": 477,
+      "veb": 4
+    },
+    {
+      "patient_id": "p07293",
+      "total": 480,
+      "negative": 480,
+      "veb": 0
+    },
+    {
+      "patient_id": "p09860",
+      "total": 479,
+      "negative": 477,
+      "veb": 2
+    },
+    {
+      "patient_id": "p07902",
+      "total": 477,
+      "negative": 442,
+      "veb": 35
+    },
+    {
+      "patient_id": "p00200",
+      "total": 476,
+      "negative": 476,
+      "veb": 0
+    },
+    {
+      "patient_id": "p00048",
+      "total": 475,
+      "negative": 475,
+      "veb": 0
+    },
+    {
+      "patient_id": "p03434",
+      "total": 475,
+      "negative": 475,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01411",
+      "total": 472,
+      "negative": 472,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01096",
+      "total": 471,
+      "negative": 471,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07977",
+      "total": 468,
+      "negative": 467,
+      "veb": 1
+    },
+    {
+      "patient_id": "p03072",
+      "total": 466,
+      "negative": 466,
+      "veb": 0
+    },
+    {
+      "patient_id": "p05914",
+      "total": 466,
+      "negative": 460,
+      "veb": 6
+    },
+    {
+      "patient_id": "p03911",
+      "total": 465,
+      "negative": 465,
+      "veb": 0
+    },
+    {
+      "patient_id": "p09022",
+      "total": 462,
+      "negative": 462,
+      "veb": 0
+    },
+    {
+      "patient_id": "p09323",
+      "total": 462,
+      "negative": 461,
+      "veb": 1
+    },
+    {
+      "patient_id": "p00123",
+      "total": 460,
+      "negative": 460,
+      "veb": 0
+    },
+    {
+      "patient_id": "p10320",
+      "total": 459,
+      "negative": 457,
+      "veb": 2
+    },
+    {
+      "patient_id": "p08387",
+      "total": 458,
+      "negative": 407,
+      "veb": 51
+    },
+    {
+      "patient_id": "p01722",
+      "total": 457,
+      "negative": 315,
+      "veb": 142
+    },
+    {
+      "patient_id": "p05211",
+      "total": 457,
+      "negative": 421,
+      "veb": 36
+    },
+    {
+      "patient_id": "p01115",
+      "total": 455,
+      "negative": 454,
+      "veb": 1
+    },
+    {
+      "patient_id": "p02400",
+      "total": 455,
+      "negative": 454,
+      "veb": 1
+    },
+    {
+      "patient_id": "p07452",
+      "total": 455,
+      "negative": 427,
+      "veb": 28
+    },
+    {
+      "patient_id": "p07786",
+      "total": 455,
+      "negative": 455,
+      "veb": 0
+    },
+    {
+      "patient_id": "p06347",
+      "total": 454,
+      "negative": 454,
+      "veb": 0
+    },
+    {
+      "patient_id": "p08873",
+      "total": 454,
+      "negative": 454,
+      "veb": 0
+    },
+    {
+      "patient_id": "p02630",
+      "total": 451,
+      "negative": 386,
+      "veb": 65
+    },
+    {
+      "patient_id": "p10514",
+      "total": 450,
+      "negative": 420,
+      "veb": 30
+    },
+    {
+      "patient_id": "p05368",
+      "total": 449,
+      "negative": 449,
+      "veb": 0
+    },
+    {
+      "patient_id": "p03817",
+      "total": 447,
+      "negative": 447,
+      "veb": 0
+    },
+    {
+      "patient_id": "p08710",
+      "total": 446,
+      "negative": 446,
+      "veb": 0
+    },
+    {
+      "patient_id": "p04262",
+      "total": 445,
+      "negative": 375,
+      "veb": 70
+    },
+    {
+      "patient_id": "p06234",
+      "total": 442,
+      "negative": 442,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01133",
+      "total": 441,
+      "negative": 441,
+      "veb": 0
+    },
+    {
+      "patient_id": "p04123",
+      "total": 440,
+      "negative": 440,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01796",
+      "total": 438,
+      "negative": 438,
+      "veb": 0
+    },
+    {
+      "patient_id": "p10488",
+      "total": 437,
+      "negative": 437,
+      "veb": 0
+    },
+    {
+      "patient_id": "p03592",
+      "total": 436,
+      "negative": 436,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07351",
+      "total": 433,
+      "negative": 432,
+      "veb": 1
+    },
+    {
+      "patient_id": "p03584",
+      "total": 432,
+      "negative": 367,
+      "veb": 65
+    },
+    {
+      "patient_id": "p00647",
+      "total": 431,
+      "negative": 428,
+      "veb": 3
+    },
+    {
+      "patient_id": "p02102",
+      "total": 431,
+      "negative": 431,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01253",
+      "total": 430,
+      "negative": 430,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07015",
+      "total": 430,
+      "negative": 430,
+      "veb": 0
+    },
+    {
+      "patient_id": "p09311",
+      "total": 430,
+      "negative": 430,
+      "veb": 0
+    },
+    {
+      "patient_id": "p10292",
+      "total": 427,
+      "negative": 427,
+      "veb": 0
+    },
+    {
+      "patient_id": "p03067",
+      "total": 425,
+      "negative": 421,
+      "veb": 4
+    },
+    {
+      "patient_id": "p10499",
+      "total": 422,
+      "negative": 403,
+      "veb": 19
+    },
+    {
+      "patient_id": "p07272",
+      "total": 421,
+      "negative": 421,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07620",
+      "total": 419,
+      "negative": 333,
+      "veb": 86
+    },
+    {
+      "patient_id": "p08462",
+      "total": 418,
+      "negative": 417,
+      "veb": 1
+    },
+    {
+      "patient_id": "p07379",
+      "total": 416,
+      "negative": 416,
+      "veb": 0
+    },
+    {
+      "patient_id": "p08383",
+      "total": 416,
+      "negative": 416,
+      "veb": 0
+    },
+    {
+      "patient_id": "p06803",
+      "total": 413,
+      "negative": 413,
+      "veb": 0
+    },
+    {
+      "patient_id": "p10234",
+      "total": 412,
+      "negative": 409,
+      "veb": 3
+    },
+    {
+      "patient_id": "p04706",
+      "total": 411,
+      "negative": 411,
+      "veb": 0
+    },
+    {
+      "patient_id": "p06394",
+      "total": 410,
+      "negative": 410,
+      "veb": 0
+    },
+    {
+      "patient_id": "p00769",
+      "total": 407,
+      "negative": 407,
+      "veb": 0
+    },
+    {
+      "patient_id": "p03003",
+      "total": 404,
+      "negative": 387,
+      "veb": 17
+    },
+    {
+      "patient_id": "p04753",
+      "total": 404,
+      "negative": 404,
+      "veb": 0
+    },
+    {
+      "patient_id": "p08187",
+      "total": 404,
+      "negative": 404,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07119",
+      "total": 397,
+      "negative": 397,
+      "veb": 0
+    },
+    {
+      "patient_id": "p08663",
+      "total": 395,
+      "negative": 388,
+      "veb": 7
+    },
+    {
+      "patient_id": "p00923",
+      "total": 390,
+      "negative": 390,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07400",
+      "total": 390,
+      "negative": 390,
+      "veb": 0
+    },
+    {
+      "patient_id": "p10506",
+      "total": 388,
+      "negative": 388,
+      "veb": 0
+    },
+    {
+      "patient_id": "p06921",
+      "total": 387,
+      "negative": 349,
+      "veb": 38
+    },
+    {
+      "patient_id": "p05793",
+      "total": 385,
+      "negative": 385,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07998",
+      "total": 385,
+      "negative": 384,
+      "veb": 1
+    },
+    {
+      "patient_id": "p02182",
+      "total": 384,
+      "negative": 381,
+      "veb": 3
+    },
+    {
+      "patient_id": "p04199",
+      "total": 384,
+      "negative": 384,
+      "veb": 0
+    },
+    {
+      "patient_id": "p10298",
+      "total": 384,
+      "negative": 384,
+      "veb": 0
+    },
+    {
+      "patient_id": "p08703",
+      "total": 383,
+      "negative": 338,
+      "veb": 45
+    },
+    {
+      "patient_id": "p00161",
+      "total": 378,
+      "negative": 378,
+      "veb": 0
+    },
+    {
+      "patient_id": "p09486",
+      "total": 375,
+      "negative": 375,
+      "veb": 0
+    },
+    {
+      "patient_id": "p10510",
+      "total": 374,
+      "negative": 370,
+      "veb": 4
+    },
+    {
+      "patient_id": "p04884",
+      "total": 370,
+      "negative": 370,
+      "veb": 0
+    },
+    {
+      "patient_id": "p05423",
+      "total": 370,
+      "negative": 370,
+      "veb": 0
+    },
+    {
+      "patient_id": "p09890",
+      "total": 370,
+      "negative": 370,
+      "veb": 0
+    },
+    {
+      "patient_id": "p09962",
+      "total": 369,
+      "negative": 369,
+      "veb": 0
+    },
+    {
+      "patient_id": "p10256",
+      "total": 368,
+      "negative": 367,
+      "veb": 1
+    },
+    {
+      "patient_id": "p06744",
+      "total": 365,
+      "negative": 354,
+      "veb": 11
+    },
+    {
+      "patient_id": "p09577",
+      "total": 363,
+      "negative": 362,
+      "veb": 1
+    },
+    {
+      "patient_id": "p02361",
+      "total": 362,
+      "negative": 362,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01784",
+      "total": 360,
+      "negative": 360,
+      "veb": 0
+    },
+    {
+      "patient_id": "p00784",
+      "total": 359,
+      "negative": 359,
+      "veb": 0
+    },
+    {
+      "patient_id": "p02153",
+      "total": 359,
+      "negative": 356,
+      "veb": 3
+    },
+    {
+      "patient_id": "p01088",
+      "total": 358,
+      "negative": 289,
+      "veb": 69
+    },
+    {
+      "patient_id": "p08126",
+      "total": 358,
+      "negative": 358,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07765",
+      "total": 357,
+      "negative": 357,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07891",
+      "total": 357,
+      "negative": 335,
+      "veb": 22
+    },
+    {
+      "patient_id": "p10774",
+      "total": 357,
+      "negative": 354,
+      "veb": 3
+    },
+    {
+      "patient_id": "p03192",
+      "total": 356,
+      "negative": 346,
+      "veb": 10
+    },
+    {
+      "patient_id": "p05082",
+      "total": 355,
+      "negative": 355,
+      "veb": 0
+    },
+    {
+      "patient_id": "p05409",
+      "total": 355,
+      "negative": 355,
+      "veb": 0
+    },
+    {
+      "patient_id": "p08681",
+      "total": 355,
+      "negative": 353,
+      "veb": 2
+    },
+    {
+      "patient_id": "p07084",
+      "total": 354,
+      "negative": 351,
+      "veb": 3
+    },
+    {
+      "patient_id": "p07295",
+      "total": 350,
+      "negative": 350,
+      "veb": 0
+    },
+    {
+      "patient_id": "p09488",
+      "total": 348,
+      "negative": 346,
+      "veb": 2
+    },
+    {
+      "patient_id": "p04517",
+      "total": 347,
+      "negative": 347,
+      "veb": 0
+    },
+    {
+      "patient_id": "p04952",
+      "total": 343,
+      "negative": 342,
+      "veb": 1
+    },
+    {
+      "patient_id": "p03155",
+      "total": 337,
+      "negative": 327,
+      "veb": 10
+    },
+    {
+      "patient_id": "p00038",
+      "total": 335,
+      "negative": 335,
+      "veb": 0
+    },
+    {
+      "patient_id": "p00987",
+      "total": 335,
+      "negative": 141,
+      "veb": 194
+    },
+    {
+      "patient_id": "p04693",
+      "total": 335,
+      "negative": 335,
+      "veb": 0
+    },
+    {
+      "patient_id": "p00582",
+      "total": 329,
+      "negative": 322,
+      "veb": 7
+    },
+    {
+      "patient_id": "p01786",
+      "total": 329,
+      "negative": 321,
+      "veb": 8
+    },
+    {
+      "patient_id": "p08525",
+      "total": 329,
+      "negative": 322,
+      "veb": 7
+    },
+    {
+      "patient_id": "p09503",
+      "total": 322,
+      "negative": 322,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07382",
+      "total": 321,
+      "negative": 321,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07378",
+      "total": 320,
+      "negative": 320,
+      "veb": 0
+    },
+    {
+      "patient_id": "p02843",
+      "total": 318,
+      "negative": 317,
+      "veb": 1
+    },
+    {
+      "patient_id": "p00710",
+      "total": 314,
+      "negative": 311,
+      "veb": 3
+    },
+    {
+      "patient_id": "p08328",
+      "total": 313,
+      "negative": 272,
+      "veb": 41
+    },
+    {
+      "patient_id": "p05923",
+      "total": 311,
+      "negative": 311,
+      "veb": 0
+    },
+    {
+      "patient_id": "p04900",
+      "total": 310,
+      "negative": 308,
+      "veb": 2
+    },
+    {
+      "patient_id": "p06944",
+      "total": 309,
+      "negative": 309,
+      "veb": 0
+    },
+    {
+      "patient_id": "p09193",
+      "total": 307,
+      "negative": 307,
+      "veb": 0
+    },
+    {
+      "patient_id": "p00864",
+      "total": 305,
+      "negative": 240,
+      "veb": 65
+    },
+    {
+      "patient_id": "p01585",
+      "total": 303,
+      "negative": 303,
+      "veb": 0
+    },
+    {
+      "patient_id": "p05861",
+      "total": 303,
+      "negative": 303,
+      "veb": 0
+    },
+    {
+      "patient_id": "p02437",
+      "total": 298,
+      "negative": 297,
+      "veb": 1
+    },
+    {
+      "patient_id": "p03365",
+      "total": 291,
+      "negative": 291,
+      "veb": 0
+    },
+    {
+      "patient_id": "p02556",
+      "total": 289,
+      "negative": 261,
+      "veb": 28
+    },
+    {
+      "patient_id": "p03473",
+      "total": 285,
+      "negative": 285,
+      "veb": 0
+    },
+    {
+      "patient_id": "p02018",
+      "total": 282,
+      "negative": 282,
+      "veb": 0
+    },
+    {
+      "patient_id": "p05767",
+      "total": 274,
+      "negative": 272,
+      "veb": 2
+    },
+    {
+      "patient_id": "p04329",
+      "total": 270,
+      "negative": 270,
+      "veb": 0
+    },
+    {
+      "patient_id": "p10456",
+      "total": 269,
+      "negative": 262,
+      "veb": 7
+    },
+    {
+      "patient_id": "p03826",
+      "total": 268,
+      "negative": 266,
+      "veb": 2
+    },
+    {
+      "patient_id": "p09016",
+      "total": 268,
+      "negative": 266,
+      "veb": 2
+    },
+    {
+      "patient_id": "p09253",
+      "total": 268,
+      "negative": 268,
+      "veb": 0
+    },
+    {
+      "patient_id": "p00296",
+      "total": 266,
+      "negative": 266,
+      "veb": 0
+    },
+    {
+      "patient_id": "p10064",
+      "total": 266,
+      "negative": 264,
+      "veb": 2
+    },
+    {
+      "patient_id": "p09372",
+      "total": 263,
+      "negative": 262,
+      "veb": 1
+    },
+    {
+      "patient_id": "p08303",
+      "total": 260,
+      "negative": 256,
+      "veb": 4
+    },
+    {
+      "patient_id": "p10954",
+      "total": 259,
+      "negative": 259,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01605",
+      "total": 256,
+      "negative": 255,
+      "veb": 1
+    },
+    {
+      "patient_id": "p07432",
+      "total": 256,
+      "negative": 256,
+      "veb": 0
+    },
+    {
+      "patient_id": "p05240",
+      "total": 254,
+      "negative": 251,
+      "veb": 3
+    },
+    {
+      "patient_id": "p09018",
+      "total": 254,
+      "negative": 254,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01362",
+      "total": 247,
+      "negative": 247,
+      "veb": 0
+    },
+    {
+      "patient_id": "p02380",
+      "total": 244,
+      "negative": 244,
+      "veb": 0
+    },
+    {
+      "patient_id": "p06243",
+      "total": 243,
+      "negative": 243,
+      "veb": 0
+    },
+    {
+      "patient_id": "p04502",
+      "total": 242,
+      "negative": 239,
+      "veb": 3
+    },
+    {
+      "patient_id": "p10704",
+      "total": 228,
+      "negative": 228,
+      "veb": 0
+    },
+    {
+      "patient_id": "p06509",
+      "total": 227,
+      "negative": 226,
+      "veb": 1
+    },
+    {
+      "patient_id": "p03178",
+      "total": 224,
+      "negative": 224,
+      "veb": 0
+    },
+    {
+      "patient_id": "p04327",
+      "total": 224,
+      "negative": 224,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01442",
+      "total": 219,
+      "negative": 207,
+      "veb": 12
+    },
+    {
+      "patient_id": "p01818",
+      "total": 217,
+      "negative": 170,
+      "veb": 47
+    },
+    {
+      "patient_id": "p01962",
+      "total": 217,
+      "negative": 217,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01538",
+      "total": 212,
+      "negative": 210,
+      "veb": 2
+    },
+    {
+      "patient_id": "p00336",
+      "total": 194,
+      "negative": 194,
+      "veb": 0
+    },
+    {
+      "patient_id": "p04235",
+      "total": 192,
+      "negative": 156,
+      "veb": 36
+    },
+    {
+      "patient_id": "p01518",
+      "total": 188,
+      "negative": 188,
+      "veb": 0
+    },
+    {
+      "patient_id": "p04183",
+      "total": 186,
+      "negative": 181,
+      "veb": 5
+    },
+    {
+      "patient_id": "p08125",
+      "total": 185,
+      "negative": 185,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01086",
+      "total": 182,
+      "negative": 182,
+      "veb": 0
+    },
+    {
+      "patient_id": "p09994",
+      "total": 182,
+      "negative": 169,
+      "veb": 13
+    },
+    {
+      "patient_id": "p07751",
+      "total": 181,
+      "negative": 175,
+      "veb": 6
+    },
+    {
+      "patient_id": "p02165",
+      "total": 178,
+      "negative": 178,
+      "veb": 0
+    },
+    {
+      "patient_id": "p07394",
+      "total": 176,
+      "negative": 176,
+      "veb": 0
+    },
+    {
+      "patient_id": "p05936",
+      "total": 163,
+      "negative": 111,
+      "veb": 52
+    },
+    {
+      "patient_id": "p01998",
+      "total": 143,
+      "negative": 143,
+      "veb": 0
+    },
+    {
+      "patient_id": "p06534",
+      "total": 140,
+      "negative": 140,
+      "veb": 0
+    },
+    {
+      "patient_id": "p03859",
+      "total": 137,
+      "negative": 137,
+      "veb": 0
+    },
+    {
+      "patient_id": "p08967",
+      "total": 137,
+      "negative": 137,
+      "veb": 0
+    },
+    {
+      "patient_id": "p03625",
+      "total": 131,
+      "negative": 131,
+      "veb": 0
+    },
+    {
+      "patient_id": "p04416",
+      "total": 131,
+      "negative": 72,
+      "veb": 59
+    },
+    {
+      "patient_id": "p08292",
+      "total": 119,
+      "negative": 119,
+      "veb": 0
+    },
+    {
+      "patient_id": "p10834",
+      "total": 109,
+      "negative": 109,
+      "veb": 0
+    },
+    {
+      "patient_id": "p01654",
+      "total": 87,
+      "negative": 87,
+      "veb": 0
+    },
+    {
+      "patient_id": "p00755",
+      "total": 78,
+      "negative": 78,
+      "veb": 0
+    }
+  ]
+}

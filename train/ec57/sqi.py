@@ -157,6 +157,30 @@ def evaluate_sqi_fixed(
     )
 
 
+def continuous_sqi_score_q15_fixed(samples_lsb: Sequence[int]) -> int:
+    """Return a causal Q15 crest-quality score using integer arithmetic only.
+
+    The score is ``1 - 16 * variance / peak_to_peak**2`` clipped to [0, 1].
+    It preserves the existing fail-closed SQI validity decision while avoiding
+    the constant score produced when saturation and impulsive-noise counts are
+    both zero.
+    """
+    quality = evaluate_sqi_fixed(samples_lsb)
+    if not quality.valid:
+        return 0
+    values = [int(value) for value in _window(samples_lsb)]
+    count = len(values)
+    total = sum(values)
+    sum_squares = sum(value * value for value in values)
+    variance_numerator = sum_squares * count - total * total
+    peak_to_peak = max(values) - min(values)
+    denominator = count * count * peak_to_peak * peak_to_peak
+    penalty_numerator = 16 * variance_numerator
+    if denominator <= 0 or penalty_numerator >= denominator:
+        return 0
+    return int(((denominator - penalty_numerator) * 32767 + denominator // 2) // denominator)
+
+
 def _select(quality_by_lead: Mapping[str, SQIResult]) -> LeadSelection:
     valid_leads = [lead for lead, quality in quality_by_lead.items() if quality.valid]
     valid_leads.sort(key=lambda lead: (quality_by_lead[lead].ranking_key, LEAD_ORDER.index(lead) if lead in LEAD_ORDER else len(LEAD_ORDER), lead))
