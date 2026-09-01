@@ -1,0 +1,67 @@
+{
+  "candidate_name": "candidate_c_tp5_la6_mlp6_cap2000_w08",
+  "description": "5-bin temporal model, 6 lookahead features, 2-layer MLP head (hidden 6), cap 2000, lr 3e-4, precision-favoring weight 0.8",
+  "model": {
+    "architecture": "TinyECGCNN_NV",
+    "in_channels": 1,
+    "input_length": 160,
+    "num_features": 6,
+    "use_features": true,
+    "num_classes": 2,
+    "temporal_pool_bins": 5,
+    "mlp_hidden_dim": 6
+  },
+  "data": {
+    "sample_rate_hz": 250,
+    "window_length": 160,
+    "r_peak_index": 64,
+    "max_beats_per_patient_epoch": 2000,
+    "max_pos_neg_ratio": "1:4"
+  },
+  "augmentation": {
+    "gain_range": [
+      0.8,
+      1.2
+    ],
+    "baseline_wander": {
+      "enabled": true,
+      "freq_hz_range": [
+        0.05,
+        0.5
+      ],
+      "max_peak_uv": 100.0
+    },
+    "gaussian_noise": {
+      "enabled": true,
+      "snr_db_range": [
+        12.0,
+        30.0
+      ]
+    }
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "lr": 0.0003,
+    "weight_decay": 0.0001,
+    "batch_size": 1024,
+    "max_epochs": 50,
+    "early_stopping_metric": "val_veb_f1",
+    "early_stopping_patience": 12,
+    "loss": "weighted_cross_entropy",
+    "veb_class_weight": 0.8
+  },
+  "threshold_search": {
+    "metric_priority": [
+      "veb_plus_p_ge_95",
+      "veb_fpr_le_0_25",
+      "max_veb_se"
+    ],
+    "min_veb_plus_p": 0.95,
+    "max_veb_fpr": 0.0025,
+    "scan_range": [
+      0.001,
+      0.999
+    ],
+    "scan_step": 0.001
+  }
+}

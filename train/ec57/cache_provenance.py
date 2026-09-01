@@ -23,6 +23,12 @@ REQUIRED_FIELDS = {
 }
 LABEL_BY_SYMBOL = {"N": 0, "S": 0, "V": 1}
 SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
+LOOKAHEAD_REQUIRED_FIELDS = {
+    "feature_names",
+    "feature_contract_id",
+    "decision_latency_mode",
+    "context_sample_indices",
+}
 
 
 class CacheProvenanceError(ValueError):
@@ -47,8 +53,28 @@ def validate_m2_cache_split(data: Mapping[str, object], *, split_name: str) -> d
             raise CacheProvenanceError(f"{split_name}: field length mismatch for {field}")
     if arrays["waveforms"].shape != (sample_count, 160):
         raise CacheProvenanceError(f"{split_name}: waveforms must have shape [N,160]")
-    if arrays["features"].shape != (sample_count, 4):
-        raise CacheProvenanceError(f"{split_name}: features must have shape [N,4]")
+    if arrays["features"].ndim != 2 or arrays["features"].shape[0] != sample_count or arrays["features"].shape[1] not in {4, 5, 6, 8}:
+        raise CacheProvenanceError(f"{split_name}: features must have shape [N,4], [N,5], [N,6], or [N,8]")
+    feature_count = int(arrays["features"].shape[1])
+    if feature_count > 4:
+        missing_lookahead = sorted(LOOKAHEAD_REQUIRED_FIELDS - set(arrays))
+        if missing_lookahead:
+            raise CacheProvenanceError(
+                f"{split_name}: lookahead cache missing schema fields: {missing_lookahead}"
+            )
+        feature_names = [str(value) for value in arrays["feature_names"].tolist()]
+        if len(feature_names) != feature_count or len(set(feature_names)) != feature_count:
+            raise CacheProvenanceError(f"{split_name}: invalid lookahead feature_names")
+        if str(arrays["feature_contract_id"].item()) != "qn88-ec57-hybrid-io-lookahead-v2":
+            raise CacheProvenanceError(f"{split_name}: unexpected lookahead feature contract")
+        if str(arrays["decision_latency_mode"].item()) != "next_valid_qrs":
+            raise CacheProvenanceError(f"{split_name}: lookahead decision must wait for next_valid_qrs")
+        context = arrays["context_sample_indices"]
+        if context.shape != (sample_count, 2):
+            raise CacheProvenanceError(f"{split_name}: context_sample_indices must have shape [N,2]")
+        current = arrays["sample_indices"].astype(np.int64)
+        if np.any(context[:, 0] >= current) or np.any(context[:, 1] <= current):
+            raise CacheProvenanceError(f"{split_name}: fabricated or non-causal lookahead context")
 
     databases = [str(value) for value in arrays["database"]]
     versions = [str(value) for value in arrays["database_version"]]
@@ -80,6 +106,7 @@ def validate_m2_cache_split(data: Mapping[str, object], *, split_name: str) -> d
         "sample_count": sample_count,
         "patient_count": len(set(str(value) for value in arrays["patient_ids"])),
         "native_symbol_counts": dict(sorted(Counter(symbols).items())),
+        "feature_count": feature_count,
     }
 
 

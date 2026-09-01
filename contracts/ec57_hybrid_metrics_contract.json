@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "contract_id": "qn88-ec57-hybrid-metrics",
-  "contract_version": "1.1.0",
+  "contract_version": "1.2.0",
   "status": "frozen-for-M1",
   "scope": "research_prevalidation_not_fda_acceptance",
   "standard_context": {
@@ -154,6 +154,31 @@
       "stale_held_duration_s",
       "out_of_range_count"
     ]
+  },
+  "validation_threshold_gate": {
+    "dataset": "Icentia_validation",
+    "min_veb_se_percent": 90.0,
+    "min_veb_plus_p_percent": 95.0,
+    "max_veb_fpr_percent": 0.25,
+    "all_three_required": true,
+    "failure_action": "reject candidate without internal-test evaluation"
+  },
+  "model_budget": {
+    "complete_deployment_parameter_package_max_bytes": 51200,
+    "container_overhead_reserve_bytes": 1024,
+    "parameter_payload_max_bytes": 50176,
+    "display_limit": "50 KiB",
+    "required_components": [
+      "signed_int8_weights",
+      "signed_int32_biases",
+      "per_output_channel_signed_int32_multiplier",
+      "per_output_channel_signed_int32_shift"
+    ],
+    "estimated_package_rule": "parameter payload plus a 1024-byte container/alignment reserve must be <= 51200 bytes",
+    "final_export_rule": "the serialized deployment package must be measured byte-for-byte and must be <= 51200 bytes; unused reserve does not permit payload above 50176 bytes before final export",
+    "parameter_count_role": "architecture diagnostic only; never use parameter count as byte size",
+    "macs_per_beat_max": 100000,
+    "max_single_layer_activation_bytes": 2048
   },
   "quantization_degradation": {
     "comparison": "same Icentia internal_test and frozen thresholds for FP32 versus PTQ/QAT",

@@ -4,7 +4,8 @@ Implements Section 6 (M2):
   1. Loads candidate configuration (A, B, or C).
   2. Applies data augmentations (gain, baseline wander, Gaussian noise).
   3. Trains with AdamW, weighted Cross-Entropy, and validation VEB F1 early stopping.
-  4. Scans decision threshold [0.001, 0.999] on validation split (gate: +P >= 95%, FPR <= 0.25%, max Se).
+  4. Scans decision threshold [0.001, 0.999] on validation split
+     (gates: Se >= 90%, +P >= 95%, FPR <= 0.25%; then maximize Se).
   5. Evaluates on test split with full Wilson CI and patient-level metrics.
   6. Exports model_fp32.pt, config.json, normalization.json, decision_threshold.json, metrics.json, and SHA-256 manifests.
 """
@@ -20,9 +21,18 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader, Sampler
-from typing import Dict, List, Tuple, Optional, Any
+from typing import Dict, List, Tuple, Optional, Any, Sequence
 
-from train.ec57.model_nv import TinyECGCNN_NV, TinyECGCNN_NV_Depthwise, count_parameters, count_macs
+from train.ec57.model_nv import (
+    TinyECGCNN_NV,
+    TinyECGCNN_NV_Depthwise,
+    MediumECGCNN_NV,
+    DualBranchECGCNN_NV,
+    count_parameters,
+    count_macs,
+    estimate_model_deployment_resources,
+)
+from train.ec57.resource_budget import frozen_model_resource_limits
 from train.ec57.metrics import (
     VEBConfusionCounts,
     compute_patient_level_metrics,
@@ -75,15 +85,126 @@ class AsymmetricNegativeFocalCrossEntropyLoss(nn.Module):
         )
 
 
+class AsymmetricMarginCrossEntropyLoss(nn.Module):
+    """Cross-entropy with quadratic margin penalty on false positives."""
+
+    def __init__(
+        self,
+        class_weights: torch.Tensor,
+        fp_margin: float = 0.05,
+        fp_penalty_weight: float = 2.0,
+    ):
+        super().__init__()
+        self.register_buffer("class_weights", class_weights.detach().clone())
+        self.fp_margin = float(fp_margin)
+        self.fp_penalty_weight = float(fp_penalty_weight)
+
+    def forward(self, logits: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
+        ce_loss = F.cross_entropy(logits, targets, weight=self.class_weights, reduction="none")
+        probs = F.softmax(logits, dim=1)
+        p_veb = probs[:, 1]
+        is_neg = targets == 0
+        fp_violation = torch.clamp(p_veb - self.fp_margin, min=0.0)
+        fp_penalty = self.fp_penalty_weight * (fp_violation ** 2)
+        total_loss = ce_loss + torch.where(is_neg, fp_penalty, 0.0)
+        return total_loss.mean()
+
+
+class AsymmetricHardNegativeMiningLoss(nn.Module):
+    """Cross-entropy with asymmetric margin penalty plus extra penalty on wide-QRS normal sinus beats."""
+
+    def __init__(
+        self,
+        class_weights: torch.Tensor,
+        fp_margin: float = 0.03,
+        fp_penalty_weight: float = 3.0,
+        wide_qrs_extra_weight: float = 5.0,
+    ):
+        super().__init__()
+        self.register_buffer("class_weights", class_weights.detach().clone())
+        self.fp_margin = float(fp_margin)
+        self.fp_penalty_weight = float(fp_penalty_weight)
+        self.wide_qrs_extra_weight = float(wide_qrs_extra_weight)
+
+    def forward(self, logits: torch.Tensor, targets: torch.Tensor, features: Optional[torch.Tensor] = None) -> torch.Tensor:
+        ce_loss = F.cross_entropy(logits, targets, weight=self.class_weights, reduction="none")
+        probs = F.softmax(logits, dim=1)
+        p_veb = probs[:, 1]
+        is_neg = targets == 0
+        fp_violation = torch.clamp(p_veb - self.fp_margin, min=0.0)
+        fp_penalty = self.fp_penalty_weight * (fp_violation ** 2)
+
+        if features is not None and features.shape[1] >= 6:
+            qrs_width = features[:, 5]
+            is_wide_neg = is_neg & (qrs_width > 0.0)
+            fp_penalty = fp_penalty + torch.where(is_wide_neg, self.wide_qrs_extra_weight * (fp_violation ** 2), 0.0)
+
+        total_loss = ce_loss + torch.where(is_neg, fp_penalty, 0.0)
+        return total_loss.mean()
+
+
+class CompensatoryConsistencyLoss(nn.Module):
+    """Cross-entropy with compensatory consistency penalty on normal sinus rhythms without pause."""
+
+    def __init__(
+        self,
+        class_weights: torch.Tensor,
+        fp_margin: float = 0.02,
+        fp_penalty_weight: float = 3.0,
+        wide_qrs_extra_weight: float = 5.0,
+        comp_neg_weight: float = 8.0,
+    ):
+        super().__init__()
+        self.register_buffer("class_weights", class_weights.detach().clone())
+        self.fp_margin = float(fp_margin)
+        self.fp_penalty_weight = float(fp_penalty_weight)
+        self.wide_qrs_extra_weight = float(wide_qrs_extra_weight)
+        self.comp_neg_weight = float(comp_neg_weight)
+
+    def forward(self, logits: torch.Tensor, targets: torch.Tensor, features: Optional[torch.Tensor] = None) -> torch.Tensor:
+        ce_loss = F.cross_entropy(logits, targets, weight=self.class_weights, reduction="none")
+        probs = F.softmax(logits, dim=1)
+        p_veb = probs[:, 1]
+        is_neg = targets == 0
+        fp_violation = torch.clamp(p_veb - self.fp_margin, min=0.0)
+        fp_penalty = self.fp_penalty_weight * (fp_violation ** 2)
+
+        if features is not None and features.shape[1] >= 6:
+            qrs_width = features[:, 5]
+            comp_ratio = features[:, 2]
+
+            # Wide QRS normal beat penalty (Bundle branch block)
+            is_wide_neg = is_neg & (qrs_width > 0.0)
+            fp_penalty = fp_penalty + torch.where(is_wide_neg, self.wide_qrs_extra_weight * (fp_violation ** 2), 0.0)
+
+            # Low compensatory pause normal beat penalty (Sinus rhythm with regular pause)
+            is_low_comp_neg = is_neg & (comp_ratio <= 0.0)
+            fp_penalty = fp_penalty + torch.where(is_low_comp_neg, self.comp_neg_weight * (fp_violation ** 2), 0.0)
+
+        total_loss = ce_loss + torch.where(is_neg, fp_penalty, 0.0)
+        return total_loss.mean()
+
+
 class ThresholdGateError(ValueError):
     """A fail-closed threshold rejection with auditable validation diagnostics."""
 
     def __init__(self, summary: Dict[str, Any]):
         super().__init__(
-            "no validation threshold meets the frozen VEB +P and FPR gates; "
+            "no validation threshold meets the frozen VEB Se, +P, and FPR gates; "
             "candidate must be rejected without internal-test evaluation"
         )
         self.summary = summary
+
+
+class ModelResourceBudgetError(ValueError):
+    """A fail-closed rejection before training an undeployable model."""
+
+    def __init__(self, resources: Dict[str, int], violations: List[str]):
+        super().__init__(
+            "deployment resource budget exceeded: " + "; ".join(violations)
+        )
+        self.resources = resources
+        self.violations = violations
 
 
 def compute_sha256(filepath: str) -> str:
@@ -269,6 +390,7 @@ def evaluate_model_at_threshold(
     threshold: float,
     device: torch.device,
     return_failures: bool = False,
+    return_average_precision: bool = False,
 ):
     """
     Evaluates model across dataloader at a given VEB probability threshold.
@@ -282,6 +404,7 @@ def evaluate_model_at_threshold(
 
     all_preds: List[int] = []
     all_targets: List[int] = []
+    all_probs: List[float] = []
     failures: List[Dict[str, Any]] = []
 
     with torch.no_grad():
@@ -328,6 +451,7 @@ def evaluate_model_at_threshold(
 
             all_preds.extend(preds.tolist())
             all_targets.extend(targets.tolist())
+            all_probs.extend(probs.tolist())
 
     # Overall Gross F1 score for VEB
     gross_vtp = sum(c.vtp for c in patient_counts.values())
@@ -341,7 +465,98 @@ def evaluate_model_at_threshold(
     avg_loss = total_loss / max(1, total_samples)
     if return_failures:
         return patient_counts, f1, avg_loss, failures
+    if return_average_precision:
+        return patient_counts, f1, avg_loss, binary_average_precision(all_targets, all_probs)
     return patient_counts, f1, avg_loss
+
+
+def binary_average_precision(targets: Sequence[int], probabilities: Sequence[float]) -> float:
+    """Threshold-grouped binary AP; deterministic even when probabilities tie."""
+    labels = np.asarray(targets, dtype=np.int64)
+    scores = np.asarray(probabilities, dtype=np.float64)
+    if labels.ndim != 1 or scores.shape != labels.shape or len(labels) == 0:
+        raise ValueError("average precision inputs must be aligned non-empty vectors")
+    if set(labels.tolist()) - {0, 1}:
+        raise ValueError("average precision targets must be binary")
+    if not np.isfinite(scores).all():
+        raise ValueError("average precision probabilities must be finite")
+    positive_count = int(np.sum(labels == 1))
+    if positive_count == 0:
+        raise ValueError("average precision requires at least one positive")
+
+    order = np.argsort(-scores, kind="stable")
+    sorted_scores = scores[order]
+    sorted_labels = labels[order]
+    tp = 0
+    fp = 0
+    previous_recall = 0.0
+    average_precision = 0.0
+    position = 0
+    while position < len(sorted_scores):
+        stop = position + 1
+        while stop < len(sorted_scores) and sorted_scores[stop] == sorted_scores[position]:
+            stop += 1
+        group = sorted_labels[position:stop]
+        tp += int(np.sum(group == 1))
+        fp += int(np.sum(group == 0))
+        recall = tp / positive_count
+        precision = tp / (tp + fp)
+        average_precision += (recall - previous_recall) * precision
+        previous_recall = recall
+        position = stop
+    return float(average_precision)
+
+
+def evaluate_se_ge_90_plus_p(
+    model: nn.Module,
+    dataloader: DataLoader,
+    device: torch.device,
+    target_se: float = 0.90,
+) -> Tuple[float, float, float]:
+    """Computes max +P on dataloader subject to VEB Se >= target_se (90.0%).
+    Returns (score, best_se, best_plus_p).
+    If no threshold meets target_se, score is negative deficit to target_se.
+    """
+    model.eval()
+    all_probs = []
+    all_targets = []
+    with torch.no_grad():
+        for x_wave, x_feat, y, _ in dataloader:
+            x_wave = x_wave.to(device)
+            x_feat = x_feat.to(device)
+            logits = model(x_wave, x_feat)
+            probs = torch.softmax(logits, dim=1)[:, 1].cpu().numpy()
+            all_probs.extend(probs.tolist())
+            all_targets.extend(y.numpy().tolist())
+    probs_arr = np.array(all_probs)
+    targets_arr = np.array(all_targets)
+
+    total_pos = int(np.sum(targets_arr == 1))
+    if total_pos == 0:
+        return 0.0, 0.0, 0.0
+
+    best_plus_p = 0.0
+    best_se = 0.0
+    max_se_overall = 0.0
+    target_pct = target_se * 100.0
+
+    for th in np.arange(0.01, 0.99, 0.01):
+        preds = (probs_arr >= th).astype(np.int64)
+        tp = int(np.sum((targets_arr == 1) & (preds == 1)))
+        fp = int(np.sum((targets_arr == 0) & (preds == 1)))
+        se = (tp / total_pos) * 100.0
+        plus_p = (tp / (tp + fp) * 100.0) if (tp + fp) > 0 else 0.0
+        max_se_overall = max(max_se_overall, se)
+        if se >= target_pct:
+            if plus_p > best_plus_p:
+                best_plus_p = plus_p
+                best_se = se
+
+    if best_se >= target_pct:
+        score = best_plus_p
+    else:
+        score = -1.0 * (target_pct - max_se_overall)
+    return float(score), float(best_se), float(best_plus_p)
 
 
 def scan_optimal_threshold(
@@ -351,11 +566,13 @@ def scan_optimal_threshold(
     scan_range: Tuple[float, float] = (0.001, 0.999),
     scan_step: float = 0.001,
     min_veb_plus_p: float = 0.95,
-    max_veb_fpr: float = 0.0025
+    max_veb_fpr: float = 0.0025,
+    min_veb_se: float = 0.90,
 ) -> Tuple[float, Dict[str, Any]]:
     """
     Scans decision threshold on validation set according to Section 6.2 priority:
-      1. Filter thresholds with VEB +P >= 95.0% and VEB FPR <= 0.25%.
+      1. Filter thresholds with VEB Se >= 90.0%, VEB +P >= 95.0%, and
+         VEB FPR <= 0.25%.
       2. Maximize VEB Se.
       3. If tie, maximize VEB +P.
       4. If tie, pick threshold closest to 0.5.
@@ -392,7 +609,11 @@ def scan_optimal_threshold(
         plus_p = (vtp / (vtp + vfp) * 100.0) if (vtp + vfp) > 0 else 0.0
         fpr = (vfp / (vtn + vfp) * 100.0) if (vtn + vfp) > 0 else 0.0
 
-        meets_gate = (plus_p >= min_veb_plus_p * 100.0) and (fpr <= max_veb_fpr * 100.0)
+        meets_gate = (
+            se >= min_veb_se * 100.0
+            and plus_p >= min_veb_plus_p * 100.0
+            and fpr <= max_veb_fpr * 100.0
+        )
 
         candidate_thresholds.append({
             "threshold": float(round(th, 4)),
@@ -417,12 +638,18 @@ def scan_optimal_threshold(
 
         under_fpr = [c for c in candidate_thresholds if c["fpr_percent"] <= max_veb_fpr * 100.0]
         under_plus_p = [c for c in candidate_thresholds if c["plus_p_percent"] >= min_veb_plus_p * 100.0]
+        under_plus_p_and_fpr = [
+            c for c in candidate_thresholds
+            if c["plus_p_percent"] >= min_veb_plus_p * 100.0
+            and c["fpr_percent"] <= max_veb_fpr * 100.0
+        ]
         summary = {
             "status": "rejected",
             "checkpoint_freezable": False,
             "valid_threshold_count": 0,
             "total_thresholds_scanned": len(candidate_thresholds),
             "scan_step": scan_step,
+            "frozen_min_veb_se_percent": min_veb_se * 100.0,
             "frozen_min_veb_plus_p_percent": min_veb_plus_p * 100.0,
             "frozen_max_veb_fpr_percent": max_veb_fpr * 100.0,
             "best_f1_diagnostic": max(candidate_thresholds, key=f1_percent),
@@ -434,6 +661,11 @@ def scan_optimal_threshold(
             "best_se_under_plus_p_gate": max(
                 under_plus_p,
                 key=lambda c: (c["se_percent"], -c["fpr_percent"]),
+                default=None,
+            ),
+            "best_se_under_plus_p_and_fpr_gates": max(
+                under_plus_p_and_fpr,
+                key=lambda c: c["se_percent"],
                 default=None,
             ),
             "thresholds": candidate_thresholds,
@@ -450,7 +682,10 @@ def scan_optimal_threshold(
         "selected_metrics": best,
         "valid_threshold_count": len(valid_candidates),
         "total_thresholds_scanned": len(candidate_thresholds),
-        "scan_step": scan_step
+        "scan_step": scan_step,
+        "frozen_min_veb_se_percent": min_veb_se * 100.0,
+        "frozen_min_veb_plus_p_percent": min_veb_plus_p * 100.0,
+        "frozen_max_veb_fpr_percent": max_veb_fpr * 100.0,
     }
     return chosen_th, summary
 
@@ -464,10 +699,17 @@ def train_single_run(
     output_dir: str,
     seed: int = 17,
     device_str: str = "cuda",
-    evaluate_internal_test: bool = True,
+    evaluate_internal_test: bool = False,
 ) -> Dict[str, Any]:
-    """Executes a single end-to-end training and evaluation run with seed."""
+    """Train and select a validation candidate without opening internal_test."""
+    if evaluate_internal_test or test_data is not None:
+        raise ValueError(
+            "the training path cannot receive or evaluate internal_test; "
+            "use a separate one-shot frozen-checkpoint evaluator with an authorization receipt"
+        )
     os.makedirs(output_dir, exist_ok=True)
+    run_mode = str(config.get("run_mode", "formal"))
+    is_formal_run = run_mode == "formal"
 
     # Set seeds
     torch.manual_seed(seed)
@@ -477,7 +719,23 @@ def train_single_run(
 
     device = torch.device(device_str if (torch.cuda.is_available() and "cuda" in device_str) else "cpu")
 
-    use_features = config["model"]["use_features"]
+    use_features = config["model"].get("use_features", True)
+    model_cfg = config.get("model", {})
+    num_features = int(model_cfg.get("num_features", 4))
+    for split_name, split_data in (("train", train_data), ("validation", val_data)):
+        actual_features = int(np.asarray(split_data["features"]).shape[1])
+        if actual_features != num_features:
+            raise ValueError(
+                f"{split_name} cache has {actual_features} features but model config requires {num_features}"
+            )
+    normalization_names = normalization.get("feature_names")
+    if num_features > 4:
+        if normalization.get("feature_contract_id") != "qn88-ec57-hybrid-io-lookahead-v2":
+            raise ValueError("lookahead training requires the v2 feature contract")
+        if normalization.get("decision_latency_mode") != "next_valid_qrs":
+            raise ValueError("lookahead training requires next_valid_qrs latency semantics")
+        if not isinstance(normalization_names, list) or len(normalization_names) != num_features:
+            raise ValueError("lookahead normalization is missing the exact feature order")
     aug_cfg = config.get("augmentation", {})
     input_divisor = float(config.get("data", {}).get("fp32_input_divisor", 1.0))
 
@@ -508,24 +766,6 @@ def train_single_run(
         use_features=use_features,
         is_training=False
     )
-    test_ds = None
-    if evaluate_internal_test:
-        if test_data is None:
-            raise ValueError("internal-test evaluation requested without test_data")
-        test_ds = BeatDataset(
-            waveforms=test_data["waveforms"],
-            features=test_data["features"],
-            labels=test_data["labels"],
-            patient_ids=test_data["patient_ids"],
-            record_ids=test_data.get("record_ids"),
-            sample_indices=test_data.get("sample_indices"),
-            native_symbols=test_data.get("native_symbols"),
-            source_file_sha256=test_data.get("source_file_sha256"),
-            input_divisor=input_divisor,
-            use_features=use_features,
-            is_training=False
-        )
-
     batch_size = config["training"]["batch_size"]
     data_cfg = config.get("data", {})
     ratio_text = str(data_cfg.get("max_pos_neg_ratio", "1:4"))
@@ -542,17 +782,83 @@ def train_single_run(
     )
     train_loader = DataLoader(train_ds, batch_size=batch_size, sampler=train_sampler, drop_last=False)
     val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False)
-    test_loader = DataLoader(test_ds, batch_size=batch_size, shuffle=False) if test_ds is not None else None
 
-    model_cfg = config.get("model", {})
     temporal_pool_bins = int(model_cfg.get("temporal_pool_bins", 1))
+    mlp_hidden_dim = int(model_cfg.get("mlp_hidden_dim", 0))
+    dilation = int(model_cfg.get("dilation", 1))
     architecture = str(model_cfg.get("architecture", "TinyECGCNN_NV"))
     if architecture == "TinyECGCNN_NV":
-        model = TinyECGCNN_NV(temporal_pool_bins=temporal_pool_bins).to(device)
+        model = TinyECGCNN_NV(
+            temporal_pool_bins=temporal_pool_bins,
+            num_features=num_features,
+            mlp_hidden_dim=mlp_hidden_dim,
+            dilation=dilation,
+            use_bilinear_gating=model_cfg.get("use_bilinear_gating", False),
+        ).to(device)
+    elif architecture == "MediumECGCNN_NV":
+        model = MediumECGCNN_NV(
+            temporal_pool_bins=temporal_pool_bins,
+            num_features=num_features,
+            mlp_hidden_dim=mlp_hidden_dim,
+            dilation=dilation,
+        ).to(device)
     elif architecture == "TinyECGCNN_NV_Depthwise":
-        model = TinyECGCNN_NV_Depthwise(temporal_pool_bins=temporal_pool_bins).to(device)
+        model = TinyECGCNN_NV_Depthwise(temporal_pool_bins=temporal_pool_bins, num_features=num_features).to(device)
+    elif architecture == "DualBranchECGCNN_NV":
+        model = DualBranchECGCNN_NV(
+            temporal_pool_bins=temporal_pool_bins,
+            num_features=num_features,
+            morph_emb_dim=int(model_cfg.get("morph_emb_dim", 24)),
+            timing_emb_dim=int(model_cfg.get("timing_emb_dim", 24)),
+            dilation=dilation,
+        ).to(device)
     else:
         raise ValueError(f"unsupported model architecture: {architecture}")
+
+    deployment_resources = estimate_model_deployment_resources(
+        model,
+        input_len=int(model_cfg.get("input_length", 160)),
+    )
+    resource_limits = frozen_model_resource_limits()
+    resource_violations = [
+        f"{name}={deployment_resources[name]} > {limit}"
+        for name, limit in resource_limits.items()
+        if deployment_resources[name] > limit
+    ]
+    if resource_violations:
+        error = ModelResourceBudgetError(deployment_resources, resource_violations)
+        resource_failure = {
+            "status": "rejected",
+            "checkpoint_freezable": False,
+            "run_mode": run_mode,
+            "evaluation_scope": "pre_training_resource_gate",
+            "resources": deployment_resources,
+            "limits": resource_limits,
+            "violations": resource_violations,
+        }
+        rejection_metrics = {
+            "status": "rejected",
+            "checkpoint_freezable": False,
+            "run_mode": run_mode,
+            "seed": seed,
+            "evaluation_scope": "pre_training_resource_gate",
+            "parameter_count": count_parameters(model),
+            "deployment_resources": deployment_resources,
+            "resource_gate_failure": resource_failure,
+        }
+        rejection_artifacts = {
+            "config.json": config,
+            "normalization.json": normalization,
+            "resource_gate_failure.json": resource_failure,
+            "metrics.json": rejection_metrics,
+        }
+        for filename, payload in rejection_artifacts.items():
+            with open(os.path.join(output_dir, filename), "w", encoding="utf-8") as handle:
+                json.dump(payload, handle, indent=2)
+        with open(os.path.join(output_dir, "manifest_sha256.txt"), "w", encoding="utf-8") as handle:
+            for filename in rejection_artifacts:
+                handle.write(f"{compute_sha256(os.path.join(output_dir, filename))}  {filename}\n")
+        raise error
 
     # Optimizer and Loss
     lr = config["training"]["lr"]
@@ -569,6 +875,27 @@ def train_single_run(
             class_weights,
             float(config["training"].get("negative_focal_gamma", -1.0)),
         ).to(device)
+    elif loss_name == "asymmetric_margin_cross_entropy":
+        criterion = AsymmetricMarginCrossEntropyLoss(
+            class_weights,
+            fp_margin=float(config["training"].get("fp_margin", 0.05)),
+            fp_penalty_weight=float(config["training"].get("fp_penalty_weight", 2.0)),
+        ).to(device)
+    elif loss_name == "asymmetric_hard_negative_mining":
+        criterion = AsymmetricHardNegativeMiningLoss(
+            class_weights,
+            fp_margin=float(config["training"].get("fp_margin", 0.03)),
+            fp_penalty_weight=float(config["training"].get("fp_penalty_weight", 3.0)),
+            wide_qrs_extra_weight=float(config["training"].get("wide_qrs_extra_weight", 5.0)),
+        ).to(device)
+    elif loss_name == "compensatory_consistency":
+        criterion = CompensatoryConsistencyLoss(
+            class_weights,
+            fp_margin=float(config["training"].get("fp_margin", 0.02)),
+            fp_penalty_weight=float(config["training"].get("fp_penalty_weight", 3.5)),
+            wide_qrs_extra_weight=float(config["training"].get("wide_qrs_extra_weight", 6.0)),
+            comp_neg_weight=float(config["training"].get("comp_neg_weight", 8.0)),
+        ).to(device)
     else:
         raise ValueError(f"unsupported training loss: {loss_name}")
 
@@ -578,7 +905,12 @@ def train_single_run(
     use_scheduler = config["training"].get("scheduler") == "cosine"
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=max_epochs, eta_min=1e-5) if use_scheduler else None
 
+    checkpoint_metric = str(config["training"].get("early_stopping_metric", "val_veb_f1"))
+    if checkpoint_metric not in {"val_veb_f1", "val_average_precision", "val_se_ge_90_plus_p"}:
+        raise ValueError(f"unsupported early_stopping_metric: {checkpoint_metric}")
+    best_val_score = -1e9
     best_val_f1 = -1.0
+    best_val_average_precision = -1.0
     best_epoch = -1
     best_model_state = None
     epochs_no_improve = 0
@@ -597,7 +929,10 @@ def train_single_run(
 
             optimizer.zero_grad()
             logits = model(x_wave, x_feat)
-            loss = criterion(logits, y)
+            if isinstance(criterion, (AsymmetricHardNegativeMiningLoss, CompensatoryConsistencyLoss)):
+                loss = criterion(logits, y, x_feat)
+            else:
+                loss = criterion(logits, y)
             loss.backward()
             optimizer.step()
 
@@ -610,17 +945,34 @@ def train_single_run(
         avg_train_loss = train_loss / max(1, train_samples)
 
         # Validation evaluation at default 0.5 threshold
-        _, val_f1, avg_val_loss = evaluate_model_at_threshold(model, val_loader, threshold=0.5, device=device)
+        _, val_f1, avg_val_loss, val_average_precision = evaluate_model_at_threshold(
+            model,
+            val_loader,
+            threshold=0.5,
+            device=device,
+            return_average_precision=True,
+        )
 
         history.append({
             "epoch": epoch,
             "train_loss": avg_train_loss,
             "val_loss": avg_val_loss,
-            "val_veb_f1": val_f1
+            "val_veb_f1": val_f1,
+            "val_average_precision": val_average_precision,
         })
 
-        if val_f1 > best_val_f1 + 1e-4:
+        if checkpoint_metric == "val_veb_f1":
+            checkpoint_score = val_f1
+        elif checkpoint_metric == "val_se_ge_90_plus_p":
+            se_score, _, _ = evaluate_se_ge_90_plus_p(model, val_loader, device=device, target_se=0.90)
+            checkpoint_score = se_score
+        else:
+            checkpoint_score = val_average_precision
+
+        if checkpoint_score > best_val_score + 1e-4:
+            best_val_score = checkpoint_score
             best_val_f1 = val_f1
+            best_val_average_precision = val_average_precision
             best_epoch = epoch
             best_model_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
             epochs_no_improve = 0
@@ -635,12 +987,13 @@ def train_single_run(
 
     # Optimal threshold scanning on validation set
     th_cfg = config.get("threshold_search", {})
+    min_se = th_cfg.get("min_veb_se", 0.90)
     min_plus_p = th_cfg.get("min_veb_plus_p", 0.95)
     max_fpr = th_cfg.get("max_veb_fpr", 0.0025)
     try:
         optimal_th, th_summary = scan_optimal_threshold(
             model, val_loader, device=device,
-            min_veb_plus_p=min_plus_p, max_veb_fpr=max_fpr
+            min_veb_se=min_se, min_veb_plus_p=min_plus_p, max_veb_fpr=max_fpr
         )
     except ThresholdGateError as error:
         model_path = os.path.join(output_dir, "model_fp32.pt")
@@ -654,14 +1007,19 @@ def train_single_run(
         rejected_metrics = {
             "status": "rejected",
             "checkpoint_freezable": False,
+            "run_mode": run_mode,
             "seed": seed,
             "evaluation_scope": "validation_only",
             "best_epoch": best_epoch,
             "total_epochs": len(history),
             "best_val_veb_f1": best_val_f1,
+            "best_val_average_precision": best_val_average_precision,
+            "checkpoint_selection_metric": checkpoint_metric,
+            "best_checkpoint_score": best_val_score,
             "history": history,
             "parameter_count": count_parameters(model),
             "macs_per_beat": count_macs(model),
+            "deployment_resources": deployment_resources,
             "threshold_gate_failure": {
                 key: value for key, value in error.summary.items() if key != "thresholds"
             },
@@ -684,19 +1042,18 @@ def train_single_run(
                 handle.write(f"{compute_sha256(os.path.join(output_dir, filename))}  {filename}\n")
         raise
 
-    # Internal test is intentionally inaccessible during A/B/C candidate selection.
-    test_metrics = None
-    test_failures: List[Dict[str, Any]] = []
-    if evaluate_internal_test:
-        assert test_loader is not None
-        test_patient_counts, test_f1, test_loss, test_failures = evaluate_model_at_threshold(
-            model, test_loader, threshold=optimal_th, device=device, return_failures=True
-        )
-        test_metrics = compute_patient_level_metrics(test_patient_counts)
-        bootstrap_ci = patient_bootstrap_ci(test_patient_counts, n_resamples=10000, seed=20260827)
-        test_metrics["patient_bootstrap_ci_10k"] = bootstrap_ci
-        test_metrics["test_loss"] = test_loss
-        test_metrics["test_veb_f1"] = test_f1
+    if not is_formal_run:
+        artifact_status = "smoke_only"
+        checkpoint_freezable = False
+    else:
+        artifact_status = "validation_candidate"
+        checkpoint_freezable = True
+    th_summary = dict(th_summary)
+    th_summary.update({
+        "status": artifact_status,
+        "checkpoint_freezable": checkpoint_freezable,
+        "run_mode": run_mode,
+    })
 
     # Save artifacts
     model_path = os.path.join(output_dir, "model_fp32.pt")
@@ -716,26 +1073,26 @@ def train_single_run(
 
     metrics_out_path = os.path.join(output_dir, "metrics.json")
     metrics_payload = {
+            "status": artifact_status,
+            "checkpoint_freezable": checkpoint_freezable,
+            "run_mode": run_mode,
             "seed": seed,
-            "evaluation_scope": "internal_test_once_after_freeze" if evaluate_internal_test else "validation_only",
+            "evaluation_scope": "validation_only",
             "best_epoch": best_epoch,
             "total_epochs": len(history),
             "best_val_veb_f1": best_val_f1,
+            "best_val_average_precision": best_val_average_precision,
+            "checkpoint_selection_metric": checkpoint_metric,
+            "best_checkpoint_score": best_val_score,
             "optimal_threshold": optimal_th,
             "validation_threshold_search": th_summary,
             "history": history,
             "parameter_count": count_parameters(model),
-            "macs_per_beat": count_macs(model)
+            "macs_per_beat": count_macs(model),
+            "deployment_resources": deployment_resources,
         }
-    if test_metrics is not None:
-        metrics_payload["test_metrics"] = test_metrics
     with open(metrics_out_path, "w", encoding="utf-8") as f:
         json.dump(metrics_payload, f, indent=2)
-
-    if evaluate_internal_test:
-        failures_out_path = os.path.join(output_dir, "vfp_vfn.json")
-        with open(failures_out_path, "w", encoding="utf-8") as f:
-            json.dump(test_failures, f, indent=2)
 
     # Compute hashes
     model_hash = compute_sha256(model_path)
@@ -744,8 +1101,6 @@ def train_single_run(
 
     manifest_lines = []
     artifact_names = ["config.json", "normalization.json", "decision_threshold.json", "metrics.json", "model_fp32.pt", "model_sha256.txt"]
-    if evaluate_internal_test:
-        artifact_names.append("vfp_vfn.json")
     for fname in artifact_names:
         fpath = os.path.join(output_dir, fname)
         if os.path.exists(fpath):
@@ -754,11 +1109,12 @@ def train_single_run(
         f.writelines(manifest_lines)
 
     result = {
+        "status": artifact_status,
+        "checkpoint_freezable": checkpoint_freezable,
+        "run_mode": run_mode,
         "seed": seed,
-        "evaluation_scope": "internal_test_once_after_freeze" if evaluate_internal_test else "validation_only",
+        "evaluation_scope": "validation_only",
         "optimal_threshold": optimal_th,
         "model_sha256": model_hash
     }
-    if test_metrics is not None:
-        result["test_metrics"] = test_metrics
     return result

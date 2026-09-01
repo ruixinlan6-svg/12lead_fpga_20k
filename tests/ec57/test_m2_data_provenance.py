@@ -31,6 +31,7 @@ from prepare_icentia_native_cache import (
     build_record_examples,
     combined_record_sha256,
     compute_train_waveform_scale,
+    count_lookahead_context_exclusions,
     finalize_split_arrays,
     normalize_native_beats_for_features,
     select_training_beats,
@@ -80,7 +81,7 @@ class TestM2DataProvenance(unittest.TestCase):
             }
             for split, patients in expected_patients.items():
                 np.savez_compressed(cache_dir / f"{split}_beats.npz", **valid_split(patients=patients))
-            loaded = load_native_cache_splits(cache_dir)
+            loaded = load_native_cache_splits(cache_dir, include_internal_test=True)
             self.assertEqual(set(loaded), set(expected_patients))
             for split, patients in expected_patients.items():
                 self.assertEqual(set(loaded[split]["patient_ids"].tolist()), set(patients))
@@ -98,7 +99,7 @@ class TestM2DataProvenance(unittest.TestCase):
             cache_dir = Path(temp_dir)
             np.savez_compressed(cache_dir / "train_beats.npz", **valid_split(patients=("p001",)))
             np.savez_compressed(cache_dir / "validation_beats.npz", **valid_split(patients=("p002",)))
-            loaded = load_native_cache_splits(cache_dir, include_internal_test=False)
+            loaded = load_native_cache_splits(cache_dir)
             self.assertEqual(set(loaded), {"train", "validation"})
 
     def test_wfdb_download_database_does_not_duplicate_version_component(self):
@@ -297,6 +298,90 @@ class TestM2DataProvenance(unittest.TestCase):
             examples[1]["raw_features"],
             np.array([1.0, 12.0, 0.6666666865348816, 0.9371623992919922], dtype=np.float32),
         )
+
+    def test_record_examples_six_feature_lookahead(self):
+        signal = np.zeros(700, dtype=np.int16)
+        for sample, amplitude in ((100, 200), (250, -300), (500, 400)):
+            signal[sample - 1 : sample + 2] = (amplitude // 2, amplitude, amplitude // 2)
+        beats = [
+            NativeBeat("p1", "r1", 100, "N", "a" * 64),
+            NativeBeat("p1", "r1", 250, "V", "a" * 64),
+            NativeBeat("p1", "r1", 500, "S", "a" * 64),
+        ]
+        examples = build_record_examples(signal, beats, selected_keys={beat.key for beat in beats}, num_features=6)
+        self.assertEqual(len(examples), 1)
+        for row in examples:
+            self.assertEqual(row["raw_features"].shape, (6,))
+            self.assertTrue(np.isfinite(row["raw_features"]).all())
+        # Beat 1 (V at 250): pre_rr = 150 (ratio 150/150 = 1.0), post_rr = 250 (ratio 250/150 = 1.6667), comp_ratio = (150+250)/(2*150) = 1.3333
+        self.assertEqual(examples[0]["sample_index"], 250)
+        self.assertEqual(examples[0]["previous_context_sample_index"], 100)
+        self.assertEqual(examples[0]["next_context_sample_index"], 500)
+        v_feat = examples[0]["raw_features"]
+        self.assertAlmostEqual(float(v_feat[0]), 1.0, places=4)
+        self.assertAlmostEqual(float(v_feat[1]), 250.0 / 150.0, places=4)
+        self.assertAlmostEqual(float(v_feat[2]), 400.0 / 300.0, places=4)
+
+    def test_record_examples_eight_feature_coupling(self):
+        signal = np.zeros(700, dtype=np.int16)
+        for sample, amplitude in ((100, 200), (250, -300), (500, 400)):
+            signal[sample - 1 : sample + 2] = (amplitude // 2, amplitude, amplitude // 2)
+        beats = [
+            NativeBeat("p1", "r1", 100, "N", "a" * 64),
+            NativeBeat("p1", "r1", 250, "V", "a" * 64),
+            NativeBeat("p1", "r1", 500, "S", "a" * 64),
+        ]
+        examples = build_record_examples(signal, beats, selected_keys={beat.key for beat in beats}, num_features=8)
+        self.assertEqual(len(examples), 1)
+        for row in examples:
+            self.assertEqual(row["raw_features"].shape, (8,))
+            self.assertTrue(np.isfinite(row["raw_features"]).all())
+        self.assertEqual(examples[0]["sample_index"], 250)
+        v_feat = examples[0]["raw_features"]
+        # v_feat[3] = ectopic_coupling = max(0, 1 - 1.0) * max(0, 1.667 - 1) = 0.0
+        # v_feat[4] = rr_diff = 1.6667 - 1.0 = 0.6667
+        self.assertAlmostEqual(float(v_feat[3]), 0.0, places=4)
+        self.assertAlmostEqual(float(v_feat[4]), (250.0 / 150.0) - 1.0, places=4)
+
+    def test_lookahead_cache_requires_real_context_and_exact_schema(self):
+        signal = np.zeros(700, dtype=np.int16)
+        beats = [
+            NativeBeat("p1", "r1", 100, "N", "a" * 64),
+            NativeBeat("p1", "r1", 250, "V", "a" * 64),
+            NativeBeat("p1", "r1", 500, "S", "a" * 64),
+        ]
+        examples = build_record_examples(
+            signal, beats, selected_keys={beat.key for beat in beats}, num_features=8
+        )
+        self.assertEqual([row["sample_index"] for row in examples], [250])
+        self.assertEqual(
+            count_lookahead_context_exclusions(beats, selected_keys={beat.key for beat in beats}),
+            {"missing_previous": 1, "missing_next": 1, "missing_either": 2},
+        )
+
+        examples_by_split = {
+            split: [dict(examples[0], patient_id=f"p-{split}", record_id=f"r-{split}")]
+            for split in ("train", "validation", "internal_test")
+        }
+        # Avoid zero-IQR rejection while retaining the boundary/schema assertion.
+        examples_by_split["train"].append(
+            dict(
+                examples[0],
+                patient_id="p-train-2",
+                record_id="r-train-2",
+                raw_features=examples[0]["raw_features"] + np.arange(1, 9, dtype=np.float32),
+            )
+        )
+        arrays, normalization = finalize_split_arrays(examples_by_split)
+        self.assertEqual(normalization["feature_contract_id"], "qn88-ec57-hybrid-io-lookahead-v2")
+        self.assertEqual(normalization["decision_latency_mode"], "next_valid_qrs")
+        self.assertEqual(len(normalization["feature_names"]), 8)
+        validate_m2_cache_split(arrays["validation"], split_name="validation")
+
+        invalid = dict(arrays["validation"])
+        invalid["context_sample_indices"] = np.array([[100, 200]], dtype=np.int64)
+        with self.assertRaisesRegex(CacheProvenanceError, "fabricated or non-causal"):
+            validate_m2_cache_split(invalid, split_name="validation")
 
     def test_duplicate_q_only_marker_is_collapsed_for_features_without_mutating_raw_beats(self):
         signal = np.zeros(700, dtype=np.int16)

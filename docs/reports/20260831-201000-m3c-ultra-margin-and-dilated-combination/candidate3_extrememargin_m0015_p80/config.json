@@ -1,0 +1,70 @@
+{
+  "candidate_name": "candidate_c_tp5_la8_mlp5_cap2000_w10_extrememargin_m0015_p80",
+  "description": "5-bin temporal model, 8 lookahead features, MLP hidden 5, cap 2000, lr 3e-4, extreme margin loss (margin 0.015, penalty 8.0), AP checkpoint selection",
+  "model": {
+    "architecture": "TinyECGCNN_NV",
+    "in_channels": 1,
+    "input_length": 160,
+    "num_features": 8,
+    "use_features": true,
+    "num_classes": 2,
+    "temporal_pool_bins": 5,
+    "mlp_hidden_dim": 5,
+    "dilation": 1
+  },
+  "data": {
+    "sample_rate_hz": 250,
+    "window_length": 160,
+    "r_peak_index": 64,
+    "max_beats_per_patient_epoch": 2000,
+    "max_pos_neg_ratio": "1:4"
+  },
+  "augmentation": {
+    "gain_range": [
+      0.8,
+      1.2
+    ],
+    "baseline_wander": {
+      "enabled": true,
+      "freq_hz_range": [
+        0.05,
+        0.5
+      ],
+      "max_peak_uv": 100.0
+    },
+    "gaussian_noise": {
+      "enabled": true,
+      "snr_db_range": [
+        12.0,
+        30.0
+      ]
+    }
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "lr": 0.0003,
+    "weight_decay": 0.0001,
+    "batch_size": 1024,
+    "max_epochs": 50,
+    "early_stopping_metric": "val_average_precision",
+    "early_stopping_patience": 12,
+    "loss": "asymmetric_margin_cross_entropy",
+    "veb_class_weight": 1.0,
+    "fp_margin": 0.015,
+    "fp_penalty_weight": 8.0
+  },
+  "threshold_search": {
+    "metric_priority": [
+      "veb_plus_p_ge_95",
+      "veb_fpr_le_0_25",
+      "max_veb_se"
+    ],
+    "min_veb_plus_p": 0.95,
+    "max_veb_fpr": 0.0025,
+    "scan_range": [
+      0.001,
+      0.999
+    ],
+    "scan_step": 0.001
+  }
+}

@@ -6,6 +6,12 @@ This directory is reserved for the QN88 EC57-style research path. M0 freezes con
 
 Use [`contracts/ec57_hybrid_io_contract.json`](../../contracts/ec57_hybrid_io_contract.json) as the machine-readable source of truth.
 
+The approved post-RR research ablation is versioned separately in
+[`contracts/ec57_hybrid_io_lookahead_v2.json`](../../contracts/ec57_hybrid_io_lookahead_v2.json).
+It emits the class for beat `R[i]` only when the next valid QRS `R[i+1]` arrives,
+retains the `R[i]` timestamp, and never fabricates first/last-record RR context.
+The original four-feature builder and deployment contract remain the default.
+
 - Target sampling rate is **250 Hz**. Source databases are resampled on the host with a versioned rational polyphase method; event times are represented in seconds before mapping to target samples.
 - The exact lead order is `I, II, III, aVR, aVL, aVF, V1, V2, V3, V4, V5, V6`. A different order is an error; do not silently permute it.
 - The transport sample is signed little-endian `int16`, with `1 LSB = 5 µV`. Each sample index carries all 12 values and frame integrity/sequence checks.
@@ -27,6 +33,8 @@ Use [`contracts/ec57_label_mapping_v1.json`](../../contracts/ec57_label_mapping_
 The role registry is [`docs/datasets/data_role_registry.csv`](../../docs/datasets/data_role_registry.csv). Icentia11k is `development/internal` and research-license restricted; its frozen manifests may be used for later integer Golden generation and RTL/HIL development while preserving patient split and manifest hashes. LUDB is QRS/delineation development; INCART is the complete locked twelve-lead external evaluation; MIT-BIH Arrhythmia, AHA, and NST are locked. Locked databases must not enter training, PTQ/QAT calibration, threshold tuning, golden generation, RTL/board debugging, or demonstrations. The contamination log is append-only and records any role downgrade; it must never be cleaned by deleting history.
 
 The Icentia patient split is patient-level: `SHA-256(patient_id) mod 100` gives `0–79=train`, `80–89=validation`, and `90–99=internal_test`. A patient cannot occur in more than one split. The PTQ calibration set, when an authorized later milestone creates it, is exactly 8,192 Icentia train beats: 4,096 V and 4,096 non_VEB, selected by a frozen patient-rotating manifest. It cannot use validation, internal test, or any locked database.
+
+`train_nv.py` and `train_nv_remote.py` are validation-only by construction: they neither load nor accept `internal_test`. A later one-shot internal-test evaluator must consume an already frozen model/threshold receipt, verify the model and split hashes, and write a single-use evaluation receipt; until that separate path exists and is reviewed, internal-test evaluation is intentionally unavailable.
 
 ## Metrics and later gates
 

@@ -1,0 +1,24 @@
+{
+  "run_id": "20260831-180114-m2ab-lookahead-contract-boundary-repair",
+  "database": "Icentia11k 1.0",
+  "sample_rate_hz": 250,
+  "window_length": 160,
+  "r_peak_index": 64,
+  "num_features": 8,
+  "feature_names": [
+    "previous_rr_over_recent_8_rr_median",
+    "next_rr_over_recent_8_rr_median",
+    "rr_pair_over_twice_recent_8_rr_median",
+    "ectopic_coupling",
+    "next_minus_previous_rr_ratio",
+    "qrs_width_ms",
+    "peak_over_recent_8_peak_median",
+    "main_lead_sqi"
+  ],
+  "feature_contract_id": "qn88-ec57-hybrid-io-lookahead-v2",
+  "decision_latency_mode": "next_valid_qrs",
+  "boundary_policy": "first and final annotated beats are excluded and counted because real previous/next context is unavailable",
+  "train_negative_per_positive_max": 4,
+  "validation_and_internal_test_prevalence": "natural within frozen cohort",
+  "normalization_statistics": "train split only"
+}

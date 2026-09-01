@@ -13,9 +13,18 @@ import json
 import unittest
 from pathlib import Path, PureWindowsPath
 
+from train.ec57.resource_budget import (
+    MODEL_DEPLOYMENT_PACKAGE_MAX_BYTES,
+    MODEL_MACS_PER_BEAT_MAX,
+    MODEL_MAX_ACTIVATION_BYTES,
+    MODEL_PACKAGE_CONTAINER_OVERHEAD_RESERVE_BYTES,
+    MODEL_PARAMETER_PAYLOAD_MAX_BYTES,
+)
+
 
 ROOT = Path(__file__).resolve().parents[2]
 IO_PATH = ROOT / "contracts" / "ec57_hybrid_io_contract.json"
+LOOKAHEAD_IO_PATH = ROOT / "contracts" / "ec57_hybrid_io_lookahead_v2.json"
 METRICS_PATH = ROOT / "contracts" / "ec57_hybrid_metrics_contract.json"
 LABEL_PATH = ROOT / "contracts" / "ec57_label_mapping_v1.json"
 MANIFEST_SCHEMA_PATH = ROOT / "docs" / "datasets" / "ec57_dataset_manifest.schema.json"
@@ -218,6 +227,15 @@ def minimal_manifest():
 
 
 class TestEC57Contracts(unittest.TestCase):
+    def test_lookahead_contract_versions_timing_without_replacing_v1(self):
+        base = json.loads(IO_PATH.read_text(encoding="utf-8"))
+        lookahead = json.loads(LOOKAHEAD_IO_PATH.read_text(encoding="utf-8"))
+        self.assertEqual(base["contract_version"], "1.0.0")
+        self.assertEqual(lookahead["base_contract"], "contracts/ec57_hybrid_io_contract.json@1.0.0")
+        self.assertEqual(lookahead["decision_timing"]["emit_trigger"], "arrival of the next valid QRS R[i+1]")
+        self.assertIn("no synthetic RR", lookahead["decision_timing"]["finite_record_boundary_policy"])
+        self.assertEqual(lookahead["features"]["count"], 8)
+        self.assertTrue(lookahead["compatibility"]["v1_default_unchanged"])
     @classmethod
     def setUpClass(cls):
         cls.io = _load_json(IO_PATH)
@@ -281,6 +299,26 @@ class TestEC57Contracts(unittest.TestCase):
         self.assertEqual(self.metrics["bit_exact"]["core_golden_beats"], 4096)
         self.assertEqual(self.metrics["timing"]["clock_mhz"], 27)
         self.assertEqual(self.metrics["hil"]["download_mode"], "SRAM_only")
+
+    def test_model_resource_contract_matches_production_constants(self):
+        budget = self.metrics["model_budget"]
+        self.assertEqual(
+            budget["complete_deployment_parameter_package_max_bytes"],
+            MODEL_DEPLOYMENT_PACKAGE_MAX_BYTES,
+        )
+        self.assertEqual(
+            budget["container_overhead_reserve_bytes"],
+            MODEL_PACKAGE_CONTAINER_OVERHEAD_RESERVE_BYTES,
+        )
+        self.assertEqual(
+            budget["parameter_payload_max_bytes"],
+            MODEL_PARAMETER_PAYLOAD_MAX_BYTES,
+        )
+        self.assertEqual(budget["macs_per_beat_max"], MODEL_MACS_PER_BEAT_MAX)
+        self.assertEqual(
+            budget["max_single_layer_activation_bytes"],
+            MODEL_MAX_ACTIVATION_BYTES,
+        )
 
     def test_ludb_gate_scope_and_reference_responsibilities_are_explicit(self):
         policy = self.metrics["ludb_qrs_evaluation"]

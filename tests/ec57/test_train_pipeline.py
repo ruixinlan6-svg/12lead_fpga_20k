@@ -13,6 +13,7 @@ except ImportError:
 
 if torch is not None:
     from train.ec57.train_nv import (
+        binary_average_precision,
         BeatDataset,
         ThresholdGateError,
         build_epoch_sample_indices,
@@ -56,6 +57,14 @@ class TestTrainPipeline(unittest.TestCase):
             "patient_ids": np.random.choice([f"test_pat_{i:02d}" for i in range(3)], size=n_test)
         }
 
+    def test_binary_average_precision_is_rank_and_tie_deterministic(self):
+        self.assertEqual(binary_average_precision([1, 0, 1], [0.9, 0.2, 0.8]), 1.0)
+        tied_forward = binary_average_precision([1, 0, 1, 0], [0.8, 0.8, 0.2, 0.2])
+        tied_reverse = binary_average_precision([0, 1, 0, 1], [0.8, 0.8, 0.2, 0.2])
+        self.assertAlmostEqual(tied_forward, tied_reverse)
+        with self.assertRaisesRegex(ValueError, "at least one positive"):
+            binary_average_precision([0, 0], [0.2, 0.1])
+
     def test_train_single_epoch_smoke(self):
         """Pipeline must run 1 epoch, save all required artifacts and valid SHA-256 manifest."""
         config_path = "train/ec57/configs/candidate_b_morph_rr.json"
@@ -64,6 +73,8 @@ class TestTrainPipeline(unittest.TestCase):
 
         config["training"]["max_epochs"] = 1
         config["training"]["batch_size"] = 64
+        config["run_mode"] = "one_epoch_pipeline_smoke"
+        config["threshold_search"]["min_veb_se"] = 0.0
         config["threshold_search"]["min_veb_plus_p"] = 0.0
         config["threshold_search"]["max_veb_fpr"] = 1.0
 
@@ -72,7 +83,7 @@ class TestTrainPipeline(unittest.TestCase):
                 config=config,
                 train_data=self.train_data,
                 val_data=self.val_data,
-                test_data=self.test_data,
+                test_data=None,
                 normalization={"statistics_source": "synthetic train split only"},
                 output_dir=tmp_dir,
                 seed=17,
@@ -80,13 +91,60 @@ class TestTrainPipeline(unittest.TestCase):
             )
 
             # Check that all artifacts exist
-            for fname in ["model_fp32.pt", "config.json", "normalization.json", "decision_threshold.json", "metrics.json", "vfp_vfn.json", "manifest_sha256.txt", "model_sha256.txt"]:
+            for fname in ["model_fp32.pt", "config.json", "normalization.json", "decision_threshold.json", "metrics.json", "manifest_sha256.txt", "model_sha256.txt"]:
                 self.assertTrue(os.path.exists(os.path.join(tmp_dir, fname)), f"Missing artifact {fname}")
+            self.assertFalse(os.path.exists(os.path.join(tmp_dir, "vfp_vfn.json")))
 
             # Check threshold and metrics
             self.assertIn("optimal_threshold", res)
-            self.assertIn("test_metrics", res)
+            self.assertNotIn("test_metrics", res)
             self.assertIn("model_sha256", res)
+            self.assertEqual(res["status"], "smoke_only")
+            self.assertFalse(res["checkpoint_freezable"])
+            self.assertEqual(res["evaluation_scope"], "validation_only")
+            with open(os.path.join(tmp_dir, "decision_threshold.json"), "r", encoding="utf-8") as handle:
+                decision = json.load(handle)
+            with open(os.path.join(tmp_dir, "metrics.json"), "r", encoding="utf-8") as handle:
+                metrics = json.load(handle)
+            self.assertEqual(decision["status"], "smoke_only")
+            self.assertFalse(decision["checkpoint_freezable"])
+            self.assertEqual(metrics["status"], "smoke_only")
+            self.assertFalse(metrics["checkpoint_freezable"])
+            self.assertEqual(metrics["evaluation_scope"], "validation_only")
+            self.assertNotIn("test_metrics", metrics)
+
+    def test_training_path_rejects_internal_test_data_and_evaluation(self):
+        with open("train/ec57/configs/candidate_b_morph_rr.json", "r", encoding="utf-8") as handle:
+            config = json.load(handle)
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            with self.assertRaisesRegex(ValueError, "training path cannot receive or evaluate internal_test"):
+                train_single_run(
+                    config=config,
+                    train_data=self.train_data,
+                    val_data=self.val_data,
+                    test_data=self.test_data,
+                    normalization={"statistics_source": "synthetic train split only"},
+                    output_dir=tmp_dir,
+                    seed=17,
+                    device_str="cpu",
+                    evaluate_internal_test=False,
+                )
+            self.assertEqual(os.listdir(tmp_dir), [])
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            with self.assertRaisesRegex(ValueError, "training path cannot receive or evaluate internal_test"):
+                train_single_run(
+                    config=config,
+                    train_data=self.train_data,
+                    val_data=self.val_data,
+                    test_data=None,
+                    normalization={"statistics_source": "synthetic train split only"},
+                    output_dir=tmp_dir,
+                    seed=17,
+                    device_str="cpu",
+                    evaluate_internal_test=True,
+                )
+            self.assertEqual(os.listdir(tmp_dir), [])
 
     def test_threshold_scan_fails_closed_when_no_threshold_meets_gate(self):
         model = TinyECGCNN_NV()
@@ -104,6 +162,7 @@ class TestTrainPipeline(unittest.TestCase):
                 model,
                 loader,
                 device=torch.device("cpu"),
+                min_veb_se=0.0,
                 min_veb_plus_p=1.01,
                 max_veb_fpr=0.0,
             )
@@ -115,6 +174,7 @@ class TestTrainPipeline(unittest.TestCase):
             config = json.load(handle)
         config["training"]["max_epochs"] = 1
         config["training"]["batch_size"] = 64
+        config["threshold_search"]["min_veb_se"] = 0.0
         config["threshold_search"]["min_veb_plus_p"] = 1.01
         config["threshold_search"]["max_veb_fpr"] = 0.0
         with tempfile.TemporaryDirectory() as tmp_dir:
@@ -150,6 +210,7 @@ class TestTrainPipeline(unittest.TestCase):
             config = json.load(handle)
         config["training"]["max_epochs"] = 1
         config["training"]["batch_size"] = 64
+        config["threshold_search"]["min_veb_se"] = 0.0
         config["threshold_search"]["min_veb_plus_p"] = 0.0
         config["threshold_search"]["max_veb_fpr"] = 1.0
         with tempfile.TemporaryDirectory() as tmp_dir:
@@ -171,6 +232,70 @@ class TestTrainPipeline(unittest.TestCase):
             self.assertEqual(metrics["evaluation_scope"], "validation_only")
             self.assertNotIn("test_metrics", metrics)
 
+    def test_medium_candidate_is_rejected_before_training_or_model_export(self):
+        with open(
+            "train/ec57/configs/candidate_c_medium_tp5_la8_mlp48_cap2000_w10_dilated_margin_m0025_p50.json",
+            "r",
+            encoding="utf-8",
+        ) as handle:
+            config = json.load(handle)
+        config["training"]["max_epochs"] = 0
+        train_data = dict(self.train_data)
+        val_data = dict(self.val_data)
+        train_data["features"] = np.pad(self.train_data["features"], ((0, 0), (0, 4)))
+        val_data["features"] = np.pad(self.val_data["features"], ((0, 0), (0, 4)))
+        normalization = {
+            "statistics_source": "synthetic train split only",
+            "feature_contract_id": "qn88-ec57-hybrid-io-lookahead-v2",
+            "decision_latency_mode": "next_valid_qrs",
+            "feature_names": [f"feature_{index}" for index in range(8)],
+        }
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            with self.assertRaisesRegex(ValueError, "deployment resource budget exceeded"):
+                train_single_run(
+                    config=config,
+                    train_data=train_data,
+                    val_data=val_data,
+                    test_data=None,
+                    normalization=normalization,
+                    output_dir=tmp_dir,
+                    seed=17,
+                    device_str="cpu",
+                    evaluate_internal_test=False,
+                )
+            self.assertFalse(os.path.exists(os.path.join(tmp_dir, "model_fp32.pt")))
+            for filename in (
+                "config.json",
+                "normalization.json",
+                "resource_gate_failure.json",
+                "metrics.json",
+                "manifest_sha256.txt",
+            ):
+                self.assertTrue(os.path.isfile(os.path.join(tmp_dir, filename)), filename)
+            with open(os.path.join(tmp_dir, "metrics.json"), "r", encoding="utf-8") as handle:
+                metrics = json.load(handle)
+            self.assertEqual(metrics["status"], "rejected")
+            self.assertFalse(metrics["checkpoint_freezable"])
+            self.assertEqual(metrics["evaluation_scope"], "pre_training_resource_gate")
+
+    def test_medium_configs_are_labelled_historical_and_oversized(self):
+        config_dir = os.path.join("train", "ec57", "configs")
+        filenames = sorted(
+            filename for filename in os.listdir(config_dir)
+            if filename.startswith("candidate_c_medium_") and filename.endswith(".json")
+        )
+        self.assertEqual(len(filenames), 3)
+        for filename in filenames:
+            with open(os.path.join(config_dir, filename), "r", encoding="utf-8") as handle:
+                description = json.load(handle)["description"]
+            with self.subTest(filename=filename):
+                self.assertIn("historical oversized diagnostic", description.lower())
+                self.assertNotIn("50KB", description)
+        with open(os.path.join(config_dir, filenames[0]), "r", encoding="utf-8") as handle:
+            first_description = json.load(handle)["description"]
+        self.assertIn("54,168 bytes", first_description)
+
     def test_candidate_configs_match_frozen_common_hyperparameters(self):
         config_dir = os.path.join("train", "ec57", "configs")
         for filename in (
@@ -186,6 +311,55 @@ class TestTrainPipeline(unittest.TestCase):
                 self.assertEqual(config["training"]["early_stopping_patience"], 8)
                 self.assertEqual(config["training"]["veb_class_weight"], 2.5)
                 self.assertNotIn("scheduler", config["training"])
+                self.assertEqual(config["threshold_search"]["min_veb_se"], 0.90)
+
+    def test_all_formal_threshold_configs_freeze_minimum_veb_sensitivity(self):
+        config_dir = os.path.join("train", "ec57", "configs")
+        for filename in sorted(os.listdir(config_dir)):
+            if not filename.endswith(".json"):
+                continue
+            with open(os.path.join(config_dir, filename), "r", encoding="utf-8") as handle:
+                config = json.load(handle)
+            if "threshold_search" not in config:
+                continue
+            with self.subTest(filename=filename):
+                self.assertEqual(config["threshold_search"]["min_veb_se"], 0.90)
+
+    def test_threshold_scan_rejects_high_precision_low_sensitivity_point(self):
+        class ProbabilityFromWaveform(torch.nn.Module):
+            def forward(self, x_wave, _x_feat):
+                probabilities = x_wave[:, 0, 0].clamp(1e-6, 1.0 - 1e-6)
+                return torch.stack((torch.log1p(-probabilities), torch.log(probabilities)), dim=1)
+
+        probabilities = np.array([0.99] + [0.40] * 9 + [0.50] * 100, dtype=np.float32)
+        labels = np.array([1] * 10 + [0] * 100, dtype=np.int64)
+        waveforms = np.zeros((len(labels), 160), dtype=np.float32)
+        waveforms[:, 0] = probabilities
+        dataset = BeatDataset(
+            waveforms=waveforms,
+            features=np.zeros((len(labels), 4), dtype=np.float32),
+            labels=labels,
+            patient_ids=np.array(["validation_patient"] * len(labels)),
+            use_features=True,
+            is_training=False,
+        )
+        loader = torch.utils.data.DataLoader(dataset, batch_size=64, shuffle=False)
+
+        with self.assertRaises(ThresholdGateError) as raised:
+            scan_optimal_threshold(
+                ProbabilityFromWaveform(),
+                loader,
+                device=torch.device("cpu"),
+                scan_range=(0.40, 0.90),
+                scan_step=0.10,
+            )
+
+        summary = raised.exception.summary
+        self.assertEqual(summary["frozen_min_veb_se_percent"], 90.0)
+        diagnostic = summary["best_se_under_plus_p_and_fpr_gates"]
+        self.assertEqual(diagnostic["se_percent"], 10.0)
+        self.assertEqual(diagnostic["plus_p_percent"], 100.0)
+        self.assertEqual(diagnostic["fpr_percent"], 0.0)
 
     def test_class_prior_ablation_configs_differ_only_in_declared_weight_and_identity(self):
         filenames = (
@@ -325,6 +499,18 @@ class TestTrainPipeline(unittest.TestCase):
         self.assertEqual(normalized[0], normalized[1])
         self.assertEqual(normalized[1], normalized[2])
 
+    def test_ap_checkpoint_candidate_changes_only_selection_metric_and_identity(self):
+        config_root = os.path.join("train", "ec57", "configs")
+        with open(os.path.join(config_root, "candidate_c_tp5_la8_mlp5_cap2000_w10.json"), "r", encoding="utf-8") as handle:
+            baseline = json.load(handle)
+        with open(os.path.join(config_root, "candidate_c_tp5_la8_mlp5_cap2000_ap.json"), "r", encoding="utf-8") as handle:
+            candidate = json.load(handle)
+        self.assertEqual(candidate["training"]["early_stopping_metric"], "val_average_precision")
+        candidate["candidate_name"] = baseline["candidate_name"]
+        candidate["description"] = baseline["description"]
+        candidate["training"]["early_stopping_metric"] = baseline["training"]["early_stopping_metric"]
+        self.assertEqual(candidate, baseline)
+
     def test_depthwise_morphology_model_shape_bins_and_budget(self):
         from train.ec57.model_nv import TinyECGCNN_NV_Depthwise
 
@@ -357,8 +543,10 @@ class TestTrainPipeline(unittest.TestCase):
             formal = json.load(handle)
         smoke = apply_smoke_overrides(formal)
         self.assertEqual(formal["training"]["max_epochs"], 50)
+        self.assertEqual(formal["threshold_search"]["min_veb_se"], 0.90)
         self.assertEqual(formal["threshold_search"]["min_veb_plus_p"], 0.95)
         self.assertEqual(smoke["training"]["max_epochs"], 1)
+        self.assertEqual(smoke["threshold_search"]["min_veb_se"], 0.0)
         self.assertEqual(smoke["threshold_search"]["min_veb_plus_p"], 0.0)
         self.assertEqual(smoke["threshold_search"]["max_veb_fpr"], 1.0)
         self.assertEqual(smoke["run_mode"], "one_epoch_pipeline_smoke")

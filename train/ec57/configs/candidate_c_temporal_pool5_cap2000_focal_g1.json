@@ -42,7 +42,8 @@
     "negative_focal_gamma": 1.0
   },
   "threshold_search": {
-    "metric_priority": ["veb_plus_p_ge_95", "veb_fpr_le_0_25", "max_veb_se"],
+    "metric_priority": ["veb_se_ge_90", "veb_plus_p_ge_95", "veb_fpr_le_0_25", "max_veb_se"],
+    "min_veb_se": 0.90,
     "min_veb_plus_p": 0.95,
     "max_veb_fpr": 0.0025,
     "scan_range": [0.001, 0.999],

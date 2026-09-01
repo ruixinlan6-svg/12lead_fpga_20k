@@ -84,8 +84,8 @@ def summarize_validation_errors(
     if set(native_symbols.tolist()) - {"N", "S", "V"}:
         raise ValueError("validation native symbols must be N/S/V only")
     features = np.asarray(arrays["features"])
-    if features.ndim != 2 or features.shape[1] != 4:
-        raise ValueError("validation features must have shape [N,4]")
+    if features.ndim != 2 or features.shape[1] not in {4, 5, 6, 8}:
+        raise ValueError("validation features must have shape [N,4], [N,5], [N,6], or [N,8]")
 
     threshold_values = sorted({float(value) for value in thresholds})
     if not threshold_values or any(not 0.0 <= value <= 1.0 for value in threshold_values):
@@ -174,14 +174,25 @@ def _infer_probabilities(
     arrays: Mapping[str, np.ndarray],
     *,
     model_path: Path,
+    config_path: Path,
     input_divisor: float,
     device_name: str,
     batch_size: int,
 ) -> np.ndarray:
     import torch
 
+    cfg = json.loads(config_path.read_text(encoding="utf-8"))
+    model_cfg = cfg.get("model", {})
+    temporal_pool_bins = int(model_cfg.get("temporal_pool_bins", 1))
+    num_features = int(model_cfg.get("num_features", 4))
+    mlp_hidden_dim = int(model_cfg.get("mlp_hidden_dim", 0))
+
     device = torch.device(device_name)
-    model = TinyECGCNN_NV().to(device)
+    model = TinyECGCNN_NV(
+        temporal_pool_bins=temporal_pool_bins,
+        num_features=num_features,
+        mlp_hidden_dim=mlp_hidden_dim,
+    ).to(device)
     try:
         state = torch.load(model_path, map_location=device, weights_only=True)
     except TypeError:
@@ -220,16 +231,20 @@ def main(argv: Sequence[str] | None = None) -> int:
     split_path = (args.npz or args.validation_npz).resolve()
     model_path = args.model.resolve()
     config_path = args.config.resolve()
-    output = args.output_dir.resolve()
-    output.mkdir(parents=True, exist_ok=True)
+    output_dir = args.output_dir.resolve()
+    output_dir.mkdir(parents=True, exist_ok=True)
+
     with np.load(split_path, allow_pickle=False) as archive:
         arrays = {key: np.asarray(archive[key]) for key in archive.files}
     validate_m2_cache_split(arrays, split_name=split)
-    config = json.loads(config_path.read_text(encoding="utf-8"))
-    input_divisor = float(config["data"]["fp32_input_divisor"])
+
+    with config_path.open("r", encoding="utf-8") as handle:
+        audit_config = json.load(handle)
+    input_divisor = float(audit_config.get("data", {}).get("fp32_input_divisor", 1.0))
     probabilities = _infer_probabilities(
         arrays,
         model_path=model_path,
+        config_path=config_path,
         input_divisor=input_divisor,
         device_name=args.device,
         batch_size=args.batch_size,
@@ -247,17 +262,19 @@ def main(argv: Sequence[str] | None = None) -> int:
             "device": args.device,
         }
     )
-    summary_path = output / "summary.json"
+    summary_path = output_dir / "summary.json"
     summary_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    errors_path = output / "errors.csv"
+    errors_path = output_dir / "errors.csv"
     fieldnames = list(rows[0]) if rows else ["cache_index"]
     with errors_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
-    artifact_paths = (summary_path, errors_path)
-    manifest_lines = [f"{_sha256_file(path)}  {path.name}" for path in artifact_paths]
-    (output / "sha256_manifest.txt").write_text("\n".join(manifest_lines) + "\n", encoding="ascii")
+    manifest_lines = []
+    for path in sorted(output_dir.iterdir(), key=lambda item: item.name):
+        if path.is_file() and path.name != "sha256_manifest.txt":
+            manifest_lines.append(f"{_sha256_file(path)}  {path.name}")
+    (output_dir / "sha256_manifest.txt").write_text("\n".join(manifest_lines) + "\n", encoding="ascii")
     print(json.dumps(report, ensure_ascii=False, indent=2))
     return 0
 

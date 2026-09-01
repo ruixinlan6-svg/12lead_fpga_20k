@@ -26,6 +26,42 @@ LABEL_BY_SYMBOL = {"N": 0, "S": 0, "V": 1}
 PN_DIR = "icentia11k-continuous-ecg/1.0"
 WFDB_DOWNLOAD_DB = "icentia11k-continuous-ecg"
 
+FEATURE_NAMES_BY_COUNT = {
+    4: [
+        "previous_rr_over_recent_8_rr_median",
+        "qrs_width_ms",
+        "peak_over_recent_8_peak_median",
+        "main_lead_sqi",
+    ],
+    5: [
+        "previous_rr_over_recent_8_rr_median",
+        "next_rr_over_recent_8_rr_median",
+        "qrs_width_ms",
+        "peak_over_recent_8_peak_median",
+        "main_lead_sqi",
+    ],
+    6: [
+        "previous_rr_over_recent_8_rr_median",
+        "next_rr_over_recent_8_rr_median",
+        "rr_pair_over_twice_recent_8_rr_median",
+        "qrs_width_ms",
+        "peak_over_recent_8_peak_median",
+        "main_lead_sqi",
+    ],
+    8: [
+        "previous_rr_over_recent_8_rr_median",
+        "next_rr_over_recent_8_rr_median",
+        "rr_pair_over_twice_recent_8_rr_median",
+        "ectopic_coupling",
+        "next_minus_previous_rr_ratio",
+        "qrs_width_ms",
+        "peak_over_recent_8_peak_median",
+        "main_lead_sqi",
+    ],
+}
+LOOKAHEAD_CONTRACT_ID = "qn88-ec57-hybrid-io-lookahead-v2"
+CAUSAL4_CONTRACT_ID = "qn88-ec57-hybrid-io-v1"
+
 
 @dataclass(frozen=True, order=True)
 class NativeBeat:
@@ -141,34 +177,71 @@ def normalize_native_beats_for_features(beats: Iterable[NativeBeat]) -> list[Nat
     return normalized
 
 
+def count_lookahead_context_exclusions(
+    beats: Iterable[NativeBeat], *, selected_keys: set[str]
+) -> dict[str, int]:
+    """Count selected trainable beats that lack real previous/next annotation context."""
+    ordered = normalize_native_beats_for_features(beats)
+    counts = {"missing_previous": 0, "missing_next": 0, "missing_either": 0}
+    for index, beat in enumerate(ordered):
+        if beat.key not in selected_keys or beat.native_symbol not in LABEL_BY_SYMBOL:
+            continue
+        missing_previous = index == 0
+        missing_next = index + 1 == len(ordered)
+        counts["missing_previous"] += int(missing_previous)
+        counts["missing_next"] += int(missing_next)
+        counts["missing_either"] += int(missing_previous or missing_next)
+    return counts
+
+
 def build_record_examples(
     signal_lsb: np.ndarray,
     beats: Iterable[NativeBeat],
     *,
     selected_keys: set[str],
+    num_features: int = 4,
 ) -> list[dict[str, object]]:
     signal = np.asarray(signal_lsb)
     if signal.ndim != 1:
         raise ValueError("Icentia signal must be one-dimensional")
+    if num_features not in FEATURE_NAMES_BY_COUNT:
+        raise ValueError(f"unsupported feature count: {num_features}")
     ordered = normalize_native_beats_for_features(beats)
     rr_history: list[int] = []
     amplitude_history: list[float] = []
-    previous_sample: int | None = None
     examples: list[dict[str, object]] = []
-    for beat in ordered:
+    for i, beat in enumerate(ordered):
         sample = int(beat.sample_index)
         if sample < 0 or sample >= len(signal):
             raise ValueError(f"native annotation outside signal: {beat.key}")
-        if previous_sample is None:
-            rr_ratio = 1.0
+        has_previous_context = i > 0
+        has_next_context = i + 1 < len(ordered)
+        if i == 0:
+            pre_rr = 250
+            pre_rr_ratio = 1.0
         else:
-            current_rr = sample - previous_sample
-            if current_rr <= 0:
+            prev_sample = int(ordered[i - 1].sample_index)
+            pre_rr = sample - prev_sample
+            if pre_rr <= 0:
                 raise ValueError(f"non-increasing native beat annotation: {beat.key}")
-            rr_history.append(current_rr)
+            rr_history.append(pre_rr)
             rr_history = rr_history[-8:]
-            rr_ratio = current_rr / float(np.median(rr_history))
-        previous_sample = sample
+            median_rr = float(np.median(rr_history))
+            pre_rr_ratio = pre_rr / median_rr
+
+        median_rr = float(np.median(rr_history)) if rr_history else 250.0
+
+        if i + 1 < len(ordered):
+            next_sample = int(ordered[i + 1].sample_index)
+            post_rr = next_sample - sample
+            if post_rr <= 0:
+                raise ValueError(f"non-increasing native beat annotation: {beat.key}")
+            post_rr_ratio = post_rr / median_rr
+        else:
+            post_rr = 0
+            post_rr_ratio = 0.0
+
+        comp_ratio = (pre_rr + post_rr) / (2.0 * median_rr)
 
         if sample < 64 or sample >= len(signal) - 96:
             continue
@@ -182,11 +255,35 @@ def build_record_examples(
 
         if beat.key not in selected_keys or beat.native_symbol not in LABEL_BY_SYMBOL:
             continue
+        # A post-RR decision is emitted only after a real previous and next QRS
+        # exist. Never fabricate context at finite-record boundaries.
+        if num_features > 4 and (not has_previous_context or not has_next_context):
+            continue
         qrs_region = np.abs(centered[44:85])
         width_threshold = 0.3 * float(np.max(qrs_region)) if len(qrs_region) else 0.0
         qrs_width_ms = float(np.count_nonzero(qrs_region >= width_threshold) * 4) if width_threshold > 0 else 0.0
         sqi_window = _complete_sqi_window(signal, sample)
         sqi_score = continuous_sqi_score_q15_fixed([int(value) for value in sqi_window]) / 32767.0
+
+        if num_features == 8:
+            ectopic_coupling = float(max(0.0, 1.0 - pre_rr_ratio) * max(0.0, post_rr_ratio - 1.0))
+            rr_diff = float(post_rr_ratio - pre_rr_ratio)
+            raw_feat = [
+                pre_rr_ratio,
+                post_rr_ratio,
+                comp_ratio,
+                ectopic_coupling,
+                rr_diff,
+                qrs_width_ms,
+                amplitude_ratio,
+                sqi_score,
+            ]
+        elif num_features == 6:
+            raw_feat = [pre_rr_ratio, post_rr_ratio, comp_ratio, qrs_width_ms, amplitude_ratio, sqi_score]
+        elif num_features == 5:
+            raw_feat = [pre_rr_ratio, post_rr_ratio, qrs_width_ms, amplitude_ratio, sqi_score]
+        else:
+            raw_feat = [pre_rr_ratio, qrs_width_ms, amplitude_ratio, sqi_score]
 
         examples.append(
             {
@@ -197,9 +294,9 @@ def build_record_examples(
                 "source_file_sha256": beat.source_file_sha256,
                 "label": LABEL_BY_SYMBOL[beat.native_symbol],
                 "waveform": np.asarray(full_window, dtype=np.int16),
-                "raw_features": np.asarray(
-                    [rr_ratio, qrs_width_ms, amplitude_ratio, sqi_score], dtype=np.float32
-                ),
+                "raw_features": np.asarray(raw_feat, dtype=np.float32),
+                "previous_context_sample_index": int(ordered[i - 1].sample_index) if has_previous_context else -1,
+                "next_context_sample_index": int(ordered[i + 1].sample_index) if has_next_context else -1,
             }
         )
     return examples
@@ -213,6 +310,20 @@ def finalize_split_arrays(
         raise ValueError(f"cache requires exactly {sorted(required_splits)}")
     if any(not examples_by_split[split] for split in required_splits):
         raise ValueError("every M2 cache split must contain examples")
+
+    feature_widths = {
+        int(np.asarray(row["raw_features"]).shape[0])
+        for rows in examples_by_split.values()
+        for row in rows
+    }
+    if len(feature_widths) != 1:
+        raise ValueError(f"all cache splits must use one feature schema, got {sorted(feature_widths)}")
+    num_features = feature_widths.pop()
+    if num_features not in FEATURE_NAMES_BY_COUNT:
+        raise ValueError(f"unsupported feature count: {num_features}")
+    feature_names = FEATURE_NAMES_BY_COUNT[num_features]
+    feature_contract_id = LOOKAHEAD_CONTRACT_ID if num_features > 4 else CAUSAL4_CONTRACT_ID
+    latency_mode = "next_valid_qrs" if num_features > 4 else "fixed_post_window"
 
     train_windows = np.stack([np.asarray(row["waveform"]) for row in examples_by_split["train"]])
     train_features = np.stack(
@@ -248,6 +359,19 @@ def finalize_split_arrays(
             "sample_indices": np.asarray([int(row["sample_index"]) for row in examples], dtype=np.int64),
             "native_symbols": np.asarray([str(row["native_symbol"]) for row in examples]),
             "source_file_sha256": np.asarray([str(row["source_file_sha256"]) for row in examples]),
+            "feature_names": np.asarray(feature_names),
+            "feature_contract_id": np.asarray(feature_contract_id),
+            "decision_latency_mode": np.asarray(latency_mode),
+            "context_sample_indices": np.asarray(
+                [
+                    [
+                        int(row.get("previous_context_sample_index", -1)),
+                        int(row.get("next_context_sample_index", -1)),
+                    ]
+                    for row in examples
+                ],
+                dtype=np.int64,
+            ),
         }
     normalization = {
         "statistics_source": "Icentia11k train split only",
@@ -256,6 +380,9 @@ def finalize_split_arrays(
         "microvolts_per_lsb": 5,
         "feature_medians": feature_medians.tolist(),
         "feature_iqrs": feature_iqrs.tolist(),
+        "feature_names": feature_names,
+        "feature_contract_id": feature_contract_id,
+        "decision_latency_mode": latency_mode,
     }
     return arrays_by_split, normalization
 
@@ -266,6 +393,7 @@ def download_and_build_cache(
     output_dir: str | Path,
     *,
     run_id: str,
+    num_features: int = 4,
 ) -> dict[str, object]:
     import wfdb
 
@@ -340,6 +468,10 @@ def download_and_build_cache(
         "internal_test": [],
     }
     processed_by_split = {"train": 0, "validation": 0, "internal_test": 0}
+    lookahead_excluded_by_split = {
+        split: {"missing_previous": 0, "missing_next": 0, "missing_either": 0}
+        for split in examples_by_split
+    }
     for position, row in enumerate(record_rows, start=1):
         split = str(row["split"])
         patient_id = str(row["patient_id"])
@@ -352,10 +484,17 @@ def download_and_build_cache(
         if not np.isfinite(signal_mv).all():
             raise ValueError(f"non-finite signal samples in {record_id}")
         signal_lsb = np.clip(round_half_away_from_zero(signal_mv * 200.0), -32768, 32767).astype(np.int16)
+        if num_features > 4:
+            exclusion_counts = count_lookahead_context_exclusions(
+                beats_by_record[(patient_id, record_id)], selected_keys=selected_keys[split]
+            )
+            for key, value in exclusion_counts.items():
+                lookahead_excluded_by_split[split][key] += value
         examples = build_record_examples(
             signal_lsb,
             beats_by_record[(patient_id, record_id)],
             selected_keys=selected_keys[split],
+            num_features=num_features,
         )
         examples_by_split[split].extend(examples)
         processed_by_split[split] += 1
@@ -373,6 +512,7 @@ def download_and_build_cache(
             "q_excluded_count": q_excluded_by_split[split],
             "selected_before_boundary_check": len(selected_by_split[split]),
             "boundary_excluded_count": len(selected_by_split[split]) - len(arrays["labels"]),
+            "lookahead_context_excluded": lookahead_excluded_by_split[split],
         }
         np.savez_compressed(output / f"{split}_beats.npz", **arrays)
     patient_counts = validate_patient_disjoint_splits(arrays_by_split)
@@ -402,6 +542,15 @@ def download_and_build_cache(
         "sample_rate_hz": 250,
         "window_length": 160,
         "r_peak_index": 64,
+        "num_features": num_features,
+        "feature_names": FEATURE_NAMES_BY_COUNT[num_features],
+        "feature_contract_id": LOOKAHEAD_CONTRACT_ID if num_features > 4 else CAUSAL4_CONTRACT_ID,
+        "decision_latency_mode": "next_valid_qrs" if num_features > 4 else "fixed_post_window",
+        "boundary_policy": (
+            "first and final annotated beats are excluded and counted because real previous/next context is unavailable"
+            if num_features > 4
+            else "v1 fixed post-window policy"
+        ),
         "train_negative_per_positive_max": 4,
         "validation_and_internal_test_prevalence": "natural within frozen cohort",
         "normalization_statistics": "train split only",
@@ -422,12 +571,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--source-root", required=True, type=Path)
     parser.add_argument("--output-dir", required=True, type=Path)
     parser.add_argument("--run-id", required=True)
+    parser.add_argument("--num-features", type=int, default=4, choices=[4, 5, 6, 8])
     args = parser.parse_args(argv)
     manifest = download_and_build_cache(
         args.annotation_audit,
         args.source_root,
         args.output_dir,
         run_id=args.run_id,
+        num_features=args.num_features,
     )
     print(json.dumps({key: value for key, value in manifest.items() if key != "source_files"}, ensure_ascii=False, indent=2))
     return 0

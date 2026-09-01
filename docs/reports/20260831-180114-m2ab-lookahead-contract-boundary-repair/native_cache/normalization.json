@@ -1,0 +1,38 @@
+{
+  "statistics_source": "Icentia11k train split only",
+  "waveform_scale_statistic": "abs_deviation_99_5_percentile",
+  "waveform_scale_ref_lsb": 201.0,
+  "microvolts_per_lsb": 5,
+  "feature_medians": [
+    0.9824817180633545,
+    1.0151188373565674,
+    0.9976851940155029,
+    0.0,
+    0.015228426083922386,
+    44.0,
+    1.0,
+    0.7432172894477844
+  ],
+  "feature_iqrs": [
+    0.23296606540679932,
+    0.205230712890625,
+    0.04263126850128174,
+    0.035589988343417645,
+    0.4522474193945527,
+    20.0,
+    0.11490678787231445,
+    0.14383375644683838
+  ],
+  "feature_names": [
+    "previous_rr_over_recent_8_rr_median",
+    "next_rr_over_recent_8_rr_median",
+    "rr_pair_over_twice_recent_8_rr_median",
+    "ectopic_coupling",
+    "next_minus_previous_rr_ratio",
+    "qrs_width_ms",
+    "peak_over_recent_8_peak_median",
+    "main_lead_sqi"
+  ],
+  "feature_contract_id": "qn88-ec57-hybrid-io-lookahead-v2",
+  "decision_latency_mode": "next_valid_qrs"
+}

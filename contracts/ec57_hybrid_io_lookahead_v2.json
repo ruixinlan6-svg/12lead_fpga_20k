@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_id": "qn88-ec57-hybrid-io-lookahead-v2",
+  "contract_version": "2.0.0-experimental",
+  "status": "approved-research-ablation",
+  "scope": "M2 VEB development only; extends, does not replace, ec57_hybrid_io_contract.json",
+  "base_contract": "contracts/ec57_hybrid_io_contract.json@1.0.0",
+  "approval": "User approved one-beat latency and post-RR features on 2026-08-31.",
+  "decision_timing": {
+    "target_beat": "R[i]",
+    "emit_trigger": "arrival of the next valid QRS R[i+1]",
+    "output_timestamp": "retain R[i]; never relabel R[i+1]",
+    "total_latency": "post_RR_i plus classifier compute latency",
+    "classifier_compute_latency_max_ms_after_context": 450,
+    "pending_timeout_ms": 3000,
+    "timeout_policy": "emit UNCLASSIFIED_BEAT for pending R[i] and preserve ASYSTOLE_CANDIDATE handling",
+    "finite_record_boundary_policy": "first and final annotated beats without real previous/next context are excluded from model-development caches and counted; no synthetic RR is permitted",
+    "research_event_effect": "PVC couplet/run/bigeminy/trigeminy state updates are delayed by one subsequent valid QRS"
+  },
+  "features": {
+    "count": 8,
+    "order": [
+      "previous_rr_over_recent_8_rr_median",
+      "next_rr_over_recent_8_rr_median",
+      "rr_pair_over_twice_recent_8_rr_median",
+      "ectopic_coupling",
+      "next_minus_previous_rr_ratio",
+      "qrs_width_ms",
+      "peak_over_recent_8_peak_median",
+      "main_lead_sqi"
+    ],
+    "statistics_source": "Icentia11k train split only",
+    "cache_requirements": [
+      "feature_names exact order",
+      "feature_contract_id",
+      "decision_latency_mode=next_valid_qrs",
+      "real previous/current/next sample indices"
+    ]
+  },
+  "compatibility": {
+    "v1_default_unchanged": true,
+    "silent_feature_count_upgrade_forbidden": true,
+    "formal_deployment_status": "not accepted until validation, quantization, RTL, and HIL gates pass"
+  }
+}

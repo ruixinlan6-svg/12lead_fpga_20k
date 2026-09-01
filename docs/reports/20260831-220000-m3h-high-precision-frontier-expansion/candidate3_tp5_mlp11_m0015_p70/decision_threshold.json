@@ -1,0 +1,17 @@
+{
+  "selected_threshold": 0.999,
+  "selected_metrics": {
+    "threshold": 0.999,
+    "vtp": 97,
+    "vfn": 1317,
+    "vfp": 4,
+    "vtn": 290102,
+    "se_percent": 6.8599717114568595,
+    "plus_p_percent": 96.03960396039604,
+    "fpr_percent": 0.0013788063673278042,
+    "meets_gate": true
+  },
+  "valid_threshold_count": 1,
+  "total_thresholds_scanned": 999,
+  "scan_step": 0.001
+}

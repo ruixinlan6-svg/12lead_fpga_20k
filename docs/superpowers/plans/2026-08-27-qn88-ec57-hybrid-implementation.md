@@ -156,7 +156,7 @@ Linear 20->2 logits
 
 - 选定架构用随机种子 `17、29、43` 各训练一次；三次均须过 Icentia internal_test 数值门槛。
 - 三个种子的 VEB Se 和 VEB +P 最大值与最小值差均 `<=2.0` 个百分点。
-- 参数数 `<=2,048`，INT8 权重与 bias/scale 打包后 `<=8 KiB`，单搏 MAC `<=100,000`，最大单层激活 `<=2 KiB`。
+- 完整部署参数包 `<=50 KiB`（`51,200 bytes`）。架构预筛时参数载荷不得超过 `50,176 bytes`，另预留 `1,024 bytes` 给容器头、版本/形状元数据、对齐及校验；载荷至少逐字节计入 signed INT8 weights、signed INT32 biases，以及每个输出通道各一个 signed INT32 multiplier 和 signed INT32 shift。最终导出的实际文件必须再次逐字节测量并保持 `<=51,200 bytes`；参数数量只作架构诊断，禁止用“参数数约等于字节数”替代包大小计算。单搏 MAC 仍为 `<=100,000`，最大单层激活仍为 `<=2 KiB`。
 - 不使用 validation/internal/锁定数据做过采样、归一化统计、早停后的阈值修补或失败样本微调。
 
 ### 3.3 量化和三方一致性
@@ -286,16 +286,16 @@ ssh ecg-gpu-server "nvidia-smi pmon -c 1"
 
 **执行步骤：**
 
-- [ ] 先写窗口边界、R 索引、患者隔离、类别映射、参数/MAC/激活预算的失败测试。
+- [ ] 先写窗口边界、R 索引、患者隔离、类别映射、完整部署参数包/MAC/激活预算的失败测试。
 - [ ] 用 smoke 患者集对 A/B/C 各跑 1 epoch；要求 loss 有限、无 NaN、输出 shape `[batch,2]`、每个 run 产物完整。
 - [ ] 在空闲 GPU 上并行运行 A/B/C，初始 seed 固定 17；只看 Icentia validation 选择候选。
-- [ ] 候选排序为：先满足 VEB +P `>=95%` 与 FPR `<=0.25%`，再最大化 VEB Se，最后选择参数/MAC 更少者；禁止用 accuracy 或 AUROC 单独选型。
+- [ ] 候选排序为：先同时满足 VEB Se `>=90%`、VEB +P `>=95%` 与 FPR `<=0.25%`，再最大化 VEB Se，最后选择完整部署参数包/MAC 更少者；禁止用 accuracy 或 AUROC 单独选型。
 - [ ] 对胜出候选分别用 seed 17、29、43 全量训练；冻结每个 seed 的 checkpoint、阈值、归一化统计和 SHA-256。
-- [ ] 每个候选在 validation 上把 VEB 概率阈值从 0.001 到 0.999、步长 0.001 扫描；先保留 `VEB +P>=95%` 且 `FPR<=0.25%` 的阈值，再选择 VEB Se 最高者；Se 相同则选择 +P 更高者，再相同则选择更接近 0.5 者。无满足阈值时该候选失败。
-- [ ] 只在冻结后运行一次 Icentia internal_test；生成 per-patient 指标、混淆矩阵、Wilson CI、10,000 次患者 bootstrap 和全部 VFP/VFN 清单。
+- [ ] 每个候选在 validation 上把 VEB 概率阈值从 0.001 到 0.999、步长 0.001 扫描；先保留 `VEB Se>=90%`、`VEB +P>=95%` 且 `FPR<=0.25%` 的阈值，再选择 VEB Se 最高者；Se 相同则选择 +P 更高者，再相同则选择更接近 0.5 者。无满足三项门禁的阈值时该候选失败。
+- [ ] 训练入口必须始终 validation-only，禁止加载、接收或评测 internal_test。只在模型、阈值、三 seed 选择和全部输入哈希冻结后，由独立的一次性评测入口读取冻结凭据并运行一次 Icentia internal_test；该入口须拒绝重复凭据，并生成 per-patient 指标、混淆矩阵、Wilson CI、10,000 次患者 bootstrap、全部 VFP/VFN 清单和单次使用回执。
 - [ ] 运行 `python -m unittest discover -s tests/ec57 -p "test_*.py" -v`，预期全部 `OK`。
 
-**验收成果：** 三个 seed 全部满足第 3.1/3.2 节 Icentia 门槛；种子跨度 `<=2.0` 个百分点；参数、MAC、权重和激活均在预算内；无患者泄漏；完整模型包至少含 `model_fp32.pt`、`config.json`、`normalization.json`、`decision_threshold.json`、`metrics.json`、`manifest_sha256.txt`、`model_sha256.txt`。
+**验收成果：** 三个 seed 全部满足第 3.1/3.2 节 Icentia 门槛；种子跨度 `<=2.0` 个百分点；完整部署参数包、MAC 和激活均在预算内；无患者泄漏；完整模型包至少含 `model_fp32.pt`、`config.json`、`normalization.json`、`decision_threshold.json`、`metrics.json`、`manifest_sha256.txt`、`model_sha256.txt`。
 
 **许可门禁：** 若 Icentia 的非商业许可未获得产品使用书面批准，则此节点只能标记 `research-only accept`，不能成为 FDA/商业候选。产品候选必须用权利清晰、患者隔离的开发数据重新训练并重新过 M2–M8。
 

@@ -1,0 +1,71 @@
+{
+  "candidate_name": "candidate_twostage_m4c_cand2_dualbranch_m32_t32_mining_m0025",
+  "description": "DualBranch Architecture M4c: 32-dim Morph + 32-dim Timing, Gated Fusion, Hard Negative Mining Loss (wide penalty=8.0), Se>=90% Selection",
+  "model": {
+    "architecture": "DualBranchECGCNN_NV",
+    "use_features": true,
+    "input_length": 160,
+    "in_channels": 1,
+    "num_classes": 2,
+    "num_features": 8,
+    "temporal_pool_bins": 5,
+    "morph_emb_dim": 32,
+    "timing_emb_dim": 32,
+    "dilation": 2
+  },
+  "data": {
+    "normalization": {
+      "wave_median_zero": true,
+      "wave_mad_unit_scale": true,
+      "clip_wave": [
+        -5.0,
+        5.0
+      ],
+      "feature_robust_zscore": true
+    },
+    "augmentation": {
+      "random_scaling": [
+        0.85,
+        1.15
+      ],
+      "baseline_wander_freq_hz": [
+        0.1,
+        0.5
+      ],
+      "noise_snr_db": [
+        20.0,
+        35.0
+      ]
+    }
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "lr": 0.0003,
+    "weight_decay": 0.0001,
+    "batch_size": 1024,
+    "max_epochs": 50,
+    "early_stopping_metric": "val_se_ge_90_plus_p",
+    "early_stopping_patience": 12,
+    "loss": "asymmetric_hard_negative_mining",
+    "veb_class_weight": 2.2,
+    "fp_margin": 0.025,
+    "fp_penalty_weight": 4.0,
+    "wide_qrs_extra_weight": 8.0
+  },
+  "threshold_search": {
+    "metric_priority": [
+      "veb_se_ge_90",
+      "veb_plus_p_ge_95",
+      "veb_fpr_le_0_25",
+      "max_veb_se"
+    ],
+    "min_veb_se": 0.9,
+    "min_veb_plus_p": 0.95,
+    "max_veb_fpr": 0.0025,
+    "scan_range": [
+      0.001,
+      0.999
+    ],
+    "scan_step": 0.001
+  }
+}

@@ -24,6 +24,7 @@ def apply_smoke_overrides(config: dict) -> dict:
     smoke = copy.deepcopy(config)
     smoke["run_mode"] = "one_epoch_pipeline_smoke"
     smoke["training"]["max_epochs"] = 1
+    smoke["threshold_search"]["min_veb_se"] = 0.0
     smoke["threshold_search"]["min_veb_plus_p"] = 0.0
     smoke["threshold_search"]["max_veb_fpr"] = 1.0
     return smoke
@@ -37,7 +38,7 @@ def format_split_summary(name: str, data: dict | None) -> str:
 
 
 def load_native_cache_splits(
-    cache_dir: str | os.PathLike[str], *, include_internal_test: bool = True
+    cache_dir: str | os.PathLike[str], *, include_internal_test: bool = False
 ) -> Dict[str, Dict[str, np.ndarray]]:
     """Load the frozen train/validation/internal-test split and fail closed on provenance."""
     root = Path(cache_dir).resolve()
@@ -67,7 +68,7 @@ def main():
     parser.add_argument(
         "--validation-only",
         action="store_true",
-        help="Select A/B/C on validation without evaluating internal_test",
+        help="Deprecated compatibility flag; training is always validation-only",
     )
     parser.add_argument(
         "--smoke",
@@ -90,10 +91,8 @@ def main():
 
     # 1. Load the already frozen patient-level splits. Never derive internal_test from validation.
     print(f"Loading native Icentia11k cache from {args.cache_dir}...")
-    evaluate_internal_test = not (args.validation_only or args.smoke)
-    splits = load_native_cache_splits(
-        args.cache_dir, include_internal_test=evaluate_internal_test
-    )
+    evaluate_internal_test = False
+    splits = load_native_cache_splits(args.cache_dir, include_internal_test=False)
     train_data = splits["train"]
     val_data = splits["validation"]
     test_data = splits.get("internal_test")

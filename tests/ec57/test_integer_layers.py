@@ -68,6 +68,27 @@ class TestIntegerLayers(unittest.TestCase):
 
         np.testing.assert_array_equal(out1, out2)
 
+    def test_dilated_mlp_integer_shapes(self):
+        """Verify winning 2.5KB dilated model (5 bins, 8 features, MLP 11) runs integer inference."""
+        torch_model = TinyECGCNN_NV(temporal_pool_bins=5, num_features=8, mlp_hidden_dim=11, dilation=2)
+        torch_model.eval()
+        calib_wave = torch.randn(10, 1, 160)
+        calib_feat = torch.randn(10, 8)
+
+        int_model = create_integer_model_from_torch(torch_model, calib_wave, calib_feat)
+
+        x_wave = np.random.randint(-128, 127, size=160, dtype=np.int8)
+        x_feat = np.random.randint(-128, 127, size=8, dtype=np.int8)
+
+        acts = int_model.forward_with_intermediates(x_wave, x_feat)
+
+        self.assertEqual(acts['pool1'].shape, (8, 80))
+        self.assertEqual(acts['pool2'].shape, (16, 40))
+        self.assertEqual(acts['gap'].shape, (80,)) # 16 * 5 = 80
+        self.assertEqual(acts['concat'].shape, (88,)) # 80 + 8 = 88
+        self.assertEqual(acts['logits'].shape, (2,))
+        self.assertEqual(acts['logits'].dtype, np.int32)
+
 
 if __name__ == '__main__':
     unittest.main()
